@@ -1,4 +1,4 @@
-namespace TPL.Core.Tests;
+namespace TPL.Core.UnitTests;
 
 public class LibraryCheckoutTests
 {

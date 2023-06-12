@@ -1,6 +1,6 @@
 using TPL.Core.Entities.TestData;
 
-namespace TPL.Core.Tests.Specs;
+namespace TPL.Core.UnitTests.SpecFlowStyle.Specs;
 
 [Binding]
 public class LibraryInventorySpec

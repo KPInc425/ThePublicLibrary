@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <PackageId>TPL.Kernel</PackageId>
-    <Version>1.01.02.03</Version>
-    <Authors>James W. Kies</Authors>
+    <Version>1.01.02.003</Version>
+    <Authors>10GeekJames</Authors>
     <Company>JamesKies.com</Company>
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>

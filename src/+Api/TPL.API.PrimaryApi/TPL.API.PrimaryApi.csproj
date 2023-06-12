@@ -1,0 +1,56 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <IsPackable>true</IsPackable>
+    <PackageId>TPL.API.PrimaryApi</PackageId>
+    <Version>1.01.02.003</Version>
+    <Authors>10GeekJames</Authors>
+    <Company>10GeekJames</Company>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <DefaultNamespace>TPL.API.PrimaryApi</DefaultNamespace> 
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Ardalis.HttpClientTestExtensions" Version="4.0.0" />    
+    <PackageReference Include="Ardalis.GuardClauses" Version="4.0.1" />
+    <PackageReference Include="Ardalis.Result" Version="7.1.0" />
+    <PackageReference Include="Ardalis.Specification.EntityFrameworkCore" Version="7.0.0" />
+    <PackageReference Include="Ardalis.EFCore.Extensions" Version="6.0.0" />
+    <PackageReference Include="Autofac" Version="7.0.1" />
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="8.0.0" />
+    <PackageReference Include="AutoMapper" Version="12.0.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+    <PackageReference Include="Blazored.FluentValidation" Version="2.1.0" />
+    <PackageReference Include="MediatR" Version="12.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="7.0.5" />    
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.5" />    
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="6.5.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="6.5.0" />    
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" PrivateAssets="all" Version="7.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="7.0.5" />
+    <PackageReference Include="SQLite" Version="3.13.0" />
+  </ItemGroup>
+
+  <Choose>
+    <When Condition="'$(Configuration)' == 'Release'">
+      <ItemGroup>
+        <PackageReference Include="TPL.Kernel" />
+        <PackageReference Include="TPL.Core" />
+        <PackageReference Include="TPL.Infrastructure" />
+        <PackageReference Include="TPL.Application" />
+      </ItemGroup>
+    </When>
+  </Choose>
+  <ItemGroup>
+    <ProjectReference Include="./../../____Kernel/TPL.Kernel/TPL.Kernel.csproj" />
+    <ProjectReference Include="./../../___Core/TPL.Core/TPL.Core.csproj" />
+    <ProjectReference Include="./../../__Infrastructure/TPL.Infrastructure/TPL.Infrastructure.csproj" />
+    <ProjectReference Include="./../../_Application/TPL.Application/TPL.Application.csproj" />
+  </ItemGroup>
+
+</Project>

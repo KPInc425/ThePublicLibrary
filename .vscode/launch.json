@@ -10,7 +10,7 @@
             "request": "launch",
             "preLaunchTask": "build",
             // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceFolder}/TPL.Core/tests/TPL.Core.Tests/bin/Debug/net7.0/TPL.Core.Tests.dll",
+            "program": "${workspaceFolder}/TPL.Core/tests/TPL.Core.Tests/bin/Debug/net7.0/TPL.Core.UnitTests.dll",
             "args": [],
             "cwd": "${workspaceFolder}/TPL.Core/tests/TPL.Core.Tests",
             // For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console

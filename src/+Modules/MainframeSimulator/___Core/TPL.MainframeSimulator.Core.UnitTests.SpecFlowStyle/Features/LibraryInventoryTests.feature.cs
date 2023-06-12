@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace TPL.Core.Tests.Features
+namespace TPL.Core.UnitTests.Features
 {
     using TechTalk.SpecFlow;
     using System;

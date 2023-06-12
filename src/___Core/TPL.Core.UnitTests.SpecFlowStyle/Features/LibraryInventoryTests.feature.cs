@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace TPL.Core.Tests.Features
+namespace TPL.Core.UnitTests.SpecFlowStyle.Features
 {
     using TechTalk.SpecFlow;
     using System;
@@ -31,7 +31,7 @@ namespace TPL.Core.Tests.Features
 #line 1 "LibraryInventoryTests.feature"
 #line hidden
         
-        public LibraryInventoryManagementFeature(LibraryInventoryManagementFeature.FixtureData fixtureData, TPL_Core_Tests_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
+        public LibraryInventoryManagementFeature(LibraryInventoryManagementFeature.FixtureData fixtureData, TPL_Core_UnitTests_SpecFlowStyle_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
         {
             this._testOutputHelper = testOutputHelper;
             this.TestInitialize();

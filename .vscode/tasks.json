@@ -7,7 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/TPL.Core/tests/TPL.Core.Tests/TPL.Core.Tests.csproj",
+                "${workspaceFolder}/TPL.Core/tests/TPL.Core.Tests/TPL.Core.UnitTests.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -19,7 +19,7 @@
             "type": "process",
             "args": [
                 "publish",
-                "${workspaceFolder}/TPL.Core/tests/TPL.Core.Tests/TPL.Core.Tests.csproj",
+                "${workspaceFolder}/TPL.Core/tests/TPL.Core.Tests/TPL.Core.UnitTests.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -33,7 +33,7 @@
                 "watch",
                 "run",
                 "--project",
-                "${workspaceFolder}/TPL.Core/tests/TPL.Core.Tests/TPL.Core.Tests.csproj"
+                "${workspaceFolder}/TPL.Core/tests/TPL.Core.Tests/TPL.Core.UnitTests.csproj"
             ],
             "problemMatcher": "$msCompile"
         }

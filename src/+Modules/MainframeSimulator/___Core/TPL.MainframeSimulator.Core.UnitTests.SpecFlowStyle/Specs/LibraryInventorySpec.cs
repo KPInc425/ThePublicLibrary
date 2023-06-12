@@ -1,4 +1,4 @@
-namespace TPL.Core.Tests.Specs;
+namespace TPL.Core.UnitTests.Specs;
 
 [Binding]
 public class LibraryInventorySpec

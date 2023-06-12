@@ -90,14 +90,7 @@
                         "dotnet test"
                     ],
                     "num": 7
-                }
-            ]
-        },
-        {
-            "name": "TPL.Application.Data",
-            "description": "Application Data and Migrations",
-            "enabled": true,
-            "terminals": [
+                },
                 {
                     "name": "TPL.Application.Data",
                     "path": ".\\src\\_Data\\TPL.Application.Data",
@@ -108,15 +101,15 @@
                     "num": 8
                 }
             ]
-        },
+        },        
         {
-            "name": "TPL.PrimaryApi",
+            "name": "TPL.API.PrimaryApi",
             "description": "TPL Primary API",
             "enabled": true,
             "terminals": [
                 {
-                    "name": "TPL.PrimaryApi",
-                    "path": ".\\src\\+Api\\TPL.PrimaryAPI",
+                    "name": "TPL.API.PrimaryApi",
+                    "path": ".\\src\\+Api\\TPL.API.PrimaryApi",
                     "cmd": [
                         "ping 127.0.0.1 -n 9 > nul",                        
                         "dotnet build"
@@ -124,8 +117,8 @@
                     "num": 9
                 },
                 {
-                    "name": "TPL.PrimaryApi",
-                    "path": ".\\src\\+Api\\TPL.PrimaryAPI.FunctionalTests",
+                    "name": "TPL.API.PrimaryApi",
+                    "path": ".\\src\\+Api\\TPL.API.PrimaryApi.FunctionalTests",
                     "cmd": [
                         "ping 127.0.0.1 -n 10 > nul",                        
                         "dotnet build"

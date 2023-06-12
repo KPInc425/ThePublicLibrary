@@ -1,4 +1,4 @@
-namespace TPL.IntegrationTests.Data.Books;
+namespace TPL.Infrastructure.IntegrationTests.Data.Books;
 public class EfBookRepositoryAdd : BaseTestFixture
 {
     [Fact]

@@ -2,8 +2,15 @@
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <IsPackable>true</IsPackable>
+    <PackageId>TPL.Application</PackageId>
+    <Version>1.01.02.003</Version>
+    <Authors>10GeekJames</Authors>
+    <Company>10GeekJames</Company>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <DefaultNamespace>TPL.Application</DefaultNamespace> 
   </PropertyGroup>
 
   <ItemGroup>
@@ -23,6 +30,15 @@
     <PackageReference Include="SQLite" Version="3.13.0" />
   </ItemGroup>
 
+  <Choose>
+    <When Condition="'$(Configuration)' == 'Release'">
+      <ItemGroup>
+        <PackageReference Include="TPL.Kernel" />
+        <PackageReference Include="TPL.Core" />
+        <PackageReference Include="TPL.Infrastructure" />
+      </ItemGroup>
+    </When>
+  </Choose>
   <ItemGroup>
     <ProjectReference Include="./../../____Kernel/TPL.Kernel/TPL.Kernel.csproj" />
     <ProjectReference Include="./../../___Core/TPL.Core/TPL.Core.csproj" />

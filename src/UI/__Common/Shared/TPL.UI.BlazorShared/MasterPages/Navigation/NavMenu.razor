@@ -1,0 +1,125 @@
+@inject IStringLocalizer<NavMenu> Localize
+<div>
+    <MudAppBar Class="py-0" Fixed="true" Bottom="false" >
+        @if (ToggleNav.HasDelegate)
+        {
+            <MudIconButton Icon="@Icons.Material.Filled.Menu" Class="z-20"  Edge="Edge.Start"
+            OnClick="@ToggleNav" />
+        }
+        <a href="/" class="navmenu-logo">
+            <img src=@($"/i{PlatformCacheService.KnownBusinessWebsite.KnownBusinessWebsiteProfile.LogoImage}")
+                width="160" alt="" class="mt-2"/>
+        </a>
+        <div Class="d-flex justify-end flex-grow-1 gap-2 pa-2">
+                        <div style="background-color: rgba(1,1,1,0.5); padding: 6px 12px; border-radius: 12px;">
+                <a class="logo" href="https://tmra.ai">
+                    <img width="64px" class="rounded-circle" src="/images/TMRALogo.png" alt=""/>
+                    <img width="350px" style="filter: drop-shadow(1px 3px 4px #fff) invert(100%)" class="rounded-pill" src="/images/TMRA.png" alt=""/>
+                </a>
+            </div>
+        </div>
+        <MudSpacer />
+        <SuperAdminNavMenu Class="mx-1" />
+        <NavMenuAccount Class="mx-1" />
+        <NavMenuLogIn Class="mx-1" />
+    </MudAppBar>
+    @if (SelectedItem != null && ((SelectedItem?.WebsiteChildPages?.Count ?? 0) > 0))
+    {
+        <MudContainer>
+            <div class="sub-menu">
+                @foreach (var menuItem in SelectedItem?.WebsiteChildPages)
+                {
+                    @if (menuItem.IsVirtual)
+                    {
+                        <MudButton class="sub-menu-item px-1" OnClick="()=>NavigateToPage(menuItem.WebPageUrl)">@menuItem.NavText
+                        </MudButton>
+                    }
+                    else
+                    {
+                        <MudButton class="sub-menu-item px-1" OnClick="()=>NavigateToStaticPage(menuItem.WebPageUrlPageOnly)">
+                            @menuItem.NavText</MudButton>
+                    }
+                }
+            </div>
+        </MudContainer>
+    }
+</div>
+@code {
+    [Parameter] public EventCallback ToggleNav { get; set; }
+    [Parameter] public EventCallback OnClick { get; set; }
+    List<WebsitePageViewModel> MenuItems { get; set; }
+    WebsitePageViewModel SelectedItem { get; set; } = new();
+    private Underline UnderlineBehavior(WebsitePageViewModel item)
+    {
+        if (SelectedItem != null && SelectedItem.NavText != null && item.NavText == SelectedItem.NavText)
+        {
+            return Underline.Always;
+        }
+        else
+        {
+            return Underline.Hover;
+        }
+    }
+    protected override void OnAfterRender(bool firstRender)
+    {
+        if(firstRender){
+            PlatformCacheService.OnMenuChange += RedrawMenu;
+        }
+        base.OnAfterRender(firstRender);
+    }
+    protected override void OnInitialized()
+    {
+        InitPage();
+        base.OnInitialized();
+    }
+    private void RedrawMenu()
+    {
+        Console.WriteLine("Redrawing Updated Menu");
+        InitPage();
+        StateHasChanged();
+    }
+    private void InitPage()
+    {
+        MenuItems = GetMenuItems();
+        SelectedItem = MenuItems.Find(item => CompareCurrentPageUrl(item.WebPageUrl));
+        Console.WriteLine($"Selected item = {SelectedItem?.NavText}");
+        @* if (SelectedItem == null)
+            {
+            SelectedItem = MenuItems.Find(item => CompareCurrentPageUrl(item.WebsiteParentPage?.WebPageUrl));
+            } *@
+        if (SelectedItem == null)
+        {
+            SelectedItem = MenuItems.Find(item => item.WebsiteChildPages.Any(nestedItem =>
+            CompareCurrentPageUrl(nestedItem.WebPageUrl)));
+        }
+    }
+    public async Task NavigateToPage(string url)
+    {
+        NavigationManager.NavigateTo(url);
+        await Task.Yield();
+    }
+    public async Task NavigateToStaticPage(string url)
+    {
+        NavigationManager.NavigateTo($"/page/{url}");
+        await Task.Yield();
+    }
+    private bool CompareCurrentPageUrl(string urlToCompare)
+    {
+        return (
+        NavigationManager.Uri.Substring(NavigationManager.BaseUri.Length - 1)
+        .Equals(urlToCompare, StringComparison.InvariantCultureIgnoreCase) ||
+        NavigationManager.Uri.Substring(NavigationManager.BaseUri.Length)
+        .Equals(urlToCompare, StringComparison.InvariantCultureIgnoreCase)
+        );
+    }
+    public async Task NavigateToPage(MenuItem item)
+    {
+        NavigationManager.NavigateTo(item.Url);
+        await Task.Yield();
+    }
+    private List<WebsitePageViewModel> GetMenuItems()
+    {
+        var websiteMenu = PlatformCacheService.KnownBusinessWebsite.WebsitePages;
+        return websiteMenu;
+    }
+}
