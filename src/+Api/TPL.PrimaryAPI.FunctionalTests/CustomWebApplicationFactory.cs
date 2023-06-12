@@ -15,10 +15,10 @@ public class CustomWebApplicationFactory<TStartup> : WebApplicationFactory<Start
         using (var scope = serviceProvider.CreateScope())
         {
             _logger = serviceProvider.GetRequiredService<ILogger<CustomWebApplicationFactory<TStartup>>>();
-            
+
             var db = serviceProvider.GetRequiredService<TplPrimaryDbContext>();
 
-            db.Database.EnsureCreated();            
+            db.Database.EnsureCreated();
             _logger.LogInformation("Database is created");
 
             try
@@ -61,16 +61,16 @@ public class CustomWebApplicationFactory<TStartup> : WebApplicationFactory<Start
 
         var containerBuilder = new ContainerBuilder();
 
-        var coreAssembly = Assembly.GetAssembly(typeof(TplCoreModule));
-        var infrastructureAssembly = Assembly.GetAssembly(typeof(TplInfrastructureModule));
+        //var coreAssembly = Assembly.GetAssembly(typeof(TplCoreModule));
+        //var infrastructureAssembly = Assembly.GetAssembly(typeof(TplInfrastructureModule));
         var applicationAssembly = Assembly.GetAssembly(typeof(TplApplicationModule));
         var primaryApiAssembly = Assembly.GetAssembly(typeof(TplPrimaryApiModule));
-        
-        _assemblies.Add(coreAssembly);
-        _assemblies.Add(infrastructureAssembly);
+
+        //_assemblies.Add(coreAssembly);
+        //_assemblies.Add(infrastructureAssembly);
         _assemblies.Add(applicationAssembly);
         _assemblies.Add(primaryApiAssembly);
-        
+
         containerBuilder.RegisterGeneric(typeof(EfRepository<>))
             .As(typeof(IRepository<>))
             .As(typeof(IReadRepository<>))
@@ -98,10 +98,10 @@ public class CustomWebApplicationFactory<TStartup> : WebApplicationFactory<Start
         }
 
         var services = new ServiceCollection();
-        services.AddAutoMapper(typeof(BookMapper).GetTypeInfo().Assembly);        
+        services.AddAutoMapper(typeof(BookMapper).GetTypeInfo().Assembly);
         containerBuilder.Populate(services);
 
-            
+
         builder
             .ConfigureServices(services =>
             {
@@ -126,11 +126,8 @@ public class CustomWebApplicationFactory<TStartup> : WebApplicationFactory<Start
                 var appSettings = _configuration.Get<AppSettings>();
                 services.AddSingleton<AppSettings>(appSettings);
                 services.AddEntityFrameworkInMemoryDatabase();
-        
-                services.AddDbContext<TPL.Infrastructure.Data.TplPrimaryDbContext>(options =>
-                {
-                    options.UseInMemoryDatabase(Guid.NewGuid().ToString());
-                });
+
+                services.AddTplPrimaryInMemoryDbContext("tpl.primary.db");
 
                 var seedDataAssembly = Assembly.GetAssembly(typeof(RunBaseSeedData));
                 foreach (var seedData in seedDataAssembly
@@ -143,7 +140,7 @@ public class CustomWebApplicationFactory<TStartup> : WebApplicationFactory<Start
 
                 services.AddControllers()
                     .AddApplicationPart(typeof(Startup).Assembly);
-                
+
             });
     }
 

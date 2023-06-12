@@ -7,6 +7,7 @@ global using Autofac.Extensions.DependencyInjection;
 
 global using AutoMapper;
 
+global using FluentAssertions;
 global using FluentValidation;
 
 global using MediatR;

@@ -17,11 +17,27 @@ public class BooksControllerTests : IClassFixture<CustomWebApplicationFactory<St
         var response = await _client.GetAsync(new BooksGetAllQuery().BuildRouteFrom());
         response.EnsureSuccessStatusCode();
 
+        var raw = await response.Content.ReadAsStringAsync();
         var result = await response
             .Content
-            .ReadFromJsonAsync<IEnumerable<Book>>();
+            .ReadFromJsonAsync<IEnumerable<BookViewModel>>();
 
-        Assert.Single(result);
+        result.Should().HaveCount(4);
+        // Assert.Contains(result, i => i.Name == SeedBookData.TestBook1.Name);
+    }
+
+    [Fact]
+    public async Task ReturnsBookSearchResults()
+    {
+        var response = await _client.GetAsync(new BooksFindByTitleQuery("a").BuildRouteFrom());
+        response.EnsureSuccessStatusCode();
+
+        var raw = await response.Content.ReadAsStringAsync();
+        var result = await response
+            .Content
+            .ReadFromJsonAsync<IEnumerable<BookViewModel>>();
+
+        result.Should().HaveCountGreaterThan(0);
         // Assert.Contains(result, i => i.Name == SeedBookData.TestBook1.Name);
     }
 }

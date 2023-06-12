@@ -116,12 +116,21 @@
             "terminals": [
                 {
                     "name": "TPL.PrimaryApi",
-                    "path": ".\\src\\PrimaryApi\\TPL.PrimaryApi",
+                    "path": ".\\src\\+Api\\TPL.PrimaryAPI",
                     "cmd": [
                         "ping 127.0.0.1 -n 9 > nul",                        
                         "dotnet build"
                     ],
                     "num": 9
+                },
+                {
+                    "name": "TPL.PrimaryApi",
+                    "path": ".\\src\\+Api\\TPL.PrimaryAPI.FunctionalTests",
+                    "cmd": [
+                        "ping 127.0.0.1 -n 10 > nul",                        
+                        "dotnet build"
+                    ],
+                    "num": 10
                 }
             ]
         }

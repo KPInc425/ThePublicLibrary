@@ -2,7 +2,7 @@ namespace TPL.Infrastructure.CommandQuery;
 
 public class BooksFindByTitleQuery : IRequest<List<Book>>, IRoutable
 {
-    protected readonly static string Route = "/Books/find/{searchFor}";
+    protected readonly static string Route = "/books/findbytitle/?searchFor={searchFor}";
 
     [Required]
     public string SearchFor { get; set; }
