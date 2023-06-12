@@ -1,0 +1,1 @@
+namespace TPL.Kernel.Interfaces;

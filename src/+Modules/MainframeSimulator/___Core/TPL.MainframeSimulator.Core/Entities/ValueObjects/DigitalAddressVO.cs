@@ -1,0 +1,14 @@
+﻿namespace TPL.Core.Entities;
+public class DigitalAddressVO : ValueObject
+{
+    public DigitalAddressType Type { get; private set; }
+    public long PhoneNumber { get; private set; }
+    public string Description { get; private set; }
+
+    public DigitalAddressVO(DigitalAddressType type, long phoneNumber, string description)
+    {
+        Type = type;
+        PhoneNumber = phoneNumber;
+        Description = description;
+    }
+}

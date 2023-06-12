@@ -1,0 +1,10 @@
+global using FluentAssertions;
+global using TPL.Core.Entities;
+global using TechTalk.SpecFlow;
+global using TPL.Core.Tests.Features;
+global using TPL.Core.Tests.Specs;
+global using Xunit;
+global using System.Threading.Tasks;
+global using BoDi;
+global using System;
+global using System.Linq;
