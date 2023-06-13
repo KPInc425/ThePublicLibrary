@@ -5,6 +5,8 @@ public class BookTestData : ITestData
     public readonly Book BookJumpingForJax;
     public readonly Book BookJuniperRising;
     public readonly Book BookAlfradoTheGreat;
+    public readonly Book BookManyCopies;
+    public readonly Book BookNoCopies;
 
     public readonly IEnumerable<Book> AllBooks;
 
@@ -25,11 +27,24 @@ public class BookTestData : ITestData
         BookAlfradoTheGreat = new(new("978-0-00-000000-9"), "Alfrado The Great", _authorTestData.AuthorJohnWriter, 1985, 400);
         BookAlfradoTheGreat.AddBookCopy(1, BookCondition.Good);
 
+        BookManyCopies = new(new("978-0-00-000001-1"), "Book Many Copies", _authorTestData.AuthorSallyTyper, 1981, 110);
+        BookManyCopies.AddBookCopy(1, BookCondition.Good);
+        BookManyCopies.AddBookCopy(2, BookCondition.Good);
+        BookManyCopies.AddBookCopy(3, BookCondition.Good);
+        BookManyCopies.AddBookCopy(4, BookCondition.Good);
+        BookManyCopies.AddBookCopy(5, BookCondition.Good);
+        BookManyCopies.AddBookCopy(6, BookCondition.Good);
+        BookManyCopies.AddBookCopy(7, BookCondition.Good);
+
+        BookNoCopies = new(new("978-0-00-000001-2"), "Book No Copies", _authorTestData.AuthorBishopKnight, 1981, 120);        
+
         AllBooks = new List<Book> {
             BookTheWildSide,
             BookJumpingForJax,
             BookJuniperRising,
-            BookAlfradoTheGreat
+            BookAlfradoTheGreat,
+            BookManyCopies,
+            BookNoCopies
         };
     }
 }

@@ -22,4 +22,25 @@ public class BookConditionTests
         // Then the book is now in poor condition
         bookCopy.Condition.Should().Be(BookCondition.Poor);
     }
+
+    [Fact]
+    public void CanRemoveDamagedBookCopies()
+    {
+        // Given I have a book with multiple copies
+        var manyCopiesMax = _bookTestData.BookManyCopies;
+        manyCopiesMax.Should().NotBeNull();
+
+        // And I select the first book copy
+        var randomBookCopy = manyCopiesMax.BookCopies.FirstOrDefault();
+        manyCopiesMax.BookCopies.Count().Should().BeGreaterThan(1);
+
+        // And I store the number of copies plus one to offset the index
+        var numberOfCopies = manyCopiesMax.BookCopies.Count();
+
+        // When I remove the damaged copy
+        manyCopiesMax.RemoveBookCopy(randomBookCopy);
+
+        // Then I should have one fewer copies of the book
+        manyCopiesMax.BookCopies.Count().Should().Be(numberOfCopies - 1);
+    }
 }
