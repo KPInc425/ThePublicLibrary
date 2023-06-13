@@ -7,4 +7,8 @@ public class Author : BaseEntityTracked<Guid>, IAggregateRoot
     {
         Name = name;
     }
+    public override string ToString()
+    {
+        return $"{Name}";
+    }
 }
