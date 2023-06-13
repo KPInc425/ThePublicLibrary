@@ -1,20 +1,34 @@
 ﻿namespace TPL.Core.Entities;
 public class Book : BaseEntityTracked<Guid>, IAggregateRoot
 {
-    public string ISBN { get; private set; }
-    public string Title { get; private set; }
-    public BookCondition Condition { get; private set; }
+    public IsbnVO Isbn { get; }
+    public string Title { get; }
+    public Author Author { get; }
+    public int PublicationYear { get; }
+    public int PageCount { get; }
 
     private List<BookCategory> _bookCategories = new();
     public IEnumerable<BookCategory> BookCategories => _bookCategories.AsReadOnly();
-    private Book(){}
-    public Book(string isbn, string title)
+
+    private List<BookCopy> _bookCopies = new();
+    public IEnumerable<BookCopy> BookCopies => _bookCopies.AsReadOnly();
+
+    private Book() { }
+    public Book(IsbnVO isbn, string title, Author author, int publicationYear, int pageCount)
     {
-        ISBN = isbn;
+        Isbn = isbn;
         Title = title;
+        Author = author;
+        PublicationYear = publicationYear;
+        PageCount = pageCount;
     }
-    public Book(string isbn, string title, BookCondition condition) : this(isbn, title)
+    public void AddBookCopy(int copySequence, BookCondition condition = BookCondition.New)
     {
-        Condition = condition;
+        var bookCopy = new BookCopy(copySequence, condition);
+        _bookCopies.Add(bookCopy);
+    }
+    public void RemoveBookCopy(BookCopy bookCopy)
+    {
+        _bookCopies.Remove(bookCopy);
     }
 }
