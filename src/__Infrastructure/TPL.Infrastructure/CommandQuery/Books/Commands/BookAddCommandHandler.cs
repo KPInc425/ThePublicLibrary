@@ -9,7 +9,7 @@ public class BookAddCommandHandler : IRequestHandler<BookAddCommand, Book>
     }
     public async Task<Book> Handle(BookAddCommand request, CancellationToken cancellationToken)
     {
-        var book = new Book(request.Isbn, request.Title, request.Condition);
+        var book = new Book(new(request.Isbn), request.Authors, request.Title, request.PublicationYear, request.PageCount);
         return await _repository.AddAsync(book, cancellationToken);
     }
 }

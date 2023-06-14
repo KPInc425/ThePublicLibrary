@@ -12,7 +12,7 @@ namespace TPL.Core.UnitTests.Books
             book.BookCopies.Should().BeEmpty();
 
             // When I add a book copy
-            book.AddBookCopy(1, BookCondition.Good);
+            book.AddBookCopy(BookCondition.Good);
 
             // Then there should be on copy of the book
             book.BookCopies.Should().NotBeEmpty();

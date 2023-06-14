@@ -6,23 +6,30 @@ public class BookAddCommand : IRequest<Book>, IRoutable
     public string Isbn { get; set; }
     [Required]
     public string Title { get; set; }
-    public BookCondition Condition { get; set; }
-    public BookAddCommand(string isbn, string title)
+    public List<Author> Authors { get; set; }
+    public int PublicationYear { get; set; }
+    public int PageCount { get; set; }
+
+    public BookAddCommand(string isbn, string title, List<Author> authors, int publicationYear, int pageCount)
     {
         Isbn = isbn;
         Title = title;
+        Authors = authors;
+        PublicationYear = publicationYear;
+        PageCount = pageCount;
     }
     public BookAddCommand(Book book)
     {
-        Isbn = book.ISBN;
+        Isbn = book.Isbn.ToString();
         Title = book.Title;
-        Condition = book.Condition;
-    }
-    public BookAddCommand(string isbn, string title, BookCondition condition): this(isbn, title)
-    {
-        Condition = condition;
-    }
+        PublicationYear = book.PublicationYear;
+        PageCount = book.PageCount;
 
+        foreach(var author in book.BookAuthors)
+        {
+            Authors.Add(author.Author);
+        }
+    }
     public string BuildRouteFrom() {
         return BookAddCommand.BuildRoute();
     }

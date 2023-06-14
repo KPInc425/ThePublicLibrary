@@ -31,8 +31,8 @@ public class LibraryInventorySpec
     {
         _library.Books.Count().Should().Be(3);
 
-        _library.Books.FirstOrDefault(rs => rs.ISBN == _book1.ISBN && rs.Title == _book1.Title).Should().NotBeNull();
-        _library.Books.FirstOrDefault(rs => rs.ISBN == _book2.ISBN && rs.Title == _book2.Title).Should().NotBeNull();
-        _library.Books.FirstOrDefault(rs => rs.ISBN == _book3.ISBN && rs.Title == _book3.Title).Should().NotBeNull();
+        _library.Books.FirstOrDefault(rs => rs.Isbn == _book1.Isbn && rs.Title == _book1.Title).Should().NotBeNull();
+        _library.Books.FirstOrDefault(rs => rs.Isbn == _book2.Isbn && rs.Title == _book2.Title).Should().NotBeNull();
+        _library.Books.FirstOrDefault(rs => rs.Isbn == _book3.Isbn && rs.Title == _book3.Title).Should().NotBeNull();
     }
 }

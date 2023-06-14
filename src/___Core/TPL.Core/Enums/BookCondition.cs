@@ -6,5 +6,6 @@ public enum BookCondition
     Good,
     Fair,
     Poor,
+    Destroyed,
     Unknown
 }

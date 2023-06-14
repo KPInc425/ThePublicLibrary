@@ -1,8 +1,11 @@
+using System.Collections.Generic;
+
 namespace TPL.Core.UnitTests;
 
 public class BookSearchTests
 {
     private readonly BookTestData _bookTestData = new();
+    private readonly AuthorTestData _authorsTestData = new();
 
     [Fact]
     public void CanSearchBooksByYearRange()
@@ -26,6 +29,29 @@ public class BookSearchTests
     }
 
     [Fact]
+    public void CanSearchBooksByAuthor()
+    {
+        // Given I have authors
+        var authors = _authorsTestData.AllAuthors;
+
+        // Given I have books
+        var books = _bookTestData.AllBooks;
+        books.Should().NotBeEmpty();
+        
+        // Given we have an author search string
+        var searchFor = "john";
+        var booksFindByAuthor = new BooksFindByAuthorSpec(searchFor);
+
+        // When I search for books in that range
+        var booksInRange = booksFindByAuthor.Evaluate(books);
+
+        // Then I find books in that range
+        booksInRange.Should().NotBeEmpty();
+        booksInRange.Should().HaveCountGreaterThan(0);
+    }
+
+
+    [Fact]
     public void CanRemoveDamagedBookCopies()
     {
         // Given I have a book with multiple copies
@@ -42,7 +68,12 @@ public class BookSearchTests
         // When I remove the damaged copy
         manyCopiesMax.RemoveBookCopy(randomBookCopy);
 
-        // Then I should have one fewer copies of the book
+        // Then I should have the same number of copies of the book
         manyCopiesMax.BookCopies.Count().Should().Be(numberOfCopies - 1);
+
+        // And the damaged copy should be removed
+        var spec = new BookCopyGetAllSpec();
+        var bookCopies = spec.Evaluate(new List<Book>() { manyCopiesMax })?.FirstOrDefault()?.BookCopies;
+        bookCopies.FirstOrDefault(rs=>rs.CopySequence == randomBookCopy.CopySequence).Should().BeNull();
     }
 }

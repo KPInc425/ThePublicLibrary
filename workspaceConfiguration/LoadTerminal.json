@@ -31,15 +31,6 @@
                         "dotnet test"
                     ],
                     "num": 2
-                },
-                {
-                    "name": "TPL.Core.UnitTests.SpecFlowStyle",
-                    "path": ".\\src\\___Core\\TPL.Core.UnitTests.SpecFlowStyle",
-                    "cmd": [
-                        "ping 127.0.0.1 -n 3 > nul",                        
-                        "dotnet test"
-                    ],
-                    "num": 3
                 }
             ]
         },
@@ -117,7 +108,7 @@
                     "num": 9
                 },
                 {
-                    "name": "TPL.API.PrimaryApi",
+                    "name": "TPL.API.PrimaryApi.FunctionalTests",
                     "path": ".\\src\\+Api\\TPL.API.PrimaryApi.FunctionalTests",
                     "cmd": [
                         "ping 127.0.0.1 -n 10 > nul",                        

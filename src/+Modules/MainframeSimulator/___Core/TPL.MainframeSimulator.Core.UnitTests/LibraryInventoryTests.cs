@@ -18,7 +18,7 @@ public class LibraryInventoryTests
         library.AddBookToInventory(book);
 
         // ASSERT
-        library.Books.FirstOrDefault(rs => rs.ISBN == book.ISBN && rs.Title == book.Title).Should().NotBeNull();
+        library.Books.FirstOrDefault(rs => rs.Isbn == book.Isbn && rs.Title == book.Title).Should().NotBeNull();
     }
 
     [Fact]
@@ -45,7 +45,7 @@ public class LibraryInventoryTests
         library.AddBookToInventory(books);
         
         // ASSERT
-        library.Books.Count(rs=>rs.ISBN == "595.702").Should().Be(2);
+        library.Books.Count(rs=>rs.Isbn == "595.702").Should().Be(2);
         
     }
 

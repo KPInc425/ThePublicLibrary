@@ -9,6 +9,11 @@ public class Author : BaseEntityTracked<Guid>, IAggregateRoot
     }
     public override string ToString()
     {
-        return $"{Name}";
+        return Name.ToString();
+    }
+    public bool ContainsInsensitive(string searchString)
+    {
+        var lowerName = Name.ToString().ToLower();
+        return lowerName.Contains(searchString);
     }
 }

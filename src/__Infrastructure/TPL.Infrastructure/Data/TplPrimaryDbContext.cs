@@ -12,8 +12,12 @@ public class TplPrimaryDbContext : DbContext
     public DbSet<Membership> Memberships { get; set; }
     public DbSet<Library> Libraries { get; set; }
     public DbSet<Book> Books { get; set; }
+    public DbSet<BookCopy> BookCopies { get; set; }
+    public DbSet<Author> Authors { get; set; }
+    public DbSet<BookAuthor> BookAuthors { get; set; }
 
     // Shared
+    
     public DbSet<BookCategory> BookCategories { get; set; }
     public DbSet<BookInCategory> BookInCategories { get; set; }
     public DbSet<MemberInMembership> MemberInMemberships { get; set; }

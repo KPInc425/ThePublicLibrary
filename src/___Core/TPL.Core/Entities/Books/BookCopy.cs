@@ -3,14 +3,16 @@ public class BookCopy : BaseEntityTracked<Guid>
 {
     public Book Book { get; } = null!;
 
-    public int CopySequence { get; } = 1;
+    public int CopySequence { get; }
     public BookCondition Condition { get; private set; } = BookCondition.New;
 
     private BookCopy() { }
-    public BookCopy(int copySequence = 1, BookCondition condition = BookCondition.New)
+    public BookCopy(Book book, BookCondition condition = BookCondition.New)
     {
-        CopySequence = copySequence;
+        Book = Guard.Against.Null(book);
         Condition = condition;
+
+        CopySequence = book.BookCopies.Count() + 1;
     }
     public void SetCondition(BookCondition condition)
     {

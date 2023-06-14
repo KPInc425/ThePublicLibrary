@@ -3,7 +3,7 @@ public class BookConfiguration : IEntityTypeConfiguration<Book>
 {
     public void Configure(EntityTypeBuilder<Book> builder)
     {
-        builder.Property(t => t.ISBN)
-            .IsRequired();
+        builder.OwnsOne(rs=>rs.Isbn);
+        
     }
 }

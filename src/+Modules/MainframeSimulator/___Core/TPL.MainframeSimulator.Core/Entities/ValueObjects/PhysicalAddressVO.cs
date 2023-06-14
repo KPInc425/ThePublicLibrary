@@ -6,6 +6,7 @@ public class PhysicalAddressVO : ValueObject
     public string StateProvince { get; init; }
     public string PostalCode { get; init; }
     public string Country { get; init; }
+    private PhysicalAddressVO(){}
     public PhysicalAddressVO(string street, string city, string stateProvince, string postalCode, string country)
     {
         Street = street;

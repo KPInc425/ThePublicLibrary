@@ -4,7 +4,7 @@ public class EfBookApplicationAdd : BaseApplicationTestFixture
     [Fact]
     public async Task AddBook()
     {
-        var cmd = new BookAddCommand(_bookTestData.AlfradoTheGreat);
+        var cmd = new BookAddCommand(_bookTestData.BookAlfradoTheGreat);
 
         (await _dataService.BooksGetAllAsync(new BooksGetAllQuery())).Count.Should().Be(0, "because we haven't added any books yet");
         await _dataService.BookAddAsync(cmd);
@@ -15,8 +15,8 @@ public class EfBookApplicationAdd : BaseApplicationTestFixture
         (await _dataService.BooksGetAllAsync(new BooksGetAllQuery())).Count.Should().Be(1, "because we added a single book");
 
 
-        result.ISBN.Should().Be(_bookTestData.AlfradoTheGreat.ISBN);
-        result.Title.Should().Be(_bookTestData.AlfradoTheGreat.Title);
-        result.Condition.Should().Be(_bookTestData.AlfradoTheGreat.Condition);
+        result.Isbn.Should().Be(_bookTestData.BookAlfradoTheGreat.Isbn);
+        result.Title.Should().Be(_bookTestData.BookAlfradoTheGreat.Title);
+        result.Condition.Should().Be(_bookTestData.BookAlfradoTheGreat.Condition);
     }
 }

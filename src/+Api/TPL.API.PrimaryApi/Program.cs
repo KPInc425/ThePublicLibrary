@@ -6,15 +6,18 @@ public class Program
     public static void Main(string[] args)
     {
         var host = CreateHostBuilder(args).Build();
+
         using (var scope = host.Services.CreateScope())
         {
             var logger = host.Services.GetRequiredService<ILogger<Program>>();
             var services = scope.ServiceProvider;
             var configuration = GetConfiguration(args);
             var appSettings = configuration.Get<AppSettings>();
-            
+
             // feel free to do work here
-            // Add services to the container.
+            // Add services to the container.   
+
+            
         }
 
         host.Run();

@@ -11,15 +11,15 @@ public class BookConstructorTests
         // Given I have a book
         var book = new Book(
             _bookTestData.BookAlfradoTheGreat.Isbn,
+            _bookTestData.BookAlfradoTheGreat.BookAuthors.Select(rs=>rs.Author),
             _bookTestData.BookAlfradoTheGreat.Title,
-            _bookTestData.BookAlfradoTheGreat.Author,
             _bookTestData.BookAlfradoTheGreat.PublicationYear,
             _bookTestData.BookAlfradoTheGreat.PageCount);
 
         // And I add 3 book copies
-        book.AddBookCopy(1, BookCondition.Good);
-        book.AddBookCopy(2, BookCondition.Good);
-        book.AddBookCopy(3, BookCondition.Poor);
+        book.AddBookCopy(BookCondition.Good);
+        book.AddBookCopy(BookCondition.Good);
+        book.AddBookCopy(BookCondition.Poor);
 
         // Then the book is not null
         book.Should().NotBeNull();
@@ -28,9 +28,9 @@ public class BookConstructorTests
         book.Title.Should().Be(_bookTestData.BookAlfradoTheGreat.Title);
 
         // And the book has an author
-        book.Author.Should().Be(_bookTestData.BookAlfradoTheGreat.Author);
+        book.BookAuthors.Count().Should().BeGreaterThan(0);
 
-        // And the book has an ISBN
+        // And the book has an Isbn
         book.Isbn.Should().Be(_bookTestData.BookAlfradoTheGreat.Isbn);
 
         // And the book has a publication year

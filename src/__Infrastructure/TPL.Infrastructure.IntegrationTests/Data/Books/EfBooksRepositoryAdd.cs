@@ -5,7 +5,7 @@ public class EfBookRepositoryAdd : BaseTestFixture
     public async Task AddsBookSetsId()
     {
         var repository = BookRepository();
-        var Book = _bookTestData.AlfradoTheGreat;
+        var Book = _bookTestData.BookAlfradoTheGreat;
 
         await repository.AddAsync(Book);
 
