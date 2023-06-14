@@ -117,6 +117,21 @@
                     "num": 10
                 }
             ]
+        },        
+        {
+            "name": "TPL.UI.Client.BlazorClient",
+            "enabled": true,
+            "terminals": [
+                {
+                    "name": "TPL.UI.Client.BlazorClient",
+                    "path": ".\\src\\UI\\Client\\TPL.UI.BlazorClient",
+                    "cmd": [
+                        "ping 127.0.0.1 -n 12 > nul",                        
+                        "dotnet watch run"
+                    ],
+                    "num": 12
+                }
+            ]
         }
         
     ]

@@ -14,8 +14,42 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="7.0.7" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="7.0.7" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer"
+      Version="7.0.7" PrivateAssets="all" />
     <PackageReference Include="MudBlazor" Version="6.4.1" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Watch Remove="**/*.css" />
+    <Watch Include="**/*.scss" />
+    <Watch Include="**/*.sass" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="wwwroot/**/*" />
+    <Content Update="**/*.cshtml" Pack="false" />
+  </ItemGroup>
+
+  <Target Name="SassCheck" BeforeTargets="AfterBuild">
+    <Exec Command="sass --version" ContinueOnError="true">
+      <Output TaskParameter="ExitCode" PropertyName="ErrorCodeSass" />
+    </Exec>
+    <Error Condition="'$(ErrorCodeSass)' != '0'"
+      Text="Dart-sass is required for this project. Install globally with 'npm i -g sass' " />
+  </Target>
+
+  <Target Name="SassBuild" BeforeTargets="AfterBuild">
+    <Exec
+      Command="sass Styles:wwwroot/ --embed-source-map Shared:Shared --style=compressed --load-path=Styles --update"
+      ContinueOnError="false">
+      <Output TaskParameter="ExitCode" PropertyName="ErrorCodeSass" />
+    </Exec>
+    <Error Condition="'$(ErrorCodeSass)' != '0'" Text="Dart-sass is unhappy about something " />
+  </Target>
+  <Target Name="PushPackage" AfterTargets="Publish" Condition="'$(Configuration)' == 'Release'">
+    <Exec Command="dotnet pack -c Release" />
+    <Exec
+      Command="dotnet nuget push &quot;$(MSBuildProjectDirectory)\bin\$(Configuration)\$(AssemblyName).$(Version).nupkg&quot; -s LocalNuggget" />
+  </Target>
 
 </Project>
