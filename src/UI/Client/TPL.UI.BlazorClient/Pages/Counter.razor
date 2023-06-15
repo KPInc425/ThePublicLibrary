@@ -4,9 +4,9 @@
 
 <MudText Typo="Typo.h3">Counter</MudText>
 
-<MudText role="status" Typo="Typo.body1">Current count: @currentCount</MudText>
+<MudText role="status" Typo="Typo.body1">Current count: <span id="currentCount">@currentCount</span></MudText>
 
-<MudButton Variant="Variant.Filled" @onclick="IncrementCount">Click me</MudButton>
+<MudButton id="incrementPlus" Variant="Variant.Filled" @onclick="IncrementCount">Click me</MudButton>
 
 @code {
     private int currentCount = 0;
