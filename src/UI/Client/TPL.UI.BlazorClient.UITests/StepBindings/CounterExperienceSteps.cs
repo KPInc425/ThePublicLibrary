@@ -10,27 +10,33 @@ public class CounterExperienceSteps : Steps
         _counterPage = counterPage;
     }
 
-    [Given(@"I navigate to the counter page")]
-    public void GivenINavigateToTheCounterPage()
+    [StepDefinition(@"we navigate to the counter page")]
+    public void GivenWeNavigateToTheCounterPage()
     {
         _counterPage.NavigateTo();
     }
 
-    [StepDefinition(@"I am on the counter page")]
-    public void GivenIAmOnTheCounterPage()
+    [StepDefinition(@"we click the increment button")]
+    public void WeClickTheIncrementButton()
+    {
+        _counterPage.IncrementValue();
+    }
+
+    [StepDefinition(@"we are on the counter page")]
+    public void WeAreOnTheCounterPage()
     {
         _counterPage.IsOnPage().Should().BeTrue();
     }
     
     [StepDefinition(@"the counter value is (.*)")]
-    public async Task ThenTheCounterValueIs(int counterValue)
+    public async Task TheCounterValueIs(int counterValue)
     {
         (await _counterPage.GetIncrementValueAsync()).Should().Be(counterValue);
     }
 
-    [When(@"I click the increment button")]
-    public void WhenIClickTheIncrementButton()
+    [StepDefinition(@"we wait (.*) second")]
+    public async Task WeWaitXSeconds(int waitTime)
     {
-        _counterPage.IncrementValue();
-    }
+        System.Threading.Thread.Sleep(waitTime * 100);
+    }    
 }

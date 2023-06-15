@@ -1,10 +1,11 @@
 Feature: Counter Experience
 
 Background: 
-    Given I navigate to the counter page
-    Then I am on the counter page
+    Given we navigate to the counter page
+    Then we are on the counter page
 
 Scenario: I can increment the value
     Given the counter value is 0
-    When I click the increment button
+    When we click the increment button
+    And we wait 1 second
     Then the counter value is 1    
