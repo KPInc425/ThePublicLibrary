@@ -37,13 +37,13 @@
       </When>
     </Choose>
     <ItemGroup>
-      <ProjectReference Include="./../../____Kernel/TPL.Kernel/TPL.Kernel.csproj" />
-      <ProjectReference Include="./../../___Core/TPL.Core/TPL.Core.csproj" />
+      <ProjectReference Include="./../../_____Kernel/TPL.Kernel/TPL.Kernel.csproj" />
+      <ProjectReference Include="./../../____Core/TPL.Core/TPL.Core.csproj" />
     </ItemGroup>
     
   <ItemGroup>
-    <ProjectReference Include="./../../____Kernel/TPL.Kernel/TPL.Kernel.csproj" />
-    <ProjectReference Include="./../../___Core/TPL.Core.UnitTests/TPL.Core.UnitTests.csproj" />
+    <ProjectReference Include="./../../_____Kernel/TPL.Kernel/TPL.Kernel.csproj" />
+    <ProjectReference Include="./../../____Core/TPL.Core.UnitTests/TPL.Core.UnitTests.csproj" />
     <ProjectReference Include="./../TPL.Infrastructure/TPL.Infrastructure.csproj" />    
   </ItemGroup>
 

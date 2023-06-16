@@ -2,5 +2,5 @@
 public class BookCategoryViewModel : BaseViewModelTracked<Guid>
 {
     public string Title { get; set; }
-    public List<BookInCategoryViewModel> BookInCategories = new();
+    public List<Book> Books { get; set; } = new();
 }

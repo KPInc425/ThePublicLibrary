@@ -103,7 +103,7 @@ namespace TPL.Application.Data.Migrations
 
                     b.HasIndex("BookId");
 
-                    b.ToTable("BookInCategories");
+                    b.ToTable("BookCategories");
                 });
 
             modelBuilder.Entity("TPL.Core.Entities.Library", b =>
@@ -221,7 +221,7 @@ namespace TPL.Application.Data.Migrations
             modelBuilder.Entity("TPL.Core.Entities.BookInCategory", b =>
                 {
                     b.HasOne("TPL.Core.Entities.BookCategory", "BookCategory")
-                        .WithMany("BookInCategories")
+                        .WithMany("BookCategories")
                         .HasForeignKey("BookCategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -415,7 +415,7 @@ namespace TPL.Application.Data.Migrations
 
             modelBuilder.Entity("TPL.Core.Entities.BookCategory", b =>
                 {
-                    b.Navigation("BookInCategories");
+                    b.Navigation("BookCategories");
                 });
 
             modelBuilder.Entity("TPL.Core.Entities.Library", b =>

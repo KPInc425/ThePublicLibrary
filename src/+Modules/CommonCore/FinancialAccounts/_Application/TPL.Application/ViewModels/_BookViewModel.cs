@@ -5,5 +5,5 @@ public class BookViewModel : BaseViewModelTracked<Guid>
     public string Title { get; set; }
     public BookCondition Condition { get; set; }
 
-    public List<BookCategoryViewModel> BookCategories = new();    
+    public List<BookCategoryViewModel> BookCategories = new();
 }

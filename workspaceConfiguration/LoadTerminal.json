@@ -8,7 +8,7 @@
             "terminals": [
                 {
                     "name": "TPL.Kernel",
-                    "path": ".\\src\\____Kernel\\TPL.Kernel",
+                    "path": ".\\src\\_____Kernel\\TPL.Kernel",
                     "cmd": [
                         "dotnet build"
                     ],
@@ -16,7 +16,7 @@
                 },
                 {
                     "name": "TPL.Core",
-                    "path": ".\\src\\___Core\\TPL.Core",
+                    "path": ".\\src\\____Core\\TPL.Core",
                     "cmd": [
                         "ping 127.0.0.1 -n 1 > nul",
                         "dotnet build"
@@ -25,7 +25,7 @@
                 },
                 {
                     "name": "TPL.Core.UnitTests",
-                    "path": ".\\src\\___Core\\TPL.Core.UnitTests",
+                    "path": ".\\src\\____Core\\TPL.Core.UnitTests",
                     "cmd": [
                         "ping 127.0.0.1 -n 2 > nul",
                         "dotnet test"
@@ -41,7 +41,7 @@
             "terminals": [
                 {
                     "name": "TPL.Infrastructure",
-                    "path": ".\\src\\__Infrastructure\\TPL.Infrastructure",
+                    "path": ".\\src\\___Infrastructure\\TPL.Infrastructure",
                     "cmd": [
                         "ping 127.0.0.1 -n 4 > nul",                        
                         "dotnet build"
@@ -50,7 +50,7 @@
                 },
                 {
                     "name": "TPL.Infrastructure.IntegrationTests",
-                    "path": ".\\src\\__Infrastructure\\TPL.Infrastructure.IntegrationTests",
+                    "path": ".\\src\\___Infrastructure\\TPL.Infrastructure.IntegrationTests",
                     "cmd": [
                         "ping 127.0.0.1 -n 5 > nul",                        
                         "dotnet test"
@@ -84,7 +84,7 @@
                 },
                 {
                     "name": "TPL.Application.Data",
-                    "path": ".\\src\\_Data\\TPL.Application.Data",
+                    "path": ".\\src\\__Data\\TPL.Application.Data",
                     "cmd": [
                         "ping 127.0.0.1 -n 8 > nul",                        
                         "dotnet build"

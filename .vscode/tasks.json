@@ -7,7 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/TPL.Core/tests/TPL.Core.Tests/TPL.Core.UnitTests.csproj",
+                "${workspaceFolder}\\TPL.Core\\tests\\TPL.Core.Tests\\TPL.Core.UnitTests.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -19,7 +19,7 @@
             "type": "process",
             "args": [
                 "publish",
-                "${workspaceFolder}/TPL.Core/tests/TPL.Core.Tests/TPL.Core.UnitTests.csproj",
+                "${workspaceFolder}\\TPL.Core\\tests\\TPL.Core.Tests\\TPL.Core.UnitTests.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -33,7 +33,88 @@
                 "watch",
                 "run",
                 "--project",
-                "${workspaceFolder}/TPL.Core/tests/TPL.Core.Tests/TPL.Core.UnitTests.csproj"
+                "${workspaceFolder}\\TPL.Core\\tests\\TPL.Core.Tests\\TPL.Core.UnitTests.csproj"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+
+
+        {
+            "label": "build-DrawProjectFolders",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}\\utilities\\DrawProjectFolders\\DrawProjectFolders.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "publish-DrawProjectFolders",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "publish",
+                "${workspaceFolder}\\utilities\\DrawProjectFolders\\DrawProjectFolders.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "watch-DrawProjectFolders",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "watch",
+                "run",
+                "--project",
+                "${workspaceFolder}\\utilities\\DrawProjectFolders\\DrawProjectFolders.csproj"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+
+
+
+
+
+
+
+        {
+            "label": "build-DPF.Application.FeatureTests",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}\\utilities\\DrawProjectFolders\\src\\_Application\\DPF.Application.FeatureTests\\DPF.Application.FeatureTests.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "publish-DPF.Application.FeatureTests",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "publish",
+                "${workspaceFolder}\\utilities\\DrawProjectFolders\\src\\_Application\\DPF.Application.FeatureTests\\DPF.Application.FeatureTests.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "watch-DPF.Application.FeatureTests",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "watch",
+                "run",
+                "--project",
+                "${workspaceFolder}\\utilities\\DrawProjectFolders\\src\\_Application\\DPF.Application.FeatureTests\\DPF.Application.FeatureTests.csproj",
             ],
             "problemMatcher": "$msCompile"
         }

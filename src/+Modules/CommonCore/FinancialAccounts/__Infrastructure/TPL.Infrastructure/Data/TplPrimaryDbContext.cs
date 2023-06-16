@@ -15,7 +15,7 @@ public class TplPrimaryDbContext : DbContext
 
     // Shared
     public DbSet<BookCategory> BookCategories { get; set; }
-    public DbSet<BookInCategory> BookInCategories { get; set; }
+    public DbSet<BookInCategory> BookCategories { get; set; }
     public DbSet<MemberInMembership> MemberInMemberships { get; set; }
 
 

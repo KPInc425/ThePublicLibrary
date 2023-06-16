@@ -54,7 +54,7 @@ public class BaseApplicationTestFixture
                 services.AddAutoMapper(typeof(BookMapper).GetTypeInfo().Assembly);
                 services.AddSingleton<IDataService, DirectDataService>();
                 services.AddEntityFrameworkInMemoryDatabase();
-                services.AddDbContext<TplPrimaryDbContext>(context => context.UseInMemoryDatabase(Guid.NewGuid().ToString())
+                services.AddDbContext<TplPrimaryDbContext>(context => context.UseInMemoryDatabase("TPL.Application.FeatureTests")
                     .UseApplicationServiceProvider(services.BuildServiceProvider()));
 
                 builder.Populate(services);

@@ -31,11 +31,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="./../../____Kernel/TPL.Kernel/TPL.Kernel.csproj" />
-    <ProjectReference Include="./../../___Core/TPL.Core/TPL.Core.csproj" />
-    <ProjectReference Include="./../../__Infrastructure/TPL.Infrastructure/TPL.Infrastructure.csproj" />
+    <ProjectReference Include="./../../_____Kernel/TPL.Kernel/TPL.Kernel.csproj" />
+    <ProjectReference Include="./../../____Core/TPL.Core/TPL.Core.csproj" />
+    <ProjectReference Include="./../../___Infrastructure/TPL.Infrastructure/TPL.Infrastructure.csproj" />
     <ProjectReference Include="./../../_Application/TPL.Application/TPL.Application.csproj" />
-    <ProjectReference Include="./../../_Data/TPL.Application.Data/TPL.Application.Data.csproj" />
+    <ProjectReference Include="./../../__Data/TPL.Application.Data/TPL.Application.Data.csproj" />
     <ProjectReference Include="./../../+Api/TPL.API.PrimaryApi/TPL.API.PrimaryApi.csproj" />
   </ItemGroup>
 

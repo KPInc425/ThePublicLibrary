@@ -7,6 +7,6 @@ public class MembershipViewModel : BaseViewModelTracked<Guid>
     public DateTime IssueDate { get; set; }
     public DateTime ExpirationDate { get; set; }
 
-    public List<MemberInMembershipViewModel> MemberInMemberships = new();
-    
+    public List<MemberInMembershipViewModel> MemberInMemberships { get; set; } = new();
+
 }

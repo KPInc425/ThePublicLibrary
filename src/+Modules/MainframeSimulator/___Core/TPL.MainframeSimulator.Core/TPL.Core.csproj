@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <ProjectReference Include=".\..\..\____Kernel\TPL.Kernel\TPL.Kernel.csproj" />
+    <ProjectReference Include=".\..\..\_____Kernel\TPL.Kernel\TPL.Kernel.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

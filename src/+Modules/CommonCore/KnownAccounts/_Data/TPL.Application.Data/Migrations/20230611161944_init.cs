@@ -144,7 +144,7 @@ namespace TPL.Application.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "BookInCategories",
+                name: "BookCategories",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "TEXT", nullable: false),
@@ -155,15 +155,15 @@ namespace TPL.Application.Data.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_BookInCategories", x => x.Id);
+                    table.PrimaryKey("PK_BookCategories", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_BookInCategories_BookCategories_BookCategoryId",
+                        name: "FK_BookCategories_BookCategories_BookCategoryId",
                         column: x => x.BookCategoryId,
                         principalTable: "BookCategories",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_BookInCategories_Books_BookId",
+                        name: "FK_BookCategories_Books_BookId",
                         column: x => x.BookId,
                         principalTable: "Books",
                         principalColumn: "Id",
@@ -176,13 +176,13 @@ namespace TPL.Application.Data.Migrations
                 column: "BookId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_BookInCategories_BookCategoryId",
-                table: "BookInCategories",
+                name: "IX_BookCategories_BookCategoryId",
+                table: "BookCategories",
                 column: "BookCategoryId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_BookInCategories_BookId",
-                table: "BookInCategories",
+                name: "IX_BookCategories_BookId",
+                table: "BookCategories",
                 column: "BookId");
 
             migrationBuilder.CreateIndex(
@@ -205,7 +205,7 @@ namespace TPL.Application.Data.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "BookInCategories");
+                name: "BookCategories");
 
             migrationBuilder.DropTable(
                 name: "MemberInMemberships");
