@@ -19,8 +19,8 @@ global using System.Linq;
 global using System.Threading;
 global using System.Threading.Tasks;
 
-global using TPL.Kernel;
-global using TPL.Kernel.Interfaces;
+global using KernelShared;
+global using KernelShared.Interfaces;
 
 global using Dpf.Core;
 global using Dpf.Core.Entities;

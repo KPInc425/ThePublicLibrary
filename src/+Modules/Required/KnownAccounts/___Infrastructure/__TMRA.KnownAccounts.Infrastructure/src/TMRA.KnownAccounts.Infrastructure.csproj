@@ -1,0 +1,43 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <IsPackable>true</IsPackable>
+    <PackageId>TPL.KnownAccounts.Infrastructure</PackageId>
+    <Version>1.0.71.176</Version>
+    <Authors>James W. Kies</Authors>
+    <Company>RobotBuildersInc</Company>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <DefaultNamespace>TPL.KnownAccounts.Infrastructure</DefaultNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Ardalis.Specification.EntityFrameworkCore" Version="6.1.0" />
+    <PackageReference Include="Ardalis.GuardClauses" Version="4.0.1" />
+    <PackageReference Include="Autofac" Version="7.0.0" />
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="8.0.0" />
+    <PackageReference Include="Ardalis.EFCore.Extensions" Version="6.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" PrivateAssets="all" Version="7.0.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="7.0.4" />
+    <PackageReference Include="Microsoft.Extensions.Identity.Core" Version="7.0.4" />
+    <PackageReference Include="SQLite" Version="3.13.0" />
+    <PackageReference Include="MediatR" Version="12.0.1" />
+  </ItemGroup>
+  <Choose>
+    <When Condition="'$(Configuration)' == 'Release'">
+      <ItemGroup>
+        <PackageReference Include="TPL.Kernel" Version="1.0.71.176" />
+        <PackageReference Include="TPL.KnownAccounts.Core" Version="1.0.71.176" />
+      </ItemGroup>
+    </When>
+  </Choose>
+  <ItemGroup>
+    <ProjectReference Include="./../../../../___TPL.Kernel/src/TPL.Kernel.csproj" />
+    <ProjectReference Include="./../../___TPL.KnownAccounts.Core/src/TPL.KnownAccounts.Core.csproj" />
+  </ItemGroup>
+  <Target Name="PushPackage" AfterTargets="Publish" Condition="'$(Configuration)' == 'Release'">
+    <Exec Command="dotnet pack -c Release" />
+    <Exec Command="dotnet nuget push &quot;$(MSBuildProjectDirectory)\bin\$(Configuration)\$(AssemblyName).$(Version).nupkg&quot; -s LocalNuggget" />
+  </Target>
+</Project>

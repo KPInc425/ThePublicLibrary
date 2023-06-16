@@ -10,7 +10,7 @@ global using System;
 global using System.Linq;
 global using System.Threading.Tasks;
 
-global using TPL.Kernel.Interfaces;
+global using KernelShared.Interfaces;
 
 global using Dpf.Core.Entities;
 global using Dpf.Core.Entities.TestData;

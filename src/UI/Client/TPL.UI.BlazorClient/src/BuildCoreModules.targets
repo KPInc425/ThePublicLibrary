@@ -1,0 +1,21 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ProjectReference Include="./../../../../_UI.Common/TPL.UI.Common/src/TPL.UI.Common.csproj" />
+  </ItemGroup>
+  <!-- The Public Library -->
+    <ItemGroup>
+      <ProjectReference Include="./../../../../+Modules/Required/ThePublicLibrary/____Core/TPL.Core/src/TPL.Core.csproj" />
+      <ProjectReference Include="./../../../../+Modules/Required/ThePublicLibrary/___Infrastructure/TPL.Infrastructure/src/TPL.Infrastructure.csproj" />    
+      <ProjectReference Include="./../../../../+Modules/Required/ThePublicLibrary/_Application/TPL.Application/src/TPL.Application.csproj" />
+    </ItemGroup>
+  <!-- /The Public Library -->
+  
+  <!-- Known Accounts Module -->    
+  <!-- /Known Accounts Module -->
+
+  <!-- FinancialAccounts Module -->
+  <!-- /FinancialAccounts Module -->
+
+  <!-- LiveRoom Module -->
+  <!-- /LiveRoom Module -->
+</Project>

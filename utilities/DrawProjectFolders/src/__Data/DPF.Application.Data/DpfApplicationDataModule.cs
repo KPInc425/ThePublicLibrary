@@ -1,7 +1,7 @@
 using System.Reflection;
 using Autofac;
 using Dpf.Core;
-using TPL.Kernel.Interfaces;
+using KernelShared.Interfaces;
 using Module = Autofac.Module;
 
 namespace Dpf.Application;

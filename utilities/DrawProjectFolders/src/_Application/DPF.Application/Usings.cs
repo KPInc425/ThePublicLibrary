@@ -17,8 +17,8 @@ global using MediatR.Pipeline;
 global using System.Net.Http.Json;
 
 
-global using TPL.Kernel;
-global using TPL.Kernel.Interfaces;
+global using KernelShared;
+global using KernelShared.Interfaces;
 
 global using Dpf.Core;
 global using Dpf.Core.Entities;

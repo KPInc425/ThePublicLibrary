@@ -17,8 +17,8 @@ global using System.Collections.Generic;
 global using System.ComponentModel.DataAnnotations;
 global using System.Linq;
 
-global using TPL.Kernel;
-global using TPL.Kernel.Interfaces;
+global using KernelShared;
+global using KernelShared.Interfaces;
 
 global using Dpf.Core.Entities;
 global using Dpf.Core.Entities.TestData;

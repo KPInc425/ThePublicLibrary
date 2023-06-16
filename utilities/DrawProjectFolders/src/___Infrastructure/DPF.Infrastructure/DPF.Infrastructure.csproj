@@ -30,13 +30,13 @@
   <Choose>
     <When Condition="'$(Configuration)' == 'Release'">
       <ItemGroup>
-        <PackageReference Include="TPL.Kernel" />
+        <PackageReference Include="KernelShared" />
         <PackageReference Include="Dpf.Core" />
       </ItemGroup>
     </When>
   </Choose>
   <ItemGroup>
-    <ProjectReference Include=".\..\..\..\..\..\src\_____Kernel\TPL.Kernel\TPL.Kernel.csproj" />
+    <ProjectReference Include=".\..\..\..\..\..\src\__Kernel\KernelShared\KernelShared.csproj" />
     <ProjectReference Include="./../../_____Core/Dpf.Core/Dpf.Core.csproj" />
   </ItemGroup>
 

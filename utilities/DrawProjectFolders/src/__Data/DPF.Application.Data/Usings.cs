@@ -8,7 +8,7 @@ global using Microsoft.Extensions.DependencyInjection;
 global using Microsoft.Extensions.Hosting;
 global using Microsoft.Extensions.Logging;
 
-global using TPL.Kernel.Interfaces;
+global using KernelShared.Interfaces;
 
 global using Dpf.Core.Entities;
 global using Dpf.Core.Entities.TestData;

@@ -1,5 +1,5 @@
 namespace Dpf.Application.Services;
-public partial class HttpDataService
+public partial class HttpDataService : IDataService
 {
     protected readonly HttpClient _httpClient;
 
