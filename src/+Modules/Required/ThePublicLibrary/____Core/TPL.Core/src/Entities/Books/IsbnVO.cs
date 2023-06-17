@@ -3,7 +3,8 @@
 [Owned]
 public class IsbnVO : ValueObject
 {
-    public string Isbn { get; }
+    [IndexColumn("Index_RegistrationNumber", IsUnique=true)]
+    public string Isbn { get; private set; }
 
     private IsbnVO() { }
 

@@ -11,14 +11,29 @@ using TPL.Infrastructure.Data;
 namespace TPL.Application.Data.Migrations
 {
     [DbContext(typeof(TplPrimaryDbContext))]
-    [Migration("20230614215835_init")]
+    [Migration("20230617195818_init")]
     partial class init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
-            modelBuilder.HasAnnotation("ProductVersion", "7.0.5");
+            modelBuilder.HasAnnotation("ProductVersion", "7.0.7");
+
+            modelBuilder.Entity("AuthorBook", b =>
+                {
+                    b.Property<Guid>("AuthorsId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<Guid>("BooksId")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("AuthorsId", "BooksId");
+
+                    b.HasIndex("BooksId");
+
+                    b.ToTable("AuthorBook");
+                });
 
             modelBuilder.Entity("TPL.Core.Entities.Author", b =>
                 {
@@ -49,6 +64,16 @@ namespace TPL.Application.Data.Migrations
                     b.Property<Guid?>("LibraryId")
                         .HasColumnType("TEXT");
 
+                    b.Property<int>("PageCount")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("PublicationYear")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.Property<DateTime>("UpdatedOn")
                         .HasColumnType("TEXT");
 
@@ -59,32 +84,13 @@ namespace TPL.Application.Data.Migrations
                     b.ToTable("Books");
                 });
 
-            modelBuilder.Entity("TPL.Core.Entities.AuthorInBook", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("TEXT");
-
-                    b.Property<Guid?>("BookId")
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime>("CreatedOn")
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime>("UpdatedOn")
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("BookId");
-
-                    b.ToTable("AuthorInBooks");
-                });
-
             modelBuilder.Entity("TPL.Core.Entities.BookCategory", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("TEXT");
+
+                    b.Property<Guid?>("BookCategoryId")
                         .HasColumnType("TEXT");
 
                     b.Property<Guid?>("BookId")
@@ -102,6 +108,8 @@ namespace TPL.Application.Data.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("BookCategoryId");
+
                     b.HasIndex("BookId");
 
                     b.ToTable("BookCategories");
@@ -113,10 +121,13 @@ namespace TPL.Application.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("TEXT");
 
-                    b.Property<Guid?>("BookId")
+                    b.Property<Guid>("BookId")
                         .HasColumnType("TEXT");
 
                     b.Property<int>("Condition")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("CopySequence")
                         .HasColumnType("INTEGER");
 
                     b.Property<DateTime>("CreatedOn")
@@ -130,33 +141,6 @@ namespace TPL.Application.Data.Migrations
                     b.HasIndex("BookId");
 
                     b.ToTable("BookCopies");
-                });
-
-            modelBuilder.Entity("TPL.Core.Entities.BookInCategory", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("TEXT");
-
-                    b.Property<Guid>("BookCategoryId")
-                        .HasColumnType("TEXT");
-
-                    b.Property<Guid>("BookId")
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime>("CreatedOn")
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime>("UpdatedOn")
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("BookCategoryId");
-
-                    b.HasIndex("BookId");
-
-                    b.ToTable("BookCategories");
                 });
 
             modelBuilder.Entity("TPL.Core.Entities.Library", b =>
@@ -257,6 +241,21 @@ namespace TPL.Application.Data.Migrations
                     b.ToTable("Memberships");
                 });
 
+            modelBuilder.Entity("AuthorBook", b =>
+                {
+                    b.HasOne("TPL.Core.Entities.Author", null)
+                        .WithMany()
+                        .HasForeignKey("AuthorsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("TPL.Core.Entities.Book", null)
+                        .WithMany()
+                        .HasForeignKey("BooksId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("TPL.Core.Entities.Author", b =>
                 {
                     b.OwnsOne("TPL.Core.Entities.NameVO", "Name", b1 =>
@@ -287,7 +286,16 @@ namespace TPL.Application.Data.Migrations
                             b1.Property<Guid>("BookId")
                                 .HasColumnType("TEXT");
 
+                            b1.Property<string>("Isbn")
+                                .IsRequired()
+                                .HasColumnType("TEXT");
+
                             b1.HasKey("BookId");
+
+                            b1.HasIndex("Isbn")
+                                .IsUnique()
+                                .HasDatabaseName("Index_RegistrationNumber")
+                                .HasAnnotation("SqlServer:Clustered", false);
 
                             b1.ToTable("Books");
 
@@ -299,15 +307,12 @@ namespace TPL.Application.Data.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("TPL.Core.Entities.AuthorInBook", b =>
-                {
-                    b.HasOne("TPL.Core.Entities.Book", null)
-                        .WithMany("AuthorInBooks")
-                        .HasForeignKey("BookId");
-                });
-
             modelBuilder.Entity("TPL.Core.Entities.BookCategory", b =>
                 {
+                    b.HasOne("TPL.Core.Entities.BookCategory", null)
+                        .WithMany("BookCategories")
+                        .HasForeignKey("BookCategoryId");
+
                     b.HasOne("TPL.Core.Entities.Book", null)
                         .WithMany("BookCategories")
                         .HasForeignKey("BookId");
@@ -315,28 +320,13 @@ namespace TPL.Application.Data.Migrations
 
             modelBuilder.Entity("TPL.Core.Entities.BookCopy", b =>
                 {
-                    b.HasOne("TPL.Core.Entities.Book", null)
-                        .WithMany("BookCopies")
-                        .HasForeignKey("BookId");
-                });
-
-            modelBuilder.Entity("TPL.Core.Entities.BookInCategory", b =>
-                {
-                    b.HasOne("TPL.Core.Entities.BookCategory", "BookCategory")
-                        .WithMany("BookCategories")
-                        .HasForeignKey("BookCategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("TPL.Core.Entities.Book", "Book")
-                        .WithMany()
+                        .WithMany("BookCopies")
                         .HasForeignKey("BookId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Book");
-
-                    b.Navigation("BookCategory");
                 });
 
             modelBuilder.Entity("TPL.Core.Entities.Library", b =>
@@ -512,8 +502,6 @@ namespace TPL.Application.Data.Migrations
 
             modelBuilder.Entity("TPL.Core.Entities.Book", b =>
                 {
-                    b.Navigation("AuthorInBooks");
-
                     b.Navigation("BookCategories");
 
                     b.Navigation("BookCopies");

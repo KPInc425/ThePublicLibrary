@@ -145,6 +145,24 @@
                         "dotnet watch run"
                     ],
                     "num": 12
+                },
+                {
+                    "name": "TPL.UI.BlazorClient.UITests",
+                    "path": ".\\src\\UI\\Client\\TPL.UI.BlazorClient.UITests\\src",
+                    "cmd": [
+                        "ping 127.0.0.1 -n 12 > nul",                        
+                        "dotnet test"
+                    ],
+                    "num": 12
+                },
+                {
+                    "name": "TPL.UI.BlazorClient.UIUnitTests",
+                    "path": ".\\src\\UI\\Client\\TPL.UI.BlazorClient.UIUnitTests\\src",
+                    "cmd": [
+                        "ping 127.0.0.1 -n 12 > nul",                        
+                        "dotnet test"
+                    ],
+                    "num": 12
                 }
             ]
         }

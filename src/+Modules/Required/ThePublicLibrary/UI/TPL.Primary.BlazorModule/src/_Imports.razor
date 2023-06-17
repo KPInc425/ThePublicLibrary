@@ -38,6 +38,7 @@
 @using MudBlazor
 @using MudBlazor.Utilities
 
+@using TPL.Core.Entities.TestData;
 
 @inject IStringLocalizer<PrimaryCoreLanguageBase> LocalizeModule
 @inject IStringLocalizer<TPL.UI.Common.SharedLanguageBase> LocalizeGlobal
@@ -47,5 +48,6 @@
 
 @* @inject AuthenticationStateProvider AuthenticationStateProvider *@
 
-@inject IDataService PrimaryCoreHttpClient
+@inject IDataService TplPrimaryDataService
 @inject PlatformCacheService PlatformCacheService
+@inject TPL.Core.Entities.TestData.BookTestData BookTestData

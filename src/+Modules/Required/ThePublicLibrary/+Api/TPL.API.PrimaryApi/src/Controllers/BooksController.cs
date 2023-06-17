@@ -8,8 +8,9 @@ public class BooksController : BaseController
     public async Task<IActionResult> GetAll()
     {
         var qry = new BooksGetAllQuery();
-        var result = _mapper.Map<IEnumerable<BookViewModel>>(await _mediator.Send(qry));
-        return Ok(result);
+        var result = await _mediator.Send(qry);
+        var response = _mapper.Map<IEnumerable<BookViewModel>>(result);
+        return Ok(response);
     }
 
     [HttpGet]

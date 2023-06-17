@@ -9,6 +9,7 @@ public class BookMapper : Profile
     public BookMapper()
     {
         CreateMap<Book, BookViewModel>()
+        .ReverseMap()
         ;
     }
 }

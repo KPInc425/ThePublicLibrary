@@ -20,7 +20,7 @@ public class BooksSeedWithData : ISeedScript
         }
         foreach (var book in bookTestData.AllBooks)
         {
-            if (dbContext.Books.FirstOrDefault(rs => rs.Isbn == book.Isbn) is null)
+            if (!dbContext.Books.AsEnumerable().Any(rs => book.Isbn.Equals(rs.Isbn)))
             {
                 dbContext.Books.Add(book);
                 logger?.LogInformation("{book.Title} was created in the database.", book.Title);

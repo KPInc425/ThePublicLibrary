@@ -2,8 +2,8 @@
 public class Library : BaseEntityTracked<Guid>, IAggregateRoot
 {
     public string Name { get; private set; }
-    public PhysicalAddressVO Address { get; set; }
-    private Library(){}
+    public PhysicalAddressVO Address { get; private set; }
+    private Library() { }
     public Library(string name, PhysicalAddressVO address)
     {
         Name = Guard.Against.NullOrEmpty(name, "Library name is required");
@@ -25,5 +25,5 @@ public class Library : BaseEntityTracked<Guid>, IAggregateRoot
     public void RemoveBook(Book book)
     {
         _books.Remove(book);
-    }    
+    }
 }

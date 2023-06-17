@@ -15,20 +15,21 @@ public class TplPrimaryDbContext : DbContext
     public DbSet<BookCopy> BookCopies { get; set; }
     public DbSet<Author> Authors { get; set; }
     
-
     // Shared
     public DbSet<BookCategory> BookCategories { get; set; }    
     public DbSet<MemberInMembership> MemberInMemberships { get; set; }
 
 
     // Value Objects
+    //public DbSet<IsbnVO> Isbns { get; set; }
     //public DbSet<DigitalAddressVO> DigitalAddresses { get; set; }
     //public DbSet<NameVO> Names { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
-
+        //modelBuilder.BuildIndexesFromAnnotations();
+        modelBuilder.BuildIndexesFromAnnotationsForSqlServer();
         modelBuilder.ApplyAllConfigurationsFromCurrentAssembly();
 
         //this.ChangeTracker.LazyLoadingEnabled = true;

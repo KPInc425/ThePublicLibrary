@@ -1,7 +1,7 @@
 ﻿namespace TPL.Core.Entities;
 public class Author : BaseEntityTracked<Guid>, IAggregateRoot
 {
-    public NameVO Name { get; }
+    public NameVO Name { get; private set; }
 
     private readonly List<Book> _books = new();
     public IEnumerable<Book> Books => _books.AsReadOnly();

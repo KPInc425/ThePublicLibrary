@@ -8,7 +8,7 @@ public partial class HttpDataService : IDataService, IDataServiceNotAuthed
         _httpClient = httpClient;
     }
 
-   
+
 
     public Task<List<LibraryViewModel>> LibrariesGetAllAsync(LibrariesGetAllQuery qry)
     {

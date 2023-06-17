@@ -1,9 +1,9 @@
 ﻿namespace TPL.Core.Entities;
 public class BookCopy : BaseEntityTracked<Guid>
 {
-    public Book Book { get; } = null!;
+    public Book Book { get;  private set; } = null!;
 
-    public int CopySequence { get; }
+    public int CopySequence { get;  private set; }
     public BookCondition Condition { get; private set; } = BookCondition.New;
 
     private BookCopy() { }

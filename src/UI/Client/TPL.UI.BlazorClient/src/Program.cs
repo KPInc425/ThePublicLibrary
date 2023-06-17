@@ -1,25 +1,31 @@
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
+
 builder.RootComponents.Add<App>("#app");
 builder.RootComponents.Add<HeadOutlet>("head::after");
 
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
+if (!builder.HostEnvironment.IsDevelopment())
+{
+    builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress.Replace("http:", "https:")) });
+}
+
 builder.Services.AddMudServices();
 
 builder.Services.AddScoped<PlatformStateCacheService>();
 builder.Services.AddScoped<PlatformCacheService>();
+
 builder.Services.AddScoped<IDataService, HttpDataService>();
 builder.Services.AddScoped<ILayoutService, LayoutService>();
 builder.Services.AddSingleton<BrowserResizeService>();
 builder.Services.AddSingleton<RandomizerService>();
 builder.Services.AddSingleton<LazyModuleJsInterop>();
 var appSettings = builder.Configuration.Get<AppSettings>();
-builder.Services.AddSingleton<Endpoints>(appSettings.Endpoints);
-builder.Services.AddSingleton<FeatureFlags>(appSettings.FeatureFlags);
-builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
-if (!builder.HostEnvironment.IsDevelopment())
-{
-    builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress.Replace("http:", "https:")) });
-}
+var endPoints = appSettings.Endpoints;
+var featureFlags = appSettings.FeatureFlags;
+
+builder.Services.AddSingleton<Endpoints>(endPoints);
+builder.Services.AddSingleton<FeatureFlags>(featureFlags);
+
 /* builder.Services.AddOidcAuthentication(options =>
         {
             builder.Configuration.Bind("Oidc", options.ProviderOptions);
@@ -33,25 +39,41 @@ if (!builder.HostEnvironment.IsDevelopment())
             options.AuthenticationPaths.LogOutSucceededPath = "/Welcome";
         }).AddAccountClaimsPrincipalFactory<AccountClaimsPrincipalFactoryEx>();
 builder.Services.AddScoped<CustomAuthorizationMessageHandler>(); */
-System.Console.WriteLine($"Hello > {appSettings.Endpoints.PrimaryApiUrl}, t/f {builder.HostEnvironment.IsDevelopment()}");
-/* builder.Services.AddGoogleAnalytics("G-WZSRLSH36B");
-builder
+System.Console.WriteLine($"Hello > {endPoints.PrimaryApiUrl}, t/f {builder.HostEnvironment.IsDevelopment()}");
+/* builder.Services.AddGoogleAnalytics("G-WZSRLSH36B"); */
+
+/* builder
     .Services
-        .AddHttpClient("",
-            client =>
-                client.BaseAddress = new Uri(appSettings.ConfigEndpoints.ApiEndpointUrl)
+        .AddHttpClient("TplPrimaryHttpClient", client =>
+                client.BaseAddress = new Uri(endPoints.PrimaryApiUrl)
         ).AddHttpMessageHandler<CustomAuthorizationMessageHandler>();
+ */
+
 builder
     .Services
-        .AddHttpClient("KnownAccountsHttpClient", client =>
-                client.BaseAddress = new Uri(appSettings.ConfigEndpoints.KnownAccountsHttpClientEndpointUrl)
-        ).AddHttpMessageHandler<CustomAuthorizationMessageHandler>();
-builder
-    .Services
-        .AddHttpClient("KnownAccountsNotAuthedHttpClient", client =>
-                client.BaseAddress = new Uri(appSettings.ConfigEndpoints.KnownAccountsHttpClientEndpointUrl)
+        .AddHttpClient("TplPrimaryHttpClient", client =>
+                client.BaseAddress = new Uri(endPoints.PrimaryApiUrl)
         );
- */        
+        
+builder
+    .Services
+        .AddHttpClient("TplPrimaryNotAuthedHttpClient", client =>
+                client.BaseAddress = new Uri(endPoints.PrimaryApiUrl)
+        );
+
+
+builder.Services.AddScoped<TplPrimaryHttpClientFactory>();
+builder.Services.AddTplHttpDataService();
+
+builder.Services.AddScoped<IDataService>(x => x
+        .GetRequiredService<TplPrimaryHttpClientFactory>()
+        .Create());
+
+builder.Services.AddScoped<IDataServiceNotAuthed>(x => x
+        .GetRequiredService<TplPrimaryHttpClientFactory>()
+        .CreateNotAuthed());
+
+builder.Services.AddScoped<BookTestData>();
 
 /* LazyServices.RegisterLazyModules(builder);
  */
@@ -124,6 +146,12 @@ builder.Services.AddScoped<IKnownAccountsNotAuthedHttpClient>(x => x
         .GetServices<KnownAccountsHttpClientFactory>()
         .First().CreateNotAuthed()); */
 var host = builder.Build();
+
+var logger = host.Services.GetRequiredService<ILoggerFactory>()
+    .CreateLogger<Program>();
+
+logger.LogInformation("Logged after the app is built in Program.cs.");
+
 await host.RunAsync();
 
 IConfiguration BuildConfig()

@@ -3,7 +3,7 @@ public class LibraryShelf : BaseEntityTracked<Guid>
 {
     public string Name { get; private set; }
     public Library Library { get; private set; }
-    public PhysicalAddressVO Address { get; set; }
+    public PhysicalAddressVO Address { get; private set; }
     public LibraryShelf(Library library, string name)
     {
         // thinking about something fun
@@ -28,5 +28,5 @@ public class LibraryShelf : BaseEntityTracked<Guid>
     public void RemoveBookFromShelf(Book book)
     {
         _books.Remove(book);
-    }    
+    }
 }

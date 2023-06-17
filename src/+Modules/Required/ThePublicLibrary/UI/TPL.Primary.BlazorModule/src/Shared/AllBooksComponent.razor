@@ -1,0 +1,25 @@
+@inject IStringLocalizer<AllBooksComponent> Localize
+
+<MudContainer>
+    <p>The Public Library - General Lazy Module</p>
+    @foreach(var book in _books) {
+        <div>@book.Title</div>        
+    }
+    
+    <MudButton OnClick="() => GetAllBooks()" >List</MudButton>    
+</MudContainer>
+
+@code {
+    private List<BookViewModel> _books = new();
+    
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();                     
+    }
+
+    protected async Task GetAllBooks() {
+        var booksGetAllQuery = new BooksGetAllQuery();
+        
+        _books = await TplPrimaryDataService.BooksGetAllAsync(booksGetAllQuery);
+    }
+}

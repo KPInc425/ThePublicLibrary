@@ -24,7 +24,7 @@
             "stopAtEntry": false
         },
         {
-            "name": ".NET Core Launch (console)",
+            "name": "TPL.Core.Tests",
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
@@ -34,6 +34,23 @@
             "console": "internalConsole",
             "stopAtEntry": false
         },
+        {
+            "name": "TPL.API.PrimaryApi",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build-TPL.API.PrimaryApi",
+            "program": "${workspaceFolder}\\src\\+Modules\\Required\\ThePublicLibrary\\+Api\\TPL.API.PrimaryApi\\src\\bin\\Debug\\net7.0\\TPL.API.PrimaryApi.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}\\src\\+Modules\\Required\\ThePublicLibrary\\+Api\\TPL.API.PrimaryApi\\src\\",
+            "console": "internalConsole",
+            "stopAtEntry": false,
+            "serverReadyAction": {
+                "action": "openExternally",
+                "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
+            },
+        },
+
+
         {
             "name": ".NET Core Attach",
             "type": "coreclr",

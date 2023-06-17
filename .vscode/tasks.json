@@ -117,6 +117,46 @@
                 "${workspaceFolder}\\utilities\\DrawProjectFolders\\src\\_Application\\DPF.Application.FeatureTests\\DPF.Application.FeatureTests.csproj",
             ],
             "problemMatcher": "$msCompile"
+        },
+
+
+
+
+        {
+            "label": "build-TPL.API.PrimaryApi",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}\\src\\+Modules\\Required\\ThePublicLibrary\\+Api\\TPL.API.PrimaryApi\\src\\TPL.API.PrimaryApi.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "publish-TPL.API.PrimaryApi",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "publish",
+                "${workspaceFolder}\\src\\+Modules\\Required\\ThePublicLibrary\\+Api\\TPL.API.PrimaryApi\\src\\TPL.API.PrimaryApi.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "watch-TPL.API.PrimaryApi",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "watch",
+                "run",
+                "--project",
+                "${workspaceFolder}\\src\\+Modules\\Required\\ThePublicLibrary\\+Api\\TPL.API.PrimaryApi\\src\\TPL.API.PrimaryApi.csproj",
+            ],
+            "problemMatcher": "$msCompile"
         }
     ]
 }

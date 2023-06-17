@@ -92,6 +92,10 @@ namespace TPL.Application.Data.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "TEXT", nullable: false),
+                    Isbn_Isbn = table.Column<string>(type: "TEXT", nullable: false),
+                    Title = table.Column<string>(type: "TEXT", nullable: false),
+                    PublicationYear = table.Column<int>(type: "INTEGER", nullable: false),
+                    PageCount = table.Column<int>(type: "INTEGER", nullable: false),
                     LibraryId = table.Column<Guid>(type: "TEXT", nullable: true),
                     CreatedOn = table.Column<DateTime>(type: "TEXT", nullable: false),
                     UpdatedOn = table.Column<DateTime>(type: "TEXT", nullable: false)
@@ -134,22 +138,27 @@ namespace TPL.Application.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "AuthorInBooks",
+                name: "AuthorBook",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "TEXT", nullable: false),
-                    BookId = table.Column<Guid>(type: "TEXT", nullable: true),
-                    CreatedOn = table.Column<DateTime>(type: "TEXT", nullable: false),
-                    UpdatedOn = table.Column<DateTime>(type: "TEXT", nullable: false)
+                    AuthorsId = table.Column<Guid>(type: "TEXT", nullable: false),
+                    BooksId = table.Column<Guid>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_AuthorInBooks", x => x.Id);
+                    table.PrimaryKey("PK_AuthorBook", x => new { x.AuthorsId, x.BooksId });
                     table.ForeignKey(
-                        name: "FK_AuthorInBooks_Books_BookId",
-                        column: x => x.BookId,
+                        name: "FK_AuthorBook_Authors_AuthorsId",
+                        column: x => x.AuthorsId,
+                        principalTable: "Authors",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_AuthorBook_Books_BooksId",
+                        column: x => x.BooksId,
                         principalTable: "Books",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -158,6 +167,7 @@ namespace TPL.Application.Data.Migrations
                 {
                     Id = table.Column<Guid>(type: "TEXT", nullable: false),
                     Title = table.Column<string>(type: "TEXT", nullable: false),
+                    BookCategoryId = table.Column<Guid>(type: "TEXT", nullable: true),
                     BookId = table.Column<Guid>(type: "TEXT", nullable: true),
                     CreatedOn = table.Column<DateTime>(type: "TEXT", nullable: false),
                     UpdatedOn = table.Column<DateTime>(type: "TEXT", nullable: false)
@@ -165,6 +175,11 @@ namespace TPL.Application.Data.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_BookCategories", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_BookCategories_BookCategories_BookCategoryId",
+                        column: x => x.BookCategoryId,
+                        principalTable: "BookCategories",
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_BookCategories_Books_BookId",
                         column: x => x.BookId,
@@ -177,8 +192,9 @@ namespace TPL.Application.Data.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "TEXT", nullable: false),
+                    BookId = table.Column<Guid>(type: "TEXT", nullable: false),
+                    CopySequence = table.Column<int>(type: "INTEGER", nullable: false),
                     Condition = table.Column<int>(type: "INTEGER", nullable: false),
-                    BookId = table.Column<Guid>(type: "TEXT", nullable: true),
                     CreatedOn = table.Column<DateTime>(type: "TEXT", nullable: false),
                     UpdatedOn = table.Column<DateTime>(type: "TEXT", nullable: false)
                 },
@@ -189,40 +205,19 @@ namespace TPL.Application.Data.Migrations
                         name: "FK_BookCopies_Books_BookId",
                         column: x => x.BookId,
                         principalTable: "Books",
-                        principalColumn: "Id");
-                });
-
-            migrationBuilder.CreateTable(
-                name: "BookCategories",
-                columns: table => new
-                {
-                    Id = table.Column<Guid>(type: "TEXT", nullable: false),
-                    BookId = table.Column<Guid>(type: "TEXT", nullable: false),
-                    BookCategoryId = table.Column<Guid>(type: "TEXT", nullable: false),
-                    CreatedOn = table.Column<DateTime>(type: "TEXT", nullable: false),
-                    UpdatedOn = table.Column<DateTime>(type: "TEXT", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_BookCategories", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_BookCategories_BookCategories_BookCategoryId",
-                        column: x => x.BookCategoryId,
-                        principalTable: "BookCategories",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_BookCategories_Books_BookId",
-                        column: x => x.BookId,
-                        principalTable: "Books",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_AuthorInBooks_BookId",
-                table: "AuthorInBooks",
-                column: "BookId");
+                name: "IX_AuthorBook_BooksId",
+                table: "AuthorBook",
+                column: "BooksId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_BookCategories_BookCategoryId",
+                table: "BookCategories",
+                column: "BookCategoryId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_BookCategories_BookId",
@@ -235,14 +230,10 @@ namespace TPL.Application.Data.Migrations
                 column: "BookId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_BookCategories_BookCategoryId",
-                table: "BookCategories",
-                column: "BookCategoryId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_BookCategories_BookId",
-                table: "BookCategories",
-                column: "BookId");
+                name: "Index_RegistrationNumber",
+                table: "Books",
+                column: "Isbn_Isbn",
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_Books_LibraryId",
@@ -264,31 +255,28 @@ namespace TPL.Application.Data.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Authors");
+                name: "AuthorBook");
 
             migrationBuilder.DropTable(
-                name: "AuthorInBooks");
+                name: "BookCategories");
 
             migrationBuilder.DropTable(
                 name: "BookCopies");
 
             migrationBuilder.DropTable(
-                name: "BookCategories");
-
-            migrationBuilder.DropTable(
                 name: "MemberInMemberships");
 
             migrationBuilder.DropTable(
-                name: "BookCategories");
+                name: "Authors");
+
+            migrationBuilder.DropTable(
+                name: "Books");
 
             migrationBuilder.DropTable(
                 name: "Members");
 
             migrationBuilder.DropTable(
                 name: "Memberships");
-
-            migrationBuilder.DropTable(
-                name: "Books");
 
             migrationBuilder.DropTable(
                 name: "Libraries");

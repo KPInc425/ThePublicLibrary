@@ -1,11 +1,14 @@
-@page "/PrimaryParticipate"
+@page "/AllBooks"
 
 @inject IStringLocalizer<Participate> Localize
 
 <PageTitle>The Public Library - General Lazy Module</PageTitle>
+@foreach(var book in BookTestData.AllBooks){
+    <div>@book.Title</div>
+}
 
 <div style="margin-left: 15px; margin-top: 15px;">
-    <ParticipateClientComponent />
+    <AllBooksComponent />
 </div>
 
 @code {

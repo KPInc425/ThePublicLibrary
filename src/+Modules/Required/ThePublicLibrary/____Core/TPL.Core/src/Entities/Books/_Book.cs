@@ -1,10 +1,12 @@
 ﻿namespace TPL.Core.Entities;
+
 public class Book : BaseEntityTracked<Guid>, IAggregateRoot
 {
-    public IsbnVO Isbn { get; }
-    public string Title { get; }
-    public int PublicationYear { get; }
-    public int PageCount { get; }
+
+    public IsbnVO Isbn { get; private set; }
+    public string Title { get; private set; }
+    public int PublicationYear { get; private set; }
+    public int PageCount { get; private set; }
 
     private List<Author> _authors = new();
     public IEnumerable<Author> Authors => _authors.AsReadOnly();
@@ -49,7 +51,7 @@ public class Book : BaseEntityTracked<Guid>, IAggregateRoot
 
     public void AddBookAuthor(Author author)
     {
-        if(_authors.Any(x => x.Id == author.Id))
+        if (_authors.Any(x => x.Id == author.Id))
         {
             return;
         }

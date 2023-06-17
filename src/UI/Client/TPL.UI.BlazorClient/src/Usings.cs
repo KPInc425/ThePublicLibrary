@@ -20,11 +20,14 @@ global using System.Text.Json;
 global using System.Threading.Tasks;
 global using System.Net.Http;
 
+global using TPL.Core.Entities.TestData;
 
 global using TPL.Application;
 global using TPL.Application.Configuration;
 global using TPL.Application.Interfaces;
 global using TPL.Application.Services;
+
+global using TPL.Primary.ModuleClientServiceLoader;
 
 global using TPL.UI.BlazorClient;
 global using TPL.UI.BlazorClient.Shared;
