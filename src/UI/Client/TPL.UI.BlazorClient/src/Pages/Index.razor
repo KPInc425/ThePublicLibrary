@@ -1,7 +1,12 @@
 ﻿@page "/"
 
-<PageTitle>Index</PageTitle>
+@using System.Net.Http.Json
+@inject HttpClient httpClient
 
-<MudText Typo="Typo.h1">Hello, world!</MudText>
+<PageTitle>Library</PageTitle>
+
+<MudText Typo="Typo.h1">Library</MudText>
 
 <MudText Typo="Typo.body1">Welcome to your new app.</MudText>
+
+

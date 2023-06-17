@@ -1,1 +1,3 @@
-::deep .colored-button-experiment{background-color:rgba(69,35,187,.7294117647) !important}/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22../Styles/app.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAGA,kCACI%22,%22file%22:%22app.css%22%7D */
+.red {
+    color: red;
+}
