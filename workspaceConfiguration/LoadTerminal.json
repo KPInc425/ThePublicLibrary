@@ -117,8 +117,8 @@
                     "name": "TPL.API.PrimaryApi",
                     "path": "./src/+Modules/Required/ThePublicLibrary/+Api/TPL.API.PrimaryApi/src",
                     "cmd": [
-                        "ping 127.0.0.1 -n 9 > nul",                        
-                        "dotnet build"
+                        "ping 127.0.0.1 -n 15 > nul",                        
+                        "dotnet watch run"
                     ],
                     "num": 9
                 },
@@ -141,7 +141,7 @@
                     "name": "TPL.UI.Client.BlazorClient",
                     "path": "./src/UI/Client/TPL.UI.BlazorClient/src",
                     "cmd": [
-                        "ping 127.0.0.1 -n 12 > nul",                        
+                        "ping 127.0.0.1 -n 20 > nul",                        
                         "dotnet watch run"
                     ],
                     "num": 12
@@ -150,7 +150,7 @@
                     "name": "TPL.UI.BlazorClient.UITests",
                     "path": ".\\src\\UI\\Client\\TPL.UI.BlazorClient.UITests\\src",
                     "cmd": [
-                        "ping 127.0.0.1 -n 12 > nul",                        
+                        "ping 127.0.0.1 -n 40 > nul",                        
                         "dotnet test"
                     ],
                     "num": 12
