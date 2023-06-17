@@ -1,9 +1,9 @@
 ﻿@using System.Reflection
 @inject IStringLocalizer<App> Localize
-
+@* 
 <MudThemeProvider Theme="SelectedMudTheme" />
 <MudDialogProvider />
-<MudSnackbarProvider />
+<MudSnackbarProvider /> *@
 
 <Router AppAssembly="@typeof(Program).Assembly" AdditionalAssemblies="@LoadedAssemblies" OnNavigateAsync="@OnNavigateAsync" PreferExactMatches="@true">
     <Found Context="routeData">
@@ -20,7 +20,7 @@
 
 @code {
     public string roomName { get; set; } = String.Empty;
-    MudTheme SelectedMudTheme = MudStaticDefaultTheme.Default;
+    //MudTheme SelectedMudTheme = MudStaticDefaultTheme.Default;
     public bool hasRunUserInit = false;
     public bool hasRunAppInit = false;
     public bool hasSkinInit = false;
