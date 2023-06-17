@@ -39,7 +39,6 @@ global using TPL.Primary.ModuleClientServiceLoader;
 
 global using TPL.UI.BlazorClient;
 global using TPL.UI.BlazorClient.Pages;
-global using TPL.UI.BlazorClient.Shared;
 
 global using TPL.UI.Common;
 global using TPL.UI.Common.Interfaces;
