@@ -21,15 +21,13 @@
     <PackageReference Include="BlazorAnimate" Version="3.0.0" />
     <PackageReference Include="Blazor.Extensions.Canvas" Version="1.1.1" />
     <PackageReference Include="Blazored.FluentValidation" Version="2.1.0" />
-    <PackageReference Include="Microsoft.Extensions.Identity.Core" Version="7.0.4" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="7.0.4" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Authentication"
-      Version="7.0.4" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer"
-      Version="7.0.4" PrivateAssets="all" />
-    <PackageReference Include="Microsoft.Extensions.Localization" Version="7.0.4" />
-    <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="7.0.4" />
-    <PackageReference Include="MudBlazor" Version="6.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Identity.Core" Version="7.0.7" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="7.0.7" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Authentication" Version="7.0.7" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="7.0.7" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.Extensions.Localization" Version="7.0.7" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="7.0.7" />
+    <PackageReference Include="MudBlazor" Version="6.4.1" />
   </ItemGroup>
 
   <Choose>
@@ -60,21 +58,17 @@
     <Exec Command="sass --version" ContinueOnError="true">
       <Output TaskParameter="ExitCode" PropertyName="ErrorCodeSass" />
     </Exec>
-    <Error Condition="'$(ErrorCodeSass)' != '0'"
-      Text="Dart-sass is required for this project. Install globally with 'npm i -g sass' " />
+    <Error Condition="'$(ErrorCodeSass)' != '0'" Text="Dart-sass is required for this project. Install globally with 'npm i -g sass' " />
   </Target>
 
   <Target Name="SassBuild" BeforeTargets="AfterBuild">
-    <Exec
-      Command="sass Styles:wwwroot/ --embed-source-map Shared:Shared --style=compressed --load-path=Styles --update"
-      ContinueOnError="false">
+    <Exec Command="sass Styles:wwwroot/ --embed-source-map Shared:Shared --style=compressed --load-path=Styles --update" ContinueOnError="false">
       <Output TaskParameter="ExitCode" PropertyName="ErrorCodeSass" />
     </Exec>
     <Error Condition="'$(ErrorCodeSass)' != '0'" Text="Dart-sass is unhappy about something " />
   </Target>
   <Target Name="PushPackage" AfterTargets="Publish" Condition="'$(Configuration)' == 'Release'">
     <Exec Command="dotnet pack -c Release" />
-    <Exec
-      Command="dotnet nuget push &quot;$(MSBuildProjectDirectory)\bin\$(Configuration)\$(AssemblyName).$(Version).nupkg&quot; -s LocalNuggget" />
+    <Exec Command="dotnet nuget push &quot;$(MSBuildProjectDirectory)\bin\$(Configuration)\$(AssemblyName).$(Version).nupkg&quot; -s LocalNuggget" />
   </Target>
 </Project>

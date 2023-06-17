@@ -29,9 +29,9 @@
   <Choose>
     <When Condition="'$(Configuration)' == 'Release'">
       <ItemGroup>
-        <PackageReference Include="TPL.Kernel" Version="1.0.71.176" />
-        <PackageReference Include="TPL.KnownAccounts.Core" Version="1.0.71.176" />
-        <PackageReference Include="TPL.KnownAccounts.Infrastructure" Version="1.0.71.176" />
+        <PackageReference Include="TPL.Kernel" Version />
+        <PackageReference Include="TPL.KnownAccounts.Core" Version />
+        <PackageReference Include="TPL.KnownAccounts.Infrastructure" Version />
       </ItemGroup>
     </When>
   </Choose>

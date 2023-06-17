@@ -14,7 +14,7 @@
   <Choose>
     <When Condition="'$(Configuration)' == 'Release'">
       <ItemGroup>
-        <PackageReference Include="TPL.Kernel" Version="1.0.71.176" />
+        <PackageReference Include="TPL.Kernel" Version />
       </ItemGroup>
     </When>
   </Choose>

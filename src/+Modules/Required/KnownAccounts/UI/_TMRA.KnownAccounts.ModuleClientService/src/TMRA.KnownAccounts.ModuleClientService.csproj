@@ -21,9 +21,9 @@
   <Choose>
     <When Condition="'$(Configuration)' == 'Release'">
       <ItemGroup>
-        <PackageReference Include="TPL.UI.BlazorClient.Common" Version="1.0.71.176" />
-        <PackageReference Include="TPL.KnownAccounts.Api.Common" Version="1.0.71.176" />
-        <PackageReference Include="TPL.KnownAccounts.Infrastructure" Version="1.0.71.176" />
+        <PackageReference Include="TPL.UI.BlazorClient.Common" Version />
+        <PackageReference Include="TPL.KnownAccounts.Api.Common" Version />
+        <PackageReference Include="TPL.KnownAccounts.Infrastructure" Version />
       </ItemGroup>
     </When>
   </Choose>

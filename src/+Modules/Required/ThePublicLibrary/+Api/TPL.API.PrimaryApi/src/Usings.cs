@@ -31,6 +31,7 @@ global using Newtonsoft.Json.Serialization;
 global using KernelShared;
 
 global using TPL.Core;
+global using TPL.Core.Entities;
 global using TPL.Core.Enums;
 
 global using TPL.Infrastructure;

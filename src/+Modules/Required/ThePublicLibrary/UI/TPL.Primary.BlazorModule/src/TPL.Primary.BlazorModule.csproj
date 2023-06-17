@@ -15,36 +15,36 @@
     <SupportedPlatform Include="browser" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
     <PackageReference Include="BlazorAnimate" Version="3.0.0" />
     <PackageReference Include="Blazor.Extensions.Canvas" Version="1.1.1" />
     <PackageReference Include="Blazored.FluentValidation" Version="2.1.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.Authorization" Version="7.0.4" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="7.0.4" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Authentication" Version="7.0.4" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="7.0.4" />
-    <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="7.0.4" />
-    <PackageReference Include="Microsoft.Extensions.Identity.Core" Version="7.0.4" />
-    <PackageReference Include="Microsoft.Extensions.Localization" Version="7.0.4" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.Authorization" Version="7.0.7" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="7.0.7" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Authentication" Version="7.0.7" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="7.0.7" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="7.0.7" />
+    <PackageReference Include="Microsoft.Extensions.Identity.Core" Version="7.0.7" />
+    <PackageReference Include="Microsoft.Extensions.Localization" Version="7.0.7" />
     <PackageReference Include="System.Net.Http.Json" Version="7.0.1" />
-    <PackageReference Include="MudBlazor" Version="6.2.0" />
-    <PackageReference Include="TinyMCE.Blazor" Version="1.0.4" />
+    <PackageReference Include="MudBlazor" Version="6.4.1" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(Configuration)' == 'Release'">
-      <ItemGroup>
-        <PackageReference Include="TPL.UI.BlazorClient.Common" Version />
-        <PackageReference Include="TPL.KnownAccounts.Api.Common" Version />
-        <PackageReference Include="TPL.KnownAccounts.ModuleClientService" Version />
-        <PackageReference Include="TPL.KnownAccounts.ModuleClientServiceLoader" Version />
+      <ItemGroup>      
+        <PackageReference Include="KernelShared" />
+        <PackageReference Include="TPL.UI.Common" />
+        <PackageReference Include="TPL.Application" />
+        <PackageReference Include="TPL.API.PrimaryApi" />
+        <PackageReference Include="TPL.KnownAccounts.ModuleClientServiceLoader" />
       </ItemGroup>
     </When>
   </Choose>
   <ItemGroup>
-    <ProjectReference Include="./../../../../___TPL.UI.BlazorClient.Common/src/TPL.UI.BlazorClient.Common.csproj" />
-    <ProjectReference Include="./../../_TPL.KnownAccounts.Api.Common/src/TPL.KnownAccounts.Api.Common.csproj" />
-    <ProjectReference Include="./../../_TPL.KnownAccounts.ModuleClientService/src/TPL.KnownAccounts.ModuleClientService.csproj" />
-    <ProjectReference Include="./../../_TPL.KnownAccounts.ModuleClientServiceLoader/src/TPL.KnownAccounts.ModuleClientServiceLoader.csproj" />
+    <ProjectReference Include="./../../../../../../__Kernel/KernelShared/src/KernelShared.csproj" />
+    <ProjectReference Include="./../../../../../../_UI.Common/TPL.UI.Common/src/TPL.UI.Common.csproj" />
+    <ProjectReference Include="./../../../_Application/TPL.Application/src/TPL.Application.csproj" />
+    <ProjectReference Include="./../../../+Api/TPL.API.PrimaryApi/src/TPL.API.PrimaryApi.csproj" />    
+    <ProjectReference Include="./../../_TPL.Primary.ModuleClientServiceLoader/src/TPL.Primary.ModuleClientServiceLoader.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Watch Remove="**/*.css" />
