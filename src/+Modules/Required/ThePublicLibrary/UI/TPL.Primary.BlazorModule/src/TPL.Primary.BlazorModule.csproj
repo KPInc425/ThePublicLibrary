@@ -18,9 +18,9 @@
     <PackageReference Include="BlazorAnimate" Version="3.0.0" />
     <PackageReference Include="Blazor.Extensions.Canvas" Version="1.1.1" />
     <PackageReference Include="Blazored.FluentValidation" Version="2.1.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.Authorization" Version="7.0.7" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="7.0.7" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Authentication" Version="7.0.7" />
+    <!-- <PackageReference Include="Microsoft.AspNetCore.Components.Authorization" Version="7.0.7" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Authentication" Version="7.0.7" /> -->
     <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="7.0.7" />
     <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="7.0.7" />
     <PackageReference Include="Microsoft.Extensions.Identity.Core" Version="7.0.7" />
@@ -34,7 +34,6 @@
         <PackageReference Include="KernelShared" />
         <PackageReference Include="TPL.UI.Common" />
         <PackageReference Include="TPL.Application" />
-        <PackageReference Include="TPL.API.PrimaryApi" />
         <PackageReference Include="TPL.KnownAccounts.ModuleClientServiceLoader" />
       </ItemGroup>
     </When>
@@ -43,7 +42,6 @@
     <ProjectReference Include="./../../../../../../__Kernel/KernelShared/src/KernelShared.csproj" />
     <ProjectReference Include="./../../../../../../_UI.Common/TPL.UI.Common/src/TPL.UI.Common.csproj" />
     <ProjectReference Include="./../../../_Application/TPL.Application/src/TPL.Application.csproj" />
-    <ProjectReference Include="./../../../+Api/TPL.API.PrimaryApi/src/TPL.API.PrimaryApi.csproj" />    
     <ProjectReference Include="./../../_TPL.Primary.ModuleClientServiceLoader/src/TPL.Primary.ModuleClientServiceLoader.csproj" />
   </ItemGroup>
   <ItemGroup>

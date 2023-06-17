@@ -13,7 +13,7 @@
 @using Microsoft.JSInterop
 
 @using Microsoft.AspNetCore.Authorization
-@using Microsoft.AspNetCore.Components.Authorization
+@* @using Microsoft.AspNetCore.Components.Authorization *@
 
 @using KernelShared;
 
@@ -28,6 +28,7 @@
 
 @using TPL.Application.ViewModels
 @using TPL.Application.Interfaces
+@using TPL.Application.Services
 
 @using TPL.Primary.ModuleClientServiceLoader
 @using TPL.Primary.BlazorModule.Shared
@@ -43,9 +44,8 @@
 
 @inject NavigationManager NavigationManager
 @inject ISnackbar Snackbar
-@inject AuthenticationStateProvider AuthenticationStateProvider
+
+@* @inject AuthenticationStateProvider AuthenticationStateProvider *@
 
 @inject IDataService PrimaryCoreHttpClient
 @inject PlatformCacheService PlatformCacheService
-
-@layout MainLayout

@@ -11,9 +11,9 @@ public class PlatformCacheService
     public bool IsOwner { get; private set; } = false;
     public bool IsCoHost { get; private set; } = false;
 
-    private bool _userDataIsReady = false;
-    private bool _businessDataIsReady = false;
-    private bool _appDataIsReady = false;
+    private bool _userDataIsReady = true; // false;
+    private bool _businessDataIsReady = true; // false;
+    private bool _appDataIsReady = true; // false;
     
     private string _currentModule = "";
     private string _currentSubModule = "";

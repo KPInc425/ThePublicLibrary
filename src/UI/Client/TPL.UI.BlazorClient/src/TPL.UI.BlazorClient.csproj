@@ -5,39 +5,37 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <IsPackable>false</IsPackable>
-    <PackageId>TPL.UI.BlazorClient</PackageId>
-    <Version>1.01.02.003</Version>
-    <Authors>10GeekJames</Authors>
-    <Company>10GeekJames</Company>
+    <BlazorWebAssemblyLoadAllGlobalizationData>true</BlazorWebAssemblyLoadAllGlobalizationData>
     <DefaultNamespace>TPL.UI.BlazorClient</DefaultNamespace>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Blazor-Analytics" Version="3.11.0" />
     <PackageReference Include="BlazorAnimate" Version="3.0.0" />
     <PackageReference Include="Blazor.Extensions.Canvas" Version="1.1.1" />
     <PackageReference Include="Blazored.FluentValidation" Version="2.1.0" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="7.0.7" />
-    <PackageReference Include="MudBlazor" Version="6.4.1" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="7.0.7" />
+    <!-- <PackageReference Include="Microsoft.AspNetCore.Components.Authorization" Version="7.0.7" /> -->
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="7.0.7" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="7.0.4" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer"
       Version="7.0.7" PrivateAssets="all" />
+    <!-- <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Authentication"
+      Version="7.0.7" /> -->
+    <PackageReference Include="Microsoft.Extensions.Localization" Version="7.0.7" />
+
+    <PackageReference Include="MudBlazor" Version="6.4.1" />
   </ItemGroup>
 
   <Choose>
     <When Condition="'$(Configuration)' == 'Release'">
       <ItemGroup>
         <PackageReference Include="KernelShared" />
-        <PackageReference Include="TPL.Core" />
-        <PackageReference Include="TPL.Infrastructure" />
-        <PackageReference Include="TPL.Application" />
       </ItemGroup>
     </When>
   </Choose>
   <ItemGroup>
-    <ProjectReference Include="./../../../../__Kernel/KernelShared/src/KernelShared.csproj" />    
+    <ProjectReference Include="./../../../../__Kernel/KernelShared/src/KernelShared.csproj" />
   </ItemGroup>
 
 
@@ -53,10 +51,10 @@
     <Watch Include="**/*.sass" />
   </ItemGroup>
 
-  <ItemGroup>
+  <!-- <ItemGroup>
     <EmbeddedResource Include="wwwroot/**/*" />
     <Content Update="**/*.cshtml" Pack="false" />
-  </ItemGroup>
+  </ItemGroup> -->
 
   <Target Name="SassCheck" BeforeTargets="AfterBuild">
     <Exec Command="sass --version" ContinueOnError="true">

@@ -57,18 +57,18 @@ builder
  */
 // smash in all the resx files
 builder.Services.AddLocalization();
-builder.Services.AddApiAuthorization(options =>
+/*builder.Services.AddApiAuthorization(options =>
 {
-    /* options.AuthenticationPaths.LogInPath = "Account/login";
+     options.AuthenticationPaths.LogInPath = "Account/login";
     options.AuthenticationPaths.LogInCallbackPath = "Account/login-callback";
     options.AuthenticationPaths.LogInFailedPath = "Account/login-failed";
     options.AuthenticationPaths.LogOutPath = "Account/logout";
     options.AuthenticationPaths.LogOutCallbackPath = "Account/logout-callback";
     options.AuthenticationPaths.LogOutFailedPath = "Account/logout-failed";
     options.AuthenticationPaths.LogOutSucceededPath = "Account/logged-out";
-    options.AuthenticationPaths.ProfilePath = "Account/profile"; */
+    options.AuthenticationPaths.ProfilePath = "Account/profile"; 
     //options.AuthenticationPaths.RegisterPath = "Account/register";
-});
+});*/
 List<CultureInfo> supportedLanguages = new List<CultureInfo>
             {
                 new CultureInfo("en-US"),
@@ -125,3 +125,10 @@ builder.Services.AddScoped<IKnownAccountsNotAuthedHttpClient>(x => x
         .First().CreateNotAuthed()); */
 var host = builder.Build();
 await host.RunAsync();
+
+IConfiguration BuildConfig()
+{
+    return new ConfigurationBuilder()
+        .SetBasePath(Directory.GetCurrentDirectory())
+        .Build();
+}

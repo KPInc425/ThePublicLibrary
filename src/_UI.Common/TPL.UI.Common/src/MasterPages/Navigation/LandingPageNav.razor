@@ -15,13 +15,13 @@
 
 </MudContainer>
 @code {
-    [CascadingParameter]
-    private Task<AuthenticationState> authenticationStateTask { get; set; }
+    @* [CascadingParameter]
+    private Task<AuthenticationState> authenticationStateTask { get; set; } *@
     private bool isAuthd = false;
     protected override async Task OnInitializedAsync()
     {
-        var authstate = await authenticationStateTask;
+        @* var authstate = await authenticationStateTask;
         var _user = authstate.User;   
-        isAuthd = (_user?.Identity?.IsAuthenticated == true);
-    }
+        isAuthd = (_user?.Identity?.IsAuthenticated == true);*@
+    } 
 }

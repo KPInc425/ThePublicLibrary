@@ -14,3 +14,6 @@ global using TPL.UI.Common.MasterPageSetters;
 global using TPL.UI.Common.Models;
 global using TPL.UI.Common.Services;
 global using TPL.UI.Common.Shared;
+
+global using TPL.Primary.ModuleClientServiceLoader;
+global using TPL.Primary.BlazorModule;

@@ -1,15 +1,15 @@
-namespace TPL.API.PrimaryApi.Services;
+namespace TPL.Application.Services;
 public partial class HttpDataService
 {
-    public async Task<List<Membership>> MembershipsGetAllAsync()
+    public async Task<List<Library>> LibrariesGetAllAsync()
     {
-        var request = new MembershipsGetAllQuery();
+        var request = new LibrariesGetAllQuery();
         var response = await _httpClient.GetAsync(request.BuildRouteFrom());
 
         response.EnsureSuccessStatusCode();
 
         return await response
             .Content
-            .ReadFromJsonAsync<List<Membership>>();
-    }
+            .ReadFromJsonAsync<List<Library>>();
+    }    
 }

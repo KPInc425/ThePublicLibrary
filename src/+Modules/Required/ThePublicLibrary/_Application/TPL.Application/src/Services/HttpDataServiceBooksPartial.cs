@@ -1,4 +1,4 @@
-namespace TPL.API.PrimaryApi.Services;
+namespace TPL.Application.Services;
 public partial class HttpDataService
 {
     public async Task<List<BookViewModel>> BooksGetAllAsync(BooksGetAllQuery qry)

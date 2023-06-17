@@ -11,8 +11,8 @@
 @code {
     [Parameter]
     public string roomName { get; set; }
-    [CascadingParameter]
-    private Task<AuthenticationState> authenticationStateTask { get; set; }
+    @* [CascadingParameter]
+    private Task<AuthenticationState> authenticationStateTask { get; set; } *@
     private List<MudSelectItemModel> moduleList = new();
     public HashSet<string> SelectValue { get; set; } = new();
     protected string userName;
@@ -20,14 +20,14 @@
     
     protected override async Task OnInitializedAsync()
     {
-        var authState = await authenticationStateTask;
+        @* var authState = await authenticationStateTask;
         var user = authState.User;
         var isAuthenticated = user.Identity.IsAuthenticated;
         
         if (isAuthenticated)
         {
             _userId = new Guid(user.FindFirst(c => c.Type == "sub")?.Value);
-        }
+        } *@
         
         var currentMode = NavigationManager.Uri.Split("/").LastOrDefault();
         

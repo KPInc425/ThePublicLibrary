@@ -29,16 +29,14 @@
       <ItemGroup>
         <PackageReference Include="TPL.UI.Common" />
         <PackageReference Include="TPL.Application" />
-        <PackageReference Include="TPL.KnownAccounts.ModuleClientService" />
-        <PackageReference Include="TPL.KnownAccounts.ModuleClientServiceLoader" />
+        <PackageReference Include="TPL.Primary.ModuleClientServiceLoader" />
       </ItemGroup>
     </When>
   </Choose>
   <ItemGroup>
     <ProjectReference Include="./../../../../___TPL.UI.Common/src/TPL.UI.Common.csproj" />
     <ProjectReference Include="./../../_TPL.Application/src/TPL.Application.csproj" />
-    <ProjectReference Include="./../../_TPL.KnownAccounts.ModuleClientService/src/TPL.KnownAccounts.ModuleClientService.csproj" />
-    <ProjectReference Include="./../../_TPL.KnownAccounts.ModuleClientServiceLoader/src/TPL.KnownAccounts.ModuleClientServiceLoader.csproj" />
+    <ProjectReference Include="./../_TPL.Primary.ModuleClientServiceLoader/src/TPL.Primary.ModuleClientServiceLoader.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Watch Remove="**/*.css" />

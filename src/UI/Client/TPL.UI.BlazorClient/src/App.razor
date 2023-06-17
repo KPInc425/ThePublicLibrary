@@ -1,4 +1,11 @@
-﻿<Router AppAssembly="@typeof(App).Assembly">
+﻿@using System.Reflection
+@inject IStringLocalizer<App> Localize
+
+<MudThemeProvider Theme="SelectedMudTheme" />
+<MudDialogProvider />
+<MudSnackbarProvider />
+
+<Router AppAssembly="@typeof(Program).Assembly" AdditionalAssemblies="@LoadedAssemblies" OnNavigateAsync="@OnNavigateAsync" PreferExactMatches="@true">
     <Found Context="routeData">
         <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
         <FocusOnNavigate RouteData="@routeData" Selector="h1" />
@@ -10,3 +17,86 @@
         </LayoutView>
     </NotFound>
 </Router>
+
+@code {
+    public string roomName { get; set; } = String.Empty;
+    MudTheme SelectedMudTheme = MudStaticDefaultTheme.Default;
+    public bool hasRunUserInit = false;
+    public bool hasRunAppInit = false;
+    public bool hasSkinInit = false;
+    public bool watchingSkinEvents = false;
+    private List<Assembly> LoadedAssemblies = new List<Assembly>();
+    private bool isAuthenticated = false;
+    private bool showSplash = true;
+    protected override async Task OnInitializedAsync()
+    {
+    }
+    private async Task GetAppData()
+    {
+        await PlatformCacheService.InitAppDataAsync(isAuthenticated);
+        while (!PlatformCacheService.AppDataIsReady)
+        {
+            Console.WriteLine("GetAppData Waiting on AppData is Ready");
+            await Task.Delay(100);
+        }
+    }
+
+    private async Task OnNavigateAsync(NavigationContext navContext)
+    {
+        Console.WriteLine("OnNavAsync");
+
+        while (!PlatformCacheService.AppDataIsReady)
+        {
+            Console.WriteLine("OnNavigateAsync Waiting on AppData is Ready");
+            await Task.Delay(100);
+        }
+        if (!watchingSkinEvents)
+        {
+            watchingSkinEvents = true;
+            //PlatformCacheService.OnSkinChange += ApplySkin;
+            Console.WriteLine("Skin init 2");
+        }
+        if (!hasSkinInit)
+        {
+            hasSkinInit = true;
+            PlatformCacheService.UpdateSkin();
+            Console.WriteLine("Skin init 3");
+            //ApplySkin();
+        }
+
+        var uriAsUri = new Uri(NavigationManager.Uri);
+
+        var subwebPrefixCount = uriAsUri.Host.Count(rs => rs == '.');
+
+        if (subwebPrefixCount > 2)
+        {
+            // // get this uri, its owner, its cohosts,
+            // does the current logged in user own this uri?
+            // is the current logged in user a cohost on this uri?
+            // // lookup this member compared to the uri
+            // is the current logged in user registered on this uri?
+            // is the current logged in user a paid participant on this uri?
+        }
+
+        Console.WriteLine($"Uri Path: {uriAsUri}, {uriAsUri.Segments.Count()}");
+
+        if (uriAsUri.Segments.Count() > 3)
+        {
+            this.roomName = uriAsUri.Segments[2].Substring(0, uriAsUri.Segments[2].Length - 1);
+        }
+        else
+        {
+            this.roomName = "";
+        }
+
+        var uriPath = NavigationManager.Uri.ToLower();
+
+        if (!uriPath.Contains("localhost"))
+        {
+
+        }
+        var preLoadAssemblies = await AssemblyLoader.LoadAssembliesAsync(new List<string>() { "TPL.Primary.BlazorModule.dll" });
+        LoadedAssemblies.AddRange(preLoadAssemblies);
+        
+    }
+}

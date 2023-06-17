@@ -4,16 +4,16 @@
     <MudButton Class=@Class Variant="Variant.Outlined" OnClick="()=>NavigateToPage(menuItem.Url)">@menuItem.Text</MudButton>
 }
 @code {
-    [CascadingParameter]
-    public Task<AuthenticationState> authenticationStateTask { get; set; }
+    @* [CascadingParameter]
+    public Task<AuthenticationState> authenticationStateTask { get; set; } *@
     [Parameter]
     public string Class { get; set; }
-    public ClaimsPrincipal User { get; set; }
+    @* public ClaimsPrincipal User { get; set; } *@
     public List<MenuItem> MenuItems { get; set; }
     public MenuItem SelectedMenuItem { get; set; }
     protected override async Task OnInitializedAsync()
     {
-        User = (await authenticationStateTask).User;
+        @* User = (await authenticationStateTask).User;
         if (User.Identity.IsAuthenticated)
         {
             MenuItems = new List<MenuItem>()
@@ -22,19 +22,19 @@
             };
         }
         else
-        {
+        { *@
             MenuItems = new List<MenuItem>()
             {
             new MenuItem { Text = "Login", Url = "/authentication/login"}
             };
-        }
+        @* } *@
         await base.OnInitializedAsync();
     }
     public async Task NavigateToPage(string url)
     {
         if (url.Contains("/authentication/logout"))
         {
-            await SignOutManager.SetSignOutState();
+            //await SignOutManager.SetSignOutState();
         }
          NavigationManager.NavigateTo(url);
     }

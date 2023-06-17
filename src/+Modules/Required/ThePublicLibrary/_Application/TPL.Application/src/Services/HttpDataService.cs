@@ -1,4 +1,4 @@
-namespace TPL.API.PrimaryApi.Services;
+namespace TPL.Application.Services;
 public partial class HttpDataService : IDataService, IDataServiceNotAuthed
 {
     protected readonly HttpClient _httpClient;
