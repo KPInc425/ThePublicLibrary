@@ -33,10 +33,11 @@ public class CounterExperienceSteps : Steps
     {
         (await _counterPage.GetIncrementValueAsync()).Should().Be(counterValue);
     }
-
+    
+    [StepDefinition(@"we wait (.*) seconds")]
     [StepDefinition(@"we wait (.*) second")]
-    public async Task WeWaitXSeconds(int waitTime)
+    public async Task WeWaitXSeconds(float waitTime)
     {
-        System.Threading.Thread.Sleep(waitTime * 100);
+        System.Threading.Thread.Sleep(Convert.ToInt32(waitTime * 1000f));
     }    
 }

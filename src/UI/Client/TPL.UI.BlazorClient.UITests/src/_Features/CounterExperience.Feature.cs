@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace TPL.UI.BlazorClient.UITests.Features
+namespace TPL.UI.BlazorClient.UITests._Features
 {
     using TechTalk.SpecFlow;
     using System;
@@ -40,7 +40,7 @@ namespace TPL.UI.BlazorClient.UITests.Features
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Counter Experience", null, ProgrammingLanguage.CSharp, featureTags);
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "_Features", "Counter Experience", null, ProgrammingLanguage.CSharp, featureTags);
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -120,7 +120,7 @@ this.FeatureBackground();
     testRunner.When("we click the increment button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 10
-    testRunner.And("we wait 1 second", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.And("we wait 0.5 seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 11
     testRunner.Then("the counter value is 1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

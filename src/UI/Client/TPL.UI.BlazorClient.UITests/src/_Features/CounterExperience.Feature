@@ -7,5 +7,5 @@ Background:
 Scenario: I can increment the value
     Given the counter value is 0
     When we click the increment button
-    And we wait 1 second
+    And we wait 0.5 seconds
     Then the counter value is 1    

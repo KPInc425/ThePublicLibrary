@@ -396,14 +396,4 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
-src/+Modules/Required/ThePublicLibrary/+Api/TPL.API.PrimaryApi/src/nul
-src/+Modules/Required/ThePublicLibrary/+Api/TPL.API.PrimaryApi.FunctionalTests/src/nul
-src/+Modules/Required/ThePublicLibrary/____Core/TPL.Core/src/nul
-src/+Modules/Required/ThePublicLibrary/____Core/TPL.Core.UnitTests/src/nul
-src/+Modules/Required/ThePublicLibrary/___Infrastructure/TPL.Infrastructure/src/nul
-src/+Modules/Required/ThePublicLibrary/___Infrastructure/TPL.Infrastructure.IntegrationTests/src/nul
-src/+Modules/Required/ThePublicLibrary/__Data/TPL.Application.Data/src/nul
-src/+Modules/Required/ThePublicLibrary/_Application/TPL.Application/src/nul
-src/+Modules/Required/ThePublicLibrary/_Application/TPL.Application.FeatureTests/src/nul
-src/_UI.Common/TPL.UI.Common/src/nul
-src/UI/Client/TPL.UI.BlazorClient/src/nul
+**nul
