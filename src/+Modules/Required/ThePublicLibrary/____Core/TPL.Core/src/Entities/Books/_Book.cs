@@ -19,7 +19,7 @@ public class Book : BaseEntityTracked<Guid>, IAggregateRoot
 
     private Book() { }
 
-    public Book(IsbnVO isbn, IEnumerable<Author> authors, IEnumerable<BookCopy>? bookCopies, string title, int publicationYear, int pageCount)
+    public Book(IsbnVO isbn, IEnumerable<Author> authors, IEnumerable<BookCategory>? bookCategories, IEnumerable<BookCopy>? bookCopies, string title, int publicationYear, int pageCount)
     {
         Isbn = isbn;
         Title = title;
@@ -31,6 +31,10 @@ public class Book : BaseEntityTracked<Guid>, IAggregateRoot
         {
             _bookCopies.AddRange(bookCopies);
         }
+        if (bookCategories is not null)
+        {
+            _bookCategories.AddRange(bookCategories);
+        }
     }
 
     public void AddBookCopy(BookCondition condition = BookCondition.New)
@@ -38,13 +42,15 @@ public class Book : BaseEntityTracked<Guid>, IAggregateRoot
         var bookCopy = new BookCopy(this, condition);
         _bookCopies.Add(bookCopy);
     }
-
-    public void AddBookCategory(string categoryTitle)
+    public void RemoveBookCopy(BookCopy bookCopy)
     {
-        var bookCategory = _bookCategories.FirstOrDefault(x => x.Title == categoryTitle);
-        if (bookCategory is null)
+        bookCopy.ChangeCondition(BookCondition.Destroyed);
+    }
+
+    public void AddBookCategory(BookCategory bookCategory)
+    {
+        if (!_bookCategories.Contains(bookCategory))
         {
-            bookCategory = new BookCategory(categoryTitle);
             _bookCategories.Add(bookCategory);
         }
     }
@@ -67,13 +73,8 @@ public class Book : BaseEntityTracked<Guid>, IAggregateRoot
         }
     }
 
-    public void RemoveBookCopy(BookCopy bookCopy)
-    {
-        bookCopy.SetCondition(BookCondition.Destroyed);
-    }
-
     public override string ToString()
     {
-        return $"{Title} ({Isbn}) ({PublicationYear}) ({PageCount}) ({Authors.Select(x => x.ToString())}) ({BookCategories.Select(x => x.Title + ", ")})";
+        return $"{Title} ({Isbn}) ({PublicationYear}) ({PageCount}) ({Authors.Select(x => x.ToString() + ", ")}) ({BookCategories.Select(x => x.Title + ", ")})";
     }
 }

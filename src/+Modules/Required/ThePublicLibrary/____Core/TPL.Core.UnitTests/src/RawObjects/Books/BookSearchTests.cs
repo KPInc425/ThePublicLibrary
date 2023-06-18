@@ -2,16 +2,14 @@ using System.Collections.Generic;
 
 namespace TPL.Core.UnitTests;
 
-public class BookSearchTests
+public class BookSearchTests : BooksBaseTest
 {
-    private readonly BookTestData _bookTestData = new();
-    private readonly AuthorTestData _authorsTestData = new();
-
+    
     [Fact]
     public void CanSearchBooksByYearRange()
     {
         // Given I have books
-        var books = _bookTestData.AllBooks;
+        ICreateManyBooks(_bookTestData.AllBooks);
 
         // Given I have a search by year range specification
         var startYear = 1900;
@@ -20,7 +18,7 @@ public class BookSearchTests
         var searchByYearRangeSpec = new BooksFindByYearRangeSpec(startYear, endYear);
 
         // When I search for books in that range
-        var booksInRange = searchByYearRangeSpec.Evaluate(books);
+        var booksInRange = searchByYearRangeSpec.Evaluate(_booksToTestWith);
 
         // Then I find books in that range
         booksInRange.Should().NotBeEmpty();
@@ -32,7 +30,7 @@ public class BookSearchTests
     public void CanSearchBooksByAuthor()
     {
         // Given I have authors
-        var authors = _authorsTestData.AllAuthors;
+        var authors = _authorTestData.AllAuthors;
 
         // Given I have books
         var books = _bookTestData.AllBooks;

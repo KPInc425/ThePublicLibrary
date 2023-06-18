@@ -1,0 +1,6 @@
+Feature: Book Constructor
+
+Scenario: Book Constructor
+    Given a book with title "The Hobbit" and author "J.R.R. Tolkien"
+    When I call the books toString method
+    Then I get the string "The Hobbit by J.R.R. Tolkien"

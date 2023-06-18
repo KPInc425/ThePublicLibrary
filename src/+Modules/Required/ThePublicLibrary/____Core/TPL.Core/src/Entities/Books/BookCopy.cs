@@ -22,7 +22,7 @@ public class BookCopy : BaseEntityTracked<Guid>
 
         CopySequence = book.BookCopies.Count() + 1;
     }
-    public void SetCondition(BookCondition condition)
+    public void ChangeCondition(BookCondition condition)
     {
         Condition = condition;
     }
