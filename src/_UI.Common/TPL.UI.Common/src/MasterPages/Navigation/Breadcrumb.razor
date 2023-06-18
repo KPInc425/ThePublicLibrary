@@ -1,24 +1,31 @@
+@implements IDisposable
+
 @inject IStringLocalizer<Breadcrumb> Localize
 
-@foreach(var item in Items) {
-    <a @onclick="()=>NavigateToUrl(item.Url)">@item.Text</a>
+@foreach (var item in Items)
+{
+    <a @onclick="()=>NavigateToUrl(item.Url)">&gt; @item.Text &gt;</a>
 }
-
-@code{
-    private string currentUrl;
-    public IEnumerable<MenuItem> Items { get; set; }
-
+@code {
+    public IEnumerable<MenuItem> Items { get; set; } = new List<MenuItem>();
     protected override void OnInitialized()
     {
-        currentUrl = NavigationManager.ToBaseRelativePath(NavigationManager.Uri);
-        Items = new List<MenuItem>
-        {
-            new MenuItem { Text = "Dashboard", Url = ""},
-            new MenuItem { Text = currentUrl, Url = ""},
-        };
+        var currentUrl = NavigationManager.ToBaseRelativePath(NavigationManager.Uri);
+        Items = currentUrl.Split(Path.PathSeparator).ToList().Select(rs => new MenuItem { Text = rs });
+        NavigationManager.LocationChanged += LocationHasChanged;
     }
-    private void NavigateToUrl(string url) {
+    private void LocationHasChanged(object sender, LocationChangedEventArgs e)
+    {
+        var currentUrl = NavigationManager.ToBaseRelativePath(NavigationManager.Uri);
+        Items = currentUrl.Split(Path.PathSeparator).ToList().Select(rs => new MenuItem { Text = rs });
+        StateHasChanged();
+    }
+    private void NavigateToUrl(string url)
+    {
         NavigationManager.NavigateTo(url);
     }
-    
+    public void Dispose()
+    {
+        NavigationManager.LocationChanged -= LocationHasChanged;        
+    }
 }
