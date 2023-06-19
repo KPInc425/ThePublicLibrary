@@ -24,8 +24,11 @@ jobs:
       with:
         dotnet-version: ${{ matrix.dotnet-version }}
     - name: Restore dependencies
-      run: dotnet restore /src/+Modules/Required/ThePublicLibrary/____Core/TPL.Core/src/TPL.Core.csproj
+      run: dotnet restore
+      working-directory: src/+Modules/Required/ThePublicLibrary/____Core/TPL.Core/src/
     - name: Build
-      run: dotnet build /src/+Modules/Required/ThePublicLibrary/____Core/TPL.Core/src/TPL.Core.csproj
+      run: dotnet build 
+      working-directory: src/+Modules/Required/ThePublicLibrary/____Core/TPL.Core/src/
     - name: Run Unit Tests
-      run: dotnet test /src/+Modules/Required/ThePublicLibrary/____Core/TPL.Core.UnitTests/src/TPL.Core.UnitTests.csproj
+      run: dotnet test
+      working-directory: src/+Modules/Required/ThePublicLibrary/____Core/TPL.Core.UnitTests/src/
