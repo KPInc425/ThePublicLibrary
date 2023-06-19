@@ -23,19 +23,9 @@ jobs:
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: ${{ matrix.dotnet-version }}
-    - name: List stuff
-      run: ls
-    - name: List more stuff
-      run: pwd
-    - name: List more stuff 2
-      run: ls ./src/
-    - name: List more stuff 3
-      run: ls ./src/+Modules
-    - name: List more stuff 4
-      run: ls ./src/+Modules/Required/ThePublicLibrary/____Core/TPL.Core/src/
     - name: Restore dependencies
-      run: dotnet restore "./src/+Modules/Required/ThePublicLibrary/____Core/TPL.Core/src/TPL.Core.csproj"      
+      run: dotnet restore "./src/+Modules/Required/ThePublicLibrary/____Core/_TPL.Core/src/TPL.Core.csproj"      
     - name: Build
-      run: dotnet build "./src/+Modules/Required/ThePublicLibrary/____Core/TPL.Core/src/TPL.Core.csproj"      
+      run: dotnet build "./src/+Modules/Required/ThePublicLibrary/____Core/_TPL.Core/src/TPL.Core.csproj"      
     - name: Run Unit Tests
-      run: dotnet test "./src/+Modules/Required/ThePublicLibrary/____Core/TPL.Core.UnitTests/src/TPL.Core.UnitTests.csproj"
+      run: dotnet test "./src/+Modules/Required/ThePublicLibrary/____Core/_TPL.Core.UnitTests/src/TPL.Core.UnitTests.csproj"
