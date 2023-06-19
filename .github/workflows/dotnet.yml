@@ -45,7 +45,7 @@ jobs:
       run: dotnet test "./src/+Modules/Required/ThePublicLibrary/_Application/TPL.Application.FeatureTests/src/TPL.Application.FeatureTests.csproj"
       
     - name: Restore PrimaryApi
-      run: dotnet restore "./src/+Modules/Required/ThePublicLibrary/+API/_TPL.PrimaryApi/src/TPL.PrimaryApi.csproj"      
+      run: dotnet restore "./src/+Modules/Required/ThePublicLibrary/+API/TPL.PrimaryApi/src/TPL.PrimaryApi.csproj"      
     - name: Build PrimaryApi
       run: dotnet build "./src/+Modules/Required/ThePublicLibrary/+API/TPL.PrimaryApi/src/TPL.PrimaryApi.csproj"      
     - name: Run PrimaryApi - Unit Tests
