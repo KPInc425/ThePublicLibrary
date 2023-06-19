@@ -29,6 +29,10 @@ jobs:
       run: pwd
     - name: List more stuff 2
       run: ls ./src/
+    - name: List more stuff 3
+      run: ls ./src/+Modules
+    - name: List more stuff 4
+      run: ls ./src/+Modules/Required/ThePublicLibrary/____Core/TPL.Core/src/
     - name: Restore dependencies
       run: dotnet restore "./src/+Modules/Required/ThePublicLibrary/____Core/TPL.Core/src/TPL.Core.csproj"      
     - name: Build
