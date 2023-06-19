@@ -1,5 +1,5 @@
 namespace TPL.Core.UnitTests;
-public abstract class BooksBaseTest
+public abstract class BaseBooksTest
 {
     protected readonly BookTestData _bookTestData = new();
     protected readonly AuthorTestData _authorTestData = new();

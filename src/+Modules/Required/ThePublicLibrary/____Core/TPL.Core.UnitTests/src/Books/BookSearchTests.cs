@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace TPL.Core.UnitTests;
 
-public class BookSearchTests : BooksBaseTest
+public class BookSearchTests : BaseBooksTest
 {
     
     [Fact]

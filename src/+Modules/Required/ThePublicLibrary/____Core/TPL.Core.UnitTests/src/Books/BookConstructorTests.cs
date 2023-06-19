@@ -1,7 +1,7 @@
 
 namespace TPL.Core.UnitTests;
 
-public class BookConstructorTests : BooksBaseTest
+public class BookConstructorTests : BaseBooksTest
 {
     [Fact]
     public void CanCreateBook()

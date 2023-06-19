@@ -63,6 +63,13 @@ public class Book : BaseEntityTracked<Guid>, IAggregateRoot
         }
         _authors.Add(author);
     }
+    public void RemoveBookAuthor(Author author)
+    {
+        if (_authors.Any(x => x.Id == author.Id))
+        {
+            _authors.Remove(author);
+        }
+    }
 
     public void RemoveBookCategory(string categoryTitle)
     {

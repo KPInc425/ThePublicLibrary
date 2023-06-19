@@ -1,6 +1,6 @@
 namespace TPL.Core.UnitTests;
 
-public class BookConditionTests : BooksBaseTest
+public class BookConditionTests : BaseBooksTest
 {
     [Fact]
     public void CanChangeBookCondition()

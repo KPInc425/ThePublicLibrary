@@ -1,6 +1,6 @@
 namespace TPL.Core.UnitTests.Books
 {
-    public class BookCopyTests : BooksBaseTest
+    public class BookCopyTests : BaseBooksTest
     {
         [Fact]
         public void LibraryCanHaveMultipleCopiesOfTheSameBook()
