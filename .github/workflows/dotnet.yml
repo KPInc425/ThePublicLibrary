@@ -23,9 +23,18 @@ jobs:
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: ${{ matrix.dotnet-version }}
-    - name: Restore dependencies
+    - name: Restore Core
       run: dotnet restore "./src/+Modules/Required/ThePublicLibrary/____Core/_TPL.Core/src/TPL.Core.csproj"      
-    - name: Build
+    - name: Build Core
       run: dotnet build "./src/+Modules/Required/ThePublicLibrary/____Core/_TPL.Core/src/TPL.Core.csproj"      
-    - name: Run Unit Tests
+    - name: Run Core - Unit Tests
       run: dotnet test "./src/+Modules/Required/ThePublicLibrary/____Core/_TPL.Core.UnitTests/src/TPL.Core.UnitTests.csproj"
+      
+    - name: Restore Infrastructure
+      run: dotnet restore "./src/+Modules/Required/ThePublicLibrary/____Core/_TPL.Core/src/TPL.Core.csproj"      
+    - name: Build Infrastructure
+      run: dotnet build "./src/+Modules/Required/ThePublicLibrary/___Infrastructure/TPL.Infrastructure/src/TPL.IntegrationTests.csproj"      
+    - name: Run Infrastructure - Unit Tests
+      run: dotnet test "./src/+Modules/Required/ThePublicLibrary/___Infrastructure/TPL.Infrastructure.UnitTests/src/TPL.Infrastructure.IntegrationTests.csproj"
+      
+    
