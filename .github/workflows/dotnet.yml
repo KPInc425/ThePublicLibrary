@@ -23,6 +23,12 @@ jobs:
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: ${{ matrix.dotnet-version }}
+    - name: List stuff
+      run: ls
+    - name: List more stuff
+      run: pwd
+    - name: List more stuff 2
+      run: ls ./src/
     - name: Restore dependencies
       run: dotnet restore "./src/+Modules/Required/ThePublicLibrary/____Core/TPL.Core/src/TPL.Core.csproj"      
     - name: Build
