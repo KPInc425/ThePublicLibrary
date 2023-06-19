@@ -54,7 +54,7 @@ jobs:
     #- name: Restore TPL.Primary.BlazorModule
     #  run: dotnet restore "./src/+Modules/Required/ThePublicLibrary/UI/TPL.Primary.BlazorModule/src/TPL.Primary.BlazorModule.csproj"      
     - name: Install Dart Sass Embedded
-      run: sudo snap install dart-sass-embedded
+      run: npm i -g sass
     - name: Build TPL.Primary.BlazorModule
       run: dotnet build "./src/+Modules/Required/ThePublicLibrary/UI/TPL.Primary.BlazorModule/src/TPL.Primary.BlazorModule.csproj"            
         
