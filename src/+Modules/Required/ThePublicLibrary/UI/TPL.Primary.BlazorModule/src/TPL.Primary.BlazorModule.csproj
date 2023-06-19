@@ -4,12 +4,12 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <IsPackable>true</IsPackable>
-    <PackageId>TPL.KnownAccounts.BlazorModule</PackageId>
+    <PackageId>TPL.Primary.BlazorModule</PackageId>
     <Version>1.0.71.176</Version>
     <Authors>James W. Kies</Authors>
     <Company>RobotBuildersInc</Company>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
-    <DefaultNamespace>TPL.KnownAccounts.BlazorModule</DefaultNamespace>
+    <DefaultNamespace>TPL.Primary.BlazorModule</DefaultNamespace>
   </PropertyGroup>
   <ItemGroup>
     <SupportedPlatform Include="browser" />
@@ -35,7 +35,7 @@
         <PackageReference Include="TPL.UI.Common" />
         <PackageReference Include="TPL.Core.TestData" />
         <PackageReference Include="TPL.Application.Shared" />
-        <PackageReference Include="TPL.KnownAccounts.ModuleClientServiceLoader" />
+        <PackageReference Include="TPL.Primary.ModuleClientServiceLoader" />
       </ItemGroup>
     </When>
   </Choose>
