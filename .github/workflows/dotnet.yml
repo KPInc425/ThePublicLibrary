@@ -31,7 +31,7 @@ jobs:
       run: dotnet test "./src/+Modules/Required/ThePublicLibrary/____Core/_TPL.Core.UnitTests/src/TPL.Core.UnitTests.csproj"
       
     - name: Restore Infrastructure
-      run: dotnet restore "./src/+Modules/Required/ThePublicLibrary/___Infrastructure/_TPL.Infrastructure/src/TPL.Infrastructure.csproj"      
+      run: dotnet restore "./src/+Modules/Required/ThePublicLibrary/___Infrastructure/TPL.Infrastructure/src/TPL.Infrastructure.csproj"      
     - name: Build Infrastructure
       run: dotnet build "./src/+Modules/Required/ThePublicLibrary/___Infrastructure/TPL.Infrastructure/src/TPL.Infrastructure.csproj"      
     - name: Run Infrastructure - Unit Tests
@@ -50,5 +50,10 @@ jobs:
       run: dotnet build "./src/+Modules/Required/ThePublicLibrary/+API/TPL.PrimaryApi/src/TPL.PrimaryApi.csproj"      
     - name: Run PrimaryApi - Unit Tests
       run: dotnet test "./src/+Modules/Required/ThePublicLibrary/+Api/TPL.PrimaryApi.UnitTests/src/TPL.PrimaryApi.FunctionalTests.csproj"
+      
+    - name: Restore TPL.Primary.BlazorModule
+      run: dotnet restore "./src/+Modules/Required/ThePublicLibrary/UI/TPL.Primary.BlazorModule/src/TPL.Primary.BlazorModule.csproj"      
+    - name: Build TPL.Primary.BlazorModule
+      run: dotnet build "./src/+Modules/Required/ThePublicLibrary/UI/TPL.Primary.BlazorModule/src/TPL.Primary.BlazorModule.csproj"      
       
         
