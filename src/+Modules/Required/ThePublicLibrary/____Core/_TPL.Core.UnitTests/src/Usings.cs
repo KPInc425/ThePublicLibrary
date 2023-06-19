@@ -1,5 +1,3 @@
-global using BoDi;
-
 global using FluentAssertions;
 
 global using System;
