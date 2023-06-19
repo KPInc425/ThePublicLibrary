@@ -45,11 +45,11 @@ jobs:
       run: dotnet test "./src/+Modules/Required/ThePublicLibrary/_Application/TPL.Application.FeatureTests/src/TPL.Application.FeatureTests.csproj"
       
     - name: Restore PrimaryApi
-      run: dotnet restore "./src/+Modules/Required/ThePublicLibrary/+API/TPL.PrimaryApi/src/TPL.PrimaryApi.csproj"      
+      run: dotnet restore "./src/+Modules/Required/ThePublicLibrary/+API/TPL.API.PrimaryApi/src/TPL.API.PrimaryApi.csproj"      
     - name: Build PrimaryApi
-      run: dotnet build "./src/+Modules/Required/ThePublicLibrary/+API/TPL.PrimaryApi/src/TPL.PrimaryApi.csproj"      
+      run: dotnet build "./src/+Modules/Required/ThePublicLibrary/+API/TPL.API.PrimaryApi/src/TPL.API.PrimaryApi.csproj"      
     - name: Run PrimaryApi - Unit Tests
-      run: dotnet test "./src/+Modules/Required/ThePublicLibrary/+Api/TPL.PrimaryApi.FunctionalTests/src/TPL.PrimaryApi.FunctionalTests.csproj"
+      run: dotnet test "./src/+Modules/Required/ThePublicLibrary/+Api/TPL.API.PrimaryApi.FunctionalTests/src/TPL.API.PrimaryApi.FunctionalTests.csproj"
       
     - name: Restore TPL.Primary.BlazorModule
       run: dotnet restore "./src/+Modules/Required/ThePublicLibrary/UI/TPL.Primary.BlazorModule/src/TPL.Primary.BlazorModule.csproj"      
