@@ -33,12 +33,12 @@ global using TPL.UI.BlazorClient;
 
 global using TPL.UI.Common;
 global using TPL.UI.Common.Interfaces;
+global using TPL.UI.Common.MasterPageSetters;
 global using TPL.UI.Common.MasterPages;
 global using TPL.UI.Common.MasterPages.Layouts;
 global using TPL.UI.Common.MasterPages.Footer;
 global using TPL.UI.Common.MasterPages.Errors;
 global using TPL.UI.Common.MasterPages.Navigation;
-global using TPL.UI.Common.MasterPageSetters;
 global using TPL.UI.Common.Models;
 global using TPL.UI.Common.Services;
 global using TPL.UI.Common.Shared;
