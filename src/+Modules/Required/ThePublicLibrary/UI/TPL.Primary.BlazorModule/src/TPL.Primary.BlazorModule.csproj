@@ -33,7 +33,8 @@
       <ItemGroup>      
         <PackageReference Include="KernelShared" />
         <PackageReference Include="TPL.UI.Common" />
-        <PackageReference Include="TPL.Application" />
+        <PackageReference Include="TPL.Core.TestData" />
+        <PackageReference Include="TPL.Application.Shared" />
         <PackageReference Include="TPL.KnownAccounts.ModuleClientServiceLoader" />
       </ItemGroup>
     </When>
@@ -41,7 +42,8 @@
   <ItemGroup>
     <ProjectReference Include="./../../../../../../__Kernel/KernelShared/src/KernelShared.csproj" />
     <ProjectReference Include="./../../../../../../_UI.Common/TPL.UI.Common/src/TPL.UI.Common.csproj" />
-    <ProjectReference Include="./../../../_Application/TPL.Application/src/TPL.Application.csproj" />
+    <ProjectReference Include="./../../../____Core/TPL.Core.TestData/src/TPL.Core.TestData.csproj" />
+    <ProjectReference Include="./../../../_Application/_TPL.Application.Shared/src/TPL.Application.Shared.csproj" />
     <ProjectReference Include="./../../_TPL.Primary.ModuleClientServiceLoader/src/TPL.Primary.ModuleClientServiceLoader.csproj" />
   </ItemGroup>
   <ItemGroup>

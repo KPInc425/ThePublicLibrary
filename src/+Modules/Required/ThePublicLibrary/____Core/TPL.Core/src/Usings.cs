@@ -22,7 +22,6 @@ global using KernelShared;
 global using KernelShared.Interfaces;
 
 global using TPL.Core.Entities;
-global using TPL.Core.Entities.TestData;
 global using TPL.Core.Enums;
 
 global using TPL.Core.Interfaces;

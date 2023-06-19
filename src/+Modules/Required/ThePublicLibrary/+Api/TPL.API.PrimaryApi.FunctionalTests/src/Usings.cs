@@ -50,15 +50,17 @@ global using TPL.Core;
 global using TPL.Core.Entities;
 global using TPL.Core.Enums;
 
+global using TPL.Core.TestData.Entities;
+
 global using TPL.Infrastructure;
 global using TPL.Infrastructure.Data;
 global using TPL.Infrastructure.CommandQuery;
 
 global using TPL.Application;
 global using TPL.Application.Automaps;
-global using TPL.Application.Configuration;
-global using TPL.Application.Interfaces;
-global using TPL.Application.ViewModels;
+global using TPL.Application.Shared.Configuration;
+global using TPL.Application.Shared.Interfaces;
+global using TPL.Application.Shared.ViewModels;
 
 global using TPL.Application.Data.Interfaces;
 global using TPL.Application.Data.SeedScripts;
@@ -68,7 +70,4 @@ global using TPL.API.PrimaryApi.Controllers;
 
 global using TPL.API.PrimaryApi.FunctionalTests;
 global using TPL.API.PrimaryApi.FunctionalTests.ControllerTests;
-
-
-
 

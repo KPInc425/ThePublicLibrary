@@ -26,9 +26,9 @@
 @using TPL.UI.Common.MasterPages.Footer
 @using TPL.UI.Common.MasterPages.Navigation
 
-@using TPL.Application.ViewModels
-@using TPL.Application.Interfaces
-@using TPL.Application.Services
+@using TPL.Application.Shared.ViewModels
+@using TPL.Application.Shared.Interfaces
+@using TPL.Application.Shared.Services
 
 @using TPL.Primary.ModuleClientServiceLoader
 @using TPL.Primary.BlazorModule.Shared
@@ -38,7 +38,7 @@
 @using MudBlazor
 @using MudBlazor.Utilities
 
-@using TPL.Core.Entities.TestData;
+@using TPL.Core.TestData.Entities;
 
 @inject IStringLocalizer<PrimaryCoreLanguageBase> LocalizeModule
 @inject IStringLocalizer<TPL.UI.Common.SharedLanguageBase> LocalizeGlobal
@@ -50,6 +50,6 @@
 
 @inject IDataService TplPrimaryDataService
 @inject PlatformCacheService PlatformCacheService
-@inject TPL.Core.Entities.TestData.BookTestData BookTestData
+@inject TPL.Core.TestData.Entities.BookTestData BookTestData
 
 @layout MainLayout

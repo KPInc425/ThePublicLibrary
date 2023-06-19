@@ -30,5 +30,5 @@ global using TPL.Infrastructure.CommandQuery;
 global using TPL.Infrastructure.Data;
 
 global using TPL.Application.Automaps;
-global using TPL.Application.Interfaces;
-global using TPL.Application.ViewModels;
+global using TPL.Application.Shared.Interfaces;
+global using TPL.Application.Shared.ViewModels;

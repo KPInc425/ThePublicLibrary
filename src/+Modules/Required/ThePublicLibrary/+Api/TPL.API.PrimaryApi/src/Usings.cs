@@ -39,9 +39,9 @@ global using TPL.Infrastructure.CommandQuery;
 
 global using TPL.Application;
 global using TPL.Application.Automaps;
-global using TPL.Application.Configuration;
-global using TPL.Application.Interfaces;
-global using TPL.Application.ViewModels;
+global using TPL.Application.Shared.Configuration;
+global using TPL.Application.Shared.Interfaces;
+global using TPL.Application.Shared.ViewModels;
 
 global using TPL.API.PrimaryApi;
 global using TPL.API.PrimaryApi.Controllers;

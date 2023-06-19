@@ -23,7 +23,7 @@ public class BooksControllerTests : IClassFixture<CustomWebApplicationFactory<St
             .Content
             .ReadFromJsonAsync<IEnumerable<BookViewModel>>();
 
-        result.Should().HaveCount(4);
+        result.Should().HaveCount(_bookTestData.AllBooks.Count());
         // Assert.Contains(result, i => i.Name == SeedBookData.TestBook1.Name);
     }
 

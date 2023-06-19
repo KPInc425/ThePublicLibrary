@@ -2,10 +2,10 @@ global using KernelShared;
 
 global using TPL.Infrastructure.CommandQuery;
 
-global using TPL.Application.Interfaces;
-global using TPL.Application.Services;
+global using TPL.Application.Shared.Interfaces;
+global using TPL.Application.Shared.Services;
 
-global using TPL.Core.Entities.TestData;
+global using TPL.Core.TestData.Entities;
 
 global using TPL.UI.Common;
 global using TPL.UI.Common.Interfaces;

@@ -43,5 +43,6 @@
     <ProjectReference Include="./../../../../../../__Kernel/KernelShared/src/KernelShared.csproj" />
     <ProjectReference Include="./../../../____Core/TPL.Core/src/TPL.Core.csproj" />
     <ProjectReference Include="./../../../___Infrastructure/TPL.Infrastructure/src/TPL.Infrastructure.csproj" />
+    <ProjectReference Include="./../../_TPL.Application.Shared/src/TPL.Application.Shared.csproj" />
   </ItemGroup>
 </Project>

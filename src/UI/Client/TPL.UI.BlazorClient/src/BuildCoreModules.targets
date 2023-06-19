@@ -15,9 +15,9 @@
   </Choose>
 
   <ItemGroup>
-    <ProjectReference Include="./../../../../+Modules/Required/ThePublicLibrary/____Core/TPL.Core/src/TPL.Core.csproj" />
+    <ProjectReference Include="./../../../../+Modules/Required/ThePublicLibrary/____Core/TPL.Core.TestData/src/TPL.Core.TestData.csproj" />
     <ProjectReference Include="./../../../../+Modules/Required/ThePublicLibrary/___Infrastructure/TPL.Infrastructure/src/TPL.Infrastructure.csproj" />    
-    <ProjectReference Include="./../../../../+Modules/Required/ThePublicLibrary/_Application/TPL.Application/src/TPL.Application.csproj" />
+    <ProjectReference Include="./../../../../+Modules/Required/ThePublicLibrary/_Application/_TPL.Application.Shared/src/TPL.Application.Shared.csproj" />
     <ProjectReference Include="./../../../../+Modules/Required/ThePublicLibrary/UI/_TPL.Primary.ModuleClientServiceLoader/src/TPL.Primary.ModuleClientServiceLoader.csproj" />
     
     <ProjectReference Include="./../../../../+Modules/Required/ThePublicLibrary/UI/TPL.Primary.BlazorModule/src/TPL.Primary.BlazorModule.csproj" />      

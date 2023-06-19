@@ -30,10 +30,9 @@ global using Telerik.JustMock;
 global using Xunit;
 global using Xunit.Microsoft.DependencyInjection;
 
-global using TPL.Application;
-global using TPL.Application.Configuration;
-global using TPL.Application.Interfaces;
-global using TPL.Application.Services;
+global using TPL.Application.Shared.Configuration;
+global using TPL.Application.Shared.Interfaces;
+global using TPL.Application.Shared.Services;
 
 global using TPL.Primary.ModuleClientServiceLoader;
 

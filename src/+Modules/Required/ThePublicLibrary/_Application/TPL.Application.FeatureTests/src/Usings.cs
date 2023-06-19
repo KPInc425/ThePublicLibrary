@@ -25,16 +25,16 @@ global using KernelShared.Interfaces;
 
 global using TPL.Core;
 global using TPL.Core.Entities;
-global using TPL.Core.Entities.TestData;
+global using TPL.Core.TestData.Entities;
 
 global using TPL.Infrastructure;
 global using TPL.Infrastructure.Data;
 global using TPL.Infrastructure.CommandQuery;
 
 global using TPL.Application.Automaps;
-global using TPL.Application.Interfaces;
 global using TPL.Application.Services;
-global using TPL.Application.ViewModels;
+global using TPL.Application.Shared.Interfaces;
+global using TPL.Application.Shared.ViewModels;
 
 global using Xunit;
 

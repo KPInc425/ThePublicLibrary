@@ -9,16 +9,13 @@ global using Microsoft.AspNetCore.Components;
 global using Microsoft.AspNetCore.SignalR.Client;
 global using Microsoft.Extensions.Configuration;
 
-
-
 global using Microsoft.JSInterop;
 
 global using KernelShared;
 
-global using TPL.Application;
-global using TPL.Application.Interfaces;
-global using TPL.Application.ViewModels;
-global using TPL.Application.Configuration;
+global using TPL.Application.Shared.Interfaces;
+global using TPL.Application.Shared.ViewModels;
+global using TPL.Application.Shared.Configuration;
 
 global using TPL.UI.Common;
 global using TPL.UI.Common.Interfaces;

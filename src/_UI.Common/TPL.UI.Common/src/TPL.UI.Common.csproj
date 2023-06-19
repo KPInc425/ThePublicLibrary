@@ -40,7 +40,7 @@
   </Choose>
   <ItemGroup>
   <ProjectReference Include="./../../../__Kernel/KernelShared/src/KernelShared.csproj" />
-    <ProjectReference Include="./../../../+Modules/Required/ThePublicLibrary/_Application/TPL.Application/src/TPL.Application.csproj" />
+    <ProjectReference Include="./../../../+Modules/Required/ThePublicLibrary/_Application/_TPL.Application.Shared/src/TPL.Application.Shared.csproj" />
   </ItemGroup>
 
   <ItemGroup>
