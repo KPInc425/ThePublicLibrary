@@ -59,7 +59,7 @@ jobs:
     - name: Build TPL.Primary.BlazorModule
       run: dotnet build "./src/+Modules/Required/ThePublicLibrary/UI/TPL.Primary.BlazorModule/src/TPL.Primary.BlazorModule.csproj"
     - name: Build TPL.UI.BlazorClient
-      run: dotnet build "./src/+Modules/Required/ThePublicLibrary/UI/Client/TPL.UI.BlazorClient/src/TPL.UI.BlazorClient.UI.csproj"
+      run: dotnet build "./src/UI/Client/TPL.UI.BlazorClient/src/TPL.UI.BlazorClient.UI.csproj"
     - name: Build TPL.UI.BlazorClient - bUnit Tests
-      run: dotnet build "./src/+Modules/Required/ThePublicLibrary/UI/Client/TPL.UI.BlazorClient.UIUnitTests/src/TPL.UI.BlazorClient.UIUnitTests.csproj"
+      run: dotnet build "./src/UI/Client/TPL.UI.BlazorClient.UIUnitTests/src/TPL.UI.BlazorClient.UIUnitTests.csproj"
         
