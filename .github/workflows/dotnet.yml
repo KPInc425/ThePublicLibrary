@@ -36,5 +36,12 @@ jobs:
       run: dotnet build "./src/+Modules/Required/ThePublicLibrary/___Infrastructure/TPL.Infrastructure/src/TPL.IntegrationTests.csproj"      
     - name: Run Infrastructure - Unit Tests
       run: dotnet test "./src/+Modules/Required/ThePublicLibrary/___Infrastructure/TPL.Infrastructure.UnitTests/src/TPL.Infrastructure.IntegrationTests.csproj"
+    
+    - name: Restore Application
+      run: dotnet restore "./src/+Modules/Required/ThePublicLibrary/_Application/_TPL.Application/src/TPL.Application.csproj"      
+    - name: Build Application
+      run: dotnet build "./src/+Modules/Required/ThePublicLibrary/_Application/TPL.Application/src/TPL.IntegrationTests.csproj"      
+    - name: Run Application - Unit Tests
+      run: dotnet test "./src/+Modules/Required/ThePublicLibrary/_Application/TPL.Application.UnitTests/src/TPL.Application.FeatureTests.csproj"
       
     
