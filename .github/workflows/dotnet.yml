@@ -51,9 +51,10 @@ jobs:
     - name: Run PrimaryApi - Functional Tests
       run: dotnet test "./src/+Modules/Required/ThePublicLibrary/+Api/TPL.API.PrimaryApi.FunctionalTests/src/TPL.API.PrimaryApi.FunctionalTests.csproj"
       
-    - name: Restore TPL.Primary.BlazorModule
-      run: dotnet restore "./src/+Modules/Required/ThePublicLibrary/UI/TPL.Primary.BlazorModule/src/TPL.Primary.BlazorModule.csproj"      
+    #- name: Restore TPL.Primary.BlazorModule
+    #  run: dotnet restore "./src/+Modules/Required/ThePublicLibrary/UI/TPL.Primary.BlazorModule/src/TPL.Primary.BlazorModule.csproj"      
+    - name: Install Dart Sass Embedded
+      run: sudo snap install dart-sass-embedded
     - name: Build TPL.Primary.BlazorModule
-      run: dotnet build "./src/+Modules/Required/ThePublicLibrary/UI/TPL.Primary.BlazorModule/src/TPL.Primary.BlazorModule.csproj"      
-      
+      run: dotnet build "./src/+Modules/Required/ThePublicLibrary/UI/TPL.Primary.BlazorModule/src/TPL.Primary.BlazorModule.csproj"            
         
