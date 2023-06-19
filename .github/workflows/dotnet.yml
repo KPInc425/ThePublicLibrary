@@ -26,6 +26,6 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore /src/+Modules/Required/ThePublicLibrary/____Core/TPL.Core/src/TPL.Core.csproj
     - name: Build
-      run: dotnet build --no-restore /src/+Modules/Required/ThePublicLibrary/____Core/TPL.Core/src/TPL.Core.csproj
+      run: dotnet build /src/+Modules/Required/ThePublicLibrary/____Core/TPL.Core/src/TPL.Core.csproj --no-restore
     - name: Run Unit Tests
       run: dotnet test /src/+Modules/Required/ThePublicLibrary/____Core/TPL.Core.UnitTests/src/TPL.Core.UnitTests.csproj
