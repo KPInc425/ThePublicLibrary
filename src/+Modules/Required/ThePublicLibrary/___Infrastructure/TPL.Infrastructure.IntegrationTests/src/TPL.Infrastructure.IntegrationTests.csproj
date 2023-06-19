@@ -28,23 +28,12 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="7.0.7" />
   </ItemGroup>
 
-  <Choose>
-      <When Condition="'$(Configuration)' == 'Release'">
-        <ItemGroup>
-          <PackageReference Include="KernelShared" />
-          <PackageReference Include="TPL.Core" />
-        </ItemGroup>
-      </When>
-    </Choose>
-    <ItemGroup>
-      <ProjectReference Include="./../../../../../../__Kernel/KernelShared/src/KernelShared.csproj" />
-      <ProjectReference Include="./../../../____Core/TPL.Core/src/TPL.Core.csproj" />
-    </ItemGroup>
-    
   <ItemGroup>
     <ProjectReference Include="./../../../../../../__Kernel/KernelShared/src/KernelShared.csproj" />
-    <ProjectReference Include="./../../../____Core/TPL.Core.UnitTests/src/TPL.Core.UnitTests.csproj" />
+    <ProjectReference Include="./../../../____Core/_TPL.Core/src/TPL.Core.csproj" />
+    <ProjectReference Include="./../../../____Core/TPL.Core.TestData/src/TPL.Core.TestData.csproj" />
     <ProjectReference Include="./../../TPL.Infrastructure/src/TPL.Infrastructure.csproj" />    
+    <ProjectReference Include="./../../../____Core/_TPL.Core.UnitTests/src/TPL.Core.UnitTests.csproj" />
   </ItemGroup>
 
   <ItemGroup>

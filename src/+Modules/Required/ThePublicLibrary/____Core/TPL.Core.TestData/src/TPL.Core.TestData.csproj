@@ -30,7 +30,7 @@
     </When>
   </Choose>
   <ItemGroup>
-    <ProjectReference Include=".\..\..\TPL.Core\src\TPL.Core.csproj" />
+    <ProjectReference Include=".\..\..\_TPL.Core\src\TPL.Core.csproj" />
     <ProjectReference Include="./../../../../../../__Kernel/KernelShared/src/KernelShared.csproj" />
   </ItemGroup>
 </Project>

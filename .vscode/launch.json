@@ -28,9 +28,9 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceFolder}\\TPL.Core\\tests\\TPL.Core.Tests\\bin\\Debug\\net7.0\\TPL.Core.UnitTests.dll",
+            "program": "${workspaceFolder}\\_TPL.Core\\tests\\TPL.Core.Tests\\bin\\Debug\\net7.0\\TPL.Core.UnitTests.dll",
             "args": [],
-            "cwd": "${workspaceFolder}\\TPL.Core\\tests\\TPL.Core.Tests",
+            "cwd": "${workspaceFolder}\\_TPL.Core\\tests\\TPL.Core.Tests",
             "console": "internalConsole",
             "stopAtEntry": false
         },

@@ -16,7 +16,7 @@
                 },
                 {
                     "name": "TPL.Core",
-                    "path": "./src/+Modules/Required/ThePublicLibrary/____Core/TPL.Core/src",
+                    "path": "./src/+Modules/Required/ThePublicLibrary/____Core/_TPL.Core/src",
                     "cmd": [
                         "ping 127.0.0.1 -n 1 > nul",
                         "dotnet build"
@@ -25,7 +25,7 @@
                 },
                 {
                     "name": "TPL.Core.UnitTests",
-                    "path": "./src/+Modules/Required/ThePublicLibrary/____Core/TPL.Core.UnitTests/src",
+                    "path": "./src/+Modules/Required/ThePublicLibrary/____Core/_TPL.Core.UnitTests/src",
                     "cmd": [
                         "ping 127.0.0.1 -n 2 > nul",
                         "dotnet test"
@@ -148,7 +148,7 @@
                 },
                 {
                     "name": "TPL.UI.BlazorClient.UITests",
-                    "path": ".\\src\\UI\\Client\\TPL.UI.BlazorClient.UITests\\src",
+                    "path": "./src/UI/Client/TPL.UI.BlazorClient.UITests/src",
                     "cmd": [
                         "ping 127.0.0.1 -n 60 > nul",                        
                         "dotnet test"
@@ -157,7 +157,7 @@
                 },
                 {
                     "name": "TPL.UI.BlazorClient.UIUnitTests",
-                    "path": ".\\src\\UI\\Client\\TPL.UI.BlazorClient.UIUnitTests\\src",
+                    "path": "./src/UI/Client/TPL.UI.BlazorClient.UIUnitTests/src",
                     "cmd": [
                         "ping 127.0.0.1 -n 15 > nul",                        
                         "dotnet test"

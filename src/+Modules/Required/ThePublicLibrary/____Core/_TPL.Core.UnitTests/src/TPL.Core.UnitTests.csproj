@@ -32,7 +32,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include=".\..\..\TPL.Core\src\TPL.Core.csproj" />
+    <ProjectReference Include=".\..\..\_TPL.Core\src\TPL.Core.csproj" />
     <ProjectReference Include=".\..\..\TPL.Core.TestData\src\TPL.Core.TestData.csproj" />
   </ItemGroup>
 

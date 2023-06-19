@@ -6,6 +6,7 @@ namespace TPL.API.PrimaryApi.FunctionalTests.ControllerTests;
 public class BooksControllerTests : IClassFixture<CustomWebApplicationFactory<Startup>>
 {
     private readonly HttpClient _client;
+    private readonly BookTestData _bookTestData = new();
 
     public BooksControllerTests(CustomWebApplicationFactory<Startup> factory)
     {
