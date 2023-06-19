@@ -38,7 +38,7 @@ jobs:
       run: dotnet test "./src/+Modules/Required/ThePublicLibrary/___Infrastructure/TPL.Infrastructure.IntegrationTests/src/TPL.Infrastructure.IntegrationTests.csproj"
     
     - name: Restore Application
-      run: dotnet restore "./src/+Modules/Required/ThePublicLibrary/_Application/_TPL.Application/src/TPL.Application.csproj"      
+      run: dotnet restore "./src/+Modules/Required/ThePublicLibrary/_Application/TPL.Application/src/TPL.Application.csproj"      
     - name: Build Application
       run: dotnet build "./src/+Modules/Required/ThePublicLibrary/_Application/TPL.Application/src/TPL.Application.csproj"      
     - name: Run Application - Unit Tests
@@ -49,7 +49,7 @@ jobs:
     - name: Build PrimaryApi
       run: dotnet build "./src/+Modules/Required/ThePublicLibrary/+API/TPL.PrimaryApi/src/TPL.PrimaryApi.csproj"      
     - name: Run PrimaryApi - Unit Tests
-      run: dotnet test "./src/+Modules/Required/ThePublicLibrary/+Api/TPL.PrimaryApi.UnitTests/src/TPL.PrimaryApi.FunctionalTests.csproj"
+      run: dotnet test "./src/+Modules/Required/ThePublicLibrary/+Api/TPL.PrimaryApi.FunctionalTests/src/TPL.PrimaryApi.FunctionalTests.csproj"
       
     - name: Restore TPL.Primary.BlazorModule
       run: dotnet restore "./src/+Modules/Required/ThePublicLibrary/UI/TPL.Primary.BlazorModule/src/TPL.Primary.BlazorModule.csproj"      
