@@ -1,12 +1,6 @@
 using System.Reflection;
 using Autofac;
-using MediatR;
 using MediatR.Pipeline;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using TPL.Application.Data.SeedScripts;
 using TPL.Core;
 
 namespace TPL.Application.Data;

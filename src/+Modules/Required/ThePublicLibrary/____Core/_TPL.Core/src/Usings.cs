@@ -9,19 +9,11 @@ global using FluentAssertions;
 global using MediatR;
 
 global using Microsoft.EntityFrameworkCore;
-global using Microsoft.Extensions.DependencyInjection;
-global using System.ComponentModel.DataAnnotations.Schema;
 global using System;
-global using System.Collections;
 global using System.Collections.Generic;
-global using System.ComponentModel.DataAnnotations;
 global using System.Linq;
 global using Toolbelt.ComponentModel.DataAnnotations.Schema.V5;
 
 global using KernelShared;
 global using KernelShared.Interfaces;
-
-global using TPL.Core.Entities;
 global using TPL.Core.Enums;
-
-global using TPL.Core.Interfaces;

@@ -1,6 +1,3 @@
-using System.Reflection;
-using TPL.Infrastructure.Data;
-
 namespace TPL.API.PrimaryApi;
 public class Startup
 {

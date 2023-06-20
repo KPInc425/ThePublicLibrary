@@ -1,4 +1,3 @@
-using System.Reflection;
 namespace KernelShared.Utilities;
 public static class ErrorEater
 {

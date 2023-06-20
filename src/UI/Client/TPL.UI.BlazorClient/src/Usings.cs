@@ -15,9 +15,7 @@ global using System;
 global using System.Collections.Generic;
 global using System.Globalization;
 global using System.Linq;
-global using System.Security.Claims;
 global using System.Text.Json;
-global using System.Threading.Tasks;
 global using System.Net.Http;
 
 global using TPL.Core.TestData.Entities;
@@ -33,14 +31,6 @@ global using TPL.UI.BlazorClient;
 
 global using TPL.UI.Common;
 global using TPL.UI.Common.Interfaces;
-global using TPL.UI.Common.MasterPageSetters;
-global using TPL.UI.Common.MasterPages;
-global using TPL.UI.Common.MasterPages.Layouts;
-global using TPL.UI.Common.MasterPages.Footer;
-global using TPL.UI.Common.MasterPages.Errors;
-global using TPL.UI.Common.MasterPages.Navigation;
-global using TPL.UI.Common.Models;
 global using TPL.UI.Common.Services;
-global using TPL.UI.Common.Shared;
 
 

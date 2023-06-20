@@ -1,4 +1,3 @@
-using System.Text;
 namespace KernelShared;
 public abstract class ValueObject : IEquatable<ValueObject>
 {

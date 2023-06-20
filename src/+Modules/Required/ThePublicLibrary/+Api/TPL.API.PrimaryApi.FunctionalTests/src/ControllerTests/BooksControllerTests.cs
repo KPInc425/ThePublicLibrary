@@ -1,5 +1,3 @@
-using Ardalis.HttpClientTestExtensions;
-
 namespace TPL.API.PrimaryApi.FunctionalTests.ControllerTests;
 
 [Collection("Sequential")]

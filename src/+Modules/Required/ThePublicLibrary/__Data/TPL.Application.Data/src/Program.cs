@@ -1,6 +1,3 @@
-using System.Reflection;
-using TPL.Application.Data.SeedScripts;
-
 namespace TPL.Application.Data;
 public class Program
 {

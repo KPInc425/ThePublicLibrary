@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-
 namespace TPL.Core.UnitTests;
 
 public class BookSearchTests : BaseBooksTest

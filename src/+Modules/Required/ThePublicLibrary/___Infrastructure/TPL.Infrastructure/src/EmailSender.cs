@@ -1,6 +1,4 @@
 using System.Net.Mail;
-using System.Threading.Tasks;
-using TPL.Core.Interfaces;
 using Microsoft.Extensions.Logging;
 
 namespace TPL.Infrastructure

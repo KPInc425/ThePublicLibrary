@@ -10,7 +10,6 @@ global using MediatR.Pipeline;
 global using Microsoft.EntityFrameworkCore;
 global using Microsoft.Extensions.DependencyInjection;
 global using Microsoft.EntityFrameworkCore.Metadata.Builders;
-global using Toolbelt.ComponentModel.DataAnnotations.Schema.V5;
 global using Toolbelt.ComponentModel.DataAnnotations;
 global using System;
 global using System.Collections.Generic;
@@ -25,10 +24,6 @@ global using KernelShared.Interfaces;
 
 global using TPL.Core;
 global using TPL.Core.Entities;
-global using TPL.Core.Enums;
 global using TPL.Core.Interfaces;
-
-global using TPL.Infrastructure;
-global using TPL.Infrastructure.CommandQuery;
 global using TPL.Infrastructure.Data;
 global using TPL.Infrastructure.Interfaces;

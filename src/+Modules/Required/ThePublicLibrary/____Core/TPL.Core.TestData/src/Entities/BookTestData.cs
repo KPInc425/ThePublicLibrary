@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-
 namespace TPL.Core.TestData.Entities;
 public class BookTestData : ITestData
 {

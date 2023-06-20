@@ -1,7 +1,6 @@
 using System.Reflection;
 using Autofac;
 using TPL.Core;
-using KernelShared.Interfaces;
 using Module = Autofac.Module;
 
 namespace TPL.Application;

@@ -1,44 +1,28 @@
-﻿@using System
-@using System.Net.Http
-@using System.Net.Http.Json
-@using System.Reflection
-@using System.Linq
-
-@using Blazor.Extensions
-@using Blazor.Extensions.Canvas
-@using Blazor.Extensions.Canvas.Canvas2D
-
-@using Microsoft.AspNetCore.Authorization
-@* @using Microsoft.AspNetCore.Components.WebAssembly.Authentication
+﻿@* @using Microsoft.AspNetCore.Components.WebAssembly.Authentication
 @using Microsoft.AspNetCore.Components.Authorization *@
-@using Microsoft.AspNetCore.Components.Forms
 @using Microsoft.AspNetCore.Components.Routing
-@using Microsoft.AspNetCore.Components.Web
-@using Microsoft.AspNetCore.Components.Web.Virtualization
 @using Microsoft.AspNetCore.Components.WebAssembly.Services
-@using Microsoft.AspNetCore.Components.WebAssembly.Http
-@using Microsoft.AspNetCore.SignalR.Client
-@using System.Web
 @using Microsoft.Extensions.Localization
 @using Microsoft.JSInterop
+@using Microsoft.AspNetCore.Components.Web
+@using System.Web
 
 
-@using TPL.UI.Common;
-@using TPL.UI.Common.Interfaces;
-@using TPL.UI.Common.MasterPages;
-@using TPL.UI.Common.MasterPages.Layouts;
-@using TPL.UI.Common.MasterPages.Footer;
-@using TPL.UI.Common.MasterPages.Errors;
-@using TPL.UI.Common.MasterPages.Navigation;
-@using TPL.UI.Common.MasterPageSetters;
-@using TPL.UI.Common.Models;
-@using TPL.UI.Common.Services;
-@using TPL.UI.Common.Shared;
+@using TPL.UI.Common
+@using TPL.UI.Common.Interfaces
+@using TPL.UI.Common.MasterPages
+@using TPL.UI.Common.MasterPages.Layouts
+@using TPL.UI.Common.MasterPages.Footer
+@using TPL.UI.Common.MasterPages.Errors
+@using TPL.UI.Common.MasterPages.Navigation
+@using TPL.UI.Common.MasterPageSetters
+@using TPL.UI.Common.Models
 @using TPL.UI.Common.Services
+@using TPL.UI.Common.Shared
 
-@using Blazored.FluentValidation
-@using BlazorAnimate
+@using TPL.UI.Common.Services
 @using MudBlazor
+@using Blazored.FluentValidation
 
 @inject FeatureFlags FeatureFlags
 @inject LazyAssemblyLoader AssemblyLoader

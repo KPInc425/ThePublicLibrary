@@ -1,4 +1,3 @@
-using System.Reflection;
 namespace KernelShared;
 public static class ExtendCopyPropertiesTo
 {

@@ -1,5 +1,4 @@
 using System.Reflection;
-using Ardalis.HttpClientTestExtensions;
 
 namespace TPL.API.PrimaryApi.FunctionalTests;
 public class CustomWebApplicationFactory<TStartup> : WebApplicationFactory<Startup>

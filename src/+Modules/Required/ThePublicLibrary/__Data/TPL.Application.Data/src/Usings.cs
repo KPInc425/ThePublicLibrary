@@ -9,8 +9,6 @@ global using Microsoft.Extensions.Hosting;
 global using Microsoft.Extensions.Logging;
 
 global using KernelShared.Interfaces;
-
-global using TPL.Core.Entities;
 global using TPL.Core.TestData.Entities;
 
 global using TPL.Infrastructure;
