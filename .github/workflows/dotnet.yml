@@ -64,5 +64,8 @@ jobs:
       
     - name: Build TPL.UI.BlazorClient - bUnit Tests
       run: dotnet build "./src/UI/Client/TPL.UI.BlazorClient.UIUnitTests/src/TPL.UI.BlazorClient.UIUnitTests.csproj"
-                        
+    - name: Check code coverage
+      uses: codecov/codecov-action@v3
+      with:
+          token: ${{ secrets.CODEC_TK }}
         
