@@ -4,7 +4,14 @@
 
 @foreach (var item in Items)
 {
-    <a @onclick="()=>NavigateToUrl(item.Url)">&gt; @item.Text &gt;</a>
+    @if (item.Text == "")
+    {
+        <a @onclick="()=>NavigateToUrl(item.Url)">Library &gt;</a>
+    }
+    else 
+    {
+        <a @onclick="()=>NavigateToUrl(item.Url)">@item.Text &gt;</a>
+    }
 }
 @code {
     public IEnumerable<MenuItem> Items { get; set; } = new List<MenuItem>();
