@@ -5,13 +5,13 @@ public class EfBookApplicationAdd : BaseApplicationTestFixture
     public async Task AddBook()
     {
 
-        var result = await _dataService.BooksGetAllAsync(new BooksGetAllQuery());
+        var result = await _dataService.BooksGetAllAsync(new BooksGetAllQry());
         result.Count.Should().Be(0, "because we haven't added any books yet");
 
-        var cmd = new BookAddCommand(_bookTestData.BookAlfradoTheGreat);
+        var cmd = new BookAddCmd(_bookTestData.BookAlfradoTheGreat);
         await _dataService.BookAddAsync(cmd);
 
-        var qry = new BooksGetAllQuery();
+        var qry = new BooksGetAllQry();
         result = (await _dataService.BooksGetAllAsync(qry));
         var resultFirst = result.FirstOrDefault();
         var resultFirstCopy = resultFirst?.BookCopies.FirstOrDefault();

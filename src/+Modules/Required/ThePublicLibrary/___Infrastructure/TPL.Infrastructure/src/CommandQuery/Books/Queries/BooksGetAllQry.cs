@@ -1,12 +1,12 @@
 namespace TPL.Infrastructure.CommandQuery;
 
-public class BooksGetAllQuery : IRequest<List<Book>>, IRoutable
+public class BooksGetAllQry : IRequest<List<Book>>, IRoutable
 {
     protected readonly static string Route = "books/getall";
 
     public string BuildRouteFrom()
     {
-        return BooksGetAllQuery.BuildRoute();
+        return BooksGetAllQry.BuildRoute();
     }
     public static string BuildRoute() { return Route; }
 }

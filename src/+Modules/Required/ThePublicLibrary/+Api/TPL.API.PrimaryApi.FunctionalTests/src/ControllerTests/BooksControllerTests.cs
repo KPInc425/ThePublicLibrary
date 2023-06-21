@@ -14,7 +14,7 @@ public class BooksControllerTests : IClassFixture<CustomWebApplicationFactory<St
     [Fact]
     public async Task ReturnsOneBook()
     {
-        var response = await _client.GetAsync(new BooksGetAllQuery().BuildRouteFrom());
+        var response = await _client.GetAsync(new BooksGetAllQry().BuildRouteFrom());
         response.EnsureSuccessStatusCode();
 
         var raw = await response.Content.ReadAsStringAsync();
@@ -29,7 +29,7 @@ public class BooksControllerTests : IClassFixture<CustomWebApplicationFactory<St
     [Fact]
     public async Task ReturnsBookSearchResults()
     {
-        var response = await _client.GetAsync(new BooksFindByTitleQuery("a").BuildRouteFrom());
+        var response = await _client.GetAsync(new BooksFindByTitleQry("a").BuildRouteFrom());
         response.EnsureSuccessStatusCode();
 
         var raw = await response.Content.ReadAsStringAsync();

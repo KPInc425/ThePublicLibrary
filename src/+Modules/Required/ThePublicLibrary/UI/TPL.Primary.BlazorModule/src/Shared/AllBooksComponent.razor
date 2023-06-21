@@ -18,8 +18,8 @@
     }
 
     protected async Task GetAllBooks() {
-        var booksGetAllQuery = new BooksGetAllQuery();
+        var BooksGetAllQry = new BooksGetAllQry();
         
-        _books = await TplPrimaryDataService.BooksGetAllAsync(booksGetAllQuery);
+        _books = await TplPrimaryDataService.BooksGetAllAsync(BooksGetAllQry);
     }
 }

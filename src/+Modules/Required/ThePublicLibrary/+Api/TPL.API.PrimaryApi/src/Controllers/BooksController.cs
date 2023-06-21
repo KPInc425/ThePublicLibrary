@@ -7,7 +7,7 @@ public class BooksController : BaseController
     [HttpGet]
     public async Task<IActionResult> GetAll()
     {
-        var qry = new BooksGetAllQuery();
+        var qry = new BooksGetAllQry();
         var result = await _mediator.Send(qry);
         var response = _mapper.Map<IEnumerable<BookViewModel>>(result);
         return Ok(response);
@@ -16,7 +16,7 @@ public class BooksController : BaseController
     [HttpGet]
     public async Task<IActionResult> FindByTitle([FromQuery] string searchFor)
     {
-        var qry = new BooksFindByTitleQuery(searchFor);
+        var qry = new BooksFindByTitleQry(searchFor);
         var result = _mapper.Map<IEnumerable<BookViewModel>>(await _mediator.Send(qry));
         return Ok(result);
     }
