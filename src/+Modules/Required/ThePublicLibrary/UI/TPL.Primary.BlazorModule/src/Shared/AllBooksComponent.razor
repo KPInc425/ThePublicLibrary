@@ -1,13 +1,13 @@
 @inject IStringLocalizer<AllBooksComponent> Localize
 
-<MudContainer>
+<div>
     <p>The Public Library - General Lazy Module</p>
     @foreach(var book in _books) {
         <div>@book.Title</div>        
     }
     
-    <MudButton OnClick="() => GetAllBooks()" >List</MudButton>    
-</MudContainer>
+    <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="() => GetAllBooks()" >Load Checked</MudButton>    
+</div>
 
 @code {
     private List<BookViewModel> _books = new();

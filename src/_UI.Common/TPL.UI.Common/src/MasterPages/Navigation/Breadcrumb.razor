@@ -2,29 +2,21 @@
 
 @inject IStringLocalizer<Breadcrumb> Localize
 
-@foreach (var item in Items)
-{
-    @if (item.Text == "")
-    {
-        <a @onclick="()=>NavigateToUrl(item.Url)">Library &gt;</a>
-    }
-    else 
-    {
-        <a @onclick="()=>NavigateToUrl(item.Url)">@item.Text &gt;</a>
-    }
-}
+
+<MudBreadcrumbs Items="Items">Library &gt;</MudBreadcrumbs>
+    
 @code {
-    public IEnumerable<MenuItem> Items { get; set; } = new List<MenuItem>();
+    public List<BreadcrumbItem> Items { get; set; } = new List<BreadcrumbItem>();
     protected override void OnInitialized()
     {
         var currentUrl = NavigationManager.ToBaseRelativePath(NavigationManager.Uri);
-        Items = currentUrl.Split(Path.PathSeparator).ToList().Select(rs => new MenuItem { Text = rs });
+        Items = currentUrl.Split(Path.PathSeparator).ToList().Select(rs => new BreadcrumbItem(rs, rs)).ToList();
         NavigationManager.LocationChanged += LocationHasChanged;
     }
     private void LocationHasChanged(object sender, LocationChangedEventArgs e)
     {
         var currentUrl = NavigationManager.ToBaseRelativePath(NavigationManager.Uri);
-        Items = currentUrl.Split(Path.PathSeparator).ToList().Select(rs => new MenuItem { Text = rs });
+        Items = currentUrl.Split(Path.PathSeparator).ToList().Select(rs => new BreadcrumbItem(rs, rs) ).ToList();
         StateHasChanged();
     }
     private void NavigateToUrl(string url)

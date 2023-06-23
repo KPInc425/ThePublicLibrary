@@ -1,15 +1,24 @@
-@page "/AllBooks"
+@page "/public/allbooks"
 
 @inject IStringLocalizer<Participate> Localize
 
 <PageTitle>The Public Library - General Lazy Module</PageTitle>
-@foreach(var book in BookTestData.AllBooks){
-    <div>@book.Title</div>
-}
 
-<div style="margin-left: 15px; margin-top: 15px;">
-    <AllBooksComponent />
-</div>
+<MudContainer>
+
+<MudTable Items="@BookTestData.AllBooks" Hover="true" Breakpoint="Breakpoint.Sm" LoadingProgressColor="Color.Info">
+    <HeaderContent>
+        <MudTh>Title</MudTh>
+        
+    </HeaderContent>
+    <RowTemplate>
+        <MudTd DataLabel="Nr">@context.Title</MudTd>
+        
+    </RowTemplate>
+</MudTable>
+<AllBooksComponent />
+</MudContainer>
+
 
 @code {
     protected override async Task OnInitializedAsync()
