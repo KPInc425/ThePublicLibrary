@@ -7,7 +7,7 @@ public class BookSearchTests : BaseBooksTest
     public void CanSearchBooksByYearRange()
     {
         // Given I have books
-        ICreateManyBooks(_bookTestData.AllBooks);
+        ICreateManyBooks(BookTestData.AllBooks);
 
         // Given I have a search by year range specification
         var startYear = 1900;
@@ -28,10 +28,10 @@ public class BookSearchTests : BaseBooksTest
     public void CanSearchBooksByAuthor()
     {
         // Given I have authors
-        var authors = _authorTestData.AllAuthors;
+        var authors = AuthorTestData.AllAuthors;
 
         // Given I have books
-        var books = _bookTestData.AllBooks;
+        var books = BookTestData.AllBooks;
         books.Should().NotBeEmpty();
         
         // Given we have an author search string
@@ -51,7 +51,7 @@ public class BookSearchTests : BaseBooksTest
     public void CanRemoveDamagedBookCopies()
     {
         // Given I have a book with multiple copies
-        var manyCopiesMax = _bookTestData.BookManyCopies;
+        var manyCopiesMax = BookTestData.BookManyCopies;
         manyCopiesMax.Should().NotBeNull();
 
         // And I select the first book copy

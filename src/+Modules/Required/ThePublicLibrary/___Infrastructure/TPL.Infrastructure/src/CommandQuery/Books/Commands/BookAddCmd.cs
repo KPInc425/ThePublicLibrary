@@ -1,7 +1,6 @@
 namespace TPL.Infrastructure.CommandQuery;
-public class BookAddCmd : IRequest<Book>, IRoutable
+public class BookAddCmd : IRequest<Book>
 {
-    protected static string Route = "/book/add";
     [Required]
     public string Isbn { get; set; }
     [Required]
@@ -34,10 +33,5 @@ public class BookAddCmd : IRequest<Book>, IRoutable
             BookCopies.AddRange(book.BookCopies);
         }
 
-    }
-    public string BuildRouteFrom()
-    {
-        return BookAddCmd.BuildRoute();
-    }
-    public static string BuildRoute() { return Route; }
+    }   
 }

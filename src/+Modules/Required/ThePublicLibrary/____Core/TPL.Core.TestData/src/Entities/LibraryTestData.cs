@@ -1,9 +1,9 @@
 namespace TPL.Core.TestData.Entities;
-public class LibraryTestData : ITestData
+public static class LibraryTestData
 {
-    public readonly string FirstStreetLibraryName = "First Street Library";
-    public readonly Library FirstStreetLibrary;
-    public readonly PhysicalAddressVO FirstStreetLibraryAddress = new (
+    public static string FirstStreetLibraryName = "First Street Library";
+    public static Library FirstStreetLibrary;
+    public static PhysicalAddressVO FirstStreetLibraryAddress = new (
         "123 First Street",
         "Suite 100",
         "First City",
@@ -12,9 +12,9 @@ public class LibraryTestData : ITestData
         "First Country"
     );
 
-    public readonly string SecondStreetLibraryName = "Second Street Library";
-    public readonly Library SecondStreetLibrary;
-    public readonly PhysicalAddressVO SecondStreetLibraryAddress = new (
+    public static string SecondStreetLibraryName = "Second Street Library";
+    public static Library SecondStreetLibrary;
+    public static PhysicalAddressVO SecondStreetLibraryAddress = new (
         "456 Second Street",
         "Suite 200",
         "Second City",
@@ -23,9 +23,9 @@ public class LibraryTestData : ITestData
         "Second Country"
     );
 
-    public readonly IEnumerable<Library> AllLibraries;
+    public static IEnumerable<Library> AllLibraries;
 
-    public LibraryTestData()
+    static LibraryTestData()
     {
         FirstStreetLibrary = new Library(FirstStreetLibraryName, FirstStreetLibraryAddress);
         SecondStreetLibrary = new Library(SecondStreetLibraryName, SecondStreetLibraryAddress);

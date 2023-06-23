@@ -6,7 +6,7 @@ namespace TPL.Core.UnitTests.Books
         public void LibraryCanHaveMultipleCopiesOfTheSameBook()
         {
             // Given I have a book with no copies
-            ICreateABook(_bookTestData.BookNoCopies);
+            ICreateABook(BookTestData.BookNoCopies);
             _bookToTestWith.BookCopies.Should().BeEmpty();
 
             // When I add a book copy

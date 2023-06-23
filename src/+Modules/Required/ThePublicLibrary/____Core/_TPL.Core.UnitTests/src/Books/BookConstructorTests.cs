@@ -7,7 +7,7 @@ public class BookConstructorTests : BaseBooksTest
     public void CanCreateBook()
     {
         // When I create a test book
-        ICreateABook(_bookTestData.BookAlfradoTheGreat);
+        ICreateABook(BookTestData.BookAlfradoTheGreat);
 
         // Then the test book has the correct data
         _bookToTestWith.Should().NotBeNull();
@@ -17,10 +17,10 @@ public class BookConstructorTests : BaseBooksTest
     public void CanCreateBookWithCopies()
     {
         // When I create a book with many copies
-        ICreateABook(_bookTestData.BookManyCopies);
+        ICreateABook(BookTestData.BookManyCopies);
 
         // And test book has the correct book copies
-        _bookToTestWith.BookCopies.Count().Should().Be(_bookTestData.BookManyCopies.BookCopies.Count());
+        _bookToTestWith.BookCopies.Count().Should().Be(BookTestData.BookManyCopies.BookCopies.Count());
 
     }
 
@@ -28,9 +28,9 @@ public class BookConstructorTests : BaseBooksTest
     public void CanCreateBookWithCategories()
     {
         // When I set test data to a book with categories
-        ICreateABook(_bookTestData.BookWithCategories);
+        ICreateABook(BookTestData.BookWithCategories);
 
         // Then book has the correct book categories
-        _bookToTestWith.BookCategories.Count().Should().Be(_bookTestData.BookWithCategories.BookCategories.Count());
+        _bookToTestWith.BookCategories.Count().Should().Be(BookTestData.BookWithCategories.BookCategories.Count());
     }
 }

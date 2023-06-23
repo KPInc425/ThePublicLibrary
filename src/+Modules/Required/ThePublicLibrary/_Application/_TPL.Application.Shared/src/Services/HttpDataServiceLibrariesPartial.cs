@@ -1,7 +1,7 @@
 namespace TPL.Application.Shared.Services;
 public partial class HttpDataService
 {
-    public async Task<List<Library>> LibrariesGetAllAsync()
+   /*  public async Task<List<Library>> LibrariesGetAllAsync()
     {
         var request = new LibrariesGetAllQuery();
         var response = await _httpClient.GetAsync(request.BuildRouteFrom());
@@ -11,5 +11,5 @@ public partial class HttpDataService
         return await response
             .Content
             .ReadFromJsonAsync<List<Library>>();
-    }    
+    }     */
 }

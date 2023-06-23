@@ -7,13 +7,7 @@ public abstract class ValueObject : IEquatable<ValueObject>
     public override string ToString()
     {
         var props = GetProperties();
-        var buffOut = new StringBuilder(props.Count());
-        foreach (var prop in props)
-        {
-            buffOut.Append(prop.GetValue(this, null).ToString() + " ");
-        }
-
-        return buffOut.ToString();
+        return string.Join(" ", props.Select(x => x.GetValue(this, null))).Trim();
     }
 
     public static bool operator ==(ValueObject obj1, ValueObject obj2)

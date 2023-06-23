@@ -1,4 +1,4 @@
-namespace TPL.Infrastructure.Interfaces;
+namespace TPL.Application.Shared.Interfaces;
 public interface IRoutable
 {
     string BuildRouteFrom();

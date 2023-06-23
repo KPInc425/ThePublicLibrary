@@ -73,8 +73,6 @@ builder.Services.AddScoped<IDataServiceNotAuthed>(x => x
         .GetRequiredService<TplPrimaryHttpClientFactory>()
         .CreateNotAuthed());
 
-builder.Services.AddScoped<BookTestData>();
-
 /* LazyServices.RegisterLazyModules(builder);
  */
 // smash in all the resx files

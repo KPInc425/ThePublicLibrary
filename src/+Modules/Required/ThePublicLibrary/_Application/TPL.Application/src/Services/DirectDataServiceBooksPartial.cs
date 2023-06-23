@@ -9,4 +9,8 @@ public partial class DirectDataService
     {
         return _mapper.Map<List<BookViewModel>>(await _mediator.Send(qry));
     }
+    public async Task<List<BookViewModel>> BooksFindAsync(BooksFindQry qry)
+    {
+        return _mapper.Map<List<BookViewModel>>(await _mediator.Send(qry));
+    }
 }

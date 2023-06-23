@@ -1,8 +1,7 @@
 namespace TPL.Core.UnitTests;
 public abstract class BaseBooksTest
 {
-    protected readonly BookTestData _bookTestData = new();
-    protected readonly AuthorTestData _authorTestData = new();
+    protected readonly BooksFindTestData _booksFindTestData = new();
     protected IsbnVO? _bookIsbn;
     protected Book? _bookToTestWith;
     protected List<Book> _booksToTestWith = new();
@@ -66,8 +65,8 @@ public abstract class BaseBooksTest
     {
         if (_bookToTestWith.BookCategories.Count() == 0)
         {
-            _bookToTestWith.AddBookCategory(_bookTestData.BookCategoryFiction);
-            _bookToTestWith.AddBookCategory(_bookTestData.BookCategoryFantasy);
+            _bookToTestWith.AddBookCategory(BookTestData.BookCategoryFiction);
+            _bookToTestWith.AddBookCategory(BookTestData.BookCategoryFantasy);
         }
     }
 }

@@ -1,5 +1,5 @@
 namespace TPL.Infrastructure.CommandQuery;
-public class MembershipAddMemberCommand : IRequest<Membership>, IRoutable
+public class MembershipAddMemberCommand : IRequest<Membership>
 {
     protected static string Route = "/membership/add";
     [Required]
@@ -22,8 +22,4 @@ public class MembershipAddMemberCommand : IRequest<Membership>, IRoutable
         Discount = discount;
     }
 
-    public string BuildRouteFrom() {
-        return MembershipAddMemberCommand.BuildRoute();
-    }
-    public static string BuildRoute() { return Route; }
 }

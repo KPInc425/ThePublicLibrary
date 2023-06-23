@@ -17,4 +17,5 @@ global using TPL.Infrastructure.Data;
 
 global using TPL.Application.Automaps;
 global using TPL.Application.Shared.Interfaces;
+global using TPL.Application.Shared.Requests;
 global using TPL.Application.Shared.ViewModels;

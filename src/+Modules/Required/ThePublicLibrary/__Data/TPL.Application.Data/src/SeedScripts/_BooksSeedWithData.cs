@@ -3,22 +3,14 @@ public class BooksSeedWithData : ISeedScript
 {
     public async Task PopulateTestData(IServiceProvider serviceProvider)
     {
-        var bookTestData = new BookTestData();
         var mediator = serviceProvider.GetRequiredService<IMediator>();
         var logger = serviceProvider.GetRequiredService<ILogger<BooksSeedWithData>>();
         using var dbContext =
                 new TplPrimaryDbContext(serviceProvider
                         .GetRequiredService<DbContextOptions<TplPrimaryDbContext>>(
                         ), mediator);
-        if (bookTestData is null)
-        {
-            throw new NullReferenceException("Book Test Data is null");
-        }
-        else
-        {
-            logger?.LogInformation("Book Test data is available");
-        }
-        foreach (var book in bookTestData.AllBooks)
+        
+        foreach (var book in BookTestData.AllBooks)
         {
             if (!dbContext.Books.AsEnumerable().Any(rs => book.Isbn.Equals(rs.Isbn)))
             {

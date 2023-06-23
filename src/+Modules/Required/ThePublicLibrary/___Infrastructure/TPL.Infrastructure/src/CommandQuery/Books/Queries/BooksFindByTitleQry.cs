@@ -1,6 +1,6 @@
 namespace TPL.Infrastructure.CommandQuery;
 
-public class BooksFindByTitleQry : IRequest<List<Book>>, IRoutable
+public class BooksFindByTitleQry : IRequest<List<Book>>
 {
     protected readonly static string Route = "/books/findbytitle/?searchFor={searchFor}";
 
@@ -11,10 +11,4 @@ public class BooksFindByTitleQry : IRequest<List<Book>>, IRoutable
     {
         SearchFor = searchFor;
     }
-
-    public string BuildRouteFrom()
-    {
-        return BooksFindByTitleQry.BuildRoute(SearchFor);
-    }
-    public static string BuildRoute(string searchFor) { return Route.Replace("{searchFor}", searchFor); }
 }

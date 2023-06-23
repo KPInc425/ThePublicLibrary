@@ -2,11 +2,7 @@ namespace TPL.Infrastructure.IntegrationTests.Data;
 public abstract class BaseTestFixture
 {
     protected TplPrimaryDbContext _dbContext;
-    protected readonly static BookTestData _bookTestData = new();
-    protected readonly static LibraryTestData _libraryTestData = new();
-    protected readonly static MembershipTestData _membershipTestData = new();
-    protected readonly static MemberTestData _memberTestData = new();
-
+    
     protected static DbContextOptions<TplPrimaryDbContext> CreateNewContextOptions()
     {
         // Create a fresh service provider, and therefore a fresh

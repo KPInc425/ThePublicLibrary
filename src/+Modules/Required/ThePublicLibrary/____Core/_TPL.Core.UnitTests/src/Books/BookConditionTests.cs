@@ -6,7 +6,7 @@ public class BookConditionTests : BaseBooksTest
     public void CanChangeBookCondition()
     {
         // Given I have books with copies
-        ICreateABook(_bookTestData.BookManyCopies);
+        ICreateABook(BookTestData.BookManyCopies);
 
         // Given I have a book copy that is in good condition
         IHaveABookCopyOfCondition(BookCondition.Good);
@@ -22,7 +22,7 @@ public class BookConditionTests : BaseBooksTest
     public void RemoveBookChangesConditionToDestroyed()
     {
         // Given I have a book with multiple copies
-        ICreateABook(_bookTestData.BookManyCopies);
+        ICreateABook(BookTestData.BookManyCopies);
 
         // And I select the first book copy
         IHaveABookCopyOfCondition(BookCondition.Good);

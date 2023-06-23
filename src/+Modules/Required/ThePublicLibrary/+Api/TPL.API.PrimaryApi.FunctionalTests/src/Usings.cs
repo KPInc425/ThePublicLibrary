@@ -26,6 +26,7 @@ global using Microsoft.Extensions.Logging;
 global using Xunit;
 global using KernelShared.Interfaces;
 
+global using TPL.Core.Enums;
 global using TPL.Core.TestData.Entities;
 
 global using TPL.Infrastructure;
@@ -35,8 +36,9 @@ global using TPL.Infrastructure.CommandQuery;
 global using TPL.Application;
 global using TPL.Application.Automaps;
 global using TPL.Application.Shared.Configuration;
+global using TPL.Application.Shared.Requests;
 global using TPL.Application.Shared.ViewModels;
-
 global using TPL.Application.Data.Interfaces;
 global using TPL.Application.Data.SeedScripts;
+
 

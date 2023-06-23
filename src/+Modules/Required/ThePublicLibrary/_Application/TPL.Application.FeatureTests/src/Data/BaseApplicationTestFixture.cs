@@ -69,11 +69,7 @@ public class BaseApplicationTestFixture
     protected readonly IMediator _mediator;
     protected readonly IMapper _mapper;
     protected readonly IDataService _dataService;
-    protected readonly static BookTestData _bookTestData = new();
-    protected readonly static LibraryTestData _libraryTestData = new();
-    protected readonly static MembershipTestData _membershipTestData = new();
-    protected readonly static MemberTestData _memberTestData = new();
-
+    
     public BaseApplicationTestFixture()
     {
         _autofacContainer = AutofacContainer;

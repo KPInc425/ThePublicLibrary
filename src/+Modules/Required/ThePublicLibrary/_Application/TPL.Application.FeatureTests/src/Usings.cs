@@ -25,6 +25,7 @@ global using TPL.Infrastructure.CommandQuery;
 
 global using TPL.Application.Automaps;
 global using TPL.Application.Services;
+global using TPL.Application.Shared.Requests;
 global using TPL.Application.Shared.Interfaces;
 
 global using Xunit;

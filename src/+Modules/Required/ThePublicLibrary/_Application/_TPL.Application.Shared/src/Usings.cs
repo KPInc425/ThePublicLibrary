@@ -18,9 +18,9 @@ global using TPL.Core.Enums;
 global using TPL.Core.Entities;
 
 global using TPL.Infrastructure;
-global using TPL.Infrastructure.Interfaces;
 global using TPL.Infrastructure.CommandQuery;
 global using TPL.Infrastructure.Data;
 
 global using TPL.Application.Shared.Interfaces;
+global using TPL.Application.Shared.Requests;
 global using TPL.Application.Shared.ViewModels;

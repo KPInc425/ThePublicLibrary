@@ -1,5 +1,5 @@
 namespace TPL.Core.TestData.Entities;
-public class MembershipTestData 
+public static class MembershipTestData 
 {
     
 }

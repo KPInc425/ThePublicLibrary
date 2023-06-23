@@ -9,6 +9,7 @@ public class BooksGetAllQryHandler : IRequestHandler<BooksGetAllQry, List<Book>>
     }
     public async Task<List<Book>> Handle(BooksGetAllQry qry, CancellationToken cancellationToken)
     {
-        return await _repository.ListAsync(cancellationToken);
+        var booksGetAllSpec = new BooksGetAllSpec();
+        return await _repository.ListAsync(booksGetAllSpec, cancellationToken);
     }
 }

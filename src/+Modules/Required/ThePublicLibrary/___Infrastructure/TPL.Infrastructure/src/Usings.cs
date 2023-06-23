@@ -26,4 +26,3 @@ global using TPL.Core;
 global using TPL.Core.Entities;
 global using TPL.Core.Interfaces;
 global using TPL.Infrastructure.Data;
-global using TPL.Infrastructure.Interfaces;

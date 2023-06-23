@@ -1,9 +1,7 @@
 namespace TPL.Infrastructure.CommandQuery;
 
-public class MembershipsFindByNameQuery : IRequest<List<Membership>>, IRoutable
+public class MembershipsFindByNameQuery : IRequest<List<Membership>>
 {
-    protected static string Route = "/memberships/{searchFor}";
-    
     [Required]
     public string SearchFor { get; set; }
 
@@ -11,9 +9,4 @@ public class MembershipsFindByNameQuery : IRequest<List<Membership>>, IRoutable
     {
         SearchFor = searchFor;
     }
-
-    public string BuildRouteFrom() {
-        return MembershipsFindByNameQuery.BuildRoute(SearchFor);
-    }
-    public static string BuildRoute(string searchFor) { return Route.Replace("{searchFor}", searchFor); }
 }
