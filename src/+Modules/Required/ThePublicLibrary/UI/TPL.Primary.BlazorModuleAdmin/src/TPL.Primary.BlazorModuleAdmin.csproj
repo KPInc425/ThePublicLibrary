@@ -40,11 +40,11 @@
     </When>
   </Choose>
   <ItemGroup>
-    <ProjectReference Include="./../../../../../__Kernel/KernelShared/src/KernelShared.csproj" />
-    <ProjectReference Include="./../../../../../_UI.Common/TPL.UI.Common/src/TPL.UI.Common.csproj" />
-    <ProjectReference Include="./../../____Core/TPL.Core.TestData/src/TPL.Core.TestData.csproj" />
-    <ProjectReference Include="./../../_Application/_TPL.Application.Shared/src/TPL.Application.Shared.csproj" />
-    <ProjectReference Include="./../_TPL.Primary.ModuleClientServiceLoader/src/TPL.Primary.ModuleClientServiceLoader.csproj" />
+    <ProjectReference Include="./../../../../../../__Kernel/KernelShared/src/KernelShared.csproj" />
+    <ProjectReference Include="./../../../../../../_UI.Common/TPL.UI.Common/src/TPL.UI.Common.csproj" />
+    <ProjectReference Include="./../../../____Core/TPL.Core.TestData/src/TPL.Core.TestData.csproj" />
+    <ProjectReference Include="./../../../_Application/_TPL.Application.Shared/src/TPL.Application.Shared.csproj" />
+    <ProjectReference Include="./../../_TPL.Primary.ModuleClientServiceLoader/src/TPL.Primary.ModuleClientServiceLoader.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Watch Remove="**/*.css" />

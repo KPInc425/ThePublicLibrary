@@ -95,19 +95,19 @@
         {
 
         }
-        var preLoadAssemblies = await AssemblyLoader.LoadAssembliesAsync(new List<string>() { "TPL.Primary.BlazorModule.dll" });
+        var preLoadAssemblies = await AssemblyLoader.LoadAssembliesAsync(new List<string>() { });
         LoadedAssemblies.AddRange(preLoadAssemblies);
         
-        @* if (uriPath.Contains("tmra/") && !uriPath.Contains("tmra/admin"))
+        if (uriPath.Contains("public/"))
         {
-            var assemblies = await AssemblyLoader.LoadAssembliesAsync(new List<string> { "TMRA.GameBrains.BlazorModule.dll" });
+            var assemblies = await AssemblyLoader.LoadAssembliesAsync(new List<string> { "TPL.Primary.BlazorModule.dll" });
             LoadedAssemblies.AddRange(assemblies);
         }
-        else if (uriPath.Contains("tmra/admin"))
+        else if (uriPath.Contains("private/"))
         {
             var assemblies = await AssemblyLoader.LoadAssembliesAsync(new List<string> {
-                "TMRA.GameBrains.BlazorModuleAdmin.dll", "TMRA.GameBrains.BlazorModule.dll"});
+                "TPL.Primary.BlazorModuleAdmin.dll"});
             LoadedAssemblies.AddRange(assemblies);
-        } *@
+        }
     }
 }

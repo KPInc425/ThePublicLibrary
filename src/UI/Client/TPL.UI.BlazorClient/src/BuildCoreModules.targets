@@ -22,6 +22,9 @@
     
     <ProjectReference Include="./../../../../+Modules/Required/ThePublicLibrary/UI/TPL.Primary.BlazorModule/src/TPL.Primary.BlazorModule.csproj" />      
     <BlazorWebAssemblyLazyLoad Include="TPL.Primary.BlazorModule.dll" />
+
+    <ProjectReference Include="./../../../../+Modules/Required/ThePublicLibrary/UI/TPL.Primary.BlazorModuleAdmin/src/TPL.Primary.BlazorModuleAdmin.csproj" />      
+    <BlazorWebAssemblyLazyLoad Include="TPL.Primary.BlazorModuleAdmin.dll" />
   </ItemGroup>
 
   <!-- /The Public Library -->
