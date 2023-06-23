@@ -1,12 +1,20 @@
 ﻿@page "/"
-
-@using System.Net.Http.Json
-@inject HttpClient httpClient
-
-<PageTitle>Library</PageTitle>
-
-<MudText Typo="Typo.h1">Library</MudText>
-
-<MudText Typo="Typo.body1">Welcome to your new app.</MudText>
-
-
+@layout MainLayoutLanding
+<PageTitle>ThePublicLibrary</PageTitle>
+<MudLayout>
+    <MudAppBar Class="animate__fadeInDown" Elevation="0" Fixed="false">
+        <MudText Typo="Typo.h5" Class="ml-3">ThePublicLibrary</MudText>
+        <MudSpacer />
+        <MudMenu Icon="@Icons.Material.Filled.Menu" AnchorOrigin="Origin.BottomLeft" Edge="Edge.End" Color="Color.Inherit" FullWidth="false">
+            <MudMenuItem class="mudmenuitem-custom">Sign in</MudMenuItem>
+            <MudMenuItem class="mudmenuitem-custom">Support</MudMenuItem>
+        </MudMenu>
+    </MudAppBar>
+    <MudBreakpointProvider>
+        <LandingHero/>
+        <MudDivider DividerType="DividerType.Middle" Class="my-6" />
+        <MudContainer Width="100%">
+            <LandingContent/>
+        </MudContainer>
+    </MudBreakpointProvider>
+</MudLayout>
