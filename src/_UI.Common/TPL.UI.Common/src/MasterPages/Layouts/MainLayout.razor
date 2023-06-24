@@ -1,6 +1,6 @@
 ﻿@inherits LayoutComponentBase
 
-<MudThemeProvider @ref="@_mudThemeProvider" @bind-IsDarkMode="@_isDarkMode" />
+<MudThemeProvider @ref="@_mudThemeProvider" Theme="_selectedMudTheme" @bind-IsDarkMode="@_isDarkMode" />
 <MudDialogProvider />
 <MudSnackbarProvider />
 
@@ -46,6 +46,7 @@
     bool _drawerOpen = true;
     private bool _isDarkMode;
     private MudThemeProvider _mudThemeProvider;
+    MudTheme _selectedMudTheme;
 
     void DrawerToggle()
     {
@@ -54,15 +55,13 @@
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
+        _mudThemeProvider = _mudThemeProvider ?? new MudThemeProvider();
+        _selectedMudTheme = MudStaticDefaultTheme.Default;
         if (firstRender)
         {
-            _isDarkMode = await _mudThemeProvider.GetSystemPreference();
+            _isDarkMode = await _mudThemeProvider.GetSystemPreference();            
             StateHasChanged();
         }
     }
-   // void Testing()
-   // {
-   //     Console.WriteLine("Clicked the ellipses");
-   // }
-
+ 
 }

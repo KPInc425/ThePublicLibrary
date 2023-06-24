@@ -10,5 +10,6 @@ global using Microsoft.JSInterop;
 
 global using TPL.Application.Shared.Interfaces;
 global using TPL.Application.Shared.Configuration;
+global using TPL.UI.Common;
 global using TPL.UI.Common.Interfaces;
 global using TPL.UI.Common.MasterPageSetters;
