@@ -39,7 +39,7 @@ public static class BookTestData
         BookAlfradoTheGreat = new(new("978-0-00-000000-9"), new List<Author>() { AuthorTestData.AuthorJohnWriter }, null, null, "Alfrado The Great", 1985, 400);
         BookAlfradoTheGreat.AddBookCopy(BookCondition.Good);
 
-        BookNoCopies = new(new("978-0-00-000441-1"), new List<Author>() { AuthorTestData.AuthorSallyTyper }, null, null, "Book Many Copies", 1981, 110);
+        BookNoCopies = new(new("978-0-00-000441-1"), new List<Author>() { AuthorTestData.AuthorSallyTyper }, null, null, "Book No Copies", 1981, 110);
 
         BookManyCopies = new(new("978-0-00-000001-1"), new List<Author>() { AuthorTestData.AuthorSallyTyper }, null, null, "Book Many Copies", 1981, 110);
         BookManyCopies.AddBookCopy(BookCondition.Good);
