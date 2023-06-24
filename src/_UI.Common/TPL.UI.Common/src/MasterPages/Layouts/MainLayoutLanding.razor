@@ -6,7 +6,15 @@
 
 
 <MudLayout>
-            @Body
+    <MudAppBar Class="animate__fadeInDown" Elevation="0" Fixed="false">
+        <MudText Typo="Typo.h5" Class="ml-3">ThePublicLibrary</MudText>
+        <MudSpacer />
+        <MudMenu Icon="@Icons.Material.Filled.Menu" AnchorOrigin="Origin.BottomLeft" Edge="Edge.End" Color="Color.Inherit" FullWidth="false">
+            <MudMenuItem class="mudmenuitem-custom">Sign in</MudMenuItem>
+            <MudMenuItem class="mudmenuitem-custom">Support</MudMenuItem>
+        </MudMenu>
+    </MudAppBar>
+    @Body
 </MudLayout>
 
 
