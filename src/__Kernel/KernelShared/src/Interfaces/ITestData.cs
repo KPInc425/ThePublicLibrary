@@ -1,5 +1,5 @@
 namespace KernelShared.Interfaces;
 
-public interface ITestData {
+public interface ITplTestData {
     
 }

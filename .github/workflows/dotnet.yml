@@ -24,46 +24,46 @@ jobs:
       with:
         dotnet-version: ${{ matrix.dotnet-version }}
     #- name: Restore Core
-    #  run: dotnet restore "./src/+Modules/Required/ThePublicLibrary/____Core/_TPL.Core/src/TPL.Core.csproj"      
+    #  run: dotnet restore "./src/+Modules/Required/ThePublicLibrary/____Core/_TPL.TplCore/src/TPL.TplCore.csproj"      
     #- name: Build Core
-    #  run: dotnet build "./src/+Modules/Required/ThePublicLibrary/____Core/_TPL.Core/src/TPL.Core.csproj"      
+    #  run: dotnet build "./src/+Modules/Required/ThePublicLibrary/____Core/_TPL.TplCore/src/TPL.TplCore.csproj"      
     - name: Run Core - Unit Tests
-      run: dotnet test "./src/+Modules/Required/ThePublicLibrary/____Core/_TPL.Core.UnitTests/src/TPL.Core.UnitTests.csproj"
+      run: dotnet test "./src/+Modules/Required/ThePublicLibrary/____Core/_TPL.TplCore.UnitTests/src/TPL.TplCore.UnitTests.csproj"
       
     #- name: Restore Infrastructure
-    #  run: dotnet restore "./src/+Modules/Required/ThePublicLibrary/___Infrastructure/TPL.Infrastructure/src/TPL.Infrastructure.csproj"      
+    #  run: dotnet restore "./src/+Modules/Required/ThePublicLibrary/___Infrastructure/TPL.TplInfrastructure/src/TPL.TplInfrastructure.csproj"      
     #- name: Build Infrastructure
-    #  run: dotnet build "./src/+Modules/Required/ThePublicLibrary/___Infrastructure/TPL.Infrastructure/src/TPL.Infrastructure.csproj"      
+    #  run: dotnet build "./src/+Modules/Required/ThePublicLibrary/___Infrastructure/TPL.TplInfrastructure/src/TPL.TplInfrastructure.csproj"      
     - name: Run Infrastructure - Integration Tests
-      run: dotnet test "./src/+Modules/Required/ThePublicLibrary/___Infrastructure/TPL.Infrastructure.IntegrationTests/src/TPL.Infrastructure.IntegrationTests.csproj"
+      run: dotnet test "./src/+Modules/Required/ThePublicLibrary/___Infrastructure/TPL.TplInfrastructure.IntegrationTests/src/TPL.TplInfrastructure.IntegrationTests.csproj"
     
     #- name: Restore Application
-    #  run: dotnet restore "./src/+Modules/Required/ThePublicLibrary/_Application/TPL.Application/src/TPL.Application.csproj"      
+    #  run: dotnet restore "./src/+Modules/Required/ThePublicLibrary/_Application/TPL.TplApplication/src/TPL.TplApplication.csproj"      
     #- name: Build Application
-    #  run: dotnet build "./src/+Modules/Required/ThePublicLibrary/_Application/TPL.Application/src/TPL.Application.csproj"      
+    #  run: dotnet build "./src/+Modules/Required/ThePublicLibrary/_Application/TPL.TplApplication/src/TPL.TplApplication.csproj"      
     - name: Run Application - Feature Tests
-      run: dotnet test "./src/+Modules/Required/ThePublicLibrary/_Application/TPL.Application.FeatureTests/src/TPL.Application.FeatureTests.csproj"
+      run: dotnet test "./src/+Modules/Required/ThePublicLibrary/_Application/TPL.TplApplication.FeatureTests/src/TPL.TplApplication.FeatureTests.csproj"
       
-    #- name: Restore PrimaryApi
-    #  run: dotnet restore "./src/+Modules/Required/ThePublicLibrary/+API/TPL.API.PrimaryApi/src/TPL.API.PrimaryApi.csproj"      
-    #- name: Build PrimaryApi
-    #  run: dotnet build "./src/+Modules/Required/ThePublicLibrary/+API/TPL.API.PrimaryApi/src/TPL.API.PrimaryApi.csproj"      
-    - name: Run PrimaryApi - Functional Tests
-      run: dotnet test "./src/+Modules/Required/ThePublicLibrary/+Api/TPL.API.PrimaryApi.FunctionalTests/src/TPL.API.PrimaryApi.FunctionalTests.csproj"
+    #- name: Restore TplApi
+    #  run: dotnet restore "./src/+Modules/Required/ThePublicLibrary/+API/TPL.API.TplApi/src/TPL.API.TplApi.csproj"      
+    #- name: Build TplApi
+    #  run: dotnet build "./src/+Modules/Required/ThePublicLibrary/+API/TPL.API.TplApi/src/TPL.API.TplApi.csproj"      
+    - name: Run TplApi - Functional Tests
+      run: dotnet test "./src/+Modules/Required/ThePublicLibrary/+Api/TPL.API.TplApi.FunctionalTests/src/TPL.API.TplApi.FunctionalTests.csproj"
       
-    #- name: Restore TPL.Primary.BlazorModule
-    #  run: dotnet restore "./src/+Modules/Required/ThePublicLibrary/UI/TPL.Primary.BlazorModule/src/TPL.Primary.BlazorModule.csproj"      
+    #- name: Restore TPL.UI.TplBlazorModule
+    #  run: dotnet restore "./src/+Modules/Required/ThePublicLibrary/UI/TPL.UI.TplBlazorModule/src/TPL.UI.TplBlazorModule.csproj"      
     - name: Install Dart Sass Embedded
       run: npm i -g sass
     
-    - name: Build TPL.Primary.BlazorModule
-      run: dotnet build "./src/+Modules/Required/ThePublicLibrary/UI/TPL.Primary.BlazorModule/src/TPL.Primary.BlazorModule.csproj"
+    - name: Build TPL.UI.TplBlazorModule
+      run: dotnet build "./src/+Modules/Required/ThePublicLibrary/UI/TPL.UI.TplBlazorModule/src/TPL.UI.TplBlazorModule.csproj"
     
-    - name: Build TPL.UI.BlazorClient
-      run: dotnet build "./src/UI/Client/TPL.UI.BlazorClient/src/TPL.UI.BlazorClient.csproj"
+    - name: Build Fernweh.UI.BlazorClient
+      run: dotnet build "./src/UI/Client/Fernweh.UI.BlazorClient/src/Fernweh.UI.BlazorClient.csproj"
       
-    - name: Build TPL.UI.BlazorClient - bUnit Tests
-      run: dotnet build "./src/UI/Client/TPL.UI.BlazorClient.UIUnitTests/src/TPL.UI.BlazorClient.UIUnitTests.csproj"
+    - name: Build Fernweh.UI.BlazorClient - bUnit Tests
+      run: dotnet build "./src/UI/Client/Fernweh.UI.BlazorClient.UIUnitTests/src/Fernweh.UI.BlazorClient.UIUnitTests.csproj"
     - name: Check code coverage
       uses: codecov/codecov-action@v3
       with:

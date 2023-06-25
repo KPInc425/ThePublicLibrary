@@ -1,0 +1,43 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <IsPackable>false</IsPackable>
+    <PackageId>TPL.API.TplApi.FunctionalTests</PackageId>
+    <Version>1.01.02.003</Version>
+    <Authors>10GeekJames</Authors>
+    <Company>10GeekJames</Company>
+    <DefaultNamespace>TPL.API.TplApi.FunctionalTests</DefaultNamespace> 
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="Ardalis.HttpClientTestExtensions" Version="4.0.0" />
+    <PackageReference Include="FluentAssertions" Version="6.11.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.6.2" />
+    <PackageReference Include="xunit" Version="2.4.2" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.5">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="coverlet.collector" Version="6.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="7.0.7" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="7.0.7" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />    
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="./../../../../../../__Kernel/KernelShared/src/KernelShared.csproj" />
+    <ProjectReference Include="./../../../____Core/_TPL.TplCore/src/TPL.TplCore.csproj" />
+    <ProjectReference Include="./../../../____Core/TPL.TplCore.TplTestData/src/TPL.TplCore.TplTestData.csproj" />
+    <ProjectReference Include="./../../../___Infrastructure/TPL.TplInfrastructure/src/TPL.TplInfrastructure.csproj" />
+    <ProjectReference Include="./../../../_Application/TPL.TplApplication/src/TPL.TplApplication.csproj" />
+    <ProjectReference Include="./../../../__Data/TPL.TplApplication.Data/src/TPL.TplApplication.Data.csproj" />
+    <ProjectReference Include="./../../../+Api/TPL.API.TplApi/src/TPL.API.TplApi.csproj" />
+  </ItemGroup>
+
+</Project>

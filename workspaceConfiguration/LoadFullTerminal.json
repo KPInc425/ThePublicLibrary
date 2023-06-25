@@ -15,8 +15,8 @@
                     "num": 0
                 },
                 {
-                    "name": "TPL.Core",
-                    "path": "./src/+Modules/Required/ThePublicLibrary/____Core/_TPL.Core/src",
+                    "name": "TPL.TplCore",
+                    "path": "./src/+Modules/Required/ThePublicLibrary/____Core/_TPL.TplCore/src",
                     "cmd": [
                         "ping 127.0.0.1 -n 1 > nul",
                         "dotnet build"
@@ -24,8 +24,8 @@
                     "num": 1
                 },
                 {
-                    "name": "TPL.Core.UnitTests",
-                    "path": "./src/+Modules/Required/ThePublicLibrary/____Core/_TPL.Core.UnitTests/src",
+                    "name": "TPL.TplCore.UnitTests",
+                    "path": "./src/+Modules/Required/ThePublicLibrary/____Core/_TPL.TplCore.UnitTests/src",
                     "cmd": [
                         "ping 127.0.0.1 -n 2 > nul",
                         "dotnet test"
@@ -35,12 +35,12 @@
             ]
         },        
         {
-            "name": "TPL.UI.Common",
+            "name": "Fernweh.UI.Common",
             "enabled": true,
             "terminals": [
                 {
-                    "name": "TPL.UI.Common",
-                    "path": "./src/_UI.Common/TPL.UI.Common/src",
+                    "name": "Fernweh.UI.Common",
+                    "path": "./src/_UI.Common/Fernweh.UI.Common/src",
                     "cmd": [
                         "ping 127.0.0.1 -n 12 > nul",                        
                         "dotnet build"
@@ -50,13 +50,13 @@
             ]
         },
         {
-            "name": "TPL.Infrastructure",
+            "name": "TPL.TplInfrastructure",
             "description": "Infrastructure and Tests",
             "enabled": true,
             "terminals": [
                 {
-                    "name": "TPL.Infrastructure",
-                    "path": "./src/+Modules/Required/ThePublicLibrary/___Infrastructure/TPL.Infrastructure/src",
+                    "name": "TPL.TplInfrastructure",
+                    "path": "./src/+Modules/Required/ThePublicLibrary/___Infrastructure/TPL.TplInfrastructure/src",
                     "cmd": [
                         "ping 127.0.0.1 -n 4 > nul",                        
                         "dotnet build"
@@ -64,8 +64,8 @@
                     "num": 4
                 },
                 {
-                    "name": "TPL.Infrastructure.IntegrationTests",
-                    "path": "./src/+Modules/Required/ThePublicLibrary/___Infrastructure/TPL.Infrastructure.IntegrationTests/src",
+                    "name": "TPL.TplInfrastructure.IntegrationTests",
+                    "path": "./src/+Modules/Required/ThePublicLibrary/___Infrastructure/TPL.TplInfrastructure.IntegrationTests/src",
                     "cmd": [
                         "ping 127.0.0.1 -n 5 > nul",                        
                         "dotnet test"
@@ -75,13 +75,13 @@
             ]
         },
         {
-            "name": "TPL.Application",
+            "name": "TPL.TplApplication",
             "description": "Application and Tests",
             "enabled": true,
             "terminals": [
                 {
-                    "name": "TPL.Application",
-                    "path": "./src/+Modules/Required/ThePublicLibrary/_Application/TPL.Application/src",
+                    "name": "TPL.TplApplication",
+                    "path": "./src/+Modules/Required/ThePublicLibrary/_Application/TPL.TplApplication/src",
                     "cmd": [
                         "ping 127.0.0.1 -n 6 > nul",                        
                         "dotnet build"
@@ -89,8 +89,8 @@
                     "num": 6
                 },
                 {
-                    "name": "TPL.Application.FeatureTests",
-                    "path": "./src/+Modules/Required/ThePublicLibrary/_Application/TPL.Application.FeatureTests/src",
+                    "name": "TPL.TplApplication.FeatureTests",
+                    "path": "./src/+Modules/Required/ThePublicLibrary/_Application/TPL.TplApplication.FeatureTests/src",
                     "cmd": [
                         "ping 127.0.0.1 -n 7 > nul",                        
                         "dotnet test"
@@ -98,8 +98,8 @@
                     "num": 7
                 },
                 {
-                    "name": "TPL.Application.Data",
-                    "path": "./src/+Modules/Required/ThePublicLibrary/__Data/TPL.Application.Data/src",
+                    "name": "TPL.TplApplication.Data",
+                    "path": "./src/+Modules/Required/ThePublicLibrary/__Data/TPL.TplApplication.Data/src",
                     "cmd": [
                         "ping 127.0.0.1 -n 8 > nul",                        
                         "dotnet build"
@@ -109,13 +109,13 @@
             ]
         },        
         {
-            "name": "TPL.API.PrimaryApi",
-            "description": "TPL Primary API",
+            "name": "TPL.API.TplApi",
+            "description": "TPL  API",
             "enabled": true,
             "terminals": [
                 {
-                    "name": "TPL.API.PrimaryApi",
-                    "path": "./src/+Modules/Required/ThePublicLibrary/+Api/TPL.API.PrimaryApi/src",
+                    "name": "TPL.API.TplApi",
+                    "path": "./src/+Modules/Required/ThePublicLibrary/+Api/TPL.API.TplApi/src",
                     "cmd": [
                         "ping 127.0.0.1 -n 20 > nul",                        
                         "dotnet watch run"
@@ -123,8 +123,8 @@
                     "num": 9
                 },
                 {
-                    "name": "TPL.API.PrimaryApi.FunctionalTests",
-                    "path": "./src/+Modules/Required/ThePublicLibrary/+Api/TPL.API.PrimaryApi.FunctionalTests/src",
+                    "name": "TPL.API.TplApi.FunctionalTests",
+                    "path": "./src/+Modules/Required/ThePublicLibrary/+Api/TPL.API.TplApi.FunctionalTests/src",
                     "cmd": [
                         "ping 127.0.0.1 -n 10 > nul",                        
                         "dotnet build"
@@ -139,7 +139,7 @@
             "terminals": [
                 {
                     "name": "TPL.UI.Client.BlazorClient",
-                    "path": "./src/UI/Client/TPL.UI.BlazorClient/src",
+                    "path": "./src/UI/Client/Fernweh.UI.BlazorClient/src",
                     "cmd": [
                         "ping 127.0.0.1 -n 30 > nul",                        
                         "dotnet watch run"
@@ -147,8 +147,8 @@
                     "num": 12
                 },
                 {
-                    "name": "TPL.UI.BlazorClient.UITests",
-                    "path": "./src/UI/Client/TPL.UI.BlazorClient.UITests/src",
+                    "name": "Fernweh.UI.BlazorClient.UITests",
+                    "path": "./src/UI/Client/Fernweh.UI.BlazorClient.UITests/src",
                     "cmd": [
                         "ping 127.0.0.1 -n 60 > nul",                        
                         "dotnet test"
@@ -156,8 +156,8 @@
                     "num": 12
                 },
                 {
-                    "name": "TPL.UI.BlazorClient.UIUnitTests",
-                    "path": "./src/UI/Client/TPL.UI.BlazorClient.UIUnitTests/src",
+                    "name": "Fernweh.UI.BlazorClient.UIUnitTests",
+                    "path": "./src/UI/Client/Fernweh.UI.BlazorClient.UIUnitTests/src",
                     "cmd": [
                         "ping 127.0.0.1 -n 15 > nul",                        
                         "dotnet test"
