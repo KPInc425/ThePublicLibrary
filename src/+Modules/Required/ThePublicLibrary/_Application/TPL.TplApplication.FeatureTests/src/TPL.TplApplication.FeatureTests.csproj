@@ -37,7 +37,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="./../../../../../../__Kernel/KernelShared/src/KernelShared.csproj" />
+    <ProjectReference Include="./../../../../../../__Kernel/Frenweh.KernelShared/src/Frenweh.KernelShared.csproj" />
     <ProjectReference Include="./../../../____Core/_TPL.TplCore.UnitTests/src/TPL.TplCore.UnitTests.csproj" />    
     <ProjectReference Include="./../../../___Infrastructure/TPL.TplInfrastructure/src/TPL.TplInfrastructure.csproj" />
     <ProjectReference Include="./../../../_Application/_TPL.TplApplication.Shared/src/TPL.TplApplication.Shared.csproj" />

@@ -10,8 +10,8 @@ global using MediatR.Pipeline;
 global using System.Net.Http.Json;
 global using System.ComponentModel.DataAnnotations;
 
-global using KernelShared;
-global using KernelShared.Interfaces;
+global using Frenweh.KernelShared;
+global using Frenweh.KernelShared.Interfaces;
 
 global using TPL.TplCore;
 global using TPL.TplCore.Enums;

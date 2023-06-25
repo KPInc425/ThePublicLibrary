@@ -1,0 +1,1 @@
+namespace Frenweh.KernelShared.Interfaces;

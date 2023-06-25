@@ -25,12 +25,12 @@
   <Choose>
     <When Condition="'$(Configuration)' == 'Release'">
       <ItemGroup>
-        <PackageReference Include="KernelShared" />        
+        <PackageReference Include="Frenweh.KernelShared" />        
       </ItemGroup>
     </When>
   </Choose>
   <ItemGroup>
     <ProjectReference Include=".\..\..\_TPL.TplCore\src\TPL.TplCore.csproj" />
-    <ProjectReference Include="./../../../../../../__Kernel/KernelShared/src/KernelShared.csproj" />
+    <ProjectReference Include="./../../../../../../__Kernel/Frenweh.KernelShared/src/Frenweh.KernelShared.csproj" />
   </ItemGroup>
 </Project>

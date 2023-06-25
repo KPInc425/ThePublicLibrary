@@ -2,13 +2,13 @@
     "version": "1.2.1",
     "groups": [
         {
-            "name": "KernelCore",
+            "name": "Frenweh.KernelShared",
             "description": "Kernel plus Core",
             "enabled": true,
             "terminals": [
                 {
-                    "name": "KernelShared",
-                    "path": "./src/__Kernel/KernelShared/src",
+                    "name": "Frenweh.KernelShared",
+                    "path": "./src/__Kernel/Frenweh.KernelShared/src",
                     "cmd": [
                         ""
                     ],
@@ -33,12 +33,12 @@
             ]
         },
         {
-            "name": "Fernweh.UI.Common",
+            "name": "Frenweh.UI.Common",
             "enabled": true,
             "terminals": [
                 {
-                    "name": "Fernweh.UI.Common",
-                    "path": "./src/_UI.Common/Fernweh.UI.Common/src",
+                    "name": "Frenweh.UI.Common",
+                    "path": "./src/_UI.Common/Frenweh.UI.Common/src",
                     "cmd": [
                         ""
                     ],
@@ -132,7 +132,7 @@
             "terminals": [
                 {
                     "name": "TPL.UI.Client.BlazorClient",
-                    "path": "./src/UI/Client/Fernweh.UI.BlazorClient/src",
+                    "path": "./src/UI/Client/Frenweh.UI.BlazorClient/src",
                     "cmd": [
                         "ping 127.0.0.1 -n 15",
                         "dotnet watch run"
@@ -140,8 +140,8 @@
                     "num": 12
                 },
                 {
-                    "name": "Fernweh.UI.BlazorClient.UITests",
-                    "path": "./src/UI/Client/Fernweh.UI.BlazorClient.UITests/src",
+                    "name": "Frenweh.UI.BlazorClient.UITests",
+                    "path": "./src/UI/Client/Frenweh.UI.BlazorClient.UITests/src",
                     "cmd": [
                         "ping 127.0.0.1 -n 60",
                         "dotnet test"
@@ -149,8 +149,8 @@
                     "num": 12
                 },
                 {
-                    "name": "Fernweh.UI.BlazorClient.UIUnitTests",
-                    "path": "./src/UI/Client/Fernweh.UI.BlazorClient.UIUnitTests/src",
+                    "name": "Frenweh.UI.BlazorClient.UIUnitTests",
+                    "path": "./src/UI/Client/Frenweh.UI.BlazorClient.UIUnitTests/src",
                     "cmd": [
                         "dotnet test"
                     ],

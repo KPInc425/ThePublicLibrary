@@ -31,8 +31,8 @@
   <Choose>
     <When Condition="'$(Configuration)' == 'Release'">
       <ItemGroup>      
-        <PackageReference Include="KernelShared" />
-        <PackageReference Include="Fernweh.UI.Common" />
+        <PackageReference Include="Frenweh.KernelShared" />
+        <PackageReference Include="Frenweh.UI.Common" />
         <PackageReference Include="TPL.TplCore.TplTestData" />
         <PackageReference Include="TPL.TplApplication.Shared" />
         <PackageReference Include="TPL.UI.TplModuleClientServiceLoader" />
@@ -40,8 +40,8 @@
     </When>
   </Choose>
   <ItemGroup>
-    <ProjectReference Include="./../../../../../../__Kernel/KernelShared/src/KernelShared.csproj" />
-    <ProjectReference Include="./../../../../../../_UI.Common/Fernweh.UI.Common/src/Fernweh.UI.Common.csproj" />
+    <ProjectReference Include="./../../../../../../__Kernel/Frenweh.KernelShared/src/Frenweh.KernelShared.csproj" />
+    <ProjectReference Include="./../../../../../../_UI.Common/Frenweh.UI.Common/src/Frenweh.UI.Common.csproj" />
     <ProjectReference Include="./../../../____Core/TPL.TplCore.TplTestData/src/TPL.TplCore.TplTestData.csproj" />
     <ProjectReference Include="./../../../_Application/_TPL.TplApplication.Shared/src/TPL.TplApplication.Shared.csproj" />
     <ProjectReference Include="./../../_TPL.UI.TplModuleClientServiceLoader/src/TPL.UI.TplModuleClientServiceLoader.csproj" />

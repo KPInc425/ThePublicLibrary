@@ -6,7 +6,7 @@ global using Microsoft.Extensions.DependencyInjection;
 
 global using MediatR;
 global using MediatR.Pipeline;
-global using KernelShared.Interfaces;
+global using Frenweh.KernelShared.Interfaces;
 
 global using TPL.TplCore;
 global using TPL.TplCore.Entities;

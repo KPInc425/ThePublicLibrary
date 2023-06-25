@@ -24,7 +24,7 @@ global using Microsoft.Extensions.Hosting;
 global using Microsoft.Extensions.Logging;
 
 global using Xunit;
-global using KernelShared.Interfaces;
+global using Frenweh.KernelShared.Interfaces;
 
 global using TPL.TplCore.Enums;
 global using TPL.TplCore.TplTestData.Entities;

@@ -1,1 +1,0 @@
-namespace KernelShared.Interfaces;

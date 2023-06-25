@@ -59,11 +59,11 @@ jobs:
     - name: Build TPL.UI.TplBlazorModule
       run: dotnet build "./src/+Modules/Required/ThePublicLibrary/UI/TPL.UI.TplBlazorModule/src/TPL.UI.TplBlazorModule.csproj"
     
-    - name: Build Fernweh.UI.BlazorClient
-      run: dotnet build "./src/UI/Client/Fernweh.UI.BlazorClient/src/Fernweh.UI.BlazorClient.csproj"
+    - name: Build Frenweh.UI.BlazorClient
+      run: dotnet build "./src/UI/Client/Frenweh.UI.BlazorClient/src/Frenweh.UI.BlazorClient.csproj"
       
-    - name: Build Fernweh.UI.BlazorClient - bUnit Tests
-      run: dotnet build "./src/UI/Client/Fernweh.UI.BlazorClient.UIUnitTests/src/Fernweh.UI.BlazorClient.UIUnitTests.csproj"
+    - name: Build Frenweh.UI.BlazorClient - bUnit Tests
+      run: dotnet build "./src/UI/Client/Frenweh.UI.BlazorClient.UIUnitTests/src/Frenweh.UI.BlazorClient.UIUnitTests.csproj"
     - name: Check code coverage
       uses: codecov/codecov-action@v3
       with:
