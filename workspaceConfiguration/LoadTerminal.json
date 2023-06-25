@@ -10,7 +10,7 @@
                     "name": "Frenweh.KernelShared",
                     "path": "./src/__Kernel/Frenweh.KernelShared/src",
                     "cmd": [
-                        ""
+                        "dotnet build"
                     ],
                     "num": 0
                 },
@@ -18,7 +18,7 @@
                     "name": "TPL.TplCore",
                     "path": "./src/+Modules/Required/ThePublicLibrary/____Core/_TPL.TplCore/src",
                     "cmd": [
-                        ""
+                        "dotnet build"
                     ],
                     "num": 1
                 },
@@ -40,7 +40,7 @@
                     "name": "Frenweh.UI.Common",
                     "path": "./src/_UI.Common/Frenweh.UI.Common/src",
                     "cmd": [
-                        ""
+                        "dotnet build"
                     ],
                     "num": 12
                 }
@@ -55,7 +55,7 @@
                     "name": "TPL.TplInfrastructure",
                     "path": "./src/+Modules/Required/ThePublicLibrary/___Infrastructure/TPL.TplInfrastructure/src",
                     "cmd": [
-                        ""
+                        "dotnet build"
                     ],
                     "num": 4
                 },
@@ -79,7 +79,7 @@
                     "name": "TPL.TplApplication",
                     "path": "./src/+Modules/Required/ThePublicLibrary/_Application/TPL.TplApplication/src",
                     "cmd": [
-                        ""
+                        "dotnet build"
                     ],
                     "num": 6
                 },
@@ -96,7 +96,7 @@
                     "name": "TPL.TplApplication.Data",
                     "path": "./src/+Modules/Required/ThePublicLibrary/__Data/TPL.TplApplication.Data/src",
                     "cmd": [
-                        ""
+                        "dotnet build"
                     ],
                     "num": 8
                 }
@@ -111,6 +111,7 @@
                     "name": "TPL.API.TplApi",
                     "path": "./src/+Modules/Required/ThePublicLibrary/+Api/TPL.API.TplApi/src",
                     "cmd": [
+                        "ping 127.0.0.1 -n 15",
                         "dotnet watch run"
                     ],
                     "num": 9
@@ -119,7 +120,6 @@
                     "name": "TPL.API.TplApi.FunctionalTests",
                     "path": "./src/+Modules/Required/ThePublicLibrary/+Api/TPL.API.TplApi.FunctionalTests/src",
                     "cmd": [
-                        "ping 127.0.0.1 -n 15",
                         "dotnet test"
                     ],
                     "num": 10

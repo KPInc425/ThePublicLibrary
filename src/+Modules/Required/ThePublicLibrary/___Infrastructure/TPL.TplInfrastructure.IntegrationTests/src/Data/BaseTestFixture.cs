@@ -36,23 +36,5 @@ public abstract class BaseTestFixture
 
         _dbContext = new TplDbContext(options, mockMediator.Object);
         return new EfRepository<Book>(_dbContext);
-    }
-
-    protected EfRepository<Member> MemberRepository()
-    {
-        var options = CreateNewContextOptions();
-        var mockMediator = new Mock<IMediator>();
-
-        _dbContext = new TplDbContext(options, mockMediator.Object);
-        return new EfRepository<Member>(_dbContext);
-    }
-
-    protected EfRepository<Membership> MembershipRepository()
-    {
-        var options = CreateNewContextOptions();
-        var mockMediator = new Mock<IMediator>();
-
-        _dbContext = new TplDbContext(options, mockMediator.Object);
-        return new EfRepository<Membership>(_dbContext);
-    }
+    }    
 }

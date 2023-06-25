@@ -8,22 +8,13 @@ public class TplDbContext : DbContext
         _mediator = mediator;
     }
 
-    public DbSet<Member> Members { get; set; }
-    public DbSet<Membership> Memberships { get; set; }
     public DbSet<Library> Libraries { get; set; }
     public DbSet<Book> Books { get; set; }
     public DbSet<BookCopy> BookCopies { get; set; }
     public DbSet<Author> Authors { get; set; }
     
     // Shared
-    public DbSet<BookCategory> BookCategories { get; set; }    
-    public DbSet<MemberInMembership> MemberInMemberships { get; set; }
-
-
-    // Value Objects
-    //public DbSet<IsbnVO> Isbns { get; set; }
-    //public DbSet<DigitalAddressVO> DigitalAddresses { get; set; }
-    //public DbSet<NameVO> Names { get; set; }
+    public DbSet<BookCategory> BookCategories { get; set; } 
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
