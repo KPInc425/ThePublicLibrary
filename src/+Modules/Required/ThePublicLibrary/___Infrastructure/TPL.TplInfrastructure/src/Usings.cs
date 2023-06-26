@@ -19,8 +19,8 @@ global using System.Linq;
 global using System.Threading;
 global using System.Threading.Tasks;
 
-global using Frenweh.KernelShared;
-global using Frenweh.KernelShared.Interfaces;
+global using Fernweh.KernelShared;
+global using Fernweh.KernelShared.Interfaces;
 
 global using TPL.TplCore;
 global using TPL.TplCore.Entities;

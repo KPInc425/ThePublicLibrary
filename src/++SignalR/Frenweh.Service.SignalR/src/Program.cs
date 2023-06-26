@@ -22,6 +22,6 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-app.MapHub<FrenwehHub>("/tplHub");
+app.MapHub<FernwehHub>("/tplHub");
 
 app.Run();

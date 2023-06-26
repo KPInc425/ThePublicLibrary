@@ -14,7 +14,7 @@ global using System.Collections.Generic;
 global using System.Linq;
 global using System.Threading.Tasks;
 
-global using Frenweh.KernelShared.Interfaces;
+global using Fernweh.KernelShared.Interfaces;
 
 global using TPL.TplCore;
 global using TPL.TplCore.TplTestData.Entities;

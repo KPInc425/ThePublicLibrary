@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33424.131
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Frenweh.KernelShared", ".\src\__Kernel\Frenweh.KernelShared\src\Frenweh.KernelShared.csproj", "{359C52A0-5153-4FAF-8555-ED7FC77FD56A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fernweh.KernelShared", ".\src\__Kernel\Fernweh.KernelShared\src\Fernweh.KernelShared.csproj", "{359C52A0-5153-4FAF-8555-ED7FC77FD56A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Frenweh.UI.Common", ".\src\_UI.Common\Frenweh.UI.Common\src\Frenweh.UI.Common.csproj", "{CCC907A3-64FF-4037-9B8E-4FB0E3CAB2A8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fernweh.UI.Common", ".\src\_UI.Common\Fernweh.UI.Common\src\Fernweh.UI.Common.csproj", "{CCC907A3-64FF-4037-9B8E-4FB0E3CAB2A8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Frenweh.Service.SignalR", ".\src\++SignalR\Frenweh.Service.SignalR\src\Frenweh.Service.SignalR.csproj", "{890D8932-9EEE-4AA1-B715-8790B6139C58}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fernweh.Service.SignalR", ".\src\++SignalR\Fernweh.Service.SignalR\src\Fernweh.Service.SignalR.csproj", "{890D8932-9EEE-4AA1-B715-8790B6139C58}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TPL.TplCore", ".\src\+Modules\Required\ThePublicLibrary\____Core\_TPL.TplCore\src\TPL.TplCore.csproj", "{E32F192F-F52A-4B0D-A99E-D662E22D1AA8}"
 EndProject
@@ -37,11 +37,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TPL.UI.TplBlazorModule", ".
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TPL.UI.TplBlazorModuleAdmin", ".\src\+Modules\Required\ThePublicLibrary\UI\TPL.UI.TplBlazorModuleAdmin\TPL.UI.TplBlazorModuleAdmin.csproj", "{99F09876-983D-44FA-AA6B-3B92869C127D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Frenweh.UI.BlazorClient", ".\src\UI\Client\Frenweh.UI.BlazorClient\src\Frenweh.UI.BlazorClient.csproj", "{7DACA9D7-C588-4A36-8D01-D2D771598B2F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fernweh.UI.BlazorClient", ".\src\UI\Client\Fernweh.UI.BlazorClient\src\Fernweh.UI.BlazorClient.csproj", "{7DACA9D7-C588-4A36-8D01-D2D771598B2F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Frenweh.UI.BlazorClient.UITests", ".\src\UI\Client\Frenweh.UI.BlazorClient.UITests\src\Frenweh.UI.BlazorClient.UITests.csproj", "{4345B971-C3B0-4170-A208-2B431D4B780A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fernweh.UI.BlazorClient.UITests", ".\src\UI\Client\Fernweh.UI.BlazorClient.UITests\src\Fernweh.UI.BlazorClient.UITests.csproj", "{4345B971-C3B0-4170-A208-2B431D4B780A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Frenweh.UI.BlazorClient.UIUnitTests", ".\src\UI\Client\Frenweh.UI.BlazorClient.UIUnitTests\src\Frenweh.UI.BlazorClient.UIUnitTests.csproj", "{4CF78E23-3005-4670-888F-8F6EE4E08CFE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fernweh.UI.BlazorClient.UIUnitTests", ".\src\UI\Client\Fernweh.UI.BlazorClient.UIUnitTests\src\Fernweh.UI.BlazorClient.UIUnitTests.csproj", "{4CF78E23-3005-4670-888F-8F6EE4E08CFE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

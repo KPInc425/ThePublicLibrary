@@ -29,13 +29,13 @@
   <Choose>
     <When Condition="'$(Configuration)' == 'Release'">
       <ItemGroup>
-        <PackageReference Include="Frenweh.KernelShared" />
+        <PackageReference Include="Fernweh.KernelShared" />
         <PackageReference Include="TPL.TplCore" />
       </ItemGroup>
     </When>
   </Choose>
   <ItemGroup>
-    <ProjectReference Include="./../../../../../../__Kernel/Frenweh.KernelShared/src/Frenweh.KernelShared.csproj" />
+    <ProjectReference Include="./../../../../../../__Kernel/Fernweh.KernelShared/src/Fernweh.KernelShared.csproj" />
     <ProjectReference Include="./../../../____Core/_TPL.TplCore/src/TPL.TplCore.csproj" />
   </ItemGroup>
 

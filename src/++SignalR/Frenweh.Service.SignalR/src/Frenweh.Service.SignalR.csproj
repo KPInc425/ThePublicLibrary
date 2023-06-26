@@ -5,11 +5,11 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <IsPackable>false</IsPackable>
-    <PackageId>Frenweh.Services.Signalr</PackageId>
+    <PackageId>Fernweh.Services.Signalr</PackageId>
     <Version>1.01.02.003</Version>
     <Authors>10GeekJames</Authors>
     <Company>10GeekJames</Company>
-    <DefaultNamespace>Frenweh.Services.Signalr</DefaultNamespace>
+    <DefaultNamespace>Fernweh.Services.Signalr</DefaultNamespace>
   </PropertyGroup>
 
   <ItemGroup>

@@ -8,7 +8,7 @@ global using Microsoft.Extensions.DependencyInjection;
 global using Microsoft.Extensions.Hosting;
 global using Microsoft.Extensions.Logging;
 
-global using Frenweh.KernelShared.Interfaces;
+global using Fernweh.KernelShared.Interfaces;
 global using TPL.TplCore.TplTestData.Entities;
 
 global using TPL.TplInfrastructure;

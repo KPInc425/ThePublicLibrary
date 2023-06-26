@@ -39,7 +39,7 @@
   <Choose>
     <When Condition="'$(Configuration)' == 'Release'">
       <ItemGroup>
-        <PackageReference Include="Frenweh.KernelShared" />
+        <PackageReference Include="Fernweh.KernelShared" />
         <PackageReference Include="TPL.TplCore" />
         <PackageReference Include="TPL.TplInfrastructure" />
         <PackageReference Include="TPL.TplApplication" />
@@ -47,7 +47,7 @@
     </When>
   </Choose>
   <ItemGroup>
-    <ProjectReference Include="./../../../../../../__Kernel/Frenweh.KernelShared/src/Frenweh.KernelShared.csproj" />
+    <ProjectReference Include="./../../../../../../__Kernel/Fernweh.KernelShared/src/Fernweh.KernelShared.csproj" />
     <ProjectReference Include="./../../../____Core/_TPL.TplCore/src/TPL.TplCore.csproj" />
     <ProjectReference Include="./../../../___Infrastructure/TPL.TplInfrastructure/src/TPL.TplInfrastructure.csproj" />
     <ProjectReference Include="./../../../_Application/_TPL.TplApplication.Shared/src/TPL.TplApplication.Shared.csproj" />
