@@ -1,4 +1,4 @@
-namespace TPL.TplApplication.Shared.Configuration;
+namespace Fernweh.KernelShared.Configuration;
 public class Endpoints
 {
     public string IdentityEndpointUrl { get; set; } = "";
@@ -13,7 +13,6 @@ public class Endpoints
     public string TplAdminApiUrl { get; set; } = "";
     public string TplAdminApiVersion { get; set; } = "";
     public string TplAdminApiName { get; set; } = "tpl_primary_admin_api";
-
     
 
     public string YmiApiUrl { get; set; } = "";

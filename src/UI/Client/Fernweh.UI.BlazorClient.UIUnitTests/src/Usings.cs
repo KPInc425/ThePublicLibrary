@@ -13,10 +13,12 @@ global using Telerik.JustMock;
 
 global using Xunit;
 
-global using TPL.TplApplication.Shared.Configuration;
 global using TPL.TplApplication.Shared.Interfaces;
 
 global using TPL.UI.TplModuleClientServiceLoader;
+
+global using Fernweh.KernelShared.Configuration;
+
 global using Fernweh.UI.BlazorClient.Pages;
 
 global using Fernweh.UI.Common;

@@ -134,11 +134,11 @@
             ]
         },        
         {
-            "name": "TPL.UI.Client.BlazorClient",
+            "name": "Fernweh.UI.BlazorClient",
             "enabled": true,
             "terminals": [
                 {
-                    "name": "TPL.UI.Client.BlazorClient",
+                    "name": "Fernweh.UI.BlazorClient",
                     "path": "./src/UI/Client/Fernweh.UI.BlazorClient/src",
                     "cmd": [
                         "ping 127.0.0.1 -n 30 > nul",                        

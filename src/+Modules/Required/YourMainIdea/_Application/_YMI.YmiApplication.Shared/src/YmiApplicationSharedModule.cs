@@ -7,16 +7,16 @@ public class YmiApplicationSharedModule : Module
     private readonly bool _isDevelopment = false;
     private readonly List<Assembly> _assemblies = new List<Assembly>();
 
-    public YmiApplicationSharedModule(bool isDevelopment, Assembly callingAssembly = null)
+    public YmiApplicationSharedModule(bool isDevelopment, Assembly? callingAssembly = null)
     {
         _isDevelopment = isDevelopment;
         var coreAssembly = Assembly.GetAssembly(typeof(YmiCoreModule));
         var infrastructureAssembly = Assembly.GetAssembly(typeof(YmiInfrastructureModule));
         var applicationAssembly = Assembly.GetAssembly(typeof(YmiApplicationSharedModule));
 
-        _assemblies.Add(coreAssembly);
-        _assemblies.Add(infrastructureAssembly);
-        _assemblies.Add(applicationAssembly);
+        _assemblies.Add(coreAssembly!);
+        _assemblies.Add(infrastructureAssembly!);
+        _assemblies.Add(applicationAssembly!);
 
         if (callingAssembly != null)
         {

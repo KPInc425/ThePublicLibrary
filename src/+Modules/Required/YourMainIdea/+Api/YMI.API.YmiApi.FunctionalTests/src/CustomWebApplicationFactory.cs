@@ -3,8 +3,8 @@ using System.Reflection;
 namespace YMI.API.YmiApi.FunctionalTests;
 public class CustomWebApplicationFactory<TStartup> : WebApplicationFactory<Startup>
 {
-    private ILogger<CustomWebApplicationFactory<TStartup>> _logger;
-    private IConfiguration _configuration;
+    private ILogger<CustomWebApplicationFactory<TStartup>>? _logger;
+    private IConfiguration? _configuration;
     private readonly List<Assembly> _assemblies = new List<Assembly>();
     protected override IHost CreateHost(IHostBuilder builder)
     {
@@ -38,8 +38,6 @@ public class CustomWebApplicationFactory<TStartup> : WebApplicationFactory<Start
 
     protected override IHostBuilder CreateHostBuilder()
     {
-        var isInDevelopment = true;
-
         return Host.CreateDefaultBuilder()
             .UseServiceProviderFactory(new AutofacServiceProviderFactory())
             .ConfigureWebHost((builder) =>
@@ -67,8 +65,8 @@ public class CustomWebApplicationFactory<TStartup> : WebApplicationFactory<Start
 
         //_assemblies.Add(coreAssembly);
         //_assemblies.Add(infrastructureAssembly);
-        _assemblies.Add(applicationAssembly);
-        _assemblies.Add(primaryApiAssembly);
+        _assemblies.Add(applicationAssembly!);
+        _assemblies.Add(primaryApiAssembly!);
 
         containerBuilder.RegisterGeneric(typeof(EfRepository<>))
             .As(typeof(IRepository<>))
@@ -123,13 +121,13 @@ public class CustomWebApplicationFactory<TStartup> : WebApplicationFactory<Start
                 }
 
                 var appSettings = _configuration.Get<AppSettings>();
-                services.AddSingleton<AppSettings>(appSettings);
+                services.AddSingleton<AppSettings>(appSettings!);
                 services.AddEntityFrameworkInMemoryDatabase();
 
                 services.AddYmiInMemoryDbContext("ymi.primary.db");
 
                 var seedDataAssembly = Assembly.GetAssembly(typeof(RunBaseSeedData));
-                foreach (var seedData in seedDataAssembly
+                foreach (var seedData in seedDataAssembly!
                     .GetTypes()
                     .Where(x => x.IsAssignableTo(typeof(IYmiSeedScript)) && x.IsClass)
                     .OrderBy(rs => rs.Name))

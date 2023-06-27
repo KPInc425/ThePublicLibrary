@@ -18,12 +18,13 @@ builder.Services.AddScoped<ILayoutService, LayoutService>();
 builder.Services.AddSingleton<BrowserResizeService>();
 builder.Services.AddSingleton<RandomizerService>();
 builder.Services.AddSingleton<LazyModuleJsInterop>();
-var appSettings = builder.Configuration.Get<AppSettings>();
-var endPoints = appSettings.Endpoints;
-var featureFlags = appSettings.FeatureFlags;
 
-builder.Services.AddSingleton<Endpoints>(endPoints);
-builder.Services.AddSingleton<FeatureFlags>(featureFlags);
+var appSettings = builder.Configuration.Get<AppSettings>();
+var endPoints = appSettings!.Endpoints;
+var featureFlags = appSettings!.FeatureFlags;
+
+builder.Services.AddSingleton<Endpoints>(endPoints!);
+builder.Services.AddSingleton<FeatureFlags>(featureFlags!);
 
 /* builder.Services.AddOidcAuthentication(options =>
         {

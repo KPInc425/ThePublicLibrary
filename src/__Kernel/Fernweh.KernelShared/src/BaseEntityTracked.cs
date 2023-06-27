@@ -1,14 +1,16 @@
 namespace Fernweh.KernelShared;
 public abstract class BaseEntityTracked<T>
 {
+#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
     public T Id { get; set; }
+#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
     public DateTime CreatedOn { get; set; }
     public DateTime UpdatedOn { get; set; }
 
-    public List<BaseDomainEvent> Events = new List<BaseDomainEvent>();
+    public List<BaseDomainEvent>? Events = new List<BaseDomainEvent>();
 
-    private List<PropertyInfo> properties;
-    private List<FieldInfo> fields;
+    private List<PropertyInfo>? properties;
+    private List<FieldInfo>? fields;
 
     public override string ToString()
     {
@@ -54,13 +56,13 @@ public abstract class BaseEntityTracked<T>
             foreach (var prop in GetProperties())
             {
                 var value = prop.GetValue(this, null);
-                hash = HashValue(hash, value);
+                hash = HashValue(hash, value!);
             }
 
             foreach (var field in GetFields())
             {
                 var value = field.GetValue(this);
-                hash = HashValue(hash, value);
+                hash = HashValue(hash, value!);
             }
 
             return hash;

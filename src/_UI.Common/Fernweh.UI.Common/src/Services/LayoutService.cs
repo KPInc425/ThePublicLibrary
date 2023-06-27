@@ -2,7 +2,7 @@ namespace Fernweh.UI.Common.Services
 {
     public class LayoutService : ILayoutService, INotifyPropertyChanged
     {
-        public SetModuleAdminNav ModuleAdminNavSetter
+        public SetModuleAdminNav? ModuleAdminNavSetter
         {
             get => moduleAdminNavSetter;
             set
@@ -13,7 +13,7 @@ namespace Fernweh.UI.Common.Services
             }
         }
 
-        public SetModuleAdminSettings ModuleAdminSettingsSetter
+        public SetModuleAdminSettings? ModuleAdminSettingsSetter
         {
             get => moduleAdminSettingsSetter;
             set
@@ -24,7 +24,7 @@ namespace Fernweh.UI.Common.Services
             }
         }
 
-        public SetModuleNav ModuleNavSetter
+        public SetModuleNav? ModuleNavSetter
         {
             get => moduleNavSetter;
             set
@@ -35,7 +35,7 @@ namespace Fernweh.UI.Common.Services
             }
         }
 
-        public SetModuleBread ModuleBreadSetter
+        public SetModuleBread? ModuleBreadSetter
         {
             get => moduleBreadSetter;
             set
@@ -46,7 +46,7 @@ namespace Fernweh.UI.Common.Services
             }
         }
 
-        public SetModuleSettings ModuleSettingsSetter
+        public SetModuleSettings? ModuleSettingsSetter
         {
             get => moduleSettingsSetter;
             set
@@ -57,29 +57,29 @@ namespace Fernweh.UI.Common.Services
             }
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler? PropertyChanged;
 
         private void NotifyPropertyChanged([CallerMemberName] string propertyName = "")
             => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
-        public RenderFragment ModuleAdminNav => ModuleAdminNavSetter?.ChildContent;
-        private SetModuleAdminNav moduleAdminNavSetter;
+        public RenderFragment? ModuleAdminNav => ModuleAdminNavSetter?.ChildContent;
+        private SetModuleAdminNav? moduleAdminNavSetter;
         public void UpdateModuleAdminNav() => NotifyPropertyChanged(nameof(ModuleAdminNav));
 
-        public RenderFragment ModuleAdminSettings => ModuleAdminSettingsSetter?.ChildContent;
-        private SetModuleAdminSettings moduleAdminSettingsSetter;
+        public RenderFragment? ModuleAdminSettings => ModuleAdminSettingsSetter?.ChildContent;
+        private SetModuleAdminSettings? moduleAdminSettingsSetter;
         public void UpdateModuleAdminSettings() => NotifyPropertyChanged(nameof(ModuleAdminSettings));
 
-        public RenderFragment ModuleNav => ModuleNavSetter?.ChildContent;
-        private SetModuleNav moduleNavSetter;
+        public RenderFragment? ModuleNav => ModuleNavSetter?.ChildContent;
+        private SetModuleNav? moduleNavSetter;
         public void UpdateModuleNav() => NotifyPropertyChanged(nameof(ModuleNav));
 
-        public RenderFragment ModuleSettings => ModuleSettingsSetter?.ChildContent;
-        private SetModuleSettings moduleSettingsSetter;
+        public RenderFragment? ModuleSettings => ModuleSettingsSetter?.ChildContent;
+        private SetModuleSettings? moduleSettingsSetter;
         public void UpdateModuleSettings() => NotifyPropertyChanged(nameof(ModuleSettings));
 
-        public RenderFragment ModuleBread => ModuleBreadSetter?.ChildContent;
-        private SetModuleBread moduleBreadSetter;
+        public RenderFragment? ModuleBread => ModuleBreadSetter?.ChildContent;
+        private SetModuleBread? moduleBreadSetter;
         public void UpdateModuleBread() => NotifyPropertyChanged(nameof(ModuleBread));
     }
 }

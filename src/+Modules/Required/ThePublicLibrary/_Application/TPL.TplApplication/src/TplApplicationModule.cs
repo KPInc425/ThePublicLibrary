@@ -7,16 +7,16 @@ public class TplApplicationModule : Module
     private readonly bool _isDevelopment = false;
     private readonly List<Assembly> _assemblies = new List<Assembly>();
 
-    public TplApplicationModule(bool isDevelopment, Assembly callingAssembly = null)
+    public TplApplicationModule(bool isDevelopment, Assembly? callingAssembly = null)
     {
         _isDevelopment = isDevelopment;
         var coreAssembly = Assembly.GetAssembly(typeof(TplCoreModule));
         var infrastructureAssembly = Assembly.GetAssembly(typeof(TplInfrastructureModule));
         var applicationAssembly = Assembly.GetAssembly(typeof(TplApplicationModule));
 
-        _assemblies.Add(coreAssembly);
-        _assemblies.Add(infrastructureAssembly);
-        _assemblies.Add(applicationAssembly);
+        _assemblies.Add(coreAssembly!);
+        _assemblies.Add(infrastructureAssembly!);
+        _assemblies.Add(applicationAssembly!);
 
         if (callingAssembly != null)
         {

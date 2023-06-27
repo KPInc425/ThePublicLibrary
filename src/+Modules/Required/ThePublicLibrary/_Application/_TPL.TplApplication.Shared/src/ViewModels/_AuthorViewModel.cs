@@ -1,6 +1,6 @@
 ﻿namespace TPL.TplApplication.Shared.ViewModels;
 public class AuthorViewModel : BaseViewModelTracked<Guid>
 {
-    public NameVOViewModel Name { get; set; }
+    public NameVOViewModel Name { get; set; } = new();
 
 }

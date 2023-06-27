@@ -12,7 +12,7 @@ public class BookConditionTests : BaseBooksTest
         IHaveABookCopyOfCondition(BookCondition.Good);
 
         // When I change the condition to poor
-        _bookCopyToTestWith.ChangeCondition(BookCondition.Poor);
+        _bookCopyToTestWith!.ChangeCondition(BookCondition.Poor);
         
         // Then the book is now in poor condition
         _bookCopyToTestWith.Condition.Should().Be(BookCondition.Poor);
@@ -28,10 +28,10 @@ public class BookConditionTests : BaseBooksTest
         IHaveABookCopyOfCondition(BookCondition.Good);
 
         // And I store the number of copies not destroyed
-        var numberOfCopiesNotDestroyed = _bookToTestWith.BookCopies.Count(rs=>rs.Condition != BookCondition.Destroyed);
+        var numberOfCopiesNotDestroyed = _bookToTestWith!.BookCopies.Count(rs=>rs.Condition != BookCondition.Destroyed);
 
         // When I remove the damaged copy
-        _bookToTestWith.RemoveBookCopy(_bookCopyToTestWith);
+        _bookToTestWith.RemoveBookCopy(_bookCopyToTestWith!);
 
         // Then I should have one fewer copies of the book
         var numberOfCopiesNotDestroyedUpdated = _bookToTestWith.BookCopies.Count(rs=>rs.Condition != BookCondition.Destroyed);

@@ -8,7 +8,6 @@ global using Microsoft.AspNetCore.Components.WebAssembly.Services;
 global using Microsoft.Extensions.Configuration;
 global using Microsoft.Extensions.DependencyInjection;
 
-
 global using MudBlazor.Services;
 
 global using System;
@@ -18,16 +17,18 @@ global using System.Linq;
 global using System.Text.Json;
 global using System.Net.Http;
 
+global using Fernweh.KernelShared.Configuration;
+
 global using Fernweh.UI.BlazorClient;
 
 global using Fernweh.UI.Common;
+
 global using Fernweh.UI.Common.Interfaces;
 global using Fernweh.UI.Common.Services;
 
 // ThePublicLibrary
 global using TPL.TplCore.TplTestData.Entities;
 
-global using TPL.TplApplication.Shared.Configuration;
 global using TPL.TplApplication.Shared.Interfaces;
 global using TPL.TplApplication.Shared.Services;
 
@@ -37,7 +38,6 @@ global using TPL.UI.TplModuleClientServiceLoader;
 // YourMainIdea
 global using YMI.YmiCore.YmiTestData.Entities;
 
-global using YMI.YmiApplication.Shared.Configuration;
 global using YMI.YmiApplication.Shared.Interfaces;
 global using YMI.YmiApplication.Shared.Services;
 

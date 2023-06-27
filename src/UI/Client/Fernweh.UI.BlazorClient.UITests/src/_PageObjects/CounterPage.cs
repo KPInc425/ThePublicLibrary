@@ -18,8 +18,8 @@ public class CounterPage : BasePageObject {
     public ILocator CounterValue => Page.Locator(CounterValueSelector);
     public ILocator IncrementButton => Page.Locator(IncrementButtonSelector);
     
-    public async Task NavigateTo() => await base.GotoAsync(PagePath);
-    public async Task IncrementValue() => await IncrementButton.ClickAsync();
+    public async Task NavigateToAsync() => await base.GotoAsync(PagePath);
+    public async Task IncrementValueAsync() => await IncrementButton.ClickAsync();
     public async Task<int> GetIncrementValueAsync() => int.Parse(await CounterValue.TextContentAsync()); 
 
     

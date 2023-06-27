@@ -7,14 +7,14 @@ namespace TPL.TplCore.UnitTests.Books
         {
             // Given I have a book with no copies
             ICreateABook(BookTplTestData.BookNoCopies);
-            _bookToTestWith.BookCopies.Should().BeEmpty();
+            _bookToTestWith!.BookCopies.Should().BeEmpty();
 
             // When I add a book copy
-            _bookToTestWith.AddBookCopy(BookCondition.Good);
+            _bookToTestWith!.AddBookCopy(BookCondition.Good);
 
             // Then there should be on copy of the book
-            _bookToTestWith.BookCopies.Should().NotBeEmpty();
-            _bookToTestWith.BookCopies.Count().Should().Be(1);
+            _bookToTestWith!.BookCopies.Should().NotBeEmpty();
+            _bookToTestWith!.BookCopies.Count().Should().Be(1);
         }
     }
 }

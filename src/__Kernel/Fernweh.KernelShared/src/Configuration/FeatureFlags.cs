@@ -1,4 +1,5 @@
-namespace TPL.TplApplication.Shared.Configuration;
+namespace Fernweh.KernelShared.Configuration;
+
 public class FeatureFlags { 
      public bool FeatureAlternativeHomePageRedirect { get; set; } = false;
 }

@@ -7,7 +7,7 @@ public class YmiApiModule : Module
     private readonly bool _isDevelopment = false;
     private readonly List<Assembly> _assemblies = new List<Assembly>();
 
-    public YmiApiModule(bool isDevelopment, Assembly callingAssembly = null)
+    public YmiApiModule(bool isDevelopment, Assembly? callingAssembly = null)
     {
         _isDevelopment = isDevelopment;
         var coreAssembly = Assembly.GetAssembly(typeof(YmiCoreModule));

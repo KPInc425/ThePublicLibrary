@@ -12,12 +12,12 @@ public class Startup
     {
 
         string connectionString =
-            Configuration.GetConnectionString("Active");
+            Configuration.GetConnectionString("Active") ?? "";
 
         var appSettings = Configuration.Get<AppSettings>();
         
         services
-            .AddSingleton<AppSettings>(appSettings);
+            .AddSingleton<AppSettings>(appSettings!);
         
         services
             .AddTplDbContext(connectionString);
@@ -63,8 +63,8 @@ public class Startup
                     "v1",
                         new OpenApiInfo
                         {
-                            Title = appSettings.Endpoints.TplApiName,
-                            Version = appSettings.Endpoints.TplApiVersion
+                            Title = appSettings!.Endpoints.TplApiName,
+                            Version = appSettings!.Endpoints.TplApiVersion
                         });
                 c.EnableAnnotations();
             });

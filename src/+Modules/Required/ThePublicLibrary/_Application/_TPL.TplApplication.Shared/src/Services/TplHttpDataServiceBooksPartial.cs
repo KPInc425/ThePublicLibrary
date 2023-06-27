@@ -2,7 +2,7 @@
 namespace TPL.TplApplication.Shared.Services;
 public partial class TplHttpDataService
 {
-    public async Task<List<BookViewModel>> BooksGetAllAsync(BooksGetAllQry qry)
+    public async Task<List<BookViewModel>?> BooksGetAllAsync(BooksGetAllQry qry)
     {
         var response = await _httpClient.GetAsync(BooksGetAllRequest.BuildRoute());
 
@@ -13,7 +13,7 @@ public partial class TplHttpDataService
             .ReadFromJsonAsync<List<BookViewModel>>();
     }
 
-     public async Task<BookViewModel> BookAddAsync(BookAddCmd cmd)
+     public async Task<BookViewModel?> BookAddAsync(BookAddCmd cmd)
     {
         var response = await _httpClient.PostAsJsonAsync(BookAddRequest.BuildRoute(), cmd);
 
@@ -24,7 +24,7 @@ public partial class TplHttpDataService
             .ReadFromJsonAsync<BookViewModel>();
     }
 
-     public async Task<List<BookViewModel>> BooksFindAsync(BooksFindQry qry)
+     public async Task<List<BookViewModel>?> BooksFindAsync(BooksFindQry qry)
     {
         var response = await _httpClient.PostAsJsonAsync(BooksFindRequest.BuildRoute(qry), qry);
 

@@ -2,16 +2,16 @@ namespace Fernweh.UI.Common.Services
 {
     public class PlatformStateCacheService
     {
-        private string _appCulture;
-        private int _headspace;
+        private string? _appCulture;
+        private int? _headspace;
 
-        public event Action OnChange;
+        public event Action? OnChange;
         private void NotifyStateChanged() => OnChange?.Invoke();
         private IJSRuntime JSRuntime;
 
         public PlatformStateCacheService(IJSRuntime JSRuntime){
             this.JSRuntime = JSRuntime;
-            InitStateFromCache();
+            _ = InitStateFromCache();
         }
         private async Task InitStateFromCache(){
             _appCulture = await JSRuntime.InvokeAsync<string>("appCulture.get") ?? "en-US";
@@ -19,7 +19,7 @@ namespace Fernweh.UI.Common.Services
         }
         public string AppCulture
         {
-            get => _appCulture;
+            get => _appCulture ?? "";
             set
             {
                 _appCulture = value;
@@ -30,7 +30,7 @@ namespace Fernweh.UI.Common.Services
         }
         public int Headspace
         {
-            get => _headspace;
+            get => _headspace ?? -1;
         }
 
         public async Task UpdateHeadspace(int newValue) {   

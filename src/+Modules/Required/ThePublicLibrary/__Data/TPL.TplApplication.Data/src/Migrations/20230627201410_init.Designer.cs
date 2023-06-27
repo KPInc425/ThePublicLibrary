@@ -11,7 +11,7 @@ using TPL.TplInfrastructure.Data;
 namespace TPL.TplApplication.Data.Migrations
 {
     [DbContext(typeof(TplDbContext))]
-    [Migration("20230627012459_init")]
+    [Migration("20230627201410_init")]
     partial class init
     {
         /// <inheritdoc />

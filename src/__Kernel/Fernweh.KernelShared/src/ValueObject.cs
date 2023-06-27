@@ -1,8 +1,8 @@
 namespace Fernweh.KernelShared;
 public abstract class ValueObject : IEquatable<ValueObject>
 {
-    private List<PropertyInfo> properties;
-    private List<FieldInfo> fields;
+    private List<PropertyInfo>? properties;
+    private List<FieldInfo>? fields;
 
     public override string ToString()
     {
@@ -28,12 +28,16 @@ public abstract class ValueObject : IEquatable<ValueObject>
         return !(obj1 == obj2);
     }
 
+#pragma warning disable CS8767 // Nullability of reference types in type of parameter doesn't match implicitly implemented member (possibly because of nullability attributes).
     public bool Equals(ValueObject obj)
+#pragma warning restore CS8767 // Nullability of reference types in type of parameter doesn't match implicitly implemented member (possibly because of nullability attributes).
     {
         return Equals(obj as object);
     }
 
+#pragma warning disable CS8765 // Nullability of type of parameter doesn't match overridden member (possibly because of nullability attributes).
     public override bool Equals(object obj)
+#pragma warning restore CS8765 // Nullability of type of parameter doesn't match overridden member (possibly because of nullability attributes).
     {
         if (obj == null || GetType() != obj.GetType()) return false;
 
@@ -87,13 +91,13 @@ public abstract class ValueObject : IEquatable<ValueObject>
             foreach (var prop in GetProperties())
             {
                 var value = prop.GetValue(this, null);
-                hash = HashValue(hash, value);
+                hash = HashValue(hash, value!);
             }
 
             foreach (var field in GetFields())
             {
                 var value = field.GetValue(this);
-                hash = HashValue(hash, value);
+                hash = HashValue(hash, value!);
             }
 
             return hash;

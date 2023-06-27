@@ -4,6 +4,7 @@ public class EfBookApplicationUpdate : BaseApplicationTestFixture
     [Fact]
     public async Task UpdatesItemAfterAddingIt()
     {
+        await Task.Yield();
         /* // add a Book
         var repository = BookApplication();
         var initialName = "My Name";

@@ -4,6 +4,7 @@ public class EfLibraryRepositoryDelete : BaseTestFixture
     [Fact]
     public async Task DeletesItemAfterAddingIt()
     {
+        await Task.Yield();
       /*   // add a Library
         var repository = LibraryRepository();
         var initialName = "My Name";

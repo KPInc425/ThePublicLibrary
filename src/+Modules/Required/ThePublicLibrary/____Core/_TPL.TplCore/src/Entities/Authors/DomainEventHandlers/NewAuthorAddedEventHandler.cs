@@ -5,6 +5,7 @@ public class NewAuthorAddedEventHandler : INotificationHandler<NewAuthorAddedEve
         {
             Guard.Against.Null(domainEvent, nameof(domainEvent));
 
+            await Task.Yield();
             // do awesome things            
         }
     }

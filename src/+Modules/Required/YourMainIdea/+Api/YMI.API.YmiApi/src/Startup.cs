@@ -14,15 +14,13 @@ public class Startup
         string connectionString =
             Configuration.GetConnectionString("Active");
 
-        var appSettings = Configuration.Get<YmiAppSettings>();
+        var appSettings = Configuration.Get<AppSettings>();
         
         services
-            .AddSingleton<YmiAppSettings>(appSettings);
+            .AddSingleton<AppSettings>(appSettings);
         
         services
             .AddYmiDbContext(connectionString);
-        // services.AddDbContext<YmiDbContext>(options =>
-        //     options.UseSqlite(connectionString, b => b.MigrationsAssembly("YMI.YmiApplication.Data")));
 
         services
             .Configure<CookiePolicyOptions>(options =>
@@ -63,8 +61,8 @@ public class Startup
                     "v1",
                         new OpenApiInfo
                         {
-                            Title = appSettings.YmiEndpoints.YmiApiName,
-                            Version = appSettings.YmiEndpoints.YmiApiVersion
+                            Title = appSettings.Endpoints.YmiApiName,
+                            Version = appSettings.Endpoints.YmiApiVersion
                         });
                 c.EnableAnnotations();
             });

@@ -4,7 +4,7 @@ public class VideoCheckedInDomainEventHandler : INotificationHandler<VideoChecke
         public async Task Handle(VideoCheckedInDomainEvent domainEvent, CancellationToken cancellationToken)
         {
             Guard.Against.Null(domainEvent, nameof(domainEvent));
-
+            await Task.Yield();
             // do awesome things            
         }
     }
