@@ -1,0 +1,65 @@
+{
+    "version": "1.2.1",
+    "groups": [
+        {
+            "name": "Fernweh.KernelShared",
+            "enabled": true,
+            "terminals": [
+                {
+                    "name": "Fernweh.KernelShared",
+                    "path": "./src/__Kernel/Fernweh.KernelShared/src",
+                    "cmd": [
+                        "dotnet build"
+                    ],
+                    "num": 0
+                }
+            ]
+        },
+        {
+            "name": "YMI.YmiCore",
+            "enabled": true,
+            "terminals": [
+                {
+                    "name": "YMI.YmiCore",
+                    "path": "./src/+Modules/Required/YourMainIdea/____Core/_YMI.YmiCore/src",
+                    "cmd": [
+                        ""
+                    ],
+                    "num": 1
+                },
+                {
+                    "name": "YMI.YmiCore.UnitTests",
+                    "path": "./src/+Modules/Required/YourMainIdea/____Core/_YMI.YmiCore.UnitTests/src",
+                    "cmd": [
+                        "dotnet test"
+                    ],
+                    "num": 2
+                }
+            ]
+        },
+        {
+            "name": "YMI.YmiInfrastructure",
+            "description": "Infrastructure and Tests",
+            "enabled": true,
+            "terminals": [
+                {
+                    "name": "YMI.YmiInfrastructure",
+                    "path": "./src/+Modules/Required/YourMainIdea/___Infrastructure/YMI.YmiInfrastructure/src",
+                    "cmd": [
+                        ""
+                    ],
+                    "num": 4
+                },
+                {
+                    "name": "YMI.YmiInfrastructure.IntegrationTests",
+                    "path": "./src/+Modules/Required/YourMainIdea/___Infrastructure/YMI.YmiInfrastructure.IntegrationTests/src",
+                    "cmd": [
+                        "ping 127.0.0.1 -n 5",
+                        "dotnet test"
+                    ],
+                    "num": 5
+                }
+            ]
+        }
+    ]
+}
