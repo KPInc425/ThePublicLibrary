@@ -1,0 +1,21 @@
+namespace YMI.YmiCore.Entities;
+[Owned]
+public class PhysicalAddyVO : ValueObject
+{
+    public string Street1 { get; init; }
+    public string Street2 { get; init; }
+    public string City { get; init; }
+    public string StateProvince { get; init; }
+    public string PostalCode { get; init; }
+    public string Country { get; init; }
+    private PhysicalAddyVO(){}
+    public PhysicalAddyVO(string street1, string street2, string city, string stateProvince, string postalCode, string country)
+    {
+        Street1 = street1;
+        Street2 = street2;
+        City = city;
+        StateProvince = stateProvince;
+        PostalCode = postalCode;
+        Country = country;
+    }
+}

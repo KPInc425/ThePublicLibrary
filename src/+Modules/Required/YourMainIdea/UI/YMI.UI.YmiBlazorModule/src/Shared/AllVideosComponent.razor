@@ -1,0 +1,25 @@
+@inject IStringLocalizer<AllVideosComponent> Localize
+
+<div>
+    <p>The Public VideoStore - General Lazy Module</p>
+    @foreach(var video in _videos) {
+        <div>@video.Title</div>        
+    }
+    
+    <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="() => GetAllVideos()" >Load Checked</MudButton>    
+</div>
+
+@code {
+    private List<VideoViewModel> _videos = new();
+    
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();                     
+    }
+
+    protected async Task GetAllVideos() {
+        var VideosGetAllQry = new VideosGetAllQry();
+        
+        _videos = await YmiDataService.VideosGetAllAsync(VideosGetAllQry);
+    }
+}

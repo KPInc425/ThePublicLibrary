@@ -1,0 +1,6 @@
+Feature: Video Constructor
+
+Scenario: Video Constructor
+    Given a video with title "The Hobbit" and actor "J.R.R. Tolkien"
+    When I call the videos toString method
+    Then I get the string "The Hobbit by J.R.R. Tolkien"

@@ -7,7 +7,7 @@
     <IsPackable>true</IsPackable>
     <PackageId>YMI.API.YmiApi</PackageId>
     <Version>1.01.02.003</Version>
-    <Authors>10GeekJames</Authors>
+    <Actors>10GeekJames</Actors>
     <Company>10GeekJames</Company>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <DefaultNamespace>YMI.API.YmiApi</DefaultNamespace> 

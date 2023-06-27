@@ -28,6 +28,33 @@
   </ItemGroup>
 
   <!-- /The Public Library -->
+
+   <!-- The YourMainIdea -->
+  <Choose>
+    <When Condition="'$(Configuration)' == 'Release'">
+      <ItemGroup>
+        <PackageReference Include="YMI.YmiCore" />
+        <PackageReference Include="YMI.YmiInfrastructure" />
+        <PackageReference Include="YMI.YmiApplication" />
+        <PackageReference Include="YMI.UI.YmiBlazorModule" />
+      </ItemGroup>
+    </When>
+  </Choose>
+
+  <ItemGroup>
+    <ProjectReference Include="./../../../../+Modules/Required/YourMainIdea/____Core/YMI.YmiCore.YmiTestData/src/YMI.YmiCore.YmiTestData.csproj" />
+    <ProjectReference Include="./../../../../+Modules/Required/YourMainIdea/___Infrastructure/YMI.YmiInfrastructure/src/YMI.YmiInfrastructure.csproj" />    
+    <ProjectReference Include="./../../../../+Modules/Required/YourMainIdea/_Application/_YMI.YmiApplication.Shared/src/YMI.YmiApplication.Shared.csproj" />
+    <ProjectReference Include="./../../../../+Modules/Required/YourMainIdea/UI/_YMI.UI.YmiModuleClientServiceLoader/src/YMI.UI.YmiModuleClientServiceLoader.csproj" />
+    
+    <ProjectReference Include="./../../../../+Modules/Required/YourMainIdea/UI/YMI.UI.YmiBlazorModule/src/YMI.UI.YmiBlazorModule.csproj" />      
+    <BlazorWebAssemblyLazyLoad Include="YMI.UI.YmiBlazorModule.dll" />
+
+    <ProjectReference Include="./../../../../+Modules/Required/YourMainIdea/UI/YMI.UI.YmiBlazorModuleAdmin/src/YMI.UI.YmiBlazorModuleAdmin.csproj" />      
+    <BlazorWebAssemblyLazyLoad Include="YMI.UI.YmiBlazorModuleAdmin.dll" />
+  </ItemGroup>
+
+  <!-- /The YourMainIdea -->
   
   <!-- Known Accounts Module -->    
   <!-- /Known Accounts Module -->

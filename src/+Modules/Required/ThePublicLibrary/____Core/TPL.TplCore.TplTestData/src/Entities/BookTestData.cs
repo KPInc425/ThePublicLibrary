@@ -57,7 +57,7 @@ public static class BookTplTestData
         BookWithCategories.AddBookCopy(BookCondition.Fair);
         BookWithCategories.AddBookCopy(BookCondition.Poor);
         
-        BookOfFantasy = new(new("978-0-00-000131-1"), new List<Author> { AuthorTplTestData.AuthorSallyTyper }, new List<BookCategory> { BookCategoryFantasy }, null, "Book Of Fantasy", 1981, 110);
+        BookOfFantasy = new(new("978-0-00-000214-6"), new List<Author> { AuthorTplTestData.AuthorSallyTyper }, new List<BookCategory> { BookCategoryFantasy }, null, "Book Of Fantasy", 1981, 110);
 
 
         AllBooks = new List<Book> {

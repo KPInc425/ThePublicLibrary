@@ -14,7 +14,6 @@ builder.Services.AddMudServices();
 builder.Services.AddScoped<PlatformStateCacheService>();
 builder.Services.AddScoped<PlatformCacheService>();
 
-builder.Services.AddScoped<ITplDataService, TplHttpDataService>();
 builder.Services.AddScoped<ILayoutService, LayoutService>();
 builder.Services.AddSingleton<BrowserResizeService>();
 builder.Services.AddSingleton<RandomizerService>();
@@ -39,7 +38,7 @@ builder.Services.AddSingleton<FeatureFlags>(featureFlags);
             options.AuthenticationPaths.LogOutSucceededPath = "/Welcome";
         }).AddAccountClaimsPrincipalFactory<AccountClaimsPrincipalFactoryEx>();
 builder.Services.AddScoped<CustomAuthorizationMessageHandler>(); */
-System.Console.WriteLine($"Hello > {endPoints.TplApiUrl}, t/f {builder.HostEnvironment.IsDevelopment()}");
+
 /* builder.Services.AddGoogleAnalytics("G-WZSRLSH36B"); */
 
 /* builder
@@ -48,6 +47,12 @@ System.Console.WriteLine($"Hello > {endPoints.TplApiUrl}, t/f {builder.HostEnvir
                 client.BaseAddress = new Uri(endPoints.TplApiUrl)
         ).AddHttpMessageHandler<CustomAuthorizationMessageHandler>();
  */
+
+
+// \ThePublicLibrary
+System.Console.WriteLine($"Hello > {endPoints.TplApiUrl}, t/f {builder.HostEnvironment.IsDevelopment()}");
+
+builder.Services.AddScoped<ITplDataService, TplHttpDataService>();
 
 builder
     .Services
@@ -72,6 +77,38 @@ builder.Services.AddScoped<ITplDataService>(x => x
 builder.Services.AddScoped<ITplDataServiceNotAuthed>(x => x
         .GetRequiredService<TplHttpClientFactory>()
         .CreateNotAuthed());
+// \ThePublicLibrary
+
+
+// YourMainIdea
+System.Console.WriteLine($"Hello > {endPoints.YmiApiUrl}, t/f {builder.HostEnvironment.IsDevelopment()}");
+builder.Services.AddScoped<IYmiDataService, YmiHttpDataService>();
+
+builder
+    .Services
+        .AddHttpClient("YmiHttpClient", client =>
+                client.BaseAddress = new Uri(endPoints.YmiApiUrl)
+        );
+        
+builder
+    .Services
+        .AddHttpClient("YmiNotAuthedHttpClient", client =>
+                client.BaseAddress = new Uri(endPoints.YmiApiUrl)
+        );
+
+
+builder.Services.AddScoped<YmiHttpClientFactory>();
+builder.Services.AddYmiHttpDataService();
+
+builder.Services.AddScoped<IYmiDataService>(x => x
+        .GetRequiredService<YmiHttpClientFactory>()
+        .Create());
+
+builder.Services.AddScoped<IYmiDataServiceNotAuthed>(x => x
+        .GetRequiredService<YmiHttpClientFactory>()
+        .CreateNotAuthed());
+// \YourMainIdea
+
 
 /* LazyServices.RegisterLazyModules(builder);
  */

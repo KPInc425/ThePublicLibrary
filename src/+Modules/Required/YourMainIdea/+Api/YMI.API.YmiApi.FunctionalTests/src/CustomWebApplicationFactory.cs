@@ -97,7 +97,7 @@ public class CustomWebApplicationFactory<TStartup> : WebApplicationFactory<Start
         }
 
         var services = new ServiceCollection();
-        services.AddAutoMapper(typeof(BookMapper).GetTypeInfo().Assembly);
+        services.AddAutoMapper(typeof(VideoMapper).GetTypeInfo().Assembly);
         containerBuilder.Populate(services);
 
 

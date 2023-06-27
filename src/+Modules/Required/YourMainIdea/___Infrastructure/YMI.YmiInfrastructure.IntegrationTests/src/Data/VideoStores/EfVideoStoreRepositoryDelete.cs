@@ -1,0 +1,22 @@
+namespace YMI.YmiInfrastructure.IntegrationTests.Data;
+public class EfVideoStoreRepositoryDelete : BaseTestFixture
+{
+    [Fact]
+    public async Task DeletesItemAfterAddingIt()
+    {
+      /*   // add a VideoStore
+        var repository = VideoStoreRepository();
+        var initialName = "My Name";
+        var initialId = Guid.NewGuid();
+
+        var VideoStore = new VideoStore(initialId, initialName);
+        await repository.AddAsync(VideoStore);
+
+        // delete the item
+        await repository.DeleteAsync(VideoStore);
+
+        // verify it's no longer there
+        Assert.DoesNotContain(await repository.ListAsync(),
+            VideoStore => VideoStore.Id == initialId); */
+    }
+}

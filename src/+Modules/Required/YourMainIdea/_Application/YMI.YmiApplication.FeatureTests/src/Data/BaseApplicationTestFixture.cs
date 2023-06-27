@@ -51,7 +51,7 @@ public class BaseApplicationTestFixture
 
                 var services = new ServiceCollection();
 
-                services.AddAutoMapper(typeof(BookMapper).GetTypeInfo().Assembly);
+                services.AddAutoMapper(typeof(VideoMapper).GetTypeInfo().Assembly);
                 services.AddSingleton<IYmiDataService, YmiDirectDataService>();
                 services.AddEntityFrameworkInMemoryDatabase();
                 services.AddDbContext<YmiDbContext>(context => context.UseInMemoryDatabase("YMI.YmiApplication.FeatureTests")

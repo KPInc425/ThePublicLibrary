@@ -3,7 +3,6 @@
     "groups": [
         {
             "name": "Fernweh.KernelShared",
-            "description": "Kernel plus Core",
             "enabled": true,
             "terminals": [
                 {
@@ -13,22 +12,6 @@
                         "dotnet build"
                     ],
                     "num": 0
-                },
-                {
-                    "name": "TPL.TplCore",
-                    "path": "./src/+Modules/Required/ThePublicLibrary/____Core/_TPL.TplCore/src",
-                    "cmd": [
-                        "dotnet build"
-                    ],
-                    "num": 1
-                },
-                {
-                    "name": "TPL.TplCore.UnitTests",
-                    "path": "./src/+Modules/Required/ThePublicLibrary/____Core/_TPL.TplCore.UnitTests/src",
-                    "cmd": [
-                        "dotnet test"
-                    ],
-                    "num": 2
                 }
             ]
         },
@@ -47,6 +30,60 @@
             ]
         },
         {
+            "name": "Fernweh.UI.Client.BlazorClient",
+            "enabled": true,
+            "terminals": [
+                {
+                    "name": "Fernweh.UI.Client.BlazorClient",
+                    "path": "./src/UI/Client/Fernweh.UI.BlazorClient/src",
+                    "cmd": [
+                        "ping 127.0.0.1 -n 15",
+                        "dotnet watch run"
+                    ],
+                    "num": 12
+                },
+                {
+                    "name": "Fernweh.UI.BlazorClient.UITests",
+                    "path": "./src/UI/Client/Fernweh.UI.BlazorClient.UITests/src",
+                    "cmd": [
+                        "ping 127.0.0.1 -n 60",
+                        "dotnet test"
+                    ],
+                    "num": 12
+                },
+                {
+                    "name": "Fernweh.UI.BlazorClient.UIUnitTests",
+                    "path": "./src/UI/Client/Fernweh.UI.BlazorClient.UIUnitTests/src",
+                    "cmd": [
+                        "dotnet test"
+                    ],
+                    "num": 12
+                }
+            ]
+        },
+        {
+            "name": "TPL.TplCore",
+            "enabled": true,
+            "terminals": [
+                {
+                    "name": "TPL.TplCore",
+                    "path": "./src/+Modules/Required/ThePublicLibrary/____Core/_TPL.TplCore/src",
+                    "cmd": [
+                        ""
+                    ],
+                    "num": 1
+                },
+                {
+                    "name": "TPL.TplCore.UnitTests",
+                    "path": "./src/+Modules/Required/ThePublicLibrary/____Core/_TPL.TplCore.UnitTests/src",
+                    "cmd": [
+                        "dotnet test"
+                    ],
+                    "num": 2
+                }
+            ]
+        },
+        {
             "name": "TPL.TplInfrastructure",
             "description": "Infrastructure and Tests",
             "enabled": true,
@@ -55,7 +92,7 @@
                     "name": "TPL.TplInfrastructure",
                     "path": "./src/+Modules/Required/ThePublicLibrary/___Infrastructure/TPL.TplInfrastructure/src",
                     "cmd": [
-                        "dotnet build"
+                        ""
                     ],
                     "num": 4
                 },
@@ -79,7 +116,7 @@
                     "name": "TPL.TplApplication",
                     "path": "./src/+Modules/Required/ThePublicLibrary/_Application/TPL.TplApplication/src",
                     "cmd": [
-                        "dotnet build"
+                        ""
                     ],
                     "num": 6
                 },
@@ -127,34 +164,152 @@
             ]
         },
         {
-            "name": "Fernweh.UI.Client.BlazorClient",
+            "name": "TPL.TplInfrastructure",
+            "description": "Infrastructure and Tests",
             "enabled": true,
             "terminals": [
                 {
-                    "name": "Fernweh.UI.Client.BlazorClient",
-                    "path": "./src/UI/Client/Fernweh.UI.BlazorClient/src",
+                    "name": "TPL.TplInfrastructure",
+                    "path": "./src/+Modules/Required/ThePublicLibrary/___Infrastructure/TPL.TplInfrastructure/src",
+                    "cmd": [
+                        ""
+                    ],
+                    "num": 4
+                },
+                {
+                    "name": "TPL.TplInfrastructure.IntegrationTests",
+                    "path": "./src/+Modules/Required/ThePublicLibrary/___Infrastructure/TPL.TplInfrastructure.IntegrationTests/src",
+                    "cmd": [
+                        "ping 127.0.0.1 -n 5",
+                        "dotnet test"
+                    ],
+                    "num": 5
+                }
+            ]
+        },
+        {
+            "name": "YMI.YmiCore",
+            "enabled": true,
+            "terminals": [
+                {
+                    "name": "YMI.YmiCore",
+                    "path": "./src/+Modules/Required/YourMainIdea/____Core/_YMI.YmiCore/src",
+                    "cmd": [
+                        ""
+                    ],
+                    "num": 1
+                },
+                {
+                    "name": "YMI.YmiCore.UnitTests",
+                    "path": "./src/+Modules/Required/YourMainIdea/____Core/_YMI.YmiCore.UnitTests/src",
+                    "cmd": [
+                        "dotnet test"
+                    ],
+                    "num": 2
+                }
+            ]
+        },
+        {
+            "name": "YMI.YmiInfrastructure",
+            "description": "Infrastructure and Tests",
+            "enabled": true,
+            "terminals": [
+                {
+                    "name": "YMI.YmiInfrastructure",
+                    "path": "./src/+Modules/Required/YourMainIdea/___Infrastructure/YMI.YmiInfrastructure/src",
+                    "cmd": [
+                        ""
+                    ],
+                    "num": 4
+                },
+                {
+                    "name": "YMI.YmiInfrastructure.IntegrationTests",
+                    "path": "./src/+Modules/Required/YourMainIdea/___Infrastructure/YMI.YmiInfrastructure.IntegrationTests/src",
+                    "cmd": [
+                        "ping 127.0.0.1 -n 5",
+                        "dotnet test"
+                    ],
+                    "num": 5
+                }
+            ]
+        },
+        {
+            "name": "YMI.YmiApplication",
+            "description": "Application and Tests",
+            "enabled": true,
+            "terminals": [
+                {
+                    "name": "YMI.YmiApplication",
+                    "path": "./src/+Modules/Required/YourMainIdea/_Application/YMI.YmiApplication/src",
+                    "cmd": [
+                        ""
+                    ],
+                    "num": 6
+                },
+                {
+                    "name": "YMI.YmiApplication.FeatureTests",
+                    "path": "./src/+Modules/Required/YourMainIdea/_Application/YMI.YmiApplication.FeatureTests/src",
+                    "cmd": [
+                        "ping 127.0.0.1 -n 10",
+                        "dotnet test"
+                    ],
+                    "num": 7
+                },
+                {
+                    "name": "YMI.YmiApplication.Data",
+                    "path": "./src/+Modules/Required/YourMainIdea/__Data/YMI.YmiApplication.Data/src",
+                    "cmd": [
+                        "dotnet build"
+                    ],
+                    "num": 8
+                }
+            ]
+        },
+        {
+            "name": "YMI.API.YmiApi",
+            "description": "YMI  API",
+            "enabled": true,
+            "terminals": [
+                {
+                    "name": "YMI.API.YmiApi",
+                    "path": "./src/+Modules/Required/YourMainIdea/+Api/YMI.API.YmiApi/src",
                     "cmd": [
                         "ping 127.0.0.1 -n 15",
                         "dotnet watch run"
                     ],
-                    "num": 12
+                    "num": 9
                 },
                 {
-                    "name": "Fernweh.UI.BlazorClient.UITests",
-                    "path": "./src/UI/Client/Fernweh.UI.BlazorClient.UITests/src",
-                    "cmd": [
-                        "ping 127.0.0.1 -n 60",
-                        "dotnet test"
-                    ],
-                    "num": 12
-                },
-                {
-                    "name": "Fernweh.UI.BlazorClient.UIUnitTests",
-                    "path": "./src/UI/Client/Fernweh.UI.BlazorClient.UIUnitTests/src",
+                    "name": "YMI.API.YmiApi.FunctionalTests",
+                    "path": "./src/+Modules/Required/YourMainIdea/+Api/YMI.API.YmiApi.FunctionalTests/src",
                     "cmd": [
                         "dotnet test"
                     ],
-                    "num": 12
+                    "num": 10
+                }
+            ]
+        },
+        {
+            "name": "YMI.YmiInfrastructure",
+            "description": "Infrastructure and Tests",
+            "enabled": true,
+            "terminals": [
+                {
+                    "name": "YMI.YmiInfrastructure",
+                    "path": "./src/+Modules/Required/YourMainIdea/___Infrastructure/YMI.YmiInfrastructure/src",
+                    "cmd": [
+                        ""
+                    ],
+                    "num": 4
+                },
+                {
+                    "name": "YMI.YmiInfrastructure.IntegrationTests",
+                    "path": "./src/+Modules/Required/YourMainIdea/___Infrastructure/YMI.YmiInfrastructure.IntegrationTests/src",
+                    "cmd": [
+                        "ping 127.0.0.1 -n 5",
+                        "dotnet test"
+                    ],
+                    "num": 5
                 }
             ]
         }

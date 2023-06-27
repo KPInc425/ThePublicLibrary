@@ -13,4 +13,16 @@ public class Endpoints
     public string TplAdminApiUrl { get; set; } = "";
     public string TplAdminApiVersion { get; set; } = "";
     public string TplAdminApiName { get; set; } = "tpl_primary_admin_api";
+
+    
+
+    public string YmiApiUrl { get; set; } = "";
+    public string YmiApiVersion { get; set; } = "";
+    public string YmiApiName { get; set; } = "ymi_primary_api";
+    
+    public string YmiAdminApiUrl { get; set; } = "";
+    public string YmiAdminApiVersion { get; set; } = "";
+    public string YmiAdminApiName { get; set; } = "ymi_primary_admin_api";
+
+    
 }

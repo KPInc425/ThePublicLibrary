@@ -6,7 +6,7 @@
     <IsPackable>true</IsPackable>
     <PackageId>YMI.UI.YmiBlazorModuleAdmin</PackageId>
     <Version>1.0.71.176</Version>
-    <Authors>James W. Kies</Authors>
+    <Actors>James W. Kies</Actors>
     <Company>RobotBuildersInc</Company>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <DefaultNamespace>YMI.UI.YmiBlazorModuleAdmin</DefaultNamespace>

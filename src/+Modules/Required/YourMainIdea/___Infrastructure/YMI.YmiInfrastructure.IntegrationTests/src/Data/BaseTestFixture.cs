@@ -20,21 +20,21 @@ public abstract class BaseTestFixture
         return builder.Options;
     }
 
-    protected EfRepository<Library> LibraryRepository()
+    protected EfRepository<VideoStore> VideoStoreRepository()
     {
         var options = CreateNewContextOptions();
         var mockMediator = new Mock<IMediator>();
 
         _dbContext = new YmiDbContext(options, mockMediator.Object);
-        return new EfRepository<Library>(_dbContext);
+        return new EfRepository<VideoStore>(_dbContext);
     }
 
-    protected EfRepository<Book> BookRepository()
+    protected EfRepository<Video> VideoRepository()
     {
         var options = CreateNewContextOptions();
         var mockMediator = new Mock<IMediator>();
 
         _dbContext = new YmiDbContext(options, mockMediator.Object);
-        return new EfRepository<Book>(_dbContext);
+        return new EfRepository<Video>(_dbContext);
     }    
 }

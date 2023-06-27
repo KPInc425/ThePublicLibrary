@@ -8,13 +8,13 @@ public class YmiDbContext : DbContext
         _mediator = mediator;
     }
 
-    public DbSet<Library> Libraries { get; set; }
-    public DbSet<Book> Books { get; set; }
-    public DbSet<BookCopy> BookCopies { get; set; }
-    public DbSet<Author> Authors { get; set; }
+    public DbSet<VideoStore> VideoStores { get; set; }
+    public DbSet<Video> Videos { get; set; }
+    public DbSet<VideoCopy> VideoCopies { get; set; }
+    public DbSet<Actor> Actors { get; set; }
     
     // Shared
-    public DbSet<BookCategory> BookCategories { get; set; } 
+    public DbSet<VideoCategory> VideoCategories { get; set; } 
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
