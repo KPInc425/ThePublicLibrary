@@ -22,14 +22,10 @@
     <PackageReference Include="Toolbelt.EntityFrameworkCore.IndexAttribute.SqlServer" Version="5.0.1" />
   </ItemGroup>
 
-  <Choose>
-    <When Condition="'$(Configuration)' == 'Release'">
-      <ItemGroup>
-        <PackageReference Include="Fernweh.KernelShared" />        
-      </ItemGroup>
-    </When>
-  </Choose>
+  
   <ItemGroup>
-    <ProjectReference Include="./../../../../../../__Kernel/Fernweh.KernelShared/src/Fernweh.KernelShared.csproj" />
+    <Reference Include="Fernweh.KernelShared">
+      <HintPath>.\..\..\..\..\..\..\..\src\__Kernel\Fernweh.KernelShared\src\bin\Debug\net7.0\Fernweh.KernelShared.dll</HintPath>
+    </Reference>
   </ItemGroup>
 </Project>

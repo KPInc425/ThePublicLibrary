@@ -4,6 +4,7 @@ public class EfVideoStoreRepositoryDelete : BaseTestFixture
     [Fact]
     public async Task DeletesItemAfterAddingIt()
     {
+        await Task.Yield();
       /*   // add a VideoStore
         var repository = VideoStoreRepository();
         var initialName = "My Name";

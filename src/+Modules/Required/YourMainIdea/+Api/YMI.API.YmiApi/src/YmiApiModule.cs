@@ -15,9 +15,9 @@ public class YmiApiModule : Module
         var applicationAssembly = Assembly.GetAssembly(typeof(YmiApplicationModule));
         //var primaryApiAssembly = Assembly.GetAssembly(typeof(YmiApiModule));
 
-        _assemblies.Add(coreAssembly);
-        _assemblies.Add(infrastructureAssembly);
-        _assemblies.Add(applicationAssembly);
+        _assemblies.Add(coreAssembly!);
+        _assemblies.Add(infrastructureAssembly!);
+        _assemblies.Add(applicationAssembly!);
         //_assemblies.Add(primaryApiAssembly);
 
         if (callingAssembly != null)

@@ -20,7 +20,7 @@ public class VideosControllerTests : IClassFixture<CustomWebApplicationFactory<S
             .Content
             .ReadFromJsonAsync<IEnumerable<VideoViewModel>>();
 
-        result.Should().HaveCount(VideoYmiTestData.AllVideos.Count()-1);
+        result.Should().HaveCount(VideoYmiTestData.AllVideos.Count());
         // Assert.Contains(result, i => i.Name == SeedVideoData.TestVideo1.Name);
     }
 

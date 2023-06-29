@@ -39,9 +39,9 @@ public static class BookTplTestData
         BookAlfradoTheGreat = new(new("978-0-00-000000-9"), new List<Author>() { AuthorTplTestData.AuthorJohnWriter }, null, null, "Alfrado The Great", 1985, 400);
         BookAlfradoTheGreat.AddBookCopy(BookCondition.Good);
 
-        BookNoCopies = new(new("978-0-00-000441-1"), new List<Author>() { AuthorTplTestData.AuthorSallyTyper }, null, null, "Book No Copies", 1981, 110);
+        BookNoCopies = new(new("978-4-00-000441-1"), new List<Author>() { AuthorTplTestData.AuthorSallyTyper }, null, null, "Book No Copies", 1981, 110);
 
-        BookManyCopies = new(new("978-0-00-000001-1"), new List<Author>() { AuthorTplTestData.AuthorSallyTyper }, null, null, "Book Many Copies", 1981, 110);
+        BookManyCopies = new(new("978-5-00-000001-1"), new List<Author>() { AuthorTplTestData.AuthorSallyTyper }, null, null, "Book Many Copies", 1981, 110);
         BookManyCopies.AddBookCopy(BookCondition.Good);
         BookManyCopies.AddBookCopy(BookCondition.Good);
         BookManyCopies.AddBookCopy(BookCondition.Good);
@@ -50,14 +50,14 @@ public static class BookTplTestData
         BookManyCopies.AddBookCopy(BookCondition.Good);
         BookManyCopies.AddBookCopy(BookCondition.Good);
 
-        BookOfThreeAuthors = new(new("978-0-00-000331-2"), new List<Author> { AuthorTplTestData.AuthorBishopKnight, AuthorTplTestData.AuthorJohnWriter, AuthorTplTestData.AuthorSallyTyper }, null, null, "Book of Three Authors", 1981, 120);
+        BookOfThreeAuthors = new(new("978-6-00-000331-2"), new List<Author> { AuthorTplTestData.AuthorBishopKnight, AuthorTplTestData.AuthorJohnWriter, AuthorTplTestData.AuthorSallyTyper }, null, null, "Book of Three Authors", 1981, 120);
 
-        BookWithCategories = new(new("978-0-00-000131-1"), new List<Author> { AuthorTplTestData.AuthorSallyTyper }, new List<BookCategory> { BookCategoryFantasy, BookCategoryFiction }, null, "Book With Categories", 1981, 110);
+        BookWithCategories = new(new("978-7-00-000131-1"), new List<Author> { AuthorTplTestData.AuthorSallyTyper }, new List<BookCategory> { BookCategoryFantasy, BookCategoryFiction }, null, "Book With Categories", 1981, 110);
         BookWithCategories.AddBookCopy(BookCondition.Good);
         BookWithCategories.AddBookCopy(BookCondition.Fair);
         BookWithCategories.AddBookCopy(BookCondition.Poor);
         
-        BookOfFantasy = new(new("978-0-00-000214-6"), new List<Author> { AuthorTplTestData.AuthorSallyTyper }, new List<BookCategory> { BookCategoryFantasy }, null, "Book Of Fantasy", 1981, 110);
+        BookOfFantasy = new(new("978-8-00-000214-6"), new List<Author> { AuthorTplTestData.AuthorSallyTyper }, new List<BookCategory> { BookCategoryFantasy }, null, "Book Of Fantasy", 1981, 110);
 
 
         AllBooks = new List<Book> {

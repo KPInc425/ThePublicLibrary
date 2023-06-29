@@ -12,7 +12,7 @@ public abstract class BaseVideosTest
     {
         _videoToTestWith = new Video(
             video.Isbn,
-            video.Actors,
+            video.Actors!,
             video.VideoCategories,
             video.VideoCopies,
             video.Title,
@@ -21,8 +21,8 @@ public abstract class BaseVideosTest
 
         _videoToTestWith.Should().NotBeNull();
         _videoToTestWith.Isbn.Should().Be(video.Isbn);
-        _videoToTestWith.Actors.Count().Should().Be(video.Actors.Count());
-        _videoToTestWith.VideoCategories.Count().Should().Be(video.VideoCategories.Count());
+        _videoToTestWith.Actors!.Count().Should().Be(video.Actors!.Count());
+        _videoToTestWith.VideoCategories!.Count().Should().Be(video.VideoCategories!.Count());
         _videoToTestWith.VideoCopies.Count().Should().Be(video.VideoCopies.Count());
         _videoToTestWith.Title.Should().Be(video.Title);
         _videoToTestWith.PublicationYear.Should().Be(video.PublicationYear);
@@ -34,7 +34,7 @@ public abstract class BaseVideosTest
         {
             var newVideo = new Video(
                 video.Isbn,
-                video.Actors,
+                video.Actors!,
                 video.VideoCategories,
                 video.VideoCopies,
                 video.Title,
@@ -43,8 +43,8 @@ public abstract class BaseVideosTest
 
             newVideo.Should().NotBeNull();
             newVideo.Isbn.Should().Be(video.Isbn);
-            newVideo.Actors.Count().Should().Be(video.Actors.Count());
-            newVideo.VideoCategories.Count().Should().Be(video.VideoCategories.Count());
+            newVideo.Actors!.Count().Should().Be(video.Actors!.Count());
+            newVideo.VideoCategories!.Count().Should().Be(video.VideoCategories!.Count());
             newVideo.VideoCopies.Count().Should().Be(video.VideoCopies.Count());
             newVideo.Title.Should().Be(video.Title);
             newVideo.PublicationYear.Should().Be(video.PublicationYear);
@@ -55,14 +55,14 @@ public abstract class BaseVideosTest
     }
     protected void IHaveAVideoCopyOfCondition(VideoCondition condition)
     {
-        _videoCopyToTestWith = _videoToTestWith.VideoCopies.FirstOrDefault(rs => rs.Condition == condition);
+        _videoCopyToTestWith = _videoToTestWith!.VideoCopies.FirstOrDefault(rs => rs.Condition == condition);
         _videoCopyToTestWith.Should().NotBeNull();
-        _videoCopyToTestWith.Condition.Should().Be(VideoCondition.Good);
+        _videoCopyToTestWith!.Condition.Should().Be(VideoCondition.Good);
 
     }
     protected void IHaveVideoCategories()
     {
-        if (_videoToTestWith.VideoCategories.Count() == 0)
+        if (_videoToTestWith!.VideoCategories!.Count() == 0)
         {
             _videoToTestWith.AddVideoCategory(VideoYmiTestData.VideoCategoryFiction);
             _videoToTestWith.AddVideoCategory(VideoYmiTestData.VideoCategoryFantasy);

@@ -30,7 +30,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="./../../../../__Kernel/Fernweh.KernelShared/src/Fernweh.KernelShared.csproj" />
+    <Reference Include="Fernweh.KernelShared">
+      <HintPath>./../../../../../src/__Kernel/Fernweh.KernelShared/src/bin/Debug/net7.0/Fernweh.KernelShared.dll</HintPath>    
+    </Reference>
+    
   </ItemGroup>
   
   <ItemGroup>
@@ -39,6 +42,14 @@
     <ProjectReference Include="./../../../../+Modules/Required/ThePublicLibrary/_Application/_TPL.TplApplication.Shared/src/TPL.TplApplication.Shared.csproj" />
     <ProjectReference Include="./../../../../+Modules/Required/ThePublicLibrary/UI/TPL.UI.TplBlazorModule/src/TPL.UI.TplBlazorModule.csproj" />          
     <ProjectReference Include="./../../../../+Modules/Required/ThePublicLibrary/UI/_TPL.UI.TplModuleClientServiceLoader/src/TPL.UI.TplModuleClientServiceLoader.csproj" />          
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="./../../../../+Modules/Required/YourMainIdea/____Core/YMI.YmiCore.YmiTestData/src/YMI.YmiCore.YmiTestData.csproj" />
+    <ProjectReference Include="./../../../../+Modules/Required/YourMainIdea/___Infrastructure/YMI.YmiInfrastructure/src/YMI.YmiInfrastructure.csproj" />    
+    <ProjectReference Include="./../../../../+Modules/Required/YourMainIdea/_Application/_YMI.YmiApplication.Shared/src/YMI.YmiApplication.Shared.csproj" />
+    <ProjectReference Include="./../../../../+Modules/Required/YourMainIdea/UI/YMI.UI.YmiBlazorModule/src/YMI.UI.YmiBlazorModule.csproj" />          
+    <ProjectReference Include="./../../../../+Modules/Required/YourMainIdea/UI/_YMI.UI.YmiModuleClientServiceLoader/src/YMI.UI.YmiModuleClientServiceLoader.csproj" />          
   </ItemGroup>
 
   <ItemGroup>

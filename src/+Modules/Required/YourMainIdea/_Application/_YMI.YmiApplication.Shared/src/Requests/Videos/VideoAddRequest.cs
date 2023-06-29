@@ -1,3 +1,5 @@
+using Ardalis.GuardClauses;
+
 namespace YMI.YmiApplication.Shared.Requests;
 public class VideoAddRequest : IYmiRoutable
 {
@@ -26,6 +28,9 @@ public class VideoAddRequest : IYmiRoutable
         Title = video.Title;
         PublicationYear = video.PublicationYear;
         PageCount = video.PageCount;
+
+        Guard.Against.Null(video, "because video cannot be null");
+        Guard.Against.NullOrEmpty(video.Actors, "becuase video actors cannot be null or empty");
 
         Actors.AddRange(video.Actors);
 

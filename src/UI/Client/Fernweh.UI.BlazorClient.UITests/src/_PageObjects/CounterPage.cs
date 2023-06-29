@@ -1,7 +1,7 @@
 namespace Fernweh.UI.BlazorClient.UITests.PageObjects;
 
 public class CounterPage : BasePageObject {
-    
+
     public readonly string CounterValueSelector = "#currentCount";
     public readonly string IncrementButtonSelector = "#incrementPlus";
 
@@ -14,13 +14,13 @@ public class CounterPage : BasePageObject {
             IncrementButtonSelector
         };
     }
-    
+
     public ILocator CounterValue => Page.Locator(CounterValueSelector);
     public ILocator IncrementButton => Page.Locator(IncrementButtonSelector);
-    
+
     public async Task NavigateToAsync() => await base.GotoAsync(PagePath);
     public async Task IncrementValueAsync() => await IncrementButton.ClickAsync();
-    public async Task<int> GetIncrementValueAsync() => int.Parse(await CounterValue.TextContentAsync()); 
+    public async Task<int> GetIncrementValueAsync() => int.Parse((await CounterValue.TextContentAsync()) ?? "-1"); 
 
     
     public bool IsOnPage() {

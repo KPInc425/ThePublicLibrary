@@ -27,6 +27,11 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
   </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Fernweh.KernelShared">
+      <HintPath>.\..\..\..\..\..\..\..\src\__Kernel\Fernweh.KernelShared\src\bin\Debug\net7.0\Fernweh.KernelShared.dll</HintPath>
+    </Reference>
+  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include=".\..\..\_YMI.YmiCore\src\YMI.YmiCore.csproj" />

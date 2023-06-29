@@ -4,6 +4,7 @@ public class EfVideoRepositoryUpdate : BaseTestFixture
     [Fact]
     public async Task UpdatesItemAfterAddingIt()
     {
+        await Task.Yield();
         /* // add a Video
         var repository = VideoRepository();
         var initialName = "My Name";

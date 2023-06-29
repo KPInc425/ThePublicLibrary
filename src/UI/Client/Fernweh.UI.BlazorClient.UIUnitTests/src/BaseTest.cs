@@ -5,7 +5,6 @@ public class BaseTest
 
     public BaseTest()
     {
-        var mockITplDataService = Mock.Create<ITplDataService>();
         var mockHttpClient = Mock.Create<HttpClient>();
         var mockPlatformStateCacheService = Mock.Create<PlatformStateCacheService>();
         var mockPlatformCacheService = Mock.Create<PlatformCacheService>();
@@ -17,12 +16,28 @@ public class BaseTest
         var mockFeatureFlags = Mock.Create<FeatureFlags>();
         var mockAppSettings = Mock.Create<AppSettings>();
         var mockNavigationManager = Mock.Create<NavigationManager>();
-        var mockTplHttpClientFactory = Mock.Create<TplHttpClientFactory>();
-
+        
         var mockIStringLocalizer = Mock.Create<IStringLocalizer>();
         var mockLocalizeShared = Mock.Create<IStringLocalizer<SharedLanguageBase>>();
 
+        // ThePublicLibrary
+        var mockITplDataService = Mock.Create<ITplDataService>();
         ctx.Services.AddSingleton<ITplDataService>(mockITplDataService);
+        
+        var mockTplHttpClientFactory = Mock.Create<TplHttpClientFactory>();        
+        ctx.Services.AddSingleton<TplHttpClientFactory>(mockTplHttpClientFactory);
+        // \ThePublicLibrary
+
+        // YourMainIdea        
+        var mockIYmiDataService = Mock.Create<IYmiDataService>();
+        ctx.Services.AddSingleton<IYmiDataService>(mockIYmiDataService);
+        
+        var mockYmiHttpClientFactory = Mock.Create<YmiHttpClientFactory>();
+        ctx.Services.AddSingleton<YmiHttpClientFactory>(mockYmiHttpClientFactory);
+        // \YourMainIdea
+
+        
+        
         ctx.Services.AddSingleton<HttpClient>(mockHttpClient);
         ctx.Services.AddSingleton<PlatformStateCacheService>(mockPlatformStateCacheService);
         ctx.Services.AddSingleton<PlatformCacheService>(mockPlatformCacheService);
@@ -34,7 +49,6 @@ public class BaseTest
         ctx.Services.AddSingleton<FeatureFlags>(mockFeatureFlags);
         ctx.Services.AddSingleton<AppSettings>(mockAppSettings);
         ctx.Services.AddSingleton<NavigationManager>(mockNavigationManager);
-        ctx.Services.AddSingleton<TplHttpClientFactory>(mockTplHttpClientFactory);
         ctx.Services.AddSingleton<IStringLocalizer>(mockIStringLocalizer);
         ctx.Services.AddSingleton<IStringLocalizer<SharedLanguageBase>>(mockLocalizeShared);
 

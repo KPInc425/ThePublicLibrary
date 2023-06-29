@@ -62,7 +62,7 @@ public class VideoSearchTests : BaseVideosTest
         var numberOfCopies = manyCopiesMax.VideoCopies.Count();
 
         // When I remove the damaged copy
-        manyCopiesMax.RemoveVideoCopy(randomVideoCopy);
+        manyCopiesMax.RemoveVideoCopy(randomVideoCopy!);
 
         // Then I should have the same number of copies of the video
         manyCopiesMax.VideoCopies.Count().Should().Be(numberOfCopies - 1);
@@ -70,6 +70,6 @@ public class VideoSearchTests : BaseVideosTest
         // And the damaged copy should be removed
         var spec = new VideoCopyGetAllSpec();
         var videoCopies = spec.Evaluate(new List<Video>() { manyCopiesMax })?.FirstOrDefault()?.VideoCopies;
-        videoCopies.FirstOrDefault(rs=>rs.CopySequence == randomVideoCopy.CopySequence).Should().BeNull();
+        videoCopies!.FirstOrDefault(rs=>rs.CopySequence == randomVideoCopy!.CopySequence).Should().BeNull();
     }
 }

@@ -47,7 +47,9 @@
     </When>
   </Choose>
   <ItemGroup>
-    <ProjectReference Include="./../../../../../../__Kernel/Fernweh.KernelShared/src/Fernweh.KernelShared.csproj" />
+    <Reference Include="Fernweh.KernelShared">
+      <HintPath>.\..\..\..\..\..\..\..\src\__Kernel\Fernweh.KernelShared\src\bin\Debug\net7.0\Fernweh.KernelShared.dll</HintPath>
+    </Reference>
     <ProjectReference Include="./../../../____Core/_YMI.YmiCore/src/YMI.YmiCore.csproj" />
     <ProjectReference Include="./../../../___Infrastructure/YMI.YmiInfrastructure/src/YMI.YmiInfrastructure.csproj" />
     <ProjectReference Include="./../../../_Application/_YMI.YmiApplication.Shared/src/YMI.YmiApplication.Shared.csproj" />

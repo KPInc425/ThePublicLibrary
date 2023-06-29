@@ -7,17 +7,17 @@ public class Startup
         Configuration = config;
         _env = env;
     }
-    public IConfiguration Configuration { get; }
+    public IConfiguration? Configuration { get; }
     public void ConfigureServices(IServiceCollection services)
     {
 
         string connectionString =
-            Configuration.GetConnectionString("Active");
+            Configuration?.GetConnectionString("Active") ?? "";
 
-        var appSettings = Configuration.Get<AppSettings>();
+        var appSettings = Configuration?.Get<AppSettings>();
         
         services
-            .AddSingleton<AppSettings>(appSettings);
+            .AddSingleton<AppSettings>(appSettings ?? new());
         
         services
             .AddYmiDbContext(connectionString);
@@ -61,8 +61,8 @@ public class Startup
                     "v1",
                         new OpenApiInfo
                         {
-                            Title = appSettings.Endpoints.YmiApiName,
-                            Version = appSettings.Endpoints.YmiApiVersion
+                            Title = appSettings?.Endpoints.YmiApiName,
+                            Version = appSettings?.Endpoints.YmiApiVersion
                         });
                 c.EnableAnnotations();
             });

@@ -11,7 +11,8 @@ public class RunBaseSeedData
         _logger = serviceProvider.GetRequiredService<ILogger<RunBaseSeedData>>();
         
         var videosSeedWithData = new VideosSeedWithData().PopulateYmiTestData(serviceProvider);
-        
+
+        await Task.Yield();
         /* foreach (var seedData in Assembly
             .GetExecutingAssembly()
             .GetTypes()

@@ -4,15 +4,16 @@ public class EfVideoStoreRepositoryAdd : BaseTestFixture
     [Fact]
     public async Task AddsVideoStoreSetsId()
     {
-       /*  var repository = VideoStoreRepository();
+        await Task.Yield();
+        /*  var repository = VideoStoreRepository();
 
-        var videoStore = _videoStoreYmiTestData.FirstStreetVideoStore;
+         var videoStore = _videoStoreYmiTestData.FirstStreetVideoStore;
 
-        await repository.AddAsync(videoStore);
+         await repository.AddAsync(videoStore);
 
-        var newVideoStore = (await repository.ListAsync())
-                        .FirstOrDefault();
+         var newVideoStore = (await repository.ListAsync())
+                         .FirstOrDefault();
 
-        Assert.NotNull(newVideoStore?.Id); */
+         Assert.NotNull(newVideoStore?.Id); */
     }
 }

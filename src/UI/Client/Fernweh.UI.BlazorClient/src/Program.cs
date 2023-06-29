@@ -189,10 +189,3 @@ var logger = host.Services.GetRequiredService<ILoggerFactory>()
 logger.LogInformation("Logged after the app is built in Program.cs.");
 
 await host.RunAsync();
-
-IConfiguration BuildConfig()
-{
-    return new ConfigurationBuilder()
-        .SetBasePath(Directory.GetCurrentDirectory())
-        .Build();
-}

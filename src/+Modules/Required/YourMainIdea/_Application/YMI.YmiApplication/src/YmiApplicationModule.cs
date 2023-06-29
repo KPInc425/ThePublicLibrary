@@ -14,9 +14,9 @@ public class YmiApplicationModule : Module
         var infrastructureAssembly = Assembly.GetAssembly(typeof(YmiInfrastructureModule));
         var applicationAssembly = Assembly.GetAssembly(typeof(YmiApplicationModule));
 
-        _assemblies.Add(coreAssembly);
-        _assemblies.Add(infrastructureAssembly);
-        _assemblies.Add(applicationAssembly);
+        _assemblies.Add(coreAssembly!);
+        _assemblies.Add(infrastructureAssembly!);
+        _assemblies.Add(applicationAssembly!);
 
         if (callingAssembly != null)
         {

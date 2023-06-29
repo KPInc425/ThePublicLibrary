@@ -10,7 +10,7 @@ public class VideoConstructorTests : BaseVideosTest
         ICreateAVideo(VideoYmiTestData.VideoAlfradoTheGreat);
 
         // Then the test video has the correct data
-        _videoToTestWith.Should().NotBeNull();
+        _videoToTestWith!.Should().NotBeNull();
     }
 
     [Fact]
@@ -20,7 +20,7 @@ public class VideoConstructorTests : BaseVideosTest
         ICreateAVideo(VideoYmiTestData.VideoManyCopies);
 
         // And test video has the correct video copies
-        _videoToTestWith.VideoCopies.Count().Should().Be(VideoYmiTestData.VideoManyCopies.VideoCopies.Count());
+        _videoToTestWith!.VideoCopies.Count().Should().Be(VideoYmiTestData.VideoManyCopies.VideoCopies.Count());
 
     }
 
@@ -31,6 +31,6 @@ public class VideoConstructorTests : BaseVideosTest
         ICreateAVideo(VideoYmiTestData.VideoWithCategories);
 
         // Then video has the correct video categories
-        _videoToTestWith.VideoCategories.Count().Should().Be(VideoYmiTestData.VideoWithCategories.VideoCategories.Count());
+        _videoToTestWith!.VideoCategories!.Count().Should().Be(VideoYmiTestData.VideoWithCategories.VideoCategories!.Count());
     }
 }

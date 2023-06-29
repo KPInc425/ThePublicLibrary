@@ -4,6 +4,6 @@ public class EfVideoStoreApplicationAdd : BaseApplicationTestFixture
     [Fact]
     public async Task AddVideoStore()
     {
-        
+        await Task.Yield();
     }
 }

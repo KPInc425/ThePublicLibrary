@@ -54,7 +54,7 @@ public class VideoFindTests : BaseVideosTest
         ICreateAVideo(VideoYmiTestData.VideoManyCopies);
 
         // And test video has the correct video copies
-        _videoToTestWith.VideoCopies.Count().Should().Be(VideoYmiTestData.VideoManyCopies.VideoCopies.Count());
+        _videoToTestWith!.VideoCopies!.Count().Should().Be(VideoYmiTestData.VideoManyCopies.VideoCopies.Count());
     }
 
     [Fact]
@@ -64,6 +64,6 @@ public class VideoFindTests : BaseVideosTest
         ICreateAVideo(VideoYmiTestData.VideoWithCategories);
 
         // Then video has the correct video categories
-        _videoToTestWith.VideoCategories.Count().Should().Be(VideoYmiTestData.VideoWithCategories.VideoCategories.Count());
+        _videoToTestWith!.VideoCategories!.Count().Should().Be(VideoYmiTestData.VideoWithCategories!.VideoCategories!.Count());
     }
 }

@@ -12,7 +12,7 @@ public class VideoConditionTests : BaseVideosTest
         IHaveAVideoCopyOfCondition(VideoCondition.Good);
 
         // When I change the condition to poor
-        _videoCopyToTestWith.ChangeCondition(VideoCondition.Poor);
+        _videoCopyToTestWith!.ChangeCondition(VideoCondition.Poor);
         
         // Then the video is now in poor condition
         _videoCopyToTestWith.Condition.Should().Be(VideoCondition.Poor);
@@ -28,15 +28,13 @@ public class VideoConditionTests : BaseVideosTest
         IHaveAVideoCopyOfCondition(VideoCondition.Good);
 
         // And I store the number of copies not destroyed
-        var numberOfCopiesNotDestroyed = _videoToTestWith.VideoCopies.Count(rs=>rs.Condition != VideoCondition.Destroyed);
+        var numberOfCopiesNotDestroyed = _videoToTestWith!.VideoCopies.Count(rs=>rs.Condition != VideoCondition.Destroyed);
 
         // When I remove the damaged copy
-        _videoToTestWith.RemoveVideoCopy(_videoCopyToTestWith);
+        _videoToTestWith.RemoveVideoCopy(_videoCopyToTestWith!);
 
         // Then I should have one fewer copies of the video
         var numberOfCopiesNotDestroyedUpdated = _videoToTestWith.VideoCopies.Count(rs=>rs.Condition != VideoCondition.Destroyed);
         numberOfCopiesNotDestroyedUpdated.Should().Be(numberOfCopiesNotDestroyed - 1);
-    }
-
-    
+    }    
 }

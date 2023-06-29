@@ -2,34 +2,6 @@
     "version": "1.2.1",
     "groups": [
         {
-            "name": "Fernweh.KernelShared",
-            "enabled": true,
-            "terminals": [
-                {
-                    "name": "Fernweh.KernelShared",
-                    "path": "./src/__Kernel/Fernweh.KernelShared/src",
-                    "cmd": [
-                        "dotnet build"
-                    ],
-                    "num": 1
-                }
-            ]
-        },
-        {
-            "name": "Fernweh.UI.Common",
-            "enabled": true,
-            "terminals": [
-                {
-                    "name": "Fernweh.UI.Common",
-                    "path": "./src/_UI.Common/Fernweh.UI.Common/src",
-                    "cmd": [
-                        "dotnet build"
-                    ],
-                    "num": 1
-                }
-            ]
-        },
-        {
             "name": "Fernweh.UI.Client.BlazorClient",
             "enabled": true,
             "terminals": [
@@ -66,35 +38,12 @@
             "enabled": true,
             "terminals": [
                 {
-                    "name": "TPL.TplCore",
-                    "path": "./src/+Modules/Required/ThePublicLibrary/____Core/_TPL.TplCore/src",
-                    "cmd": [
-                        ""
-                    ],
-                    "num": 3
-                },
-                {
                     "name": "TPL.TplCore.UnitTests",
                     "path": "./src/+Modules/Required/ThePublicLibrary/____Core/_TPL.TplCore.UnitTests/src",
                     "cmd": [
                         "dotnet test"
                     ],
                     "num": 3
-                }
-            ]
-        },
-        {
-            "name": "TPL.TplInfrastructure",
-            "description": "Infrastructure and Tests",
-            "enabled": true,
-            "terminals": [
-                {
-                    "name": "TPL.TplInfrastructure",
-                    "path": "./src/+Modules/Required/ThePublicLibrary/___Infrastructure/TPL.TplInfrastructure/src",
-                    "cmd": [
-                        ""
-                    ],
-                    "num": 4
                 },
                 {
                     "name": "TPL.TplInfrastructure.IntegrationTests",
@@ -104,21 +53,6 @@
                         "dotnet test"
                     ],
                     "num": 4
-                }
-            ]
-        },
-        {
-            "name": "TPL.TplApplication",
-            "description": "Application and Tests",
-            "enabled": true,
-            "terminals": [
-                {
-                    "name": "TPL.TplApplication",
-                    "path": "./src/+Modules/Required/ThePublicLibrary/_Application/TPL.TplApplication/src",
-                    "cmd": [
-                        ""
-                    ],
-                    "num": 5
                 },
                 {
                     "name": "TPL.TplApplication.FeatureTests",
@@ -130,20 +64,13 @@
                     "num": 5
                 },
                 {
-                    "name": "TPL.TplApplication.Data",
-                    "path": "./src/+Modules/Required/ThePublicLibrary/__Data/TPL.TplApplication.Data/src",
+                    "name": "TPL.API.TplApi.FunctionalTests",
+                    "path": "./src/+Modules/Required/ThePublicLibrary/+Api/TPL.API.TplApi.FunctionalTests/src",
                     "cmd": [
-                        "dotnet build"
+                        "dotnet test"
                     ],
-                    "num": 6
-                }
-            ]
-        },
-        {
-            "name": "TPL.API.TplApi",
-            "description": "TPL  API",
-            "enabled": true,
-            "terminals": [
+                    "num": 7
+                }   ,
                 {
                     "name": "TPL.API.TplApi",
                     "path": "./src/+Modules/Required/ThePublicLibrary/+Api/TPL.API.TplApi/src",
@@ -151,40 +78,8 @@
                         "ping 127.0.0.1 -n 15",
                         "dotnet watch run"
                     ],
-                    "num": 7
-                },
-                {
-                    "name": "TPL.API.TplApi.FunctionalTests",
-                    "path": "./src/+Modules/Required/ThePublicLibrary/+Api/TPL.API.TplApi.FunctionalTests/src",
-                    "cmd": [
-                        "dotnet test"
-                    ],
-                    "num": 7
-                }
-            ]
-        },
-        {
-            "name": "TPL.TplInfrastructure",
-            "description": "Infrastructure and Tests",
-            "enabled": true,
-            "terminals": [
-                {
-                    "name": "TPL.TplInfrastructure",
-                    "path": "./src/+Modules/Required/ThePublicLibrary/___Infrastructure/TPL.TplInfrastructure/src",
-                    "cmd": [
-                        ""
-                    ],
-                    "num": 8
-                },
-                {
-                    "name": "TPL.TplInfrastructure.IntegrationTests",
-                    "path": "./src/+Modules/Required/ThePublicLibrary/___Infrastructure/TPL.TplInfrastructure.IntegrationTests/src",
-                    "cmd": [
-                        "ping 127.0.0.1 -n 5",
-                        "dotnet test"
-                    ],
-                    "num": 8
-                }
+                    "num": 12
+                }             
             ]
         },
         {
@@ -192,35 +87,12 @@
             "enabled": true,
             "terminals": [
                 {
-                    "name": "YMI.YmiCore",
-                    "path": "./src/+Modules/Required/YourMainIdea/____Core/_YMI.YmiCore/src",
-                    "cmd": [
-                        ""
-                    ],
-                    "num": 9
-                },
-                {
                     "name": "YMI.YmiCore.UnitTests",
                     "path": "./src/+Modules/Required/YourMainIdea/____Core/_YMI.YmiCore.UnitTests/src",
                     "cmd": [
                         "dotnet test"
                     ],
-                    "num": 9
-                }
-            ]
-        },
-        {
-            "name": "YMI.YmiInfrastructure",
-            "description": "Infrastructure and Tests",
-            "enabled": true,
-            "terminals": [
-                {
-                    "name": "YMI.YmiInfrastructure",
-                    "path": "./src/+Modules/Required/YourMainIdea/___Infrastructure/YMI.YmiInfrastructure/src",
-                    "cmd": [
-                        ""
-                    ],
-                    "num": 10
+                    "num": 3
                 },
                 {
                     "name": "YMI.YmiInfrastructure.IntegrationTests",
@@ -230,21 +102,6 @@
                         "dotnet test"
                     ],
                     "num": 10
-                }
-            ]
-        },
-        {
-            "name": "YMI.YmiApplication",
-            "description": "Application and Tests",
-            "enabled": true,
-            "terminals": [
-                {
-                    "name": "YMI.YmiApplication",
-                    "path": "./src/+Modules/Required/YourMainIdea/_Application/YMI.YmiApplication/src",
-                    "cmd": [
-                        ""
-                    ],
-                    "num": 11
                 },
                 {
                     "name": "YMI.YmiApplication.FeatureTests",
@@ -256,34 +113,19 @@
                     "num": 11
                 },
                 {
-                    "name": "YMI.YmiApplication.Data",
-                    "path": "./src/+Modules/Required/YourMainIdea/__Data/YMI.YmiApplication.Data/src",
+                    "name": "YMI.API.YmiApi.FunctionalTests",
+                    "path": "./src/+Modules/Required/YourMainIdea/+Api/YMI.API.YmiApi.FunctionalTests/src",
                     "cmd": [
-                        "dotnet build"
+                        "dotnet test"
                     ],
-                    "num": 11
-                }
-            ]
-        },
-        {
-            "name": "YMI.API.YmiApi",
-            "description": "YMI  API",
-            "enabled": true,
-            "terminals": [
+                    "num": 12
+                },
                 {
                     "name": "YMI.API.YmiApi",
                     "path": "./src/+Modules/Required/YourMainIdea/+Api/YMI.API.YmiApi/src",
                     "cmd": [
                         "ping 127.0.0.1 -n 15",
                         "dotnet watch run"
-                    ],
-                    "num": 12
-                },
-                {
-                    "name": "YMI.API.YmiApi.FunctionalTests",
-                    "path": "./src/+Modules/Required/YourMainIdea/+Api/YMI.API.YmiApi.FunctionalTests/src",
-                    "cmd": [
-                        "dotnet test"
                     ],
                     "num": 12
                 }

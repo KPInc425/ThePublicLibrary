@@ -1,3 +1,6 @@
+using Ardalis.GuardClauses;
+using FluentAssertions;
+
 namespace YMI.YmiInfrastructure.CommandQuery;
 public class VideoAddCmd : IRequest<Video>
 {
@@ -25,6 +28,9 @@ public class VideoAddCmd : IRequest<Video>
         Title = video.Title;
         PublicationYear = video.PublicationYear;
         PageCount = video.PageCount;
+
+        Guard.Against.Null(video, "because video cannot be null");
+        Guard.Against.NullOrEmpty(video.Actors, "because video actors cannot be null or empty");
 
         Actors.AddRange(video.Actors);
 

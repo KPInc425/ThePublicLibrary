@@ -37,7 +37,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="./../../../../../../__Kernel/Fernweh.KernelShared/src/Fernweh.KernelShared.csproj" />
+    <Reference Include="Fernweh.KernelShared">
+      <HintPath>.\..\..\..\..\..\..\..\src\__Kernel\Fernweh.KernelShared\src\bin\Debug\net7.0\Fernweh.KernelShared.dll</HintPath>
+    </Reference>
     <ProjectReference Include="./../../../____Core/_TPL.TplCore.UnitTests/src/TPL.TplCore.UnitTests.csproj" />    
     <ProjectReference Include="./../../../___Infrastructure/TPL.TplInfrastructure/src/TPL.TplInfrastructure.csproj" />
     <ProjectReference Include="./../../../_Application/_TPL.TplApplication.Shared/src/TPL.TplApplication.Shared.csproj" />

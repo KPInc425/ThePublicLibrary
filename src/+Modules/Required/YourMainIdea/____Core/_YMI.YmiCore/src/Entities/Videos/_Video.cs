@@ -17,7 +17,9 @@ public class Video : BaseEntityTracked<Guid>, IAggregateRoot
     private List<VideoCopy> _videoCopies = new();
     public IEnumerable<VideoCopy> VideoCopies => _videoCopies.Where(rs => rs.Condition != VideoCondition.Destroyed).ToList().AsReadOnly();
 
+#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
     private Video() { }
+#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
 
     public Video(IsbnVO isbn, IEnumerable<Actor> actors, IEnumerable<VideoCategory>? videoCategories, IEnumerable<VideoCopy>? videoCopies, string title, int publicationYear, int pageCount)
     {
@@ -92,6 +94,6 @@ public class Video : BaseEntityTracked<Guid>, IAggregateRoot
 
     public override string ToString()
     {
-        return $"{Title} ({Isbn}) ({PublicationYear}) ({PageCount}) ({Actors.Select(x => x.ToString() + ", ")}) ({VideoCategories.Select(x => x.Title + ", ")})";
+        return $"{Title} ({Isbn}) ({PublicationYear}) ({PageCount}) ({Actors!.Select(x => x.ToString() + ", ")}) ({VideoCategories?.Select(x => x.Title + ", ")})";
     }
 }

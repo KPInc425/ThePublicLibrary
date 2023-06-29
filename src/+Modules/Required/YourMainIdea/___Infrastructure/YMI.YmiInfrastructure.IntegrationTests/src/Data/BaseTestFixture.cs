@@ -1,7 +1,7 @@
 namespace YMI.YmiInfrastructure.IntegrationTests.Data;
 public abstract class BaseTestFixture
 {
-    protected YmiDbContext _dbContext;
+    protected YmiDbContext? _dbContext;
     
     protected static DbContextOptions<YmiDbContext> CreateNewContextOptions()
     {

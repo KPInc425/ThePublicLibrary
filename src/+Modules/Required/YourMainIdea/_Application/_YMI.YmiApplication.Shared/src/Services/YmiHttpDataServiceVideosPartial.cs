@@ -2,7 +2,7 @@
 namespace YMI.YmiApplication.Shared.Services;
 public partial class YmiHttpDataService
 {
-    public async Task<List<VideoViewModel>> VideosGetAllAsync(VideosGetAllQry qry)
+    public async Task<List<VideoViewModel>?> VideosGetAllAsync(VideosGetAllQry qry)
     {
         var response = await _httpClient.GetAsync(VideosGetAllRequest.BuildRoute());
 
@@ -13,7 +13,7 @@ public partial class YmiHttpDataService
             .ReadFromJsonAsync<List<VideoViewModel>>();
     }
 
-     public async Task<VideoViewModel> VideoAddAsync(VideoAddCmd cmd)
+     public async Task<VideoViewModel?> VideoAddAsync(VideoAddCmd cmd)
     {
         var response = await _httpClient.PostAsJsonAsync(VideoAddRequest.BuildRoute(), cmd);
 
@@ -24,7 +24,7 @@ public partial class YmiHttpDataService
             .ReadFromJsonAsync<VideoViewModel>();
     }
 
-     public async Task<List<VideoViewModel>> VideosFindAsync(VideosFindQry qry)
+     public async Task<List<VideoViewModel>?> VideosFindAsync(VideosFindQry qry)
     {
         var response = await _httpClient.PostAsJsonAsync(VideosFindRequest.BuildRoute(qry), qry);
 

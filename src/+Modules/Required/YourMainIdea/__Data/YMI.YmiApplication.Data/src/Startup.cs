@@ -16,7 +16,7 @@ public class Startup
     public void ConfigureServices(IServiceCollection services)
     {
         string connectionString =
-            Configuration.GetConnectionString("Active"); //Configuration.GetConnectionString("DefaultConnection");
+            Configuration?.GetConnectionString("Active") ?? ""; //Configuration.GetConnectionString("DefaultConnection");
 
         services.AddYmiDbContext(connectionString);
 
@@ -42,8 +42,8 @@ public class Startup
         //var applicationAssembly = Assembly.GetAssembly(typeof(YmiApplicationModule));
         //var applicationTestAssembly = Assembly.GetAssembly(typeof(BaseApplicationTestFixture));
 
-        assemblies.Add(coreAssembly);
-        assemblies.Add(infrastructureAssembly);
+        assemblies.Add(coreAssembly!);
+        assemblies.Add(infrastructureAssembly!);
         
         builder.RegisterGeneric(typeof(EfRepository<>))
             .As(typeof(IRepository<>))
