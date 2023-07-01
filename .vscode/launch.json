@@ -24,24 +24,24 @@
             "stopAtEntry": false
         },
         {
-            "name": "TPL.TplCore.Tests",
+            "name": "TplCore.Tests",
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceFolder}\\_TPL.TplCore\\tests\\TPL.TplCore.Tests\\bin\\Debug\\net7.0\\TPL.TplCore.UnitTests.dll",
+            "program": "${workspaceFolder}\\_TplCore\\tests\\TplCore.Tests\\bin\\Debug\\net7.0\\TplCore.UnitTests.dll",
             "args": [],
-            "cwd": "${workspaceFolder}\\_TPL.TplCore\\tests\\TPL.TplCore.Tests",
+            "cwd": "${workspaceFolder}\\_TplCore\\tests\\TplCore.Tests",
             "console": "internalConsole",
             "stopAtEntry": false
         },
         {
-            "name": "TPL.API.TplApi",
+            "name": "API.TplApi",
             "type": "coreclr",
             "request": "launch",
-            "preLaunchTask": "build-TPL.API.TplApi",
-            "program": "${workspaceFolder}\\src\\+Modules\\Required\\ThePublicLibrary\\+Api\\TPL.API.TplApi\\src\\bin\\Debug\\net7.0\\TPL.API.TplApi.dll",
+            "preLaunchTask": "build-API.TplApi",
+            "program": "${workspaceFolder}\\src\\+Modules\\Required\\ThePublicLibrary\\+Api\\API.TplApi\\src\\bin\\Debug\\net7.0\\API.TplApi.dll",
             "args": [],
-            "cwd": "${workspaceFolder}\\src\\+Modules\\Required\\ThePublicLibrary\\+Api\\TPL.API.TplApi\\src\\",
+            "cwd": "${workspaceFolder}\\src\\+Modules\\Required\\ThePublicLibrary\\+Api\\API.TplApi\\src\\",
             "console": "internalConsole",
             "stopAtEntry": false,
             "serverReadyAction": {

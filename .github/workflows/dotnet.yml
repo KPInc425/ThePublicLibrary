@@ -24,40 +24,40 @@ jobs:
       with:
         dotnet-version: ${{ matrix.dotnet-version }}
     #- name: Restore Core
-    #  run: dotnet restore "./src/+Modules/Required/ThePublicLibrary/____Core/_TPL.TplCore/src/TPL.TplCore.csproj"      
+    #  run: dotnet restore "./src/+Modules/Lazy/ThePublicLibrary/____Core/_TplCore/src/TplCore.csproj"      
     #- name: Build Core
-    #  run: dotnet build "./src/+Modules/Required/ThePublicLibrary/____Core/_TPL.TplCore/src/TPL.TplCore.csproj"      
+    #  run: dotnet build "./src/+Modules/Lazy/ThePublicLibrary/____Core/_TplCore/src/TplCore.csproj"      
     - name: Run Core - Unit Tests
-      run: dotnet test "./src/+Modules/Required/ThePublicLibrary/____Core/_TPL.TplCore.UnitTests/src/TPL.TplCore.UnitTests.csproj"
+      run: dotnet test "./src/+Modules/Lazy/ThePublicLibrary/____Core/_TplCore.UnitTests/src/TplCore.UnitTests.csproj"
       
     #- name: Restore Infrastructure
-    #  run: dotnet restore "./src/+Modules/Required/ThePublicLibrary/___Infrastructure/TPL.TplInfrastructure/src/TPL.TplInfrastructure.csproj"      
+    #  run: dotnet restore "./src/+Modules/Lazy/ThePublicLibrary/___Infrastructure/TplInfrastructure/src/TplInfrastructure.csproj"      
     #- name: Build Infrastructure
-    #  run: dotnet build "./src/+Modules/Required/ThePublicLibrary/___Infrastructure/TPL.TplInfrastructure/src/TPL.TplInfrastructure.csproj"      
+    #  run: dotnet build "./src/+Modules/Lazy/ThePublicLibrary/___Infrastructure/TplInfrastructure/src/TplInfrastructure.csproj"      
     - name: Run Infrastructure - Integration Tests
-      run: dotnet test "./src/+Modules/Required/ThePublicLibrary/___Infrastructure/TPL.TplInfrastructure.IntegrationTests/src/TPL.TplInfrastructure.IntegrationTests.csproj"
+      run: dotnet test "./src/+Modules/Lazy/ThePublicLibrary/___Infrastructure/TplInfrastructure.IntegrationTests/src/TplInfrastructure.IntegrationTests.csproj"
     
     #- name: Restore Application
-    #  run: dotnet restore "./src/+Modules/Required/ThePublicLibrary/_Application/TPL.TplApplication/src/TPL.TplApplication.csproj"      
+    #  run: dotnet restore "./src/+Modules/Lazy/ThePublicLibrary/_Application/TplApplication/src/TplApplication.csproj"      
     #- name: Build Application
-    #  run: dotnet build "./src/+Modules/Required/ThePublicLibrary/_Application/TPL.TplApplication/src/TPL.TplApplication.csproj"      
+    #  run: dotnet build "./src/+Modules/Lazy/ThePublicLibrary/_Application/TplApplication/src/TplApplication.csproj"      
     - name: Run Application - Feature Tests
-      run: dotnet test "./src/+Modules/Required/ThePublicLibrary/_Application/TPL.TplApplication.FeatureTests/src/TPL.TplApplication.FeatureTests.csproj"
+      run: dotnet test "./src/+Modules/Lazy/ThePublicLibrary/_Application/TplApplication.FeatureTests/src/TplApplication.FeatureTests.csproj"
       
     #- name: Restore TplApi
-    #  run: dotnet restore "./src/+Modules/Required/ThePublicLibrary/+API/TPL.API.TplApi/src/TPL.API.TplApi.csproj"      
+    #  run: dotnet restore "./src/+Modules/Lazy/ThePublicLibrary/+API/API.TplApi/src/API.TplApi.csproj"      
     #- name: Build TplApi
-    #  run: dotnet build "./src/+Modules/Required/ThePublicLibrary/+API/TPL.API.TplApi/src/TPL.API.TplApi.csproj"      
+    #  run: dotnet build "./src/+Modules/Lazy/ThePublicLibrary/+API/API.TplApi/src/API.TplApi.csproj"      
     - name: Run TplApi - Functional Tests
-      run: dotnet test "./src/+Modules/Required/ThePublicLibrary/+Api/TPL.API.TplApi.FunctionalTests/src/TPL.API.TplApi.FunctionalTests.csproj"
+      run: dotnet test "./src/+Modules/Lazy/ThePublicLibrary/+Api/API.TplApi.FunctionalTests/src/API.TplApi.FunctionalTests.csproj"
       
-    #- name: Restore TPL.UI.TplBlazorModule
-    #  run: dotnet restore "./src/+Modules/Required/ThePublicLibrary/UI/TPL.UI.TplBlazorModule/src/TPL.UI.TplBlazorModule.csproj"      
+    #- name: Restore UI.TplBlazorModule
+    #  run: dotnet restore "./src/+Modules/Lazy/ThePublicLibrary/UI/UI.TplBlazorModule/src/UI.TplBlazorModule.csproj"      
     - name: Install Dart Sass Embedded
       run: npm i -g sass
     
-    - name: Build TPL.UI.TplBlazorModule
-      run: dotnet build "./src/+Modules/Required/ThePublicLibrary/UI/TPL.UI.TplBlazorModule/src/TPL.UI.TplBlazorModule.csproj"
+    - name: Build UI.TplBlazorModule
+      run: dotnet build "./src/+Modules/Lazy/ThePublicLibrary/UI/UI.TplBlazorModule/src/UI.TplBlazorModule.csproj"
     
     - name: Build Fernweh.UI.BlazorClient
       run: dotnet build "./src/UI/Client/Fernweh.UI.BlazorClient/src/Fernweh.UI.BlazorClient.csproj"

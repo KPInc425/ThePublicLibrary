@@ -1,0 +1,50 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <IsPackable>true</IsPackable>
+    <PackageId>TplApplication</PackageId>
+    <Version>1.01.02.003</Version>
+    <Authors>10GeekJames</Authors>
+    <Company>10GeekJames</Company>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <DefaultNamespace>TplApplication</DefaultNamespace> 
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Ardalis.GuardClauses" Version="4.0.1" />
+    <PackageReference Include="Ardalis.Result" Version="7.1.0" />    
+    <PackageReference Include="Ardalis.Specification.EntityFrameworkCore" Version="7.0.0" />    
+    <PackageReference Include="Ardalis.EFCore.Extensions" Version="6.0.0" />    
+    <PackageReference Include="Autofac" Version="7.0.1" />
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="8.0.0" />
+    <PackageReference Include="AutoMapper" Version="12.0.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+    <PackageReference Include="Blazored.FluentValidation" Version="2.1.0" />  
+    <PackageReference Include="MediatR" Version="12.0.1" />       
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" PrivateAssets="all" Version="7.0.7" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.7" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="7.0.7" />
+    <PackageReference Include="SQLite" Version="3.13.0" />
+  </ItemGroup>
+
+  <Choose>
+    <When Condition="'$(Configuration)' == 'Release'">
+      <ItemGroup>
+        <PackageReference Include="Fernweh.KernelShared" />
+        <PackageReference Include="TplCore" />
+        <PackageReference Include="TplInfrastructure" />
+      </ItemGroup>
+    </When>
+  </Choose>
+  <ItemGroup>
+    <Reference Include="Fernweh.KernelShared">
+      <HintPath>.\..\..\..\..\..\..\..\src\__Kernel\Fernweh.KernelShared\src\bin\Debug\net7.0\Fernweh.KernelShared.dll</HintPath>
+    </Reference>
+    <ProjectReference Include="./../../../____Core/_TplCore/src/TplCore.csproj" />
+    <ProjectReference Include="./../../../___Infrastructure/TplInfrastructure/src/TplInfrastructure.csproj" />
+    <ProjectReference Include="./../../_TplApplication.Shared/src/TplApplication.Shared.csproj" />
+  </ItemGroup>
+</Project>

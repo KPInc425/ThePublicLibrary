@@ -1,0 +1,47 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <IsPackable>true</IsPackable>
+    <PackageId>KnownAccountsApi.Common</PackageId>
+    <Version>1.0.71.176</Version>
+    <Authors>James W. Kies</Authors>
+    <Company>RobotBuildersInc</Company>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <DefaultNamespace>KnownAccountsApi.Common</DefaultNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <SupportedPlatform Include="browser" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="12.0.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="7.0.4" />
+    <PackageReference Include="Blazored.FluentValidation" Version="2.1.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" PrivateAssets="all" Version="7.0.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="7.0.4" />
+    <PackageReference Include="Ardalis.Specification.EntityFrameworkCore" Version="6.1.0" />
+    <PackageReference Include="Ardalis.GuardClauses" Version="4.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Identity.KnownAccountsCore" Version="7.0.4" />
+  </ItemGroup>
+  <Choose>
+    <When Condition="'$(Configuration)' == 'Release'">
+      <ItemGroup>
+        <PackageReference Include="Kernel" Version="1.0.71.176" />
+        <PackageReference Include="KnownAccountsCore" Version="1.0.71.176" />
+        <PackageReference Include="KnownAccountsInfrastructure" Version="1.0.71.176" />
+      </ItemGroup>
+    </When>
+  </Choose>
+  <ItemGroup>
+    <ProjectReference Include="./../../../../___Kernel/src/Kernel.csproj" />
+    <ProjectReference Include="./../../____Core/src/KnownAccountsCore.csproj" />
+    <ProjectReference Include="./../../__KnownAccountsInfrastructure/src/KnownAccountsInfrastructure.csproj" />
+  </ItemGroup>
+  <Target Name="PushPackage" AfterTargets="Publish" Condition="'$(Configuration)' == 'Release'">
+    <Exec Command="dotnet pack -c Release" />
+    <Exec Command="dotnet nuget push &quot;$(MSBuildProjectDirectory)\bin\$(Configuration)\$(AssemblyName).$(Version).nupkg&quot; -s LocalNuggget" />
+  </Target>
+</Project>
