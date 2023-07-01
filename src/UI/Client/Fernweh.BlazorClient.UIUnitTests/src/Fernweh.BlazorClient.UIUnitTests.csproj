@@ -1,0 +1,71 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="bunit.web" Version="1.20.8" />
+    <PackageReference Include="bunit.xunit" Version="1.0.0-preview-02" />
+    <PackageReference Include="FluentAssertions" Version="6.11.0" />
+    <PackageReference Include="JustMock" Version="2023.2.601.35" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.3.2" />
+    
+    <PackageReference Include="BlazorAnimate" Version="3.0.0" />
+    <PackageReference Include="Blazor.Extensions.Canvas" Version="1.1.1" />
+    <PackageReference Include="Blazored.FluentValidation" Version="2.1.0" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="7.0.7" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="7.0.7" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="7.0.7" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer"
+      Version="7.0.7" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.Extensions.Localization" Version="7.0.7" />
+
+    <PackageReference Include="RichardSzalay.MockHttp" Version="6.0.0" />
+    <PackageReference Include="xunit" Version="2.4.2" />
+    <PackageReference Include="Xunit.Microsoft.DependencyInjection" Version="7.0.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Fernweh.KernelShared">
+      <HintPath>./../../../../../src/__Kernel/Fernweh.KernelShared/src/bin/Debug/net7.0/Fernweh.KernelShared.dll</HintPath>    
+    </Reference>
+    
+  </ItemGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="./../../../../+Modules/Lazy/ThePublicLibrary/____Core/TplCore.TplTestData/src/TplCore.TplTestData.csproj" />
+    <ProjectReference Include="./../../../../+Modules/Lazy/ThePublicLibrary/___Infrastructure/TplInfrastructure/src/TplInfrastructure.csproj" />    
+    <ProjectReference Include="./../../../../+Modules/Lazy/ThePublicLibrary/_Application/_TplApplication.Shared/src/TplApplication.Shared.csproj" />
+    <ProjectReference Include="./../../../../+Modules/Lazy/ThePublicLibrary/UI/TplBlazorModule/src/TplBlazorModule.csproj" />          
+    <ProjectReference Include="./../../../../+Modules/Lazy/ThePublicLibrary/UI/_TplModuleClientServiceLoader/src/TplModuleClientServiceLoader.csproj" />          
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="./../../../../+Modules/Lazy/YourMainIdea/____Core/YmiCore.YmiTestData/src/YmiCore.YmiTestData.csproj" />
+    <ProjectReference Include="./../../../../+Modules/Lazy/YourMainIdea/___Infrastructure/YmiInfrastructure/src/YmiInfrastructure.csproj" />    
+    <ProjectReference Include="./../../../../+Modules/Lazy/YourMainIdea/_Application/_YmiApplication.Shared/src/YmiApplication.Shared.csproj" />
+    <ProjectReference Include="./../../../../+Modules/Lazy/YourMainIdea/UI/YmiBlazorModule/src/YmiBlazorModule.csproj" />          
+    <ProjectReference Include="./../../../../+Modules/Lazy/YourMainIdea/UI/_YmiModuleClientServiceLoader/src/YmiModuleClientServiceLoader.csproj" />          
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.5">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="coverlet.collector" Version="3.1.2">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include=".\..\..\Fernweh.BlazorClient\src\Fernweh.BlazorClient.csproj" />
+  </ItemGroup>
+
+
+</Project>

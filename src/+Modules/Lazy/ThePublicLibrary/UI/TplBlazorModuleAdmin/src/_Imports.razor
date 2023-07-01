@@ -1,0 +1,55 @@
+@using System.Net.Http
+@using System.Net.Http.Json
+@using System.Collections
+@using System.Security.Claims
+
+@using Microsoft.AspNetCore.Components.Forms
+@using Microsoft.AspNetCore.Components.Routing
+@using Microsoft.AspNetCore.Components.Web
+@using Microsoft.AspNetCore.Components.Web.Virtualization
+@using Microsoft.AspNetCore.SignalR.Client
+@using Microsoft.Extensions.Localization
+@using Microsoft.JSInterop
+
+@using Microsoft.AspNetCore.Authorization
+@* @using Microsoft.AspNetCore.Components.Authorization *@
+
+@using Fernweh.KernelShared;
+
+@using Fernweh.Common.Services
+@using Fernweh.Common.Interfaces
+@using Fernweh.Common.Models
+@using Fernweh.Common.Shared
+@using Fernweh.Common.MasterPageSetters
+@using Fernweh.Common.MasterPages
+@using Fernweh.Common.MasterPages.Authentication
+@using Fernweh.Common.MasterPages.Errors
+@using Fernweh.Common.MasterPages.Footer
+@using Fernweh.Common.MasterPages.Navigation
+@using Fernweh.Common.MasterPages.Layouts
+
+@using TplApplication.Shared.ViewModels
+@using TplApplication.Shared.Interfaces
+@using TplApplication.Shared.Services
+
+@using TplModuleClientServiceLoader
+
+@using Blazored.FluentValidation
+@using BlazorAnimate
+@using MudBlazor
+@using MudBlazor.Utilities
+
+@using TplCore.TplTestData.Entities;
+
+@* inject IStringLocalizer<TplCoreLanguageBase> LocalizeModule *@
+@inject IStringLocalizer<Fernweh.Common.SharedLanguageBase> LocalizeGlobal
+
+@inject NavigationManager NavigationManager
+@inject ISnackbar Snackbar
+
+@* @inject AuthenticationStateProvider AuthenticationStateProvider *@
+
+@inject ITplDataService TplDataService
+@inject PlatformCacheService PlatformCacheService
+
+@layout MainLayout

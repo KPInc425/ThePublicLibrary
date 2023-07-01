@@ -1,0 +1,29 @@
+@page "/KnownAccounts/Accounts"
+@inject IStringLocalizer<KnownAccounts> Localize
+@layout MainLayoutWithModNav
+<PageTitle>Known Accounts</PageTitle>
+<SetModuleNav>
+    <MudNavMenu>
+        <MudNavLink Match="NavLinkMatch.All" Icon="@Icons.Filled.Group">CLIENT 1</MudNavLink>
+        <MudNavLink Match="NavLinkMatch.All" Icon="@Icons.Filled.Group">CLIENT 2</MudNavLink>
+        <MudNavLink Match="NavLinkMatch.All" Icon="@Icons.Filled.Group">CLIENT 3</MudNavLink>        
+    </MudNavMenu>
+</SetModuleNav>
+<SetModuleSettings>
+    <div>Awesome injection of a second area from modules</div>
+</SetModuleSettings>
+<p Typo="Typo.h4" Class="mb-8">TPL</p>
+
+<AuthorizeView>
+    <NotAuthorized>
+        <h1>Not Authorized</h1>
+        <p>You can only see this content if you're authenticated.</p>
+    </NotAuthorized>
+    <Authorized>
+        <div>
+            Welcome, authorized visitor.
+        </div>
+    </Authorized>
+</AuthorizeView>
+@code {
+}

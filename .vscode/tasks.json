@@ -7,7 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}\\_TPL.TplCore\\tests\\TPL.TplCore.Tests\\TPL.TplCore.UnitTests.csproj",
+                "${workspaceFolder}\\_TplCore\\tests\\TplCore.Tests\\TplCore.UnitTests.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -19,7 +19,7 @@
             "type": "process",
             "args": [
                 "publish",
-                "${workspaceFolder}\\_TPL.TplCore\\tests\\TPL.TplCore.Tests\\TPL.TplCore.UnitTests.csproj",
+                "${workspaceFolder}\\_TplCore\\tests\\TplCore.Tests\\TplCore.UnitTests.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -33,7 +33,7 @@
                 "watch",
                 "run",
                 "--project",
-                "${workspaceFolder}\\_TPL.TplCore\\tests\\TPL.TplCore.Tests\\TPL.TplCore.UnitTests.csproj"
+                "${workspaceFolder}\\_TplCore\\tests\\TplCore.Tests\\TplCore.UnitTests.csproj"
             ],
             "problemMatcher": "$msCompile"
         },
@@ -123,38 +123,38 @@
 
 
         {
-            "label": "build-TPL.API.TplApi",
+            "label": "build-API.TplApi",
             "command": "dotnet",
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}\\src\\+Modules\\Required\\ThePublicLibrary\\+Api\\TPL.API.TplApi\\src\\TPL.API.TplApi.csproj",
+                "${workspaceFolder}\\src\\+Modules\\Required\\ThePublicLibrary\\+Api\\API.TplApi\\src\\API.TplApi.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
             "problemMatcher": "$msCompile"
         },
         {
-            "label": "publish-TPL.API.TplApi",
+            "label": "publish-API.TplApi",
             "command": "dotnet",
             "type": "process",
             "args": [
                 "publish",
-                "${workspaceFolder}\\src\\+Modules\\Required\\ThePublicLibrary\\+Api\\TPL.API.TplApi\\src\\TPL.API.TplApi.csproj",
+                "${workspaceFolder}\\src\\+Modules\\Required\\ThePublicLibrary\\+Api\\API.TplApi\\src\\API.TplApi.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
             "problemMatcher": "$msCompile"
         },
         {
-            "label": "watch-TPL.API.TplApi",
+            "label": "watch-API.TplApi",
             "command": "dotnet",
             "type": "process",
             "args": [
                 "watch",
                 "run",
                 "--project",
-                "${workspaceFolder}\\src\\+Modules\\Required\\ThePublicLibrary\\+Api\\TPL.API.TplApi\\src\\TPL.API.TplApi.csproj",
+                "${workspaceFolder}\\src\\+Modules\\Required\\ThePublicLibrary\\+Api\\API.TplApi\\src\\API.TplApi.csproj",
             ],
             "problemMatcher": "$msCompile"
         }

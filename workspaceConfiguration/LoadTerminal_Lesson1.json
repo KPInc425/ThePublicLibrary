@@ -16,20 +16,20 @@
             ]
         },
         {
-            "name": "YMI.YmiCore",
+            "name": "YmiCore",
             "enabled": true,
             "terminals": [
                 {
-                    "name": "YMI.YmiCore",
-                    "path": "./src/+Modules/Required/YourMainIdea/____Core/_YMI.YmiCore/src",
+                    "name": "YmiCore",
+                    "path": "./src/+Modules/Required/YourMainIdea/____Core/_YmiCore/src",
                     "cmd": [
                         ""
                     ],
                     "num": 1
                 },
                 {
-                    "name": "YMI.YmiCore.UnitTests",
-                    "path": "./src/+Modules/Required/YourMainIdea/____Core/_YMI.YmiCore.UnitTests/src",
+                    "name": "YmiCore.UnitTests",
+                    "path": "./src/+Modules/Required/YourMainIdea/____Core/_YmiCore.UnitTests/src",
                     "cmd": [
                         "dotnet test"
                     ],
