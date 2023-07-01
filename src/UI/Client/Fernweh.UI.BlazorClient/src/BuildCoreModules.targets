@@ -30,7 +30,7 @@
   <!-- /The Public Library -->
 
    <!-- The YourMainIdea -->
-  <Choose>
+  <!-- <Choose>
     <When Condition="'$(Configuration)' == 'Release'">
       <ItemGroup>
         <PackageReference Include="YMI.YmiCore" />
@@ -52,7 +52,7 @@
 
     <ProjectReference Include="./../../../../+Modules/Required/YourMainIdea/UI/YMI.UI.YmiBlazorModuleAdmin/src/YMI.UI.YmiBlazorModuleAdmin.csproj" />      
     <BlazorWebAssemblyLazyLoad Include="YMI.UI.YmiBlazorModuleAdmin.dll" />
-  </ItemGroup>
+  </ItemGroup> -->
 
   <!-- /The YourMainIdea -->
   

@@ -33,11 +33,14 @@
 @inject PlatformStateCacheService PlatformStateCacheService
 @inject PlatformCacheService PlatformCacheService
 @* @inject SignOutSessionStateManager SignOutManager *@
-
-@inject ITplDataService TplCoreDataService
-
-@inject IYmiDataService YmiCoreDataService
-
 @inject IJSRuntime JSRuntime
 @inject IStringLocalizer<SharedLanguageBase> LocalizeShared
 @inject RandomizerService RandomizerService
+
+@*ThePublicLibrary*@
+@inject ITplDataService TplCoreDataService
+@*/ThePublicLibrary*@
+
+@*YourMainIdea*@
+@* @inject IYmiDataService YmiCoreDataService *@
+@*/YourMainIdea*@

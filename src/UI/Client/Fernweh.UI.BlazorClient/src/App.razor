@@ -98,6 +98,7 @@
         var preLoadAssemblies = await AssemblyLoader.LoadAssembliesAsync(new List<string>() { });
         LoadedAssemblies.AddRange(preLoadAssemblies);
         
+        // ThePublicLibrary
         if (uriPath.Contains("public/"))
         {
             var assemblies = await AssemblyLoader.LoadAssembliesAsync(new List<string> { "TPL.UI.TplBlazorModule.dll" });
@@ -109,9 +110,10 @@
                 "TPL.UI.TplBlazorModuleAdmin.dll"});
             LoadedAssemblies.AddRange(assemblies);
         }
+        // \ThePublicLibrary
 
-
-        if (uriPath.Contains("ymi/"))
+        // YourMainIdea
+        @* if (uriPath.Contains("ymi/"))
         {
             var assemblies = await AssemblyLoader.LoadAssembliesAsync(new List<string> { "YMI.UI.YmiBlazorModule.dll" });
             LoadedAssemblies.AddRange(assemblies);
@@ -121,6 +123,7 @@
             var assemblies = await AssemblyLoader.LoadAssembliesAsync(new List<string> {
                 "YMI.UI.YmiBlazorModuleAdmin.dll"});
             LoadedAssemblies.AddRange(assemblies);
-        }
+        } *@
+        // \YourMainIdea
     }
 }

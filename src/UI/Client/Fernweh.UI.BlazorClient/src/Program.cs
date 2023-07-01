@@ -82,7 +82,7 @@ builder.Services.AddScoped<ITplDataServiceNotAuthed>(x => x
 
 
 // YourMainIdea
-System.Console.WriteLine($"Hello > {endPoints.YmiApiUrl}, t/f {builder.HostEnvironment.IsDevelopment()}");
+/* System.Console.WriteLine($"Hello > {endPoints.YmiApiUrl}, t/f {builder.HostEnvironment.IsDevelopment()}");
 builder.Services.AddScoped<IYmiDataService, YmiHttpDataService>();
 
 builder
@@ -107,7 +107,7 @@ builder.Services.AddScoped<IYmiDataService>(x => x
 
 builder.Services.AddScoped<IYmiDataServiceNotAuthed>(x => x
         .GetRequiredService<YmiHttpClientFactory>()
-        .CreateNotAuthed());
+        .CreateNotAuthed()); */
 // \YourMainIdea
 
 

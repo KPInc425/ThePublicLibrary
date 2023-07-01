@@ -36,12 +36,12 @@ global using TPL.UI.TplModuleClientServiceLoader;
 // \ThePublicLibrary
 
 // YourMainIdea
-global using YMI.YmiCore.YmiTestData.Entities;
+/* global using YMI.YmiCore.YmiTestData.Entities;
 
 global using YMI.YmiApplication.Shared.Interfaces;
 global using YMI.YmiApplication.Shared.Services;
 
-global using YMI.UI.YmiModuleClientServiceLoader;
+global using YMI.UI.YmiModuleClientServiceLoader; */
 // \YourMainIdea
 
 
