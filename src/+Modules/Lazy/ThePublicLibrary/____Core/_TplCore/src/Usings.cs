@@ -16,5 +16,6 @@ global using Toolbelt.ComponentModel.DataAnnotations.Schema.V5;
 
 global using Fernweh.KernelShared;
 global using Fernweh.KernelShared.Interfaces;
+global using Fernweh.KernelShared.Enums; 
 
 global using TplCore.Enums;
