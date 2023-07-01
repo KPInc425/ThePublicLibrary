@@ -10,7 +10,7 @@ public class Program
             var logger = host.Services.GetRequiredService<ILogger<Program>>();
             var services = scope.ServiceProvider;
             var configuration = GetConfiguration(args);
-            //var appSettings = configuration.Get<AppSettings>();
+            var appSettings = configuration.Get<AppSettings>();
 
             // feel free to do work here
             // Add services to the container.   

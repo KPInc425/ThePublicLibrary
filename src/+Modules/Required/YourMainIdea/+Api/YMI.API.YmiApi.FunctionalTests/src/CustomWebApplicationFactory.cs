@@ -5,6 +5,7 @@ public class CustomWebApplicationFactory<TStartup> : WebApplicationFactory<Start
 {
     private ILogger<CustomWebApplicationFactory<TStartup>>? _logger;
     private IConfiguration? _configuration;
+
     private readonly List<Assembly> _assemblies = new List<Assembly>();
     protected override IHost CreateHost(IHostBuilder builder)
     {
@@ -58,13 +59,9 @@ public class CustomWebApplicationFactory<TStartup> : WebApplicationFactory<Start
 
         var containerBuilder = new ContainerBuilder();
 
-        //var coreAssembly = Assembly.GetAssembly(typeof(YmiCoreModule));
-        //var infrastructureAssembly = Assembly.GetAssembly(typeof(YmiInfrastructureModule));
         var applicationAssembly = Assembly.GetAssembly(typeof(YmiApplicationModule));
         var primaryApiAssembly = Assembly.GetAssembly(typeof(YmiApiModule));
 
-        //_assemblies.Add(coreAssembly);
-        //_assemblies.Add(infrastructureAssembly);
         _assemblies.Add(applicationAssembly!);
         _assemblies.Add(primaryApiAssembly!);
 
@@ -95,7 +92,7 @@ public class CustomWebApplicationFactory<TStartup> : WebApplicationFactory<Start
         }
 
         var services = new ServiceCollection();
-        services.AddAutoMapper(typeof(VideoMapper).GetTypeInfo().Assembly);
+        services.AddAutoMapper(typeof(BookMapper).GetTypeInfo().Assembly);
         containerBuilder.Populate(services);
 
 

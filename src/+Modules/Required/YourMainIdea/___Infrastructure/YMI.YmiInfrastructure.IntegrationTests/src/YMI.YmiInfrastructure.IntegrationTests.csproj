@@ -7,7 +7,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <IsPackable>false</IsPackable>
     <PackageId>YMI.YmiInfrastructure.IntegrationTests</PackageId>
-    <Actors>10GeekJames</Actors>
+    <Authors>10GeekJames</Authors>
     <Company>10GeekJames</Company>
     <DefaultNamespace>YMI.YmiInfrastructure.IntegrationTests</DefaultNamespace>
   </PropertyGroup>

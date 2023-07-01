@@ -112,4 +112,8 @@ public abstract class ValueObject : IEquatable<ValueObject>
 
         return seed * 23 + currentHash;
     }
+
+    public Boolean Contains(string searchFor) {
+        return ToString().Contains(searchFor, StringComparison.OrdinalIgnoreCase);
+    }
 }

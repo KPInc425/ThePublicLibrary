@@ -42,7 +42,7 @@ public class YmiApiModule : Module
     private void RegisterCommonDependencies(ContainerBuilder builder)
     {
         var services = new ServiceCollection();
-        services.AddAutoMapper(typeof(VideoMapper).GetTypeInfo().Assembly);
+        services.AddAutoMapper(typeof(BookMapper).GetTypeInfo().Assembly);
         builder.Populate(services);
 
         // register misc

@@ -11,7 +11,6 @@ public static class BookTplTestData
     public static Book BookOfThreeAuthors;
     public static Book BookOfFantasy;
     
-
     public static BookCategory BookCategoryFiction;
     public static BookCategory BookCategoryNonFiction;
     public static BookCategory BookCategoryScify;

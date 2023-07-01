@@ -8,13 +8,19 @@ public class YmiDbContext : DbContext
         _mediator = mediator;
     }
 
-    public DbSet<VideoStore> VideoStores { get; set; }
-    public DbSet<Video> Videos { get; set; }
-    public DbSet<VideoCopy> VideoCopies { get; set; }
-    public DbSet<Actor> Actors { get; set; }
+    public DbSet<Library> Libraries { get; set; }
+    public DbSet<Book> Books { get; set; }
+    public DbSet<BookCopy> BookCopies { get; set; }
+    public DbSet<Author> Authors { get; set; }
     
     // Shared
-    public DbSet<VideoCategory> VideoCategories { get; set; } 
+    public DbSet<BookCategory> BookCategories { get; set; } 
+
+    // Value Objects
+  /*   public DbSet<DigitalAddressVO> DigitalAddressVOs {get;set;}
+    public DbSet<NameVO> NameVOs {get;set;}
+    public DbSet<PhysicalAddressVO> DigitalAddressePhysicalAddressVOs {get;set;} */
+
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -24,9 +30,6 @@ public class YmiDbContext : DbContext
         modelBuilder.ApplyAllConfigurationsFromCurrentAssembly();
 
         //this.ChangeTracker.LazyLoadingEnabled = true;
-
-        // alternately this is built-in to EF Core 2.2
-        //modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
     }
     public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
     {
@@ -65,7 +68,7 @@ public class YmiDbContext : DbContext
             entity.Events.Clear();
             foreach (var domainEvent in events)
             {
-                await _mediator.Publish(domainEvent).ConfigureAwait(false);
+                await _mediator.Publish(domainEvent, cancellationToken).ConfigureAwait(false);
             }
         }
 

@@ -7,7 +7,7 @@
     <IsPackable>false</IsPackable>
     <PackageId>YMI.API.YmiApi.FunctionalTests</PackageId>
     <Version>1.01.02.003</Version>
-    <Actors>10GeekJames</Actors>
+    <Authors>10GeekJames</Authors>
     <Company>10GeekJames</Company>
     <DefaultNamespace>YMI.API.YmiApi.FunctionalTests</DefaultNamespace> 
   </PropertyGroup>

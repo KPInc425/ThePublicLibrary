@@ -6,7 +6,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <IsPackable>false</IsPackable>
     <PackageId>YMI.YmiCore.UnitTests</PackageId>
-    <Actors>10GeekJames</Actors>
+    <Authors>10GeekJames</Authors>
     <Company>10GeekJames</Company>
     <DefaultNamespace>YMI.YmiCore.UnitTests</DefaultNamespace>
   </PropertyGroup>
@@ -27,15 +27,15 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
   </ItemGroup>
-  <ItemGroup>
-    <Reference Include="Fernweh.KernelShared">
-      <HintPath>.\..\..\..\..\..\..\..\src\__Kernel\Fernweh.KernelShared\src\bin\Debug\net7.0\Fernweh.KernelShared.dll</HintPath>
-    </Reference>
-  </ItemGroup>
+
 
   <ItemGroup>
     <ProjectReference Include=".\..\..\_YMI.YmiCore\src\YMI.YmiCore.csproj" />
     <ProjectReference Include=".\..\..\YMI.YmiCore.YmiTestData\src\YMI.YmiCore.YmiTestData.csproj" />
+
+    <Reference Include="Fernweh.KernelShared">
+      <HintPath>.\..\..\..\..\..\..\..\src\__Kernel\Fernweh.KernelShared\src\bin\Debug\net7.0\Fernweh.KernelShared.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

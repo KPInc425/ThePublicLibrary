@@ -8,7 +8,7 @@ public abstract class BaseBooksTest
     protected List<Author>? _bookAuthorsToTestWith;
     protected List<BookCategory>? _bookCategoriesToTestWith;
 
-    protected void ICreateABook(Book book)
+    protected void ICreateABook(Book book, string reasonMessage = "")
     {
         _bookToTestWith = new Book(
             book.Isbn,
@@ -19,16 +19,16 @@ public abstract class BaseBooksTest
             book.PublicationYear,
             book.PageCount);
 
-        _bookToTestWith.Should().NotBeNull();
-        _bookToTestWith.Isbn.Should().Be(book.Isbn);
-        _bookToTestWith!.Authors!.Count().Should().Be(book.Authors!.Count());
-        _bookToTestWith!.BookCategories!.Count().Should().Be(book.BookCategories!.Count());
-        _bookToTestWith.BookCopies.Count().Should().Be(book.BookCopies.Count());
-        _bookToTestWith.Title.Should().Be(book.Title);
-        _bookToTestWith.PublicationYear.Should().Be(book.PublicationYear);
-        _bookToTestWith.PageCount.Should().Be(book.PageCount);
+        _bookToTestWith.Should().NotBeNull(reasonMessage);
+        _bookToTestWith.Isbn.Should().Be(book.Isbn, reasonMessage);
+        _bookToTestWith!.Authors!.Count().Should().Be(book.Authors!.Count(), reasonMessage);
+        _bookToTestWith!.BookCategories!.Count().Should().Be(book.BookCategories!.Count(), reasonMessage);
+        _bookToTestWith.BookCopies.Count().Should().Be(book.BookCopies.Count(), reasonMessage);
+        _bookToTestWith.Title.Should().Be(book.Title, reasonMessage);
+        _bookToTestWith.PublicationYear.Should().Be(book.PublicationYear, reasonMessage);
+        _bookToTestWith.PageCount.Should().Be(book.PageCount, reasonMessage);
     }
-    protected void ICreateManyBooks(IEnumerable<Book> books)
+    protected void ICreateManyBooks(IEnumerable<Book> books, string reasonMessage = "")
     {
         foreach (var book in books)
         {
@@ -41,14 +41,14 @@ public abstract class BaseBooksTest
                 book.PublicationYear,
                 book.PageCount);
 
-            newBook.Should().NotBeNull();
-            newBook.Isbn.Should().Be(book.Isbn);
-            newBook.Authors!.Count().Should().Be(book.Authors!.Count());
-            newBook.BookCategories!.Count().Should().Be(book.BookCategories!.Count());
-            newBook.BookCopies.Count().Should().Be(book.BookCopies.Count());
-            newBook.Title.Should().Be(book.Title);
-            newBook.PublicationYear.Should().Be(book.PublicationYear);
-            newBook.PageCount.Should().Be(book.PageCount);
+            newBook.Should().NotBeNull(reasonMessage);
+            newBook.Isbn.Should().Be(book.Isbn, reasonMessage);
+            newBook.Authors!.Count().Should().Be(book.Authors!.Count(), reasonMessage);
+            newBook.BookCategories!.Count().Should().Be(book.BookCategories!.Count(), reasonMessage);
+            newBook.BookCopies.Count().Should().Be(book.BookCopies.Count(), reasonMessage);
+            newBook.Title.Should().Be(book.Title, reasonMessage);
+            newBook.PublicationYear.Should().Be(book.PublicationYear, reasonMessage);
+            newBook.PageCount.Should().Be(book.PageCount, reasonMessage);
             _booksToTestWith.Add(newBook);
         }
         _booksToTestWith.Count().Should().Be(books.Count());

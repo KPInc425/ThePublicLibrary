@@ -19,5 +19,5 @@ public class PhysicalAddressVO : ValueObject
         StateProvince = stateProvince;
         PostalCode = postalCode;
         Country = country;
-    }
+    }    
 }

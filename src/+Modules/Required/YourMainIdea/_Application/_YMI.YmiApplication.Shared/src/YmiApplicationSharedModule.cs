@@ -50,7 +50,7 @@ public class YmiApplicationSharedModule : Module
             .InstancePerLifetimeScope();
 
         var services = new ServiceCollection();
-        //services.AddAutoMapper(typeof(VideoMapper).GetTypeInfo().Assembly);
+        //services.AddAutoMapper(typeof(BookMapper).GetTypeInfo().Assembly);
         builder.Populate(services);
 
         var mediatrOpenTypes = new[]

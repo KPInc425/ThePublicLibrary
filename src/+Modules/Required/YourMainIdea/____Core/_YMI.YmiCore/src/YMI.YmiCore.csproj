@@ -6,7 +6,7 @@
     <IsPackable>true</IsPackable>
     <PackageId>YMI.YmiCore</PackageId>
     <Version>1.01.02.003</Version>
-    <Actors>10GeekJames</Actors>
+    <Authors>10GeekJames</Authors>
     <Company>10GeekJames</Company>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <DefaultNamespace>YMI.YmiCore</DefaultNamespace>
@@ -21,11 +21,9 @@
     <PackageReference Include="MediatR" Version="12.0.1" />
     <PackageReference Include="Toolbelt.EntityFrameworkCore.IndexAttribute.SqlServer" Version="5.0.1" />
   </ItemGroup>
-
-  
   <ItemGroup>
     <Reference Include="Fernweh.KernelShared">
       <HintPath>.\..\..\..\..\..\..\..\src\__Kernel\Fernweh.KernelShared\src\bin\Debug\net7.0\Fernweh.KernelShared.dll</HintPath>
     </Reference>
-  </ItemGroup>
+  </ItemGroup>  
 </Project>

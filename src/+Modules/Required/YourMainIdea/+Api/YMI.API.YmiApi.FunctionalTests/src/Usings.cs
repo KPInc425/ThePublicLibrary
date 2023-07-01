@@ -25,7 +25,6 @@ global using Microsoft.Extensions.Logging;
 
 global using Xunit;
 
-
 global using Fernweh.KernelShared.Configuration;
 global using Fernweh.KernelShared.Interfaces;
 

@@ -94,6 +94,6 @@ public class Book : BaseEntityTracked<Guid>, IAggregateRoot
 
     public override string ToString()
     {
-        return $"{Title} ({Isbn}) ({PublicationYear}) ({PageCount}) ({Authors?.Select(x => x.ToString() + ", ")}) ({BookCategories?.Select(x => x.Title + ", ")})";
+        return $"{Title}| {Isbn}| {PublicationYear}| {PageCount}| {(Authors is null ? '|' : (String.Join(' ', Authors!.Select(x => x.ToString()))))}| {(BookCategories is null ? '|' : (String.Join(' ', BookCategories!.Select(x => x.ToString()))))}| ";
     }
 }

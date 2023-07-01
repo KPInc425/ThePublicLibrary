@@ -10,9 +10,10 @@ public class RunBaseSeedData
         _mediator = serviceProvider.GetRequiredService<IMediator>();
         _logger = serviceProvider.GetRequiredService<ILogger<RunBaseSeedData>>();
         
-        var videosSeedWithData = new VideosSeedWithData().PopulateYmiTestData(serviceProvider);
+        var booksSeedWithData = new BooksSeedWithData().PopulateYmiTestData(serviceProvider);
 
         await Task.Yield();
+        
         /* foreach (var seedData in Assembly
             .GetExecutingAssembly()
             .GetTypes()

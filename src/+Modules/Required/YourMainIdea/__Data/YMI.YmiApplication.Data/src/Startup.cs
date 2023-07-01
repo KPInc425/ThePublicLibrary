@@ -16,7 +16,7 @@ public class Startup
     public void ConfigureServices(IServiceCollection services)
     {
         string connectionString =
-            Configuration?.GetConnectionString("Active") ?? ""; //Configuration.GetConnectionString("DefaultConnection");
+            Configuration.GetConnectionString("Active") ?? ""; //Configuration.GetConnectionString("DefaultConnection");
 
         services.AddYmiDbContext(connectionString);
 

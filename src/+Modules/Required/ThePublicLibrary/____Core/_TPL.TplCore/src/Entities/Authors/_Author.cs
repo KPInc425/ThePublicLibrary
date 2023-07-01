@@ -1,4 +1,5 @@
-﻿namespace TPL.TplCore.Entities;
+﻿using System;
+namespace TPL.TplCore.Entities;
 public class Author : BaseEntityTracked<Guid>, IAggregateRoot
 {
     public NameVO Name { get; private set; }
@@ -16,5 +17,5 @@ public class Author : BaseEntityTracked<Guid>, IAggregateRoot
     public override string ToString()
     {
         return Name.ToString();
-    }
+    }    
 }
