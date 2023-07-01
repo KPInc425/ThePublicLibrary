@@ -62,7 +62,7 @@ public class BookSearchTests : BaseBooksTest
         var numberOfCopies = manyCopiesMax.BookCopies.Count();
 
         // When I remove the damaged copy
-        manyCopiesMax.RemoveBookCopy(randomBookCopy);
+        manyCopiesMax.RemoveBookCopy(randomBookCopy!);
 
         // Then I should have the same number of copies of the book
         manyCopiesMax.BookCopies.Count().Should().Be(numberOfCopies - 1);
@@ -70,6 +70,6 @@ public class BookSearchTests : BaseBooksTest
         // And the damaged copy should be removed
         var spec = new BookCopyGetAllSpec();
         var bookCopies = spec.Evaluate(new List<Book>() { manyCopiesMax })?.FirstOrDefault()?.BookCopies;
-        bookCopies.FirstOrDefault(rs=>rs.CopySequence == randomBookCopy.CopySequence).Should().BeNull();
+        bookCopies!.FirstOrDefault(rs=>rs.CopySequence == randomBookCopy!.CopySequence).Should().BeNull();
     }
 }

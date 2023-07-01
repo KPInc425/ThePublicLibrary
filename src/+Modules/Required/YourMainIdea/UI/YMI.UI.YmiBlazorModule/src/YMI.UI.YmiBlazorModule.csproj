@@ -6,7 +6,7 @@
     <IsPackable>true</IsPackable>
     <PackageId>YMI.UI.YmiBlazorModule</PackageId>
     <Version>1.0.71.176</Version>
-    <Actors>James W. Kies</Actors>
+    <Authors>James W. Kies</Authors>
     <Company>RobotBuildersInc</Company>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <DefaultNamespace>YMI.UI.YmiBlazorModule</DefaultNamespace>
@@ -40,7 +40,9 @@
     </When>
   </Choose>
   <ItemGroup>
-    <ProjectReference Include="./../../../../../../__Kernel/Fernweh.KernelShared/src/Fernweh.KernelShared.csproj" />
+    <Reference Include="Fernweh.KernelShared">
+      <HintPath>.\..\..\..\..\..\..\..\src\__Kernel\Fernweh.KernelShared\src\bin\Debug\net7.0\Fernweh.KernelShared.dll</HintPath>
+    </Reference>
     <ProjectReference Include="./../../../../../../_UI.Common/Fernweh.UI.Common/src/Fernweh.UI.Common.csproj" />
     <ProjectReference Include="./../../../____Core/YMI.YmiCore.YmiTestData/src/YMI.YmiCore.YmiTestData.csproj" />
     <ProjectReference Include="./../../../_Application/_YMI.YmiApplication.Shared/src/YMI.YmiApplication.Shared.csproj" />

@@ -4,7 +4,7 @@ namespace YMI.YmiApplication.FeatureTests.Data;
 public class BaseApplicationTestFixture
 {
     private readonly List<Assembly> _assemblies = new List<Assembly>();
-    private IContainer _autofacContainer = null;
+    private IContainer? _autofacContainer = null;
     protected IContainer AutofacContainer
     {
         get
@@ -18,10 +18,10 @@ public class BaseApplicationTestFixture
                 var applicationAssembly = Assembly.GetAssembly(typeof(YmiApplicationModule));
                 var applicationTestAssembly = Assembly.GetAssembly(typeof(BaseApplicationTestFixture));
 
-                _assemblies.Add(coreAssembly);
-                _assemblies.Add(infrastructureAssembly);
-                _assemblies.Add(applicationAssembly);
-                _assemblies.Add(applicationTestAssembly);
+                _assemblies.Add(coreAssembly!);
+                _assemblies.Add(infrastructureAssembly!);
+                _assemblies.Add(applicationAssembly!);
+                _assemblies.Add(applicationTestAssembly!);
 
                 builder.RegisterGeneric(typeof(EfRepository<>))
                     .As(typeof(IRepository<>))
@@ -51,7 +51,7 @@ public class BaseApplicationTestFixture
 
                 var services = new ServiceCollection();
 
-                services.AddAutoMapper(typeof(VideoMapper).GetTypeInfo().Assembly);
+                services.AddAutoMapper(typeof(BookMapper).GetTypeInfo().Assembly);
                 services.AddSingleton<IYmiDataService, YmiDirectDataService>();
                 services.AddEntityFrameworkInMemoryDatabase();
                 services.AddDbContext<YmiDbContext>(context => context.UseInMemoryDatabase("YMI.YmiApplication.FeatureTests")

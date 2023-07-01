@@ -26,7 +26,7 @@ public class BookAddCmd : IRequest<Book>
         PublicationYear = book.PublicationYear;
         PageCount = book.PageCount;
 
-        Authors.AddRange(book.Authors);
+        Authors.AddRange(book.Authors!);
 
         if (book.BookCopies is not null)
         {

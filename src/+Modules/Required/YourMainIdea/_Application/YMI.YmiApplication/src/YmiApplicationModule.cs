@@ -7,16 +7,16 @@ public class YmiApplicationModule : Module
     private readonly bool _isDevelopment = false;
     private readonly List<Assembly> _assemblies = new List<Assembly>();
 
-    public YmiApplicationModule(bool isDevelopment, Assembly callingAssembly = null)
+    public YmiApplicationModule(bool isDevelopment, Assembly? callingAssembly = null)
     {
         _isDevelopment = isDevelopment;
         var coreAssembly = Assembly.GetAssembly(typeof(YmiCoreModule));
         var infrastructureAssembly = Assembly.GetAssembly(typeof(YmiInfrastructureModule));
         var applicationAssembly = Assembly.GetAssembly(typeof(YmiApplicationModule));
 
-        _assemblies.Add(coreAssembly);
-        _assemblies.Add(infrastructureAssembly);
-        _assemblies.Add(applicationAssembly);
+        _assemblies.Add(coreAssembly!);
+        _assemblies.Add(infrastructureAssembly!);
+        _assemblies.Add(applicationAssembly!);
 
         if (callingAssembly != null)
         {
@@ -50,7 +50,7 @@ public class YmiApplicationModule : Module
             .InstancePerLifetimeScope();
 
         var services = new ServiceCollection();
-        services.AddAutoMapper(typeof(VideoMapper).GetTypeInfo().Assembly);
+        services.AddAutoMapper(typeof(BookMapper).GetTypeInfo().Assembly);
         builder.Populate(services);
 
         var mediatrOpenTypes = new[]

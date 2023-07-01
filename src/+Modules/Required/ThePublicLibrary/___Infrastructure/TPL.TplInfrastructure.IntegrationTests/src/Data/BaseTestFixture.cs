@@ -1,7 +1,7 @@
 namespace TPL.TplInfrastructure.IntegrationTests.Data;
 public abstract class BaseTestFixture
 {
-    protected TplDbContext _dbContext;
+    protected TplDbContext? _dbContext;
     
     protected static DbContextOptions<TplDbContext> CreateNewContextOptions()
     {

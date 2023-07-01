@@ -11,6 +11,8 @@ public class RunBaseSeedData
         _logger = serviceProvider.GetRequiredService<ILogger<RunBaseSeedData>>();
         
         var booksSeedWithData = new BooksSeedWithData().PopulateTplTestData(serviceProvider);
+
+        await Task.Yield();
         
         /* foreach (var seedData in Assembly
             .GetExecutingAssembly()

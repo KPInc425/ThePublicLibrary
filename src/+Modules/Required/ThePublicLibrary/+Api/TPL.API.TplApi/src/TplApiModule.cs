@@ -7,7 +7,7 @@ public class TplApiModule : Module
     private readonly bool _isDevelopment = false;
     private readonly List<Assembly> _assemblies = new List<Assembly>();
 
-    public TplApiModule(bool isDevelopment, Assembly callingAssembly = null)
+    public TplApiModule(bool isDevelopment, Assembly? callingAssembly = null)
     {
         _isDevelopment = isDevelopment;
         var coreAssembly = Assembly.GetAssembly(typeof(TplCoreModule));
@@ -15,9 +15,9 @@ public class TplApiModule : Module
         var applicationAssembly = Assembly.GetAssembly(typeof(TplApplicationModule));
         //var primaryApiAssembly = Assembly.GetAssembly(typeof(TplApiModule));
 
-        _assemblies.Add(coreAssembly);
-        _assemblies.Add(infrastructureAssembly);
-        _assemblies.Add(applicationAssembly);
+        _assemblies.Add(coreAssembly!);
+        _assemblies.Add(infrastructureAssembly!);
+        _assemblies.Add(applicationAssembly!);
         //_assemblies.Add(primaryApiAssembly);
 
         if (callingAssembly != null)

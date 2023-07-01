@@ -8,8 +8,10 @@ global using Microsoft.AspNetCore.SignalR.Client;
 
 global using Microsoft.JSInterop;
 
-global using TPL.TplApplication.Shared.Interfaces;
-global using TPL.TplApplication.Shared.Configuration;
+global using Fernweh.KernelShared.Configuration;
+
 global using Fernweh.UI.Common;
 global using Fernweh.UI.Common.Interfaces;
 global using Fernweh.UI.Common.MasterPageSetters;
+
+global using TPL.TplApplication.Shared.Interfaces;

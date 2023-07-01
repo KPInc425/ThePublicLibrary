@@ -4,15 +4,16 @@ public class EfLibraryRepositoryAdd : BaseTestFixture
     [Fact]
     public async Task AddsLibrarySetsId()
     {
-       /*  var repository = LibraryRepository();
+        await Task.Yield();
+        /*  var repository = LibraryRepository();
 
-        var library = _libraryTplTestData.FirstStreetLibrary;
+         var library = _libraryTplTestData.FirstStreetLibrary;
 
-        await repository.AddAsync(library);
+         await repository.AddAsync(library);
 
-        var newLibrary = (await repository.ListAsync())
-                        .FirstOrDefault();
+         var newLibrary = (await repository.ListAsync())
+                         .FirstOrDefault();
 
-        Assert.NotNull(newLibrary?.Id); */
+         Assert.NotNull(newLibrary?.Id); */
     }
 }

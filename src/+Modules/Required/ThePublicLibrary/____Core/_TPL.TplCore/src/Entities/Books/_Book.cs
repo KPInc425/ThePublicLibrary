@@ -17,7 +17,9 @@ public class Book : BaseEntityTracked<Guid>, IAggregateRoot
     private List<BookCopy> _bookCopies = new();
     public IEnumerable<BookCopy> BookCopies => _bookCopies.Where(rs => rs.Condition != BookCondition.Destroyed).ToList().AsReadOnly();
 
+#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
     private Book() { }
+#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
 
     public Book(IsbnVO isbn, IEnumerable<Author> authors, IEnumerable<BookCategory>? bookCategories, IEnumerable<BookCopy>? bookCopies, string title, int publicationYear, int pageCount)
     {
@@ -92,6 +94,6 @@ public class Book : BaseEntityTracked<Guid>, IAggregateRoot
 
     public override string ToString()
     {
-        return $"{Title} ({Isbn}) ({PublicationYear}) ({PageCount}) ({Authors.Select(x => x.ToString() + ", ")}) ({BookCategories.Select(x => x.Title + ", ")})";
+        return $"{Title}| {Isbn}| {PublicationYear}| {PageCount}| {(Authors is null ? '|' : (String.Join(' ', Authors!.Select(x => x.ToString()))))}| {(BookCategories is null ? '|' : (String.Join(' ', BookCategories!.Select(x => x.ToString()))))}| ";
     }
 }

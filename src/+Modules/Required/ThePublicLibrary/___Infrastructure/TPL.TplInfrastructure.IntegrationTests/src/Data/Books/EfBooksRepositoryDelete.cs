@@ -4,19 +4,20 @@ public class EfBookRepositoryDelete : BaseTestFixture
     [Fact]
     public async Task DeletesItemAfterAddingIt()
     {
-      /*   // add a Book
-        var repository = BookRepository();
-        var initialName = "My Name";
-        var initialId = Guid.NewGuid();
+        await Task.Yield();
+        /*   // add a Book
+          var repository = BookRepository();
+          var initialName = "My Name";
+          var initialId = Guid.NewGuid();
 
-        var Book = new Book(initialId, initialName);
-        await repository.AddAsync(Book);
+          var Book = new Book(initialId, initialName);
+          await repository.AddAsync(Book);
 
-        // delete the item
-        await repository.DeleteAsync(Book);
+          // delete the item
+          await repository.DeleteAsync(Book);
 
-        // verify it's no longer there
-        Assert.DoesNotContain(await repository.ListAsync(),
-            Book => Book.Id == initialId); */
+          // verify it's no longer there
+          Assert.DoesNotContain(await repository.ListAsync(),
+              Book => Book.Id == initialId); */
     }
 }

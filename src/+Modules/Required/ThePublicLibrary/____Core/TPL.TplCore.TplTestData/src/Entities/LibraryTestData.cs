@@ -27,8 +27,8 @@ public static class LibraryTplTestData
 
     static LibraryTplTestData()
     {
-        FirstStreetLibrary = new Library(FirstStreetLibraryName, FirstStreetLibraryAddress);
-        SecondStreetLibrary = new Library(SecondStreetLibraryName, SecondStreetLibraryAddress);
+        FirstStreetLibrary = new Library(FirstStreetLibraryName, FirstStreetLibraryAddress, null, null);
+        SecondStreetLibrary = new Library(SecondStreetLibraryName, SecondStreetLibraryAddress, null, null);
 
         AllLibraries = new List<Library> {
             FirstStreetLibrary,

@@ -7,7 +7,7 @@ public class YmiApiModule : Module
     private readonly bool _isDevelopment = false;
     private readonly List<Assembly> _assemblies = new List<Assembly>();
 
-    public YmiApiModule(bool isDevelopment, Assembly callingAssembly = null)
+    public YmiApiModule(bool isDevelopment, Assembly? callingAssembly = null)
     {
         _isDevelopment = isDevelopment;
         var coreAssembly = Assembly.GetAssembly(typeof(YmiCoreModule));
@@ -15,9 +15,9 @@ public class YmiApiModule : Module
         var applicationAssembly = Assembly.GetAssembly(typeof(YmiApplicationModule));
         //var primaryApiAssembly = Assembly.GetAssembly(typeof(YmiApiModule));
 
-        _assemblies.Add(coreAssembly);
-        _assemblies.Add(infrastructureAssembly);
-        _assemblies.Add(applicationAssembly);
+        _assemblies.Add(coreAssembly!);
+        _assemblies.Add(infrastructureAssembly!);
+        _assemblies.Add(applicationAssembly!);
         //_assemblies.Add(primaryApiAssembly);
 
         if (callingAssembly != null)
@@ -42,7 +42,7 @@ public class YmiApiModule : Module
     private void RegisterCommonDependencies(ContainerBuilder builder)
     {
         var services = new ServiceCollection();
-        services.AddAutoMapper(typeof(VideoMapper).GetTypeInfo().Assembly);
+        services.AddAutoMapper(typeof(BookMapper).GetTypeInfo().Assembly);
         builder.Populate(services);
 
         // register misc

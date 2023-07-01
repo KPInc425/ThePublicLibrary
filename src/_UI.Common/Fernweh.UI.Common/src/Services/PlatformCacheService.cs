@@ -18,10 +18,10 @@ public class PlatformCacheService
     private string _currentModule = "";
     private string _currentSubModule = "";
     
-    public event Action OnChange;
-    public event Action OnRoomChange;
-    public event Action OnMenuChange;
-    public event Action OnSkinChange;
+    public event Action? OnChange;
+    public event Action? OnRoomChange;
+    public event Action? OnMenuChange;
+    public event Action? OnSkinChange;
     
     private void NotifyStateChanged() => OnChange?.Invoke();
     private void NotifyOnMenuChange() => OnMenuChange?.Invoke();

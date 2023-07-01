@@ -1,8 +1,8 @@
 ﻿namespace TPL.TplApplication.Shared.ViewModels;
 public class BookViewModel : BaseViewModelTracked<Guid>
 {
-    public IsbnVOViewModel Isbn { get; set; }
-    public string Title { get; set; }
+    public IsbnVOViewModel Isbn { get; set; } = new();
+    public string Title { get; set; } = string.Empty;
     public int PublicationYear { get; set; }
     public int PageCount { get; set; }
 

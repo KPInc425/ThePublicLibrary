@@ -183,6 +183,22 @@ namespace TPL.TplApplication.Data.Migrations
                             b1.Property<Guid>("AuthorId")
                                 .HasColumnType("TEXT");
 
+                            b1.Property<string>("FirstName")
+                                .IsRequired()
+                                .HasColumnType("TEXT");
+
+                            b1.Property<string>("LastName")
+                                .IsRequired()
+                                .HasColumnType("TEXT");
+
+                            b1.Property<string>("MiddleName")
+                                .IsRequired()
+                                .HasColumnType("TEXT");
+
+                            b1.Property<string>("NameSuffix")
+                                .IsRequired()
+                                .HasColumnType("TEXT");
+
                             b1.HasKey("AuthorId");
 
                             b1.ToTable("Authors");
@@ -251,7 +267,53 @@ namespace TPL.TplApplication.Data.Migrations
 
             modelBuilder.Entity("TPL.TplCore.Entities.Library", b =>
                 {
-                    b.OwnsOne("TPL.TplCore.Entities.PhysicalAddressVO", "Address", b1 =>
+                    b.OwnsOne("TPL.TplCore.Entities.DigitalAddressVO", "PrimaryEmail", b1 =>
+                        {
+                            b1.Property<Guid>("LibraryId")
+                                .HasColumnType("TEXT");
+
+                            b1.Property<string>("Description")
+                                .IsRequired()
+                                .HasColumnType("TEXT");
+
+                            b1.Property<long>("PhoneNumber")
+                                .HasColumnType("INTEGER");
+
+                            b1.Property<int>("Type")
+                                .HasColumnType("INTEGER");
+
+                            b1.HasKey("LibraryId");
+
+                            b1.ToTable("Libraries");
+
+                            b1.WithOwner()
+                                .HasForeignKey("LibraryId");
+                        });
+
+                    b.OwnsOne("TPL.TplCore.Entities.DigitalAddressVO", "PrimaryPhone", b1 =>
+                        {
+                            b1.Property<Guid>("LibraryId")
+                                .HasColumnType("TEXT");
+
+                            b1.Property<string>("Description")
+                                .IsRequired()
+                                .HasColumnType("TEXT");
+
+                            b1.Property<long>("PhoneNumber")
+                                .HasColumnType("INTEGER");
+
+                            b1.Property<int>("Type")
+                                .HasColumnType("INTEGER");
+
+                            b1.HasKey("LibraryId");
+
+                            b1.ToTable("Libraries");
+
+                            b1.WithOwner()
+                                .HasForeignKey("LibraryId");
+                        });
+
+                    b.OwnsOne("TPL.TplCore.Entities.PhysicalAddressVO", "MailingAddress", b1 =>
                         {
                             b1.Property<Guid>("LibraryId")
                                 .HasColumnType("TEXT");
@@ -288,7 +350,13 @@ namespace TPL.TplApplication.Data.Migrations
                                 .HasForeignKey("LibraryId");
                         });
 
-                    b.Navigation("Address")
+                    b.Navigation("MailingAddress")
+                        .IsRequired();
+
+                    b.Navigation("PrimaryEmail")
+                        .IsRequired();
+
+                    b.Navigation("PrimaryPhone")
                         .IsRequired();
                 });
 

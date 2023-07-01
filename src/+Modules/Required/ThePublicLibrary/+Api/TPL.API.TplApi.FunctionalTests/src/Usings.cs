@@ -24,6 +24,8 @@ global using Microsoft.Extensions.Hosting;
 global using Microsoft.Extensions.Logging;
 
 global using Xunit;
+
+global using Fernweh.KernelShared.Configuration;
 global using Fernweh.KernelShared.Interfaces;
 
 global using TPL.TplCore.Enums;
@@ -35,7 +37,6 @@ global using TPL.TplInfrastructure.CommandQuery;
 
 global using TPL.TplApplication;
 global using TPL.TplApplication.Automaps;
-global using TPL.TplApplication.Shared.Configuration;
 global using TPL.TplApplication.Shared.Requests;
 global using TPL.TplApplication.Shared.ViewModels;
 global using TPL.TplApplication.Data.Interfaces;

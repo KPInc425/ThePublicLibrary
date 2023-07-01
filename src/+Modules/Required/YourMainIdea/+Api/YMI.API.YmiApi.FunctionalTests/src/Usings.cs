@@ -24,6 +24,8 @@ global using Microsoft.Extensions.Hosting;
 global using Microsoft.Extensions.Logging;
 
 global using Xunit;
+
+global using Fernweh.KernelShared.Configuration;
 global using Fernweh.KernelShared.Interfaces;
 
 global using YMI.YmiCore.Enums;
@@ -35,7 +37,6 @@ global using YMI.YmiInfrastructure.CommandQuery;
 
 global using YMI.YmiApplication;
 global using YMI.YmiApplication.Automaps;
-global using YMI.YmiApplication.Shared.Configuration;
 global using YMI.YmiApplication.Shared.Requests;
 global using YMI.YmiApplication.Shared.ViewModels;
 global using YMI.YmiApplication.Data.Interfaces;

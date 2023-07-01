@@ -15,30 +15,29 @@ public class BooksFindSpec : Specification<Book>
         if (titleSearch.Trim() != "")
         {
             Query
-                .Where(rs => rs.Title.Contains(titleSearch));
+                .Where(rs => rs.Title.Contains(titleSearch, StringComparison.OrdinalIgnoreCase));
         }
 
         if (authorSearch is not null && authorSearch.Any())
         {
             Query
-                .Where(s => s.Authors!.Any(rs => authorSearch
-                    .Any(author => rs.Name.ToString()
-                        .Contains(author))));
+                .Where(s => s.Authors!.Any(author => authorSearch
+                    .Any(searchSpec => author.Name.Contains(searchSpec))));
         }
 
         if (categorySearch is not null && categorySearch.Any())
         {
             Query
-                .Where(s => s.BookCategories!.Any(rs => categorySearch
-                    .Any(categorySearch => rs.Title
-                        .Contains(categorySearch))));
+                .Where(s => s.BookCategories!.Any(bookCategory => categorySearch
+                    .Any(searchSpec => bookCategory.Title.Contains(searchSpec, StringComparison.OrdinalIgnoreCase))));
         }
 
         if (conditionSearch is not null && conditionSearch.Any())
         {
             Query
                 .Where(book => book.BookCopies
-                    .Any(search => conditionSearch.Any(condition => search.Condition.ToString().Contains(condition))));
+                    .Any(searchSpec => conditionSearch
+                        .Any(bookCondition => bookCondition.Contains(searchSpec.Condition.ToString(), StringComparison.OrdinalIgnoreCase))));
         }
 
         Query

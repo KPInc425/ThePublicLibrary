@@ -12,12 +12,12 @@ public class Startup
     {
 
         string connectionString =
-            Configuration.GetConnectionString("Active");
+            Configuration.GetConnectionString("Active") ?? "";
 
-        var appSettings = Configuration.Get<YmiAppSettings>();
+        var appSettings = Configuration.Get<AppSettings>();
         
         services
-            .AddSingleton<YmiAppSettings>(appSettings);
+            .AddSingleton<AppSettings>(appSettings!);
         
         services
             .AddYmiDbContext(connectionString);
@@ -63,8 +63,8 @@ public class Startup
                     "v1",
                         new OpenApiInfo
                         {
-                            Title = appSettings.YmiEndpoints.YmiApiName,
-                            Version = appSettings.YmiEndpoints.YmiApiVersion
+                            Title = appSettings!.Endpoints.YmiApiName,
+                            Version = appSettings!.Endpoints.YmiApiVersion
                         });
                 c.EnableAnnotations();
             });
@@ -79,7 +79,7 @@ public class Startup
             options =>
             {
                 options.RequireHttpsMetadata = false;
-                options.Actority = appSettings.ConfigEndpoints.IdentityEndpointUrl;
+                options.Authority = appSettings.ConfigEndpoints.IdentityEndpointUrl;
                 options.MetadataAddress = $"{appSettings.ConfigEndpoints.IdentityEndpointUrl}/.well-known/openid-configuration";
                 options.Audience = "ymi_primary_api_swaggerui";
                 options.TokenValidationParameters = new TokenValidationParameters

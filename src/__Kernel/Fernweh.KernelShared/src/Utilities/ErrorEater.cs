@@ -20,7 +20,9 @@ public static class ErrorEater
         return false;
     }
 
+#pragma warning disable CS8601 // Possible null reference assignment.
     public static T IgnoreErrors<T>(Func<T> operation, T defaultValue = default(T))
+#pragma warning restore CS8601 // Possible null reference assignment.
     {
         if (operation == null)
             return defaultValue;

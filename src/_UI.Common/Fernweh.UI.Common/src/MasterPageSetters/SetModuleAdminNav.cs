@@ -3,10 +3,10 @@ namespace Fernweh.UI.Common.MasterPageSetters
     public class SetModuleAdminNav : ComponentBase, IDisposable
     {
         [Inject]
-        private ILayoutService Layout { get; set; }
+        private ILayoutService? Layout { get; set; }
 
         [Parameter]
-        public RenderFragment ChildContent { get; set; }
+        public RenderFragment? ChildContent { get; set; }
 
         protected override void OnInitialized()
         {
@@ -22,7 +22,7 @@ namespace Fernweh.UI.Common.MasterPageSetters
             var shouldRender = base.ShouldRender();
             if (shouldRender)
             {
-                Layout.UpdateModuleAdminNav();
+                Layout?.UpdateModuleAdminNav();
             }
             return shouldRender;
         }

@@ -18,7 +18,7 @@ public class SpecFlowBindingHooks
         var builder = new ConfigurationBuilder();
 
             builder
-                .SetBasePath(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location));
+                .SetBasePath(Path.GetDirectoryName(Assembly.GetEntryAssembly()?.Location) ?? "");
         
             builder
                 .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
@@ -26,7 +26,7 @@ public class SpecFlowBindingHooks
         var defaultConfig = builder.Build();
         var appConfig = defaultConfig.Get<AppConfig>();
         
-        this.objectContainer.RegisterInstanceAs<AppConfig>(appConfig);   
+        this.objectContainer.RegisterInstanceAs<AppConfig>(appConfig!);   
 
         var playwright = await Playwright.CreateAsync();
         var browser = await playwright.Chromium.LaunchAsync(new BrowserTypeLaunchOptions {
@@ -39,7 +39,7 @@ public class SpecFlowBindingHooks
         
         this.objectContainer.RegisterInstanceAs<IPlaywright>(playwright);
         this.objectContainer.RegisterInstanceAs<IBrowser>(browser);
-        var counterPage = new CounterPage(browser, appConfig);
+        var counterPage = new CounterPage(browser, appConfig!);
         this.objectContainer.RegisterInstanceAs<CounterPage>(counterPage);   
     }
 

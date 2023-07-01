@@ -1,4 +1,4 @@
-@page "/ymi/primary/signalr"
+@page "/public/primary/signalr"
 
 @inject IStringLocalizer<SignalR> Localize
 
@@ -9,10 +9,10 @@
 
 <p Typo="Typo.h4" Class="mb-8">SignalR</p>
 
-<ActorizeView>
-    <Actorized Context="authContext">
+<AuthorizeView>
+    <Authorized Context="authContext">
         SignalR
-    </Actorized>
-</ActorizeView>
+    </Authorized>
+</AuthorizeView>
 @code {
 }

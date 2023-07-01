@@ -16,6 +16,12 @@ public class TplDbContext : DbContext
     // Shared
     public DbSet<BookCategory> BookCategories { get; set; } 
 
+    // Value Objects
+  /*   public DbSet<DigitalAddressVO> DigitalAddressVOs {get;set;}
+    public DbSet<NameVO> NameVOs {get;set;}
+    public DbSet<PhysicalAddressVO> DigitalAddressePhysicalAddressVOs {get;set;} */
+
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
@@ -24,9 +30,6 @@ public class TplDbContext : DbContext
         modelBuilder.ApplyAllConfigurationsFromCurrentAssembly();
 
         //this.ChangeTracker.LazyLoadingEnabled = true;
-
-        // alternately this is built-in to EF Core 2.2
-        //modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
     }
     public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
     {
@@ -65,7 +68,7 @@ public class TplDbContext : DbContext
             entity.Events.Clear();
             foreach (var domainEvent in events)
             {
-                await _mediator.Publish(domainEvent).ConfigureAwait(false);
+                await _mediator.Publish(domainEvent, cancellationToken).ConfigureAwait(false);
             }
         }
 

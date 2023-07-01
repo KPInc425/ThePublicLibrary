@@ -7,7 +7,7 @@
     <IsPackable>true</IsPackable>
     <PackageId>YMI.YmiApplication.Shared</PackageId>
     <Version>1.01.02.003</Version>
-    <Actors>10GeekJames</Actors>
+    <Authors>10GeekJames</Authors>
     <Company>10GeekJames</Company>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <DefaultNamespace>YMI.YmiApplication.Shared</DefaultNamespace> 
@@ -40,7 +40,9 @@
     </When>
   </Choose>
   <ItemGroup>
-    <ProjectReference Include="./../../../../../../__Kernel/Fernweh.KernelShared/src/Fernweh.KernelShared.csproj" />
+    <Reference Include="Fernweh.KernelShared">
+      <HintPath>.\..\..\..\..\..\..\..\src\__Kernel\Fernweh.KernelShared\src\bin\Debug\net7.0\Fernweh.KernelShared.dll</HintPath>
+    </Reference>
     <ProjectReference Include="./../../../____Core/_YMI.YmiCore/src/YMI.YmiCore.csproj" />
     <ProjectReference Include="./../../../___Infrastructure/YMI.YmiInfrastructure/src/YMI.YmiInfrastructure.csproj" />
   </ItemGroup>

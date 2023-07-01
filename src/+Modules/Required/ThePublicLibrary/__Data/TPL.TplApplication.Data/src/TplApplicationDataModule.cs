@@ -9,14 +9,14 @@ public class TplApplicationDataModule : Module
     private readonly bool _isDevelopment = false;
     private readonly List<Assembly> _assemblies = new List<Assembly>();
 
-    public TplApplicationDataModule(bool isDevelopment, Assembly callingAssembly = null)
+    public TplApplicationDataModule(bool isDevelopment, Assembly? callingAssembly = null)
     {
         _isDevelopment = isDevelopment;
         var coreAssembly = Assembly.GetAssembly(typeof(TplCoreModule));
         var infrastructureAssembly = Assembly.GetAssembly(typeof(TplInfrastructureModule));
 
-        _assemblies.Add(coreAssembly);
-        _assemblies.Add(infrastructureAssembly);
+        _assemblies.Add(coreAssembly!);
+        _assemblies.Add(infrastructureAssembly!);
         
         if (callingAssembly != null)
         {

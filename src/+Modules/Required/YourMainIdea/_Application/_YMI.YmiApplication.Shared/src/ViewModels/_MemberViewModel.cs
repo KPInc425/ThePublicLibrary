@@ -1,10 +1,10 @@
 namespace YMI.YmiApplication.Shared.ViewModels;
 public class MemberViewModel : BaseViewModelTracked<Guid>
 {
-    public FullNameVOViewModel Name { get; set; }
-    public PhysicalAddyVOViewModel Address { get; set; }
-    public DigitalAddyVOViewModel? Email { get; set; }
-    public DigitalAddyVOViewModel? Phone { get; set; }
+    public NameVOViewModel Name { get; set; } = new();
+    public PhysicalAddressVOViewModel Address { get; set; } = new();
+    public DigitalAddressVOViewModel? Email { get; set; } = new();
+    public DigitalAddressVOViewModel? Phone { get; set; } = new();
     public List<MemberInMembershipViewModel> MemberInMemberships { get; set; } = new();
 
 }

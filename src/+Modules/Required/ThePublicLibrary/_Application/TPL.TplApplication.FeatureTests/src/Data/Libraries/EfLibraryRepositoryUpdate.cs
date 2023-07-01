@@ -4,6 +4,7 @@ public class EfLibraryRepositoryUpdate : BaseApplicationTestFixture
     [Fact]
     public async Task UpdatesItemAfterAddingIt()
     {
+        await Task.Yield();
         /* // add a Library
         var repository = LibraryRepository();
         var initialName = "My Name";

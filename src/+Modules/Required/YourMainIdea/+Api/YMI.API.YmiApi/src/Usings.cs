@@ -14,6 +14,8 @@ global using Microsoft.OpenApi.Models;
 global using Newtonsoft.Json;
 global using Newtonsoft.Json.Serialization;
 
+global using Fernweh.KernelShared.Configuration;
+
 global using YMI.YmiCore;
 
 global using YMI.YmiInfrastructure;
@@ -21,7 +23,6 @@ global using YMI.YmiInfrastructure.CommandQuery;
 
 global using YMI.YmiApplication;
 global using YMI.YmiApplication.Automaps;
-global using YMI.YmiApplication.Shared.Configuration;
 global using YMI.YmiApplication.Shared.ViewModels;
 
 

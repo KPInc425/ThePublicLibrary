@@ -28,9 +28,14 @@
     </PackageReference>
   </ItemGroup>
 
+
   <ItemGroup>
     <ProjectReference Include=".\..\..\_TPL.TplCore\src\TPL.TplCore.csproj" />
     <ProjectReference Include=".\..\..\TPL.TplCore.TplTestData\src\TPL.TplCore.TplTestData.csproj" />
+
+    <Reference Include="Fernweh.KernelShared">
+      <HintPath>.\..\..\..\..\..\..\..\src\__Kernel\Fernweh.KernelShared\src\bin\Debug\net7.0\Fernweh.KernelShared.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

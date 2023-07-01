@@ -10,7 +10,7 @@ namespace Fernweh.UI.Common
                 "import", "./_content/Fernweh.UI.Common/js/LazyModuleJsInterop.js")
                 .AsTask());
             //Prompt("I have loaded, yes.");
-            ImportCss();
+            _ = ImportCss();
         }
 
         public async ValueTask<string> Prompt(string message)

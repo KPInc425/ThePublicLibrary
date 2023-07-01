@@ -3,8 +3,9 @@ using System.Reflection;
 namespace TPL.API.TplApi.FunctionalTests;
 public class CustomWebApplicationFactory<TStartup> : WebApplicationFactory<Startup>
 {
-    private ILogger<CustomWebApplicationFactory<TStartup>> _logger;
-    private IConfiguration _configuration;
+    private ILogger<CustomWebApplicationFactory<TStartup>>? _logger;
+    private IConfiguration? _configuration;
+
     private readonly List<Assembly> _assemblies = new List<Assembly>();
     protected override IHost CreateHost(IHostBuilder builder)
     {
@@ -38,8 +39,6 @@ public class CustomWebApplicationFactory<TStartup> : WebApplicationFactory<Start
 
     protected override IHostBuilder CreateHostBuilder()
     {
-        var isInDevelopment = true;
-
         return Host.CreateDefaultBuilder()
             .UseServiceProviderFactory(new AutofacServiceProviderFactory())
             .ConfigureWebHost((builder) =>
@@ -60,15 +59,11 @@ public class CustomWebApplicationFactory<TStartup> : WebApplicationFactory<Start
 
         var containerBuilder = new ContainerBuilder();
 
-        //var coreAssembly = Assembly.GetAssembly(typeof(TplCoreModule));
-        //var infrastructureAssembly = Assembly.GetAssembly(typeof(TplInfrastructureModule));
         var applicationAssembly = Assembly.GetAssembly(typeof(TplApplicationModule));
         var primaryApiAssembly = Assembly.GetAssembly(typeof(TplApiModule));
 
-        //_assemblies.Add(coreAssembly);
-        //_assemblies.Add(infrastructureAssembly);
-        _assemblies.Add(applicationAssembly);
-        _assemblies.Add(primaryApiAssembly);
+        _assemblies.Add(applicationAssembly!);
+        _assemblies.Add(primaryApiAssembly!);
 
         containerBuilder.RegisterGeneric(typeof(EfRepository<>))
             .As(typeof(IRepository<>))
@@ -123,13 +118,13 @@ public class CustomWebApplicationFactory<TStartup> : WebApplicationFactory<Start
                 }
 
                 var appSettings = _configuration.Get<AppSettings>();
-                services.AddSingleton<AppSettings>(appSettings);
+                services.AddSingleton<AppSettings>(appSettings!);
                 services.AddEntityFrameworkInMemoryDatabase();
 
                 services.AddTplInMemoryDbContext("tpl.primary.db");
 
                 var seedDataAssembly = Assembly.GetAssembly(typeof(RunBaseSeedData));
-                foreach (var seedData in seedDataAssembly
+                foreach (var seedData in seedDataAssembly!
                     .GetTypes()
                     .Where(x => x.IsAssignableTo(typeof(ITplSeedScript)) && x.IsClass)
                     .OrderBy(rs => rs.Name))
