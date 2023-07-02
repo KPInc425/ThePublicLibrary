@@ -13,3 +13,4 @@ global using System.Text;
 global using Fernweh.KernelShared;
 global using Fernweh.KernelShared.Enums;
 global using Fernweh.KernelShared.SharedValueObjects;
+global using Toolbelt.ComponentModel.DataAnnotations.Schema.V5;

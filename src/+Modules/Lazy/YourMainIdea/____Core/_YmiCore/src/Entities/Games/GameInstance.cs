@@ -1,4 +1,4 @@
-namespace YMI.YmiCore.Entities;
+namespace YmiCore.Entities;
 public class GameInstance : BaseEntityTracked<Guid>, IAggregateRoot
 {
     public string Title { get; private set; }
