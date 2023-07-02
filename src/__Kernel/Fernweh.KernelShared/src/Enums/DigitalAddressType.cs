@@ -1,4 +1,4 @@
-namespace TplCore.Enums;
+namespace Fernweh.KernelShared.Enums;
 
 public enum DigitalAddressType
 {

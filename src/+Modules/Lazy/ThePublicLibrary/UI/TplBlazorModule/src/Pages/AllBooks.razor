@@ -6,7 +6,7 @@
 
 <MudContainer>
 
-<MudTable Items="@BookTplTestData.AllBooks" Hover="true" Breakpoint="Breakpoint.Sm" LoadingProgressColor="Color.Info">
+<MudTable Id="AllBooksStaticTable" Items="@BookTplTestData.AllBooks" Hover="true" Breakpoint="Breakpoint.Sm" LoadingProgressColor="Color.Info">
     <HeaderContent>
         <MudTh>Title</MudTh>
         
@@ -16,7 +16,9 @@
         
     </RowTemplate>
 </MudTable>
+
 <AllBooksComponent />
+
 </MudContainer>
 
 

@@ -1,4 +1,4 @@
-namespace Fernweh.Kernel.SharedValueObjects;
+namespace Fernweh.KernelShared.SharedValueObjects;
 [Owned]
 public class PhysicalAddressVO : ValueObject
 {

@@ -11,7 +11,9 @@ global using System.Net.Http.Json;
 global using System.ComponentModel.DataAnnotations;
 
 global using Fernweh.KernelShared;
+global using Fernweh.KernelShared.Enums;
 global using Fernweh.KernelShared.Interfaces;
+global using Fernweh.KernelShared.SharedValueObjects;
 
 global using TplCore;
 global using TplCore.Enums;

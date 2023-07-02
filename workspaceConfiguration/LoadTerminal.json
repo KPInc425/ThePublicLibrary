@@ -37,7 +37,7 @@
             "terminals": [
                 {
                     "name": "TplCore.UnitTests",
-                    "path": "./src/+Modules/Required/ThePublicLibrary/____Core/_TplCore.UnitTests/src",
+                    "path": "./src/+Modules/Lazy/ThePublicLibrary/____Core/_TplCore.UnitTests/src",
                     "cmd": [
                         "dotnet test"
                     ],
@@ -45,7 +45,7 @@
                 },
                 {
                     "name": "TplInfrastructure.IntegrationTests",
-                    "path": "./src/+Modules/Required/ThePublicLibrary/___Infrastructure/TplInfrastructure.IntegrationTests/src",
+                    "path": "./src/+Modules/Lazy/ThePublicLibrary/___Infrastructure/TplInfrastructure.IntegrationTests/src",
                     "cmd": [
                         "dotnet test"
                     ],
@@ -53,7 +53,7 @@
                 },
                 {
                     "name": "TplApplication.FeatureTests",
-                    "path": "./src/+Modules/Required/ThePublicLibrary/_Application/TplApplication.FeatureTests/src",
+                    "path": "./src/+Modules/Lazy/ThePublicLibrary/_Application/TplApplication.FeatureTests/src",
                     "cmd": [
                         "dotnet test"
                     ],
@@ -61,15 +61,15 @@
                 },
                 {
                     "name": "TplApi.FunctionalTests",
-                    "path": "./src/+Modules/Required/ThePublicLibrary/+Api/TplApi.FunctionalTests/src",
+                    "path": "./src/+Modules/Lazy/ThePublicLibrary/+Api/TplApi.FunctionalTests/src",
                     "cmd": [
                         "dotnet test"
                     ],
                     "num": 7
                 }   ,
                 {
-                    "name": "TplApi",
-                    "path": "./src/+Modules/Required/ThePublicLibrary/+Api/TplApi/src",
+                    "name": "TplApi",                      
+                    "path": "./src/+Modules/Lazy/ThePublicLibrary/+Api/TplApi/src",
                     "cmd": [
                         "dotnet watch run"
                     ],
@@ -83,7 +83,7 @@
             "terminals": [
                 {
                     "name": "YmiCore.UnitTests",
-                    "path": "./src/+Modules/Required/YourMainIdea/____Core/_YmiCore.UnitTests/src",
+                    "path": "./src/+Modules/Lazy/YourMainIdea/____Core/_YmiCore.UnitTests/src",
                     "cmd": [
                         "dotnet test"
                     ],
@@ -91,7 +91,7 @@
                 },
                 {
                     "name": "YmiInfrastructure.IntegrationTests",
-                    "path": "./src/+Modules/Required/YourMainIdea/___Infrastructure/YmiInfrastructure.IntegrationTests/src",
+                    "path": "./src/+Modules/Lazy/YourMainIdea/___Infrastructure/YmiInfrastructure.IntegrationTests/src",
                     "cmd": [
                         "dotnet test"
                     ],
@@ -99,7 +99,7 @@
                 },
                 {
                     "name": "YmiApplication.FeatureTests",
-                    "path": "./src/+Modules/Required/YourMainIdea/_Application/YmiApplication.FeatureTests/src",
+                    "path": "./src/+Modules/Lazy/YourMainIdea/_Application/YmiApplication.FeatureTests/src",
                     "cmd": [
                         "dotnet test"
                     ],
@@ -107,7 +107,7 @@
                 },
                 {
                     "name": "YmiApi.FunctionalTests",
-                    "path": "./src/+Modules/Required/YourMainIdea/+Api/YmiApi.FunctionalTests/src",
+                    "path": "./src/+Modules/Lazy/YourMainIdea/+Api/YmiApi.FunctionalTests/src",
                     "cmd": [
                         "dotnet test"
                     ],
@@ -115,7 +115,7 @@
                 },
                 {
                     "name": "YmiApi",
-                    "path": "./src/+Modules/Required/YourMainIdea/+Api/YmiApi/src",
+                    "path": "./src/+Modules/Lazy/YourMainIdea/+Api/YmiApi/src",
                     "cmd": [
                         "dotnet watch run"
                     ],
