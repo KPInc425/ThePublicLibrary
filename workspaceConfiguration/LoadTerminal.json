@@ -17,6 +17,7 @@
                     "name": "Fernweh.BlazorClient.UITests",
                     "path": "./src/UI/Client/Fernweh.BlazorClient.UITests/src",
                     "cmd": [
+                        "ping 127.0.0.1 -n 20",
                         "dotnet test"
                     ],
                     "num": 2

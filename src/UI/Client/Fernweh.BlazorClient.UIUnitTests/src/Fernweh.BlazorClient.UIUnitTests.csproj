@@ -37,22 +37,6 @@
   </ItemGroup>
   
   <ItemGroup>
-    <ProjectReference Include="./../../../../+Modules/Lazy/ThePublicLibrary/____Core/TplCore.TplTestData/src/TplCore.TplTestData.csproj" />
-    <ProjectReference Include="./../../../../+Modules/Lazy/ThePublicLibrary/___Infrastructure/TplInfrastructure/src/TplInfrastructure.csproj" />    
-    <ProjectReference Include="./../../../../+Modules/Lazy/ThePublicLibrary/_Application/_TplApplication.Shared/src/TplApplication.Shared.csproj" />
-    <ProjectReference Include="./../../../../+Modules/Lazy/ThePublicLibrary/UI/TplBlazorModule/src/TplBlazorModule.csproj" />          
-    <ProjectReference Include="./../../../../+Modules/Lazy/ThePublicLibrary/UI/_TplModuleClientServiceLoader/src/TplModuleClientServiceLoader.csproj" />          
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="./../../../../+Modules/Lazy/YourMainIdea/____Core/YmiCore.YmiTestData/src/YmiCore.YmiTestData.csproj" />
-    <ProjectReference Include="./../../../../+Modules/Lazy/YourMainIdea/___Infrastructure/YmiInfrastructure/src/YmiInfrastructure.csproj" />    
-    <ProjectReference Include="./../../../../+Modules/Lazy/YourMainIdea/_Application/_YmiApplication.Shared/src/YmiApplication.Shared.csproj" />
-    <ProjectReference Include="./../../../../+Modules/Lazy/YourMainIdea/UI/YmiBlazorModule/src/YmiBlazorModule.csproj" />          
-    <ProjectReference Include="./../../../../+Modules/Lazy/YourMainIdea/UI/_YmiModuleClientServiceLoader/src/YmiModuleClientServiceLoader.csproj" />          
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.5">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>

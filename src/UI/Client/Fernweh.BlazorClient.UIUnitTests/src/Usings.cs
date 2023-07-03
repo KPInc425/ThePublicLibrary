@@ -27,6 +27,6 @@ global using TplModuleClientServiceLoader;
 // \ThePublicLibrary
 
 // YourMainIdea
-global using YmiApplication.Shared.Interfaces;
-global using YmiModuleClientServiceLoader;
+/* global using YmiApplication.Shared.Interfaces;
+global using YmiModuleClientServiceLoader; */
 // \YourMainIdea

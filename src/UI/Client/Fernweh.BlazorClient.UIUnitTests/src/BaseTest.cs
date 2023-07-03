@@ -29,11 +29,11 @@ public class BaseTest
         // \ThePublicLibrary
 
         // YourMainIdea        
-        var mockIYmiDataService = Mock.Create<IYmiDataService>();
+        /* var mockIYmiDataService = Mock.Create<IYmiDataService>();
         ctx.Services.AddSingleton<IYmiDataService>(mockIYmiDataService);
         
         var mockYmiHttpClientFactory = Mock.Create<YmiHttpClientFactory>();
-        ctx.Services.AddSingleton<YmiHttpClientFactory>(mockYmiHttpClientFactory);
+        ctx.Services.AddSingleton<YmiHttpClientFactory>(mockYmiHttpClientFactory); */
         // \YourMainIdea
 
         

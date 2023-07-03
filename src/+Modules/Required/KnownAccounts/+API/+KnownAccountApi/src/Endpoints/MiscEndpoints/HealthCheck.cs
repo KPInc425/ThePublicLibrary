@@ -1,4 +1,0 @@
-namespace KnownAccountsApi.Endpoints.MiscEndpoints
-{
-
-}
