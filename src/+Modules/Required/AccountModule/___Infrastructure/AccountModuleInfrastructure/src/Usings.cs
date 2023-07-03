@@ -7,7 +7,9 @@ global using Fernweh.KernelShared.Interfaces;
 
 global using AccountModuleCore;
 global using AccountModuleCore.Entities;
+global using AccountModuleCore.Specifications;
 global using AccountModuleCore.Interfaces;
+
 global using AccountModuleInfrastructure.CommandQuery;
 global using AccountModuleInfrastructure.Data;
 
