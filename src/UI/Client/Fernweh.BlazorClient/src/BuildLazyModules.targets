@@ -1,7 +1,56 @@
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <!-- GameBrains Module -->
-  <!-- /GameBrains Module -->
+  <!-- The Public Library -->
+  <Choose>
+    <When Condition="'$(Configuration)' == 'Release'">
+      <ItemGroup>
+        <PackageReference Include="TplCore" />
+        <PackageReference Include="TplInfrastructure" />
+        <PackageReference Include="TplApplication" />
+        <PackageReference Include="TplBlazorModule" />
+      </ItemGroup>
+    </When>
+  </Choose>
 
-  <!-- UIKit Module -->
-  <!-- /UIKit Module -->
+  <ItemGroup>
+    <ProjectReference Include="./../../../../+Modules/Lazy/ThePublicLibrary/____Core/TplCore.TplTestData/src/TplCore.TplTestData.csproj" />
+    <ProjectReference Include="./../../../../+Modules/Lazy/ThePublicLibrary/___Infrastructure/TplInfrastructure/src/TplInfrastructure.csproj" />    
+    <ProjectReference Include="./../../../../+Modules/Lazy/ThePublicLibrary/_Application/_TplApplication.Shared/src/TplApplication.Shared.csproj" />
+    <ProjectReference Include="./../../../../+Modules/Lazy/ThePublicLibrary/UI/_TplModuleClientServiceLoader/src/TplModuleClientServiceLoader.csproj" />
+    
+    <ProjectReference Include="./../../../../+Modules/Lazy/ThePublicLibrary/UI/TplBlazorModule/src/TplBlazorModule.csproj" />      
+    <BlazorWebAssemblyLazyLoad Include="TplBlazorModule.dll" />
+
+    <ProjectReference Include="./../../../../+Modules/Lazy/ThePublicLibrary/UI/TplBlazorModuleAdmin/src/TplBlazorModuleAdmin.csproj" />      
+    <BlazorWebAssemblyLazyLoad Include="TplBlazorModuleAdmin.dll" />
+  </ItemGroup>
+
+  <!-- /The Public Library -->
+
+   <!-- The YourMainIdea -->
+  <!-- <Choose>
+    <When Condition="'$(Configuration)' == 'Release'">
+      <ItemGroup>
+        <PackageReference Include="YmiCore" />
+        <PackageReference Include="YmiInfrastructure" />
+        <PackageReference Include="YmiApplication" />
+        <PackageReference Include="YmiBlazorModule" />
+      </ItemGroup>
+    </When>
+  </Choose>
+
+  <ItemGroup>
+    <ProjectReference Include="./../../../../+Modules/Lazy/YourMainIdea/____Core/YmiCore.YmiTestData/src/YmiCore.YmiTestData.csproj" />
+    <ProjectReference Include="./../../../../+Modules/Lazy/YourMainIdea/___Infrastructure/YmiInfrastructure/src/YmiInfrastructure.csproj" />    
+    <ProjectReference Include="./../../../../+Modules/Lazy/YourMainIdea/_Application/_YmiApplication.Shared/src/YmiApplication.Shared.csproj" />
+    <ProjectReference Include="./../../../../+Modules/Lazy/YourMainIdea/UI/_YmiModuleClientServiceLoader/src/YmiModuleClientServiceLoader.csproj" />
+    
+    <ProjectReference Include="./../../../../+Modules/Lazy/YourMainIdea/UI/YmiBlazorModule/src/YmiBlazorModule.csproj" />      
+    <BlazorWebAssemblyLazyLoad Include="YmiBlazorModule.dll" />
+
+    <ProjectReference Include="./../../../../+Modules/Lazy/YourMainIdea/UI/YmiBlazorModuleAdmin/src/YmiBlazorModuleAdmin.csproj" />      
+    <BlazorWebAssemblyLazyLoad Include="YmiBlazorModuleAdmin.dll" />
+  </ItemGroup> -->
+
+  <!-- /The YourMainIdea -->
+  
 </Project>

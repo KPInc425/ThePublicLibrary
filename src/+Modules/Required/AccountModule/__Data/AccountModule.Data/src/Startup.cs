@@ -18,12 +18,12 @@ public class Startup
         string connectionString =
             Configuration.GetConnectionString("Active") ?? ""; //Configuration.GetConnectionString("DefaultConnection");
 
-        services.AddKnownAccountDbContext(connectionString);
+        services.AddAccountModuleDbContext(connectionString);
 
         foreach (var seedData in Assembly
                     .GetExecutingAssembly()
                     .GetTypes()
-                    .Where(x => x.IsAssignableTo(typeof(IKnownAccountSeedScript)) && x.IsClass)
+                    .Where(x => x.IsAssignableTo(typeof(IAccountModuleSeedScript)) && x.IsClass)
                     .OrderBy(rs => rs.Name))
         {
             services.AddSingleton(seedData);
@@ -32,7 +32,7 @@ public class Startup
     public void ConfigureContainer(ContainerBuilder builder)
     {
         builder
-            .RegisterModule(new AccountModuleApplicationDataModule(_env
+            .RegisterModule(new AccountModuleDataModule(_env
                     .EnvironmentName ==
                 "Development"));
         var assemblies = new List<Assembly>();

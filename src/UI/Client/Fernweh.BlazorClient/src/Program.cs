@@ -26,68 +26,54 @@ var featureFlags = appSettings!.FeatureFlags;
 builder.Services.AddSingleton<Endpoints>(endPoints!);
 builder.Services.AddSingleton<FeatureFlags>(featureFlags!);
 
-/* builder.Services.AddOidcAuthentication(options =>
+builder.Services.AddOidcAuthentication(options =>
         {
             builder.Configuration.Bind("Oidc", options.ProviderOptions);
-            options.ProviderOptions.Authority = appSettings.ConfigEndpoints.IdentityEndpointUrl;
+            options.ProviderOptions.Authority = appSettings.Endpoints.IdentityEndpointUrl;
             options.ProviderOptions.ClientId = "TPLClient";
             options.ProviderOptions.ResponseType = "code";
             options.UserOptions.RoleClaim = "role";
             options.ProviderOptions.PostLogoutRedirectUri = "/Welcome";
-            options.AuthenticationPaths.RemoteProfilePath = $"{appSettings.ConfigEndpoints.IdentityEndpointUrl}/Account/Manage";
-            options.AuthenticationPaths.RemoteRegisterPath = $"{appSettings.ConfigEndpoints.IdentityEndpointUrl}/Account/Register";
+            options.AuthenticationPaths.RemoteProfilePath = $"{appSettings.Endpoints.IdentityEndpointUrl}/Account/Manage";
+            options.AuthenticationPaths.RemoteRegisterPath = $"{appSettings.Endpoints.IdentityEndpointUrl}/Account/Register";
             options.AuthenticationPaths.LogOutSucceededPath = "/Welcome";
         }).AddAccountClaimsPrincipalFactory<AccountClaimsPrincipalFactoryEx>();
-builder.Services.AddScoped<CustomAuthorizationMessageHandler>(); */
+builder.Services.AddScoped<CustomAuthorizationMessageHandler>();
 
 /* builder.Services.AddGoogleAnalytics("G-WZSRLSH36B"); */
 
-/* builder
-    .Services
-        .AddHttpClient("TplHttpClient", client =>
-                client.BaseAddress = new Uri(endPoints.TplApiUrl)
-        ).AddHttpMessageHandler<CustomAuthorizationMessageHandler>();
- */
 
 
-// \ThePublicLibrary
-System.Console.WriteLine($"Hello > {endPoints.TplApiUrl}, t/f {builder.HostEnvironment.IsDevelopment()}");
+// \AccountModule
+System.Console.WriteLine($"Hello > {endPoints.AccountAdminApiUrl}, t/f {builder.HostEnvironment.IsDevelopment()}");
 
-builder.Services.AddScoped<ITplDataService, TplHttpDataService>();
+builder.Services.AddScoped<IAccountModuleDataService, AccountModuleHttpDataService>();
 
 builder
     .Services
-        .AddHttpClient("TplHttpClient", client =>
-                client.BaseAddress = new Uri(endPoints.TplApiUrl)
-        );
-        
-builder
-    .Services
-        .AddHttpClient("TplNotAuthedHttpClient", client =>
-                client.BaseAddress = new Uri(endPoints.TplApiUrl)
+        .AddHttpClient("AccountModuleHttpClient", client =>
+                client.BaseAddress = new Uri(endPoints.AccountAdminApiUrl)
         );
 
+builder.Services.AddScoped<AccountModuleHttpClientFactory>();
+builder.Services.AddAccountModuleHttpDataService();
 
-builder.Services.AddScoped<TplHttpClientFactory>();
-builder.Services.AddTplHttpDataService();
-
-builder.Services.AddScoped<ITplDataService>(x => x
-        .GetRequiredService<TplHttpClientFactory>()
+builder.Services.AddScoped<IAccountModuleDataService>(x => x
+        .GetRequiredService<AccountModuleHttpClientFactory>()
         .Create());
+// \AccountModule
 
-builder.Services.AddScoped<ITplDataServiceNotAuthed>(x => x
-        .GetRequiredService<TplHttpClientFactory>()
-        .CreateNotAuthed());
-// \ThePublicLibrary
+
+
 
 
 // YourMainIdea
 /* System.Console.WriteLine($"Hello > {endPoints.YmiApiUrl}, t/f {builder.HostEnvironment.IsDevelopment()}");
-builder.Services.AddScoped<IYmiDataService, YmiHttpDataService>();
+builder.Services.AddScoped<IYmiDataService, YmiModuleHttpDataService>();
 
 builder
     .Services
-        .AddHttpClient("YmiHttpClient", client =>
+        .AddHttpClient("YmiModuleHttpClient", client =>
                 client.BaseAddress = new Uri(endPoints.YmiApiUrl)
         );
         
@@ -98,23 +84,26 @@ builder
         );
 
 
-builder.Services.AddScoped<YmiHttpClientFactory>();
-builder.Services.AddYmiHttpDataService();
+builder.Services.AddScoped<YmiModuleHttpClientFactory>();
+builder.Services.AddYmiModuleHttpDataService();
 
 builder.Services.AddScoped<IYmiDataService>(x => x
-        .GetRequiredService<YmiHttpClientFactory>()
+        .GetRequiredService<YmiModuleHttpClientFactory>()
         .Create());
 
 builder.Services.AddScoped<IYmiDataServiceNotAuthed>(x => x
-        .GetRequiredService<YmiHttpClientFactory>()
+        .GetRequiredService<YmiModuleHttpClientFactory>()
         .CreateNotAuthed()); */
 // \YourMainIdea
 
+RegisterRequiredServices.RegisterModules(builder);
+RegisterLazyServices.RegisterModules(builder);
 
-/* LazyServices.RegisterLazyModules(builder);
- */
+
 // smash in all the resx files
+
 builder.Services.AddLocalization();
+
 /*builder.Services.AddApiAuthorization(options =>
 {
      options.AuthenticationPaths.LogInPath = "Account/login";

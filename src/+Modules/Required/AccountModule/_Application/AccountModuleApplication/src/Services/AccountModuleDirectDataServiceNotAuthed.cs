@@ -1,4 +1,9 @@
-namespace AccountModule.TplApplication.Shared.Interfaces;
+namespace AccountModuleApplication.Services;
 
-public class AccountModuleDataServiceNotAuthed : AccountModuleDataService
-{ }   
+public class AccountModuleDirectDataServiceNotAuthed : AccountModuleDirectDataService
+{ 
+    public AccountModuleDirectDataServiceNotAuthed(IMediator mediator, IMapper mapper) : base(mediator, mapper)
+    {
+        
+    }
+}   

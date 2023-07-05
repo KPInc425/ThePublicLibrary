@@ -5,4 +5,4 @@ global using Fernweh.KernelShared.Interfaces;
 global using AccountModuleCore.Entities;
 global using AccountModuleCore.Enums;
 
-global using AccountModuleCore.AccountModuleTestData.Interfaces;
+global using AccountModuleCore.TestData.Interfaces;

@@ -50,7 +50,7 @@ public class AccountModuleApplicationModule : Module
             .InstancePerLifetimeScope();
 
         var services = new ServiceCollection();
-        services.AddAutoMapper(typeof(BookMapper).GetTypeInfo().Assembly);
+        services.AddAutoMapper(typeof(KnownAccountMap).GetTypeInfo().Assembly);
         builder.Populate(services);
 
         var mediatrOpenTypes = new[]

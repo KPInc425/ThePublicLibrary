@@ -1,4 +1,4 @@
-namespace AccountModuleCore.AccountModuleTestData.Requests;
+namespace AccountModuleCore.TestData.Requests;
 public class BooksFindAccountModuleTestData : IAccountModuleTestData
 {
     /* public BooksFindSpec FindByTitleSpec { get; set; }

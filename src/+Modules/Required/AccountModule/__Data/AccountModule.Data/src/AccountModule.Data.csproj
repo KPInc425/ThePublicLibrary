@@ -38,7 +38,7 @@
       <HintPath>.\..\..\..\..\..\..\..\src\__Kernel\Fernweh.KernelShared\src\bin\Debug\net7.0\Fernweh.KernelShared.dll</HintPath>
     </Reference>
     <ProjectReference Include="./../../../____Core/__AccountModuleCore/src/AccountModuleCore.csproj" />
-    <ProjectReference Include="./../../../____Core/__AccountModuleCore.TestData/src/AccountModuleCore.AccountModuleTestData.csproj" />
+    <ProjectReference Include="./../../../____Core/_AccountModuleCore.TestData/src/AccountModuleCore.TestData.csproj" />
     <ProjectReference Include="./../../../___Infrastructure/AccountModuleInfrastructure/src/AccountModuleInfrastructure.csproj" />
   </ItemGroup>
   

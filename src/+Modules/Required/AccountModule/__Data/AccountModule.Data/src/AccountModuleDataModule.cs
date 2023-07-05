@@ -4,12 +4,12 @@ using AccountModuleCore;
 using Module = Autofac.Module;
 
 namespace AccountModuleApplication;
-public class AccountModuleApplicationDataModule : Module
+public class AccountModuleDataModule : Module
 {
     private readonly bool _isDevelopment = false;
     private readonly List<Assembly> _assemblies = new List<Assembly>();
 
-    public AccountModuleApplicationDataModule(bool isDevelopment, Assembly? callingAssembly = null)
+    public AccountModuleDataModule(bool isDevelopment, Assembly? callingAssembly = null)
     {
         _isDevelopment = isDevelopment;
         var coreAssembly = Assembly.GetAssembly(typeof(AccountModuleCoreModule));

@@ -14,4 +14,5 @@ global using Fernweh.Common;
 global using Fernweh.Common.Interfaces;
 global using Fernweh.Common.MasterPageSetters;
 
-global using TplApplication.Shared.Interfaces;
+global using AccountModuleApplication.Shared.Interfaces;
+global using AccountModuleApplication.Shared.ViewModels;

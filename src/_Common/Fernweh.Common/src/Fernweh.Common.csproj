@@ -21,13 +21,13 @@
     <PackageReference Include="BlazorAnimate" Version="3.0.0" />
     <PackageReference Include="Blazor.Extensions.Canvas" Version="1.1.1" />
     <PackageReference Include="Blazored.FluentValidation" Version="2.1.0" />
-    <PackageReference Include="Microsoft.Extensions.Identity.Core" Version="7.0.7" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="7.0.7" />
-    <!-- <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Authentication" Version="7.0.7" /> -->
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="7.0.7" PrivateAssets="all" />
-    <PackageReference Include="Microsoft.Extensions.Localization" Version="7.0.7" />
-    <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="7.0.7" />
-    <PackageReference Include="MudBlazor" Version="6.4.1" />
+    <PackageReference Include="Microsoft.Extensions.Identity.Core" Version="7.0.8" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="7.0.8" />
+    <!-- <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Authentication" Version="7.0.8" /> -->
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="7.0.8" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.Extensions.Localization" Version="7.0.8" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="7.0.8" />
+    <PackageReference Include="MudBlazor" Version="6.6.0" />
   </ItemGroup>
 
   <Choose>
@@ -43,7 +43,7 @@
       <HintPath>./../../../../src/__Kernel/Fernweh.KernelShared/src/bin/Debug/net7.0/Fernweh.KernelShared.dll</HintPath>    
     </Reference>
     
-    <ProjectReference Include="./../../../+Modules/Lazy/ThePublicLibrary/_Application/_TplApplication.Shared/src/TplApplication.Shared.csproj" />
+    <ProjectReference Include="./../../../+Modules/Required/AccountModule/_Application/_AccountModuleApplication.Shared/src/AccountModuleApplication.Shared.csproj" />
   </ItemGroup>
 
   <ItemGroup>

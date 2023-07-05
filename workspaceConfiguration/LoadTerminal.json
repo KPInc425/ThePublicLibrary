@@ -31,6 +31,52 @@
                     "num": 2
                 }
             ]
+        },        
+        {
+            "name": "AccountModuleCore",
+            "enabled": true,
+            "terminals": [
+                {
+                    "name": "AccountModuleCore.UnitTests",
+                    "path": "./src/+Modules/Required/AccountModule/____Core/AccountModuleCore.UnitTests/src",
+                    "cmd": [
+                        "dotnet test"
+                    ],
+                    "num": 3
+                },
+                {
+                    "name": "AccountModuleInfrastructure.IntegrationTests",
+                    "path": "./src/+Modules/Required/AccountModule/___Infrastructure/AccountModuleInfrastructure.IntegrationTests/src",
+                    "cmd": [
+                        "dotnet test"
+                    ],
+                    "num": 3
+                },
+                {
+                    "name": "AccountModuleApplication.FeatureTests",
+                    "path": "./src/+Modules/Required/AccountModule/_Application/AccountModuleApplication.FeatureTests/src",
+                    "cmd": [
+                        "dotnet test"
+                    ],
+                    "num": 3
+                },
+                {
+                    "name": "AccountModuleApi.FunctionalTests",
+                    "path": "./src/+Modules/Required/AccountModule/+API/+AccountModuleApi.FunctionalTests/src",
+                    "cmd": [
+                        "dotnet test"
+                    ],
+                    "num": 3
+                }   ,
+                {
+                    "name": "AccountModuleApi",                      
+                    "path": "./src/+Modules/Required/AccountModule/+API/+AccountModuleApi/src",
+                    "cmd": [
+                        "dotnet watch run"
+                    ],
+                    "num": 3
+                }             
+            ]
         },
         {
             "name": "TplCore",
@@ -42,7 +88,7 @@
                     "cmd": [
                         "dotnet test"
                     ],
-                    "num": 3
+                    "num": 4
                 },
                 {
                     "name": "TplInfrastructure.IntegrationTests",
@@ -58,7 +104,7 @@
                     "cmd": [
                         "dotnet test"
                     ],
-                    "num": 5
+                    "num": 4
                 },
                 {
                     "name": "TplApi.FunctionalTests",
@@ -66,7 +112,7 @@
                     "cmd": [
                         "dotnet test"
                     ],
-                    "num": 7
+                    "num": 4
                 }   ,
                 {
                     "name": "TplApi",                      
@@ -74,7 +120,7 @@
                     "cmd": [
                         "dotnet watch run"
                     ],
-                    "num": 12
+                    "num": 4
                 }             
             ]
         },
@@ -88,7 +134,7 @@
                     "cmd": [
                         "dotnet test"
                     ],
-                    "num": 3
+                    "num": 5
                 },
                 {
                     "name": "YmiInfrastructure.IntegrationTests",
@@ -96,7 +142,7 @@
                     "cmd": [
                         "dotnet test"
                     ],
-                    "num": 10
+                    "num": 5
                 },
                 {
                     "name": "YmiApplication.FeatureTests",
@@ -104,7 +150,7 @@
                     "cmd": [
                         "dotnet test"
                     ],
-                    "num": 11
+                    "num": 5
                 },
                 {
                     "name": "YmiApi.FunctionalTests",
@@ -112,7 +158,7 @@
                     "cmd": [
                         "dotnet test"
                     ],
-                    "num": 12
+                    "num": 5
                 },
                 {
                     "name": "YmiApi",
@@ -120,7 +166,7 @@
                     "cmd": [
                         "dotnet watch run"
                     ],
-                    "num": 12
+                    "num": 5
                 }
             ]
         }

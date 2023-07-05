@@ -1,33 +1,33 @@
+using AccountModuleCore.Entities;
+
 namespace Fernweh.Common.Services;
 public class PlatformCacheService
 {
-    private ITplDataService _dataService;
-    
-    public PlatformCacheService(ITplDataService dataService)
+    private IAccountModuleDataService _accountModuleHttpClient;
+    public PlatformCacheService(IAccountModuleDataService knownAccountModuleClient)
     {
-        _dataService = dataService;
+        _accountModuleHttpClient = knownAccountModuleClient;
     }
+    public KnownUserViewModel KnownUser { get; set; } = null;
+    public KnownBusinessWebsiteViewModel KnownBusinessWebsite { get; set; } = new();
+    public KnownBusinessViewModel KnownBusiness { get; set; } = new();
     public bool HasInitRun { get; set; } = false;
     public bool IsOwner { get; private set; } = false;
     public bool IsCoHost { get; private set; } = false;
 
-    private bool _userDataIsReady = true; // false;
-    private bool _businessDataIsReady = true; // false;
-    private bool _appDataIsReady = true; // false;
-    
+    private bool _userDataIsReady = false;
+    private bool _businessDataIsReady = false;
+    private bool _appDataIsReady = false;
     private string _currentModule = "";
     private string _currentSubModule = "";
-    
-    public event Action? OnChange;
-    public event Action? OnRoomChange;
-    public event Action? OnMenuChange;
-    public event Action? OnSkinChange;
-    
+    public event Action OnChange;
+    public event Action OnRoomChange;
+    public event Action OnMenuChange;
+    public event Action OnSkinChange;
     private void NotifyStateChanged() => OnChange?.Invoke();
     private void NotifyOnMenuChange() => OnMenuChange?.Invoke();
     private void NotifyOnRoomChange() => OnRoomChange?.Invoke();
     private void NotifyOnSkinChange() => OnSkinChange?.Invoke();
-    
     public bool UserDataIsReady
     {
         get => _userDataIsReady;
@@ -48,15 +48,26 @@ public class PlatformCacheService
     {
         if (isAuthenticated)
         {
-            // get authorized user data
+            KnownBusinessWebsite = await _accountModuleHttpClient.KnownBusinessWebsiteGet();
+            Console.WriteLine($"InitAppDataAsync load data > {KnownBusinessWebsite?.Name}");
+            if (KnownBusinessWebsite != null)
+            {
+                SetBusinessDataToReady();
+                await Task.Delay(50);
+            }
+            KnownUser = await _accountModuleHttpClient.KnownUserGet();
+            Console.WriteLine($"InitAppDataAsync user from api state > {KnownUser?.UserId}");
+            if (KnownUser != null)
+            {
+                SetUserDataToReady();
+                await Task.Delay(50);
+            }
         }
         else if (!isAuthenticated)
         {
-            // get anonymous user data
+            throw new Exception("Must be authenticated");
         }
-
         SetAppDataToReady();
-        
         await Task.Yield();
     }
     public void UpdateMenu()
@@ -82,18 +93,18 @@ public class PlatformCacheService
         _businessDataIsReady = value;
         NotifyStateChanged();
     }
-    private void SetAppDataToReady(bool value = true)
+    public void SetAppDataToReady(bool value = true)
     {
         _appDataIsReady = value;
         NotifyStateChanged();
         NotifyOnMenuChange();
     }
-    
-    /* public void SetKnownBusinessWebsiteProfile(KnownBusinessWebsiteProfileViewModel knownBusinessWebsiteProfile)
+
+    public void SetKnownBusinessWebsiteProfile(KnownBusinessWebsiteProfileViewModel knownBusinessWebsiteProfile)
     {
         KnownBusinessWebsite.KnownBusinessWebsiteProfile = knownBusinessWebsiteProfile;
         NotifyStateChanged();
-    } */
+    }
 
     public string CurrentModule => _currentModule;
     public string CurrentSubModule => _currentSubModule;

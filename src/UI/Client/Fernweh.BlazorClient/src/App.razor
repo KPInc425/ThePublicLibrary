@@ -30,6 +30,7 @@
     private bool showSplash = true;
     protected override async Task OnInitializedAsync()
     {
+        PlatformCacheService.SetAppDataToReady();
     }
     private async Task GetAppData()
     {
@@ -95,8 +96,19 @@
         {
 
         }
-        var preLoadAssemblies = await AssemblyLoader.LoadAssembliesAsync(new List<string>() { });
+
+
+
+
+        var preLoadAssemblies = await AssemblyLoader.LoadAssembliesAsync(new List<string>() { "AccountModuleBlazorModuleAdmin.dll" });
         LoadedAssemblies.AddRange(preLoadAssemblies);
+
+        // AccountModule
+        if (uriPath.Contains("account/"))
+        {
+            // pre loaded
+        }        
+        // \AccountModule
         
         // ThePublicLibrary
         if (uriPath.Contains("public/"))
@@ -106,8 +118,7 @@
         }
         else if (uriPath.Contains("private/"))
         {
-            var assemblies = await AssemblyLoader.LoadAssembliesAsync(new List<string> {
-                "TplBlazorModuleAdmin.dll"});
+            var assemblies = await AssemblyLoader.LoadAssembliesAsync(new List<string> { "TplBlazorModuleAdmin.dll" });
             LoadedAssemblies.AddRange(assemblies);
         }
         // \ThePublicLibrary

@@ -1,8 +1,8 @@
-namespace AccountModuleApplication.Shared.Interfaces;
+namespace AccountModuleApplication.Services;
 
-public partial interface IDataServiceKnownUserPartial
+public partial class AccountModuleDirectDataService
 {
-    public async Task<KnownUserViewModel> KnownUserGet()
+    /* public async Task<KnownUserViewModel> KnownUserGet()
     {
         var cmd = new KnownUserGet();
         return _mapper.Map<BookViewModel>(await _mediator.Send(cmd));
@@ -10,7 +10,7 @@ public partial interface IDataServiceKnownUserPartial
     public async Task<KnownUserViewModel> KnownUserUpdateAccount(KnownUserUpdateAccountRequest request)
     {
         return _mapper.Map<BookViewModel>(await _mediator.Send(cmd));
-    }
+    } */
     
     
     

@@ -1,4 +1,4 @@
-namespace AccountModuleCore.AccountModuleTestData.Interfaces;
+namespace AccountModuleCore.TestData.Interfaces;
 public interface IAccountModuleTestData
 {
     

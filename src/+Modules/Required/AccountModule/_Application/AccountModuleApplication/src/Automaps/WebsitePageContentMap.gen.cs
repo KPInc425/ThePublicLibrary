@@ -1,5 +1,5 @@
 // ag=yes
-namespace AccountModuleCore..Api.Common.Automaps; 
+namespace AccountModuleApplication.Automaps; 
 public partial class WebsitePageContentMap : Profile
 { 
     public override string ProfileName => "WebsitePageContentMap";

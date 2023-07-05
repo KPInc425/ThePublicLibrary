@@ -1,5 +1,5 @@
 namespace Fernweh.BlazorClient;
-/* public class AccountClaimsPrincipalFactoryEx : AccountClaimsPrincipalFactory<RemoteUserAccount>
+public class AccountClaimsPrincipalFactoryEx : AccountClaimsPrincipalFactory<RemoteUserAccount>
 {
     public AccountClaimsPrincipalFactoryEx(IAccessTokenProviderAccessor accessor) : base(accessor)
     {
@@ -39,4 +39,4 @@ namespace Fernweh.BlazorClient;
 
         return user;
     }
-} */
+}

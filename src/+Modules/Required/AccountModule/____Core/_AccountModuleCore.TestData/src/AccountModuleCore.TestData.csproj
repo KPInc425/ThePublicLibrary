@@ -4,12 +4,12 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <IsPackable>true</IsPackable>
-    <PackageId>AccountModuleCore.AccountModuleTestData</PackageId>
+    <PackageId>AccountModuleCore.TestData</PackageId>
     <Version>1.01.02.003</Version>
     <Authors>10GeekJames</Authors>
     <Company>10GeekJames</Company>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
-    <DefaultNamespace>AccountModuleCore.AccountModuleTestData</DefaultNamespace>
+    <DefaultNamespace>AccountModuleCore.TestData</DefaultNamespace>
   </PropertyGroup>
 
   <ItemGroup>

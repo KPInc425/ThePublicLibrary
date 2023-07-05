@@ -1,4 +1,4 @@
-namespace AccountModuleCore.AccountModuleTestData.Entities;
+namespace AccountModuleCore.TestData.Entities;
 public static class AccountModuleTestData {
     /* public static NameVO AuthorJohnWriterName = new("John", "Writer");
     public static NameVO AuthorSallyTyperName = new("Sally", "Typer");

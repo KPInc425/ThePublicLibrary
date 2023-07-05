@@ -1,9 +1,9 @@
 namespace AccountModuleApplication.Services;
-public partial class KnownAccountDirectDataService : IAccountModuleDataService
+public partial class AccountModuleDirectDataService //: IAccountModuleDirectDataService
 {
-    private readonly IMediator _mediator;
-    private readonly IMapper _mapper;
-    public KnownAccountDirectDataService(IMediator mediator, IMapper mapper)
+    protected readonly IMediator _mediator;
+    protected readonly IMapper _mapper;
+    public AccountModuleDirectDataService(IMediator mediator, IMapper mapper)
     {
         _mediator = mediator;
         _mapper = mapper;

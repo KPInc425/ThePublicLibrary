@@ -1,5 +1,5 @@
 // ag=yes
-namespace AccountModuleCore..Api.Common.Automaps; 
+namespace AccountModuleApplication.Automaps; 
 public partial class KnownBusinessWebsiteMap : Profile
 { 
     public override string ProfileName => "KnownBusinessWebsiteMap";

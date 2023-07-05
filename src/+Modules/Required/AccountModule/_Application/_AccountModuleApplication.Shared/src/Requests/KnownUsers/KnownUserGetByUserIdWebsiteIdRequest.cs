@@ -7,8 +7,7 @@ public class KnownUserGetByUserIdWebsiteIdRequest : IRoutable
     public Guid KnownUserId { get; set; }
     public Guid KnownBusinessWebsiteId { get; set; }
 
-    private KnownUserGetByUserIdWebsiteIdRequest()
-    { }
+    private KnownUserGetByUserIdWebsiteIdRequest() { }
     public KnownUserGetByUserIdWebsiteIdRequest(Guid knownUserId, Guid knownBusinessWebsiteId)
     {
         KnownUserId = Guard.Against.NullOrEmpty(knownUserId);

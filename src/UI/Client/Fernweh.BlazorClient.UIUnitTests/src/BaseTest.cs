@@ -24,8 +24,8 @@ public class BaseTest
         var mockITplDataService = Mock.Create<ITplDataService>();
         ctx.Services.AddSingleton<ITplDataService>(mockITplDataService);
         
-        var mockTplHttpClientFactory = Mock.Create<TplHttpClientFactory>();        
-        ctx.Services.AddSingleton<TplHttpClientFactory>(mockTplHttpClientFactory);
+        var mockTplModuleHttpClientFactory = Mock.Create<TplModuleHttpClientFactory>();        
+        ctx.Services.AddSingleton<TplModuleHttpClientFactory>(mockTplModuleHttpClientFactory);
         // \ThePublicLibrary
 
         // YourMainIdea        

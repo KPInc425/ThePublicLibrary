@@ -1,4 +1,4 @@
-namespace AccountModuleCore.AccountModuleTestData.Entities;
+namespace AccountModuleCore.TestData.Entities;
 public static class KnownBusinessTestData
 {
     

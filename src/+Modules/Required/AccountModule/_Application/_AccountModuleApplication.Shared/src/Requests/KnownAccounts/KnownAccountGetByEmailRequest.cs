@@ -6,7 +6,7 @@ public class KnownAccountGetByEmailRequest : IRoutable
     [Required]
     public string EmailAddress { get; set; }
 
-    private KnownAccountGetByEmailRequest() { }
+    public KnownAccountGetByEmailRequest() { }
     public KnownAccountGetByEmailRequest(string emailAddress)
     {
         EmailAddress = emailAddress;

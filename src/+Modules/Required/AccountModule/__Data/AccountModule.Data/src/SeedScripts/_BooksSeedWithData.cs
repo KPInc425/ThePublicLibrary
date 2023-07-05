@@ -1,5 +1,5 @@
 namespace AccountModule.Data.SeedScripts;
-public class BooksSeedWithData : IKnownAccountSeedScript
+public class BooksSeedWithData : IAccountModuleSeedScript
 {
     public async Task PopulateAccountModuleTestData(IServiceProvider serviceProvider)
     {

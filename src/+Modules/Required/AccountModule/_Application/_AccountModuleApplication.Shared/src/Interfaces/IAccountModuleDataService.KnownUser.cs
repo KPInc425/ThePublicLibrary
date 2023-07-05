@@ -1,6 +1,6 @@
 namespace AccountModuleApplication.Shared.Interfaces;
 
-public partial interface IDataServiceKnownUserPartial
+public partial interface IAccountModuleDataService
 {
     
     Task<KnownUserViewModel> KnownUserGet();
