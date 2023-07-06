@@ -6,7 +6,8 @@ public class EfKnownAccountApplicationAdd : BaseApplicationTestFixture
     {
 
         var result = await _dataService.KnownAccountAllAsync();
-        result!.Count.Should().Be(0, "because we haven't added any books yet");
+        result!.Should().NotBeNull("because an empty result should be created");
+        result!.Count.Should().Be(0, "because we haven't added any known accounts yet");
 
         /* var cmd = new KnownAccountAddCmd(KnownAccountTestData.KnownAccountAlfradoTheGreat);
         await _dataService.KnownAccountAddAsync(cmd);

@@ -17,8 +17,9 @@ public partial class AccountModuleDirectDataService
     }
     public async Task<List<KnownAccountViewModel>> KnownAccountAllAsync()
     {
-        /* var qry = new KnownAccountGetAllQry();
-        return _mapper.Map<KnownAccountViewModel>(await _mediator.Send(qry)); */
-        return null;
+        var qry = new KnownAccountGetAllQry();
+        var result = await _mediator.Send(qry);
+
+        return _mapper.Map<List<KnownAccountViewModel>>(result ?? new ());
     }
 }

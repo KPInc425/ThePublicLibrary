@@ -36,7 +36,9 @@ public partial class AccountModuleHttpDataService : IAccountModuleDataService
     {
         var response = await _httpClient.GetAsync(KnownAccountGetAllRequest.BuildRoute());
         response.EnsureSuccessStatusCode();
-        return await response.Content.ReadFromJsonAsync<List<KnownAccountViewModel>>();
+        
+        var result = await response.Content.ReadFromJsonAsync<List<KnownAccountViewModel>>() ?? new List<KnownAccountViewModel>();
+        return result;
     }
     public async Task<KnownBusinessWebsiteViewModel> KnownBusinessWebsiteGet()
     {

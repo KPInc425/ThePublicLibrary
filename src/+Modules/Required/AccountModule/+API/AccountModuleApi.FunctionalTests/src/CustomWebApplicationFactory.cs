@@ -24,6 +24,7 @@ public class CustomWebApplicationFactory<TStartup> : WebApplicationFactory<Start
             try
             {
                 var runBaseSeedData = new RunBaseSeedData();
+                _logger.LogInformation("Seeding data.");
                 runBaseSeedData.Initialize(serviceProvider).GetAwaiter().GetResult();
             }
             catch (Exception ex)

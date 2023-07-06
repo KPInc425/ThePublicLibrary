@@ -1,7 +1,7 @@
 using System.Reflection;
 using Module = Autofac.Module;
 
-namespace AccountModuleApplicationModule;
+namespace AccountModuleApplication;
 public class AccountModuleApplicationModule : Module
 {
     private readonly bool _isDevelopment = false;
