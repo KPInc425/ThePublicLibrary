@@ -32,7 +32,7 @@
   <ItemGroup>
     <ProjectReference Include=".\..\..\_YmiCore\src\YmiCore.csproj" />
     <ProjectReference Include=".\..\..\YmiCore.YmiTestData\src\YmiCore.YmiTestData.csproj" />
-
+    
     <Reference Include="Fernweh.KernelShared">
       <HintPath>.\..\..\..\..\..\..\..\src\__Kernel\Fernweh.KernelShared\src\bin\Debug\net7.0\Fernweh.KernelShared.dll</HintPath>
     </Reference>
