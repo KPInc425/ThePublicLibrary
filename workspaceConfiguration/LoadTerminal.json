@@ -62,9 +62,9 @@
                 },
                 {
                     "name": "AccountModuleApi.FunctionalTests",
-                    "path": "./src/+Modules/Required/AccountModule/+API/+AccountModuleApi.FunctionalTests/src",
+                    "path": "./src/+Modules/Required/AccountModule/+API/AccountModuleApi.FunctionalTests/src",
                     "cmd": [
-                        "dotnet test"
+                        "echo build this"
                     ],
                     "num": 3
                 }   ,

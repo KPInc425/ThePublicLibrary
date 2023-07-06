@@ -20,6 +20,15 @@ public class BaseTest
         var mockIStringLocalizer = Mock.Create<IStringLocalizer>();
         var mockLocalizeShared = Mock.Create<IStringLocalizer<SharedLanguageBase>>();
 
+        // AccountModule
+        var mockIAccountModuleDataService = Mock.Create<IAccountModuleDataService>();
+        ctx.Services.AddSingleton<IAccountModuleDataService>(mockIAccountModuleDataService);
+        
+        var mockAccountModuleHttpClientFactory = Mock.Create<AccountModuleHttpClientFactory>();        
+        ctx.Services.AddSingleton<AccountModuleHttpClientFactory>(mockAccountModuleHttpClientFactory);
+        // \ThePublicLibrary
+
+
         // ThePublicLibrary
         var mockITplDataService = Mock.Create<ITplDataService>();
         ctx.Services.AddSingleton<ITplDataService>(mockITplDataService);

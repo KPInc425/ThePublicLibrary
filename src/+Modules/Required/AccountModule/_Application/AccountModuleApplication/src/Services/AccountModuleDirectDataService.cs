@@ -1,5 +1,5 @@
 namespace AccountModuleApplication.Services;
-public partial class AccountModuleDirectDataService //: IAccountModuleDirectDataService
+public partial class AccountModuleDirectDataService : IAccountModuleDataService
 {
     protected readonly IMediator _mediator;
     protected readonly IMapper _mapper;

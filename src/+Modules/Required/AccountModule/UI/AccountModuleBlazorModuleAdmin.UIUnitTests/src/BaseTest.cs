@@ -1,4 +1,4 @@
-namespace TplBlazorModule.UIUnitTests;
+namespace AccountModuleBlazorModuleAdmin.UIUnitTests;
 public class BaseTest
 {
     protected TestContext ctx = new TestContext();
@@ -47,23 +47,23 @@ public class BaseTest
         var mockLocalizeShared = Mock.Create<IStringLocalizer<SharedLanguageBase>>();
         ctx.Services.AddSingleton<IStringLocalizer<SharedLanguageBase>>(mockLocalizeShared);
 
-        var mockLocalizeModule = Mock.Create<IStringLocalizer<TplCoreLanguageBase>>();
-        ctx.Services.AddSingleton<IStringLocalizer<TplCoreLanguageBase>>(mockLocalizeModule);
+        var mockLocalizeModule = Mock.Create<IStringLocalizer<AccountModuleLanguageBase>>();
+        ctx.Services.AddSingleton<IStringLocalizer<AccountModuleLanguageBase>>(mockLocalizeModule);
 
-        var mockAllBooksPageLocalizer = Mock.Create<IStringLocalizer<AllBooks>>();
-        ctx.Services.AddSingleton<IStringLocalizer<AllBooks>>(mockAllBooksPageLocalizer);
+        var mockModuleTestPageLocalizer = Mock.Create<IStringLocalizer<ModuleTest>>();
+        ctx.Services.AddSingleton<IStringLocalizer<ModuleTest>>(mockModuleTestPageLocalizer);
 
-        var mockAllBooksComponentLocalizer = Mock.Create<IStringLocalizer<AllBooksComponent>>();
-        ctx.Services.AddSingleton<IStringLocalizer<AllBooksComponent>>(mockAllBooksComponentLocalizer);
+        var mockModuleTestComponentLocalizer = Mock.Create<IStringLocalizer<ModuleTestComponent>>();
+        ctx.Services.AddSingleton<IStringLocalizer<ModuleTestComponent>>(mockModuleTestComponentLocalizer);
 
         // ------------------------------------
 
         // ThePublicLibrary
-        var mockITplDataService = Mock.Create<ITplDataService>();
-        ctx.Services.AddSingleton<ITplDataService>(mockITplDataService);
+        var mockIAccountModuleDataService = Mock.Create<IAccountModuleDataService>();
+        ctx.Services.AddSingleton<IAccountModuleDataService>(mockIAccountModuleDataService);
 
-        var mockTplModuleHttpClientFactory = Mock.Create<TplModuleHttpClientFactory>();
-        ctx.Services.AddSingleton<TplModuleHttpClientFactory>(mockTplModuleHttpClientFactory);
+        var mockAccountModuleHttpClientFactory = Mock.Create<AccountModuleHttpClientFactory>();
+        ctx.Services.AddSingleton<AccountModuleHttpClientFactory>(mockAccountModuleHttpClientFactory);
         // \ThePublicLibrary       
 
         ctx.Services.AddSingleton<LazyAssemblyLoader>();
