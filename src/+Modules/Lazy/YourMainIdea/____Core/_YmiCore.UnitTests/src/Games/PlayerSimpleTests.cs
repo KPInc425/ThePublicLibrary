@@ -1,7 +1,7 @@
 
 namespace YmiCore.UnitTests;
 
-public class GameSimpleTests : BaseGameTests
+public class PlayerSimpleTests : BasePlayerTests
 {
     [Fact]
     public void CanCreateNewGame()

@@ -1,5 +1,5 @@
 namespace YmiCore.UnitTests;
-public abstract class BaseGameTests
+public abstract class BasePlayerTests
 {
     protected Player? _playerToTestWith;
     protected List<Player> _playersToTestWith = new();
