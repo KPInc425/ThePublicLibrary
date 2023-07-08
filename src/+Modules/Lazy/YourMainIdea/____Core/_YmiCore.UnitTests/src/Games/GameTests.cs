@@ -27,12 +27,13 @@ namespace YmiCore.UnitTests
         [Fact]
         public void GameHasRegions()
         {
-            // Given I have a Game Data
+            // Given I have a Data
             var playerData = PlayerTestData.TestPlayer;
+            var gameData = GameTestData.TestGame;
             // When I create a game
             var gameA = new Game(playerData);
             // Then game has a current city
-            gameA.AllRegions.Count().Should().Be();
+            gameA.AllRegions.Count().Should().Be(gameData.AllRegions.Count());
         }
     }
 }
