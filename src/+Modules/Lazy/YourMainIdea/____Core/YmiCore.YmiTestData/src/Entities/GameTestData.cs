@@ -1,15 +1,20 @@
 namespace YmiCore.YmiTestData.Entities;
-public static class GameTestData
-{
-    public static Player TestPlayer;
 
-    public static IEnumerable<Player> AllPlayers;
+public class GameTestData
+{
+    public static Game TestGame;
+
+    public static IEnumerable<Game> AllGames;
 
     static GameTestData()
     {
-        TestPlayer = new Player("George", bio: "ABS" );
-        AllPlayers = new List<Player> {
-            TestPlayer
+        var playerA = PlayerTestData.TestPlayer;
+        var cityA = CityTestData.TestCity;
+        TestGame = new Game(playerA);
+
+        AllGames = new List<Game> {
+            TestGame,
         };
     }
+
 }
