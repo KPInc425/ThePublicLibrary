@@ -3,6 +3,8 @@ global using Ardalis.GuardClauses;
 
 global using MediatR;
 
+global using Microsoft.Extensions.DependencyInjection;
+
 global using Microsoft.EntityFrameworkCore;
 
 global using System.Collections.Generic;
