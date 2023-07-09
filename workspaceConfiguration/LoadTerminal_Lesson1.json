@@ -21,7 +21,7 @@
             "terminals": [
                 {
                     "name": "YmiCore",
-                    "path": "./src/+Modules/Required/YourMainIdea/____Core/_YmiCore/src",
+                    "path": "./src/+Modules/Lazy/YourMainIdea/____Core/_YmiCore/src",
                     "cmd": [
                         ""
                     ],
@@ -29,9 +29,17 @@
                 },
                 {
                     "name": "YmiCore.UnitTests",
-                    "path": "./src/+Modules/Required/YourMainIdea/____Core/_YmiCore.UnitTests/src",
+                    "path": "./src/+Modules/Lazy/YourMainIdea/____Core/_YmiCore.UnitTests/src",
                     "cmd": [
-                        "dotnet test"
+                        ""
+                    ],
+                    "num": 2
+                },
+                {
+                    "name": "YmiCore.TestData",
+                    "path": "./src/+Modules/Lazy/YourMainIdea/____Core/_YmiCore.TestData/src",
+                    "cmd": [
+                        ""
                     ],
                     "num": 2
                 }

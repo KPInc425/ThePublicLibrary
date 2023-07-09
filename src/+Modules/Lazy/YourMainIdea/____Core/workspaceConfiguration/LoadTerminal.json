@@ -7,7 +7,7 @@
             "terminals": [
                 {
                     "name": "Fernweh.KernelShared",
-                    "path": "./src/__Kernel/Fernweh.KernelShared/src",
+                    "path": "./../../../../__Kernel/Fernweh.KernelShared/src",
                     "cmd": [
                         "dotnet build"
                     ],
@@ -21,7 +21,7 @@
             "terminals": [
                 {
                     "name": "YmiCore",
-                    "path": "./src/+Modules/Lazy/YourMainIdea/____Core/_YmiCore/src",
+                    "path": "./_YmiCore/src",
                     "cmd": [
                         ""
                     ],
@@ -29,7 +29,7 @@
                 },
                 {
                     "name": "YmiCore.UnitTests",
-                    "path": "./src/+Modules/Lazy/YourMainIdea/____Core/_YmiCore.UnitTests/src",
+                    "path": "./_YmiCore.UnitTests/src",
                     "cmd": [
                         ""
                     ],
@@ -37,7 +37,7 @@
                 },
                 {
                     "name": "YmiCore.YmiTestData",
-                    "path": "./src/+Modules/Lazy/YourMainIdea/____Core/YmiCore.YmiTestData/src",
+                    "path": "./YmiCore.YmiTestData/src",
                     "cmd": [
                         ""
                     ],
