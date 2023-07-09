@@ -30,7 +30,7 @@ builder.Services.AddOidcAuthentication(options =>
         {
             builder.Configuration.Bind("Oidc", options.ProviderOptions);
             options.ProviderOptions.Authority = appSettings.Endpoints.IdentityEndpointUrl;
-            options.ProviderOptions.ClientId = "TPLClient";
+            options.ProviderOptions.ClientId = "FernwehClient";
             options.ProviderOptions.ResponseType = "code";
             options.UserOptions.RoleClaim = "role";
             options.ProviderOptions.PostLogoutRedirectUri = "/Welcome";
@@ -43,59 +43,6 @@ builder.Services.AddScoped<CustomAuthorizationMessageHandler>();
 /* builder.Services.AddGoogleAnalytics("G-WZSRLSH36B"); */
 
 
-
-// \AccountModule
-System.Console.WriteLine($"Hello > {endPoints.AccountAdminApiUrl}, t/f {builder.HostEnvironment.IsDevelopment()}");
-
-builder.Services.AddScoped<IAccountModuleDataService, AccountModuleHttpDataService>();
-
-builder
-    .Services
-        .AddHttpClient("AccountModuleHttpClient", client =>
-                client.BaseAddress = new Uri(endPoints.AccountAdminApiUrl)
-        );
-
-builder.Services.AddScoped<AccountModuleHttpClientFactory>();
-builder.Services.AddAccountModuleHttpDataService();
-
-builder.Services.AddScoped<IAccountModuleDataService>(x => x
-        .GetRequiredService<AccountModuleHttpClientFactory>()
-        .Create());
-// \AccountModule
-
-
-
-
-
-// YourMainIdea
-/* System.Console.WriteLine($"Hello > {endPoints.YmiApiUrl}, t/f {builder.HostEnvironment.IsDevelopment()}");
-builder.Services.AddScoped<IYmiDataService, YmiModuleHttpDataService>();
-
-builder
-    .Services
-        .AddHttpClient("YmiModuleHttpClient", client =>
-                client.BaseAddress = new Uri(endPoints.YmiApiUrl)
-        );
-        
-builder
-    .Services
-        .AddHttpClient("YmiNotAuthedHttpClient", client =>
-                client.BaseAddress = new Uri(endPoints.YmiApiUrl)
-        );
-
-
-builder.Services.AddScoped<YmiModuleHttpClientFactory>();
-builder.Services.AddYmiModuleHttpDataService();
-
-builder.Services.AddScoped<IYmiDataService>(x => x
-        .GetRequiredService<YmiModuleHttpClientFactory>()
-        .Create());
-
-builder.Services.AddScoped<IYmiDataServiceNotAuthed>(x => x
-        .GetRequiredService<YmiModuleHttpClientFactory>()
-        .CreateNotAuthed()); */
-// \YourMainIdea
-
 RegisterRequiredServices.RegisterModules(builder);
 RegisterLazyServices.RegisterModules(builder);
 
@@ -104,18 +51,18 @@ RegisterLazyServices.RegisterModules(builder);
 
 builder.Services.AddLocalization();
 
-/*builder.Services.AddApiAuthorization(options =>
+builder.Services.AddApiAuthorization(options =>
 {
-     options.AuthenticationPaths.LogInPath = "Account/login";
+    options.AuthenticationPaths.LogInPath = "Account/login";
     options.AuthenticationPaths.LogInCallbackPath = "Account/login-callback";
     options.AuthenticationPaths.LogInFailedPath = "Account/login-failed";
     options.AuthenticationPaths.LogOutPath = "Account/logout";
     options.AuthenticationPaths.LogOutCallbackPath = "Account/logout-callback";
     options.AuthenticationPaths.LogOutFailedPath = "Account/logout-failed";
     options.AuthenticationPaths.LogOutSucceededPath = "Account/logged-out";
-    options.AuthenticationPaths.ProfilePath = "Account/profile"; 
+    options.AuthenticationPaths.ProfilePath = "Account/profile";
     //options.AuthenticationPaths.RegisterPath = "Account/register";
-});*/
+});
 List<CultureInfo> supportedLanguages = new List<CultureInfo>
             {
                 new CultureInfo("en-US"),
@@ -136,10 +83,7 @@ if (appLanguage != null)
         CultureInfo.DefaultThreadCurrentUICulture = cultureInfo;
     }
 }
-/* builder.Services.AddScoped<KnownAccountsHttpClientFactory>();
-builder.Services.AddScoped<KnownAccountsServiceFactory>();
-builder.Services.AddKnownAccountsHttpClientServices();
-builder.Services.AddKnownAccountsServices(); */
+
 // add in some mud blazor
 builder.Services.AddMudServices(options =>
     {
@@ -163,13 +107,6 @@ builder.Services.Configure<AnimateOptions>("my", options =>
     }); */
 // student add your code here 
 
-
-/* builder.Services.AddScoped<IKnownAccountsHttpClient>(x => x
-        .GetServices<KnownAccountsHttpClientFactory>()
-        .First().Create());
-builder.Services.AddScoped<IKnownAccountsNotAuthedHttpClient>(x => x
-        .GetServices<KnownAccountsHttpClientFactory>()
-        .First().CreateNotAuthed()); */
 var host = builder.Build();
 
 var logger = host.Services.GetRequiredService<ILoggerFactory>()

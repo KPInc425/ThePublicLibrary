@@ -47,14 +47,44 @@
             "serverReadyAction": {
                 "action": "openExternally",
                 "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
-            },
+            }
         },
-
-
         {
             "name": ".NET Core Attach",
             "type": "coreclr",
             "request": "attach"
+        },
+        {
+            "name": "Fernweh.BlazorClient",
+            "type": "blazorwasm",
+            "request": "launch",
+            "preLaunchTask": "build-Fernweh.BlazorClient",
+            "inspectUri": "{wsProtocol}://{url.hostname}:{url.port}/_framework/debug/ws-proxy?browser={browserInspectUri}",
+            "program": "${workspaceFolder}/src/UI/Client/Fernweh.BlazorClient/src/bin/Debug/net7.0/Fernweh.BlazorClient.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/src/UI/Client/Fernweh.BlazorClient/src",
+            "stopAtEntry": false,
+            "console": "internalConsole"
+        },
+        {
+            "name": "AccountModuleApi",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build-AccountModuleApi",
+            "program": "${workspaceFolder}/src/+Modules/Required/AccountModule/+API/+AccountModuleApi/src/bin/Debug/net7.0/AccountModuleApi.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/src/+Modules/Required/AccountModule/+API/+AccountModuleApi/src",
+            "stopAtEntry": false,
+            "serverReadyAction": {
+                "action": "openExternally",
+                "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
+            },
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
+            },
+            "sourceFileMap": {
+                "/Views": "${workspaceFolder}/src/+Modules/Required/AccountModule/+API/+AccountModuleApi/src/Views"
+            }
         }
     ]
 }

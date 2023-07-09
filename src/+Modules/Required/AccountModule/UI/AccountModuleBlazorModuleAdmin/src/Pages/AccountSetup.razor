@@ -65,7 +65,7 @@
         Console.WriteLine($"SaveUserRecord name => {_name}");
 
         var createKnownAccountRequest = new KnownUserUpdateAccountRequest(_name, _email);
-        var knownUser = await AccountModuleHttpClient.KnownUserUpdateAccount(createKnownAccountRequest);
+        var knownUser = await AccountModuleHttpClient.KnownUserUpdateAccountAsync(createKnownAccountRequest);
 
         PlatformCacheService.KnownUser = knownUser;
 

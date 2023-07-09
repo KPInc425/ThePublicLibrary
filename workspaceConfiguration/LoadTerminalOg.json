@@ -7,6 +7,20 @@
             "terminals": [
                 {
                     "name": "Fernweh.Client.BlazorClient",
+                    "path": "./src/++Identity/Fernweh.Identity/src/Fernweh.Identity.STS.Identity/",
+                    "cmd": [
+                        "dotnet watch run"
+                    ],
+                    "num": 2
+                }
+            ]            
+        },
+        {
+            "name": "Fernweh.Client.BlazorClient",
+            "enabled": true,
+            "terminals": [
+                {
+                    "name": "Fernweh.Client.BlazorClient",
                     "path": "./src/UI/Client/Fernweh.BlazorClient/src",
                     "cmd": [
                         "dotnet watch run"

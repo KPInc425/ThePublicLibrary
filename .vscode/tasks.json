@@ -37,8 +37,6 @@
             ],
             "problemMatcher": "$msCompile"
         },
-
-
         {
             "label": "build-DrawProjectFolders",
             "command": "dotnet",
@@ -75,13 +73,6 @@
             ],
             "problemMatcher": "$msCompile"
         },
-
-
-
-
-
-
-
         {
             "label": "build-DPF.Application.FeatureTests",
             "command": "dotnet",
@@ -114,14 +105,10 @@
                 "watch",
                 "run",
                 "--project",
-                "${workspaceFolder}\\utilities\\DrawProjectFolders\\src\\_Application\\DPF.Application.FeatureTests\\DPF.Application.FeatureTests.csproj",
+                "${workspaceFolder}\\utilities\\DrawProjectFolders\\src\\_Application\\DPF.Application.FeatureTests\\DPF.Application.FeatureTests.csproj"
             ],
             "problemMatcher": "$msCompile"
         },
-
-
-
-
         {
             "label": "build-API.TplApi",
             "command": "dotnet",
@@ -154,7 +141,31 @@
                 "watch",
                 "run",
                 "--project",
-                "${workspaceFolder}\\src\\+Modules\\Required\\ThePublicLibrary\\+Api\\API.TplApi\\src\\API.TplApi.csproj",
+                "${workspaceFolder}\\src\\+Modules\\Required\\ThePublicLibrary\\+Api\\API.TplApi\\src\\API.TplApi.csproj"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "build-Fernweh.BlazorClient",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/src/UI/Client/Fernweh.BlazorClient/src/Fernweh.BlazorClient.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "build-AccountModuleApi",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/src/+Modules/Required/AccountModule/+API/+AccountModuleApi/src/AccountModuleApi.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
             ],
             "problemMatcher": "$msCompile"
         }

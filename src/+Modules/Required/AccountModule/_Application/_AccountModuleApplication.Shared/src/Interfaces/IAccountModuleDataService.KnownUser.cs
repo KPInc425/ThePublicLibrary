@@ -3,6 +3,6 @@ namespace AccountModuleApplication.Shared.Interfaces;
 public partial interface IAccountModuleDataService
 {
     
-    Task<KnownUserViewModel> KnownUserGet();
-    Task<KnownUserViewModel> KnownUserUpdateAccount(KnownUserUpdateAccountRequest request);
+    Task<KnownUserViewModel> KnownUserGetAsync();
+    Task<KnownUserViewModel> KnownUserUpdateAccountAsync(KnownUserUpdateAccountRequest request);
 }

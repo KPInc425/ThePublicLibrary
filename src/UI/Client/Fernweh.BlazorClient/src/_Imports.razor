@@ -27,6 +27,8 @@
 @using MudBlazor
 @using Blazored.FluentValidation
 
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@inject SignOutSessionStateManager SignOutManager
 @inject FeatureFlags FeatureFlags
 @inject LazyAssemblyLoader AssemblyLoader
 @inject NavigationManager NavigationManager

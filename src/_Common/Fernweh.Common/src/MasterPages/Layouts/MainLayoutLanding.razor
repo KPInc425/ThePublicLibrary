@@ -10,7 +10,7 @@
         <MudText Typo="Typo.h5" Class="ml-3">ThePublicLibrary</MudText>
         <MudSpacer />
         <MudMenu Icon="@Icons.Material.Filled.Menu" AnchorOrigin="Origin.BottomLeft" Edge="Edge.End" Color="Color.Inherit" FullWidth="false">
-            <MudMenuItem class="mudmenuitem-custom">Sign in</MudMenuItem>
+            <MudMenuItem class="mudmenuitem-custom" OnClick=RedirectToLogin>Sign in</MudMenuItem>
             <MudMenuItem class="mudmenuitem-custom">Support</MudMenuItem>
         </MudMenu>
     </MudAppBar>
@@ -27,6 +27,10 @@
     void DrawerToggle()
     {
         _drawerOpen = !_drawerOpen;
+    }
+
+    protected void RedirectToLogin() {
+        NavigationManager.NavigateTo($"authentication/login?returnUrl={Uri.EscapeDataString(NavigationManager.Uri)}");
     }
 
     protected override async Task OnAfterRenderAsync(bool firstRender)

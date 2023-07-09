@@ -4,6 +4,8 @@ public static class RegisterRequiredServices
     public static void RegisterModules(WebAssemblyHostBuilder builder)
     {
         RegisterAccountRequiredService(builder);
+
+        
         
         static void RegisterAccountRequiredService(WebAssemblyHostBuilder builder)
         {
@@ -12,7 +14,7 @@ public static class RegisterRequiredServices
             // add the logged in users client endpoint for Account
             builder
                 .Services
-                    .AddHttpClient("AccountModuleClient",
+                    .AddHttpClient("AccountModuleHttpClient",
                             client =>
                             {
                                 client.BaseAddress = new Uri(appSettings.Endpoints.AccountAdminApiUrl);
@@ -20,14 +22,6 @@ public static class RegisterRequiredServices
                             }
 
                         ).AddHttpMessageHandler<CustomAuthorizationMessageHandler>();
-
-            // add the not logged in users client endpoint for Account
-            builder
-                .Services
-                    .AddHttpClient("AccountNotAuthedHttpClient",
-                        client =>
-                            client.BaseAddress = new Uri(appSettings.Endpoints.AccountAdminApiUrl)
-                    );
 
             // register the http client factory
             builder.Services.AddScoped<AccountModuleHttpClientFactory>();
