@@ -33,7 +33,7 @@
       <HintPath>.\..\..\..\..\..\..\..\src\__Kernel\Fernweh.KernelShared\src\bin\Debug\net7.0\Fernweh.KernelShared.dll</HintPath>
     </Reference>
     <ProjectReference Include="./../../../____Core/_YmiCore/src/YmiCore.csproj" />
-    <ProjectReference Include="./../../../____Core/YmiCore.YmiTestData/src/YmiCore.YmiTestData.csproj" />
+    <ProjectReference Include="./../../../____Core/YmiCore.TestData/src/YmiCore.TestData.csproj" />
     <ProjectReference Include="./../../YmiInfrastructure/src/YmiInfrastructure.csproj" />    
     <ProjectReference Include="./../../../____Core/_YmiCore.UnitTests/src/YmiCore.UnitTests.csproj" />
   </ItemGroup>

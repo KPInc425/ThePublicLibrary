@@ -1,4 +1,4 @@
-namespace YmiCore.YmiTestData.Entities;
+namespace YmiCore.TestData.Entities;
 
 public class GameTestData
 {

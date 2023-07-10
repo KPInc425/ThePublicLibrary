@@ -1,4 +1,4 @@
-namespace YmiCore.YmiTestData.Entities;
+namespace YmiCore.TestData.Entities;
 public static class PlayerTestData
 {
     public static Player TestPlayer;

@@ -8,7 +8,7 @@ global using System.Linq;
 global using System.Threading.Tasks;
 
 global using YmiCore.Entities;
-global using YmiCore.YmiTestData.Entities;
+global using YmiCore.TestData.Entities;
 
 global using YmiInfrastructure.Data;
 

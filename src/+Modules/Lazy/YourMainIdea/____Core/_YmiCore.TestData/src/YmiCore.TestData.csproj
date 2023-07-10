@@ -9,7 +9,7 @@
     <Authors>10GeekJames</Authors>
     <Company>10GeekJames</Company>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
-    <DefaultNamespace>YmiCore.YmiTestData</DefaultNamespace>
+    <DefaultNamespace>YmiCore.TestData</DefaultNamespace>
   </PropertyGroup>
 
   <ItemGroup>

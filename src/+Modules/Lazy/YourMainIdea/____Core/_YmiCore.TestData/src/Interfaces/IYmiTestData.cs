@@ -1,4 +1,4 @@
-namespace YmiCore.YmiTestData.Interfaces;
+namespace YmiCore.TestData.Interfaces;
 public interface IYmiTestData
 {
     

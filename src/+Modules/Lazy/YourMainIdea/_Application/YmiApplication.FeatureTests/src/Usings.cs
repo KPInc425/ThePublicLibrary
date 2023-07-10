@@ -17,7 +17,7 @@ global using System.Threading.Tasks;
 global using Fernweh.KernelShared.Interfaces;
 
 global using YmiCore;
-global using YmiCore.YmiTestData.Entities;
+global using YmiCore.TestData.Entities;
 
 global using YmiInfrastructure;
 global using YmiInfrastructure.Data;

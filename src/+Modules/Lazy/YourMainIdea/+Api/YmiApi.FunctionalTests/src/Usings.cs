@@ -29,7 +29,7 @@ global using Fernweh.KernelShared.Configuration;
 global using Fernweh.KernelShared.Interfaces;
 
 global using YmiCore.Enums;
-global using YmiCore.YmiTestData.Entities;
+global using YmiCore.TestData.Entities;
 
 global using YmiInfrastructure;
 global using YmiInfrastructure.Data;

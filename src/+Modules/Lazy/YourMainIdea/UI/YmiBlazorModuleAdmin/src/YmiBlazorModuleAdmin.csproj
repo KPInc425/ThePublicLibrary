@@ -33,7 +33,7 @@
       <ItemGroup>      
         <PackageReference Include="Fernweh.KernelShared" />
         <PackageReference Include="Fernweh.Common" />
-        <PackageReference Include="YmiCore.YmiTestData" />
+        <PackageReference Include="YmiCore.TestData" />
         <PackageReference Include="YmiApplication.Shared" />
         <PackageReference Include="YmiModuleClientServiceLoader" />
       </ItemGroup>
@@ -44,7 +44,7 @@
       <HintPath>.\..\..\..\..\..\..\..\src\__Kernel\Fernweh.KernelShared\src\bin\Debug\net7.0\Fernweh.KernelShared.dll</HintPath>
     </Reference>
     <ProjectReference Include="./../../../../../../_Common/Fernweh.Common/src/Fernweh.Common.csproj" />
-    <ProjectReference Include="./../../../____Core/YmiCore.YmiTestData/src/YmiCore.YmiTestData.csproj" />
+    <ProjectReference Include="./../../../____Core/YmiCore.TestData/src/YmiCore.TestData.csproj" />
     <ProjectReference Include="./../../../_Application/_YmiApplication.Shared/src/YmiApplication.Shared.csproj" />
     <ProjectReference Include="./../../_YmiModuleClientServiceLoader/src/YmiModuleClientServiceLoader.csproj" />
   </ItemGroup>
