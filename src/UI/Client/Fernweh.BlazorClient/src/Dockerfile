@@ -1,5 +1,5 @@
 FROM nginx:alpine as final
-EXPOSE 5007/tcp
+EXPOSE 5020/tcp
 WORKDIR /usr/share/nginx/html
 ADD "https://www.random.org/cgi-bin/randbyte?nbytes=10&format=h" skipcache
 COPY ./src/Fernweh.BlazorClient/src/bin/Release/net7.0/publish/wwwroot/ /etc/nginx/html/

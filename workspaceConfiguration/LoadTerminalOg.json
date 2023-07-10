@@ -1,0 +1,188 @@
+{
+    "version": "1.2.1",
+    "groups": [
+        {
+            "name": "Fernweh.Client.BlazorClient",
+            "enabled": true,
+            "terminals": [
+                {
+                    "name": "Fernweh.Client.BlazorClient",
+                    "path": "./src/++Identity/Fernweh.Identity/src/Fernweh.Identity.STS.Identity/",
+                    "cmd": [
+                        "dotnet watch run"
+                    ],
+                    "num": 2
+                }
+            ]            
+        },
+        {
+            "name": "Fernweh.Client.BlazorClient",
+            "enabled": true,
+            "terminals": [
+                {
+                    "name": "Fernweh.Client.BlazorClient",
+                    "path": "./src/UI/Client/Fernweh.BlazorClient/src",
+                    "cmd": [
+                        "dotnet watch run"
+                    ],
+                    "num": 2
+                },
+                {
+                    "name": "Fernweh.BlazorClient.UITests",
+                    "path": "./src/UI/Client/Fernweh.BlazorClient.UITests/src",
+                    "cmd": [
+                        "ping 127.0.0.1 -n 20",
+                        "dotnet test"
+                    ],
+                    "num": 2
+                },
+                {
+                    "name": "Fernweh.BlazorClient.UIUnitTests",
+                    "path": "./src/UI/Client/Fernweh.BlazorClient.UIUnitTests/src",
+                    "cmd": [
+                        "dotnet test"
+                    ],
+                    "num": 2
+                }
+            ]
+        },        
+        {
+            "name": "AccountModuleCore",
+            "enabled": true,
+            "terminals": [
+                {
+                    "name": "AccountModuleCore.UnitTests",
+                    "path": "./src/+Modules/Required/AccountModule/____Core/AccountModuleCore.UnitTests/src",
+                    "cmd": [
+                        "dotnet test"
+                    ],
+                    "num": 3
+                },
+                {
+                    "name": "AccountModuleInfrastructure.IntegrationTests",
+                    "path": "./src/+Modules/Required/AccountModule/___Infrastructure/AccountModuleInfrastructure.IntegrationTests/src",
+                    "cmd": [
+                        "dotnet test"
+                    ],
+                    "num": 3
+                },
+                {
+                    "name": "AccountModuleApplication.FeatureTests",
+                    "path": "./src/+Modules/Required/AccountModule/_Application/AccountModuleApplication.FeatureTests/src",
+                    "cmd": [
+                        "dotnet test"
+                    ],
+                    "num": 3
+                },
+                {
+                    "name": "AccountModuleApi.FunctionalTests",
+                    "path": "./src/+Modules/Required/AccountModule/+API/AccountModuleApi.FunctionalTests/src",
+                    "cmd": [
+                        "echo build this"
+                    ],
+                    "num": 3
+                }   ,
+                {
+                    "name": "AccountModuleApi",                      
+                    "path": "./src/+Modules/Required/AccountModule/+API/+AccountModuleApi/src",
+                    "cmd": [
+                        "dotnet watch run"
+                    ],
+                    "num": 3
+                }             
+            ]
+        },
+        {
+            "name": "TplCore",
+            "enabled": true,
+            "terminals": [
+                {
+                    "name": "TplCore.UnitTests",
+                    "path": "./src/+Modules/Lazy/ThePublicLibrary/____Core/_TplCore.UnitTests/src",
+                    "cmd": [
+                        "dotnet test"
+                    ],
+                    "num": 4
+                },
+                {
+                    "name": "TplInfrastructure.IntegrationTests",
+                    "path": "./src/+Modules/Lazy/ThePublicLibrary/___Infrastructure/TplInfrastructure.IntegrationTests/src",
+                    "cmd": [
+                        "dotnet test"
+                    ],
+                    "num": 4
+                },
+                {
+                    "name": "TplApplication.FeatureTests",
+                    "path": "./src/+Modules/Lazy/ThePublicLibrary/_Application/TplApplication.FeatureTests/src",
+                    "cmd": [
+                        "dotnet test"
+                    ],
+                    "num": 4
+                },
+                {
+                    "name": "TplApi.FunctionalTests",
+                    "path": "./src/+Modules/Lazy/ThePublicLibrary/+Api/TplApi.FunctionalTests/src",
+                    "cmd": [
+                        "dotnet test"
+                    ],
+                    "num": 4
+                }   ,
+                {
+                    "name": "TplApi",                      
+                    "path": "./src/+Modules/Lazy/ThePublicLibrary/+Api/TplApi/src",
+                    "cmd": [
+                        "dotnet watch run"
+                    ],
+                    "num": 4
+                }             
+            ]
+        },
+        {
+            "name": "YmiCore",
+            "enabled": true,
+            "terminals": [
+                {
+                    "name": "YmiCore.UnitTests",
+                    "path": "./src/+Modules/Lazy/YourMainIdea/____Core/_YmiCore.UnitTests/src",
+                    "cmd": [
+                        "dotnet test"
+                    ],
+                    "num": 5
+                },
+                {
+                    "name": "YmiInfrastructure.IntegrationTests",
+                    "path": "./src/+Modules/Lazy/YourMainIdea/___Infrastructure/YmiInfrastructure.IntegrationTests/src",
+                    "cmd": [
+                        "dotnet test"
+                    ],
+                    "num": 5
+                },
+                {
+                    "name": "YmiApplication.FeatureTests",
+                    "path": "./src/+Modules/Lazy/YourMainIdea/_Application/YmiApplication.FeatureTests/src",
+                    "cmd": [
+                        "dotnet test"
+                    ],
+                    "num": 5
+                },
+                {
+                    "name": "YmiApi.FunctionalTests",
+                    "path": "./src/+Modules/Lazy/YourMainIdea/+Api/YmiApi.FunctionalTests/src",
+                    "cmd": [
+                        "dotnet test"
+                    ],
+                    "num": 5
+                },
+                {
+                    "name": "YmiApi",
+                    "path": "./src/+Modules/Lazy/YourMainIdea/+Api/YmiApi/src",
+                    "cmd": [
+                        "dotnet watch run"
+                    ],
+                    "num": 5
+                }
+            ]
+        }
+    ]
+}

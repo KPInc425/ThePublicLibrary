@@ -6,34 +6,6 @@ public static class RegisterLazyServices
         RegisterTplLazyServices(builder);
         RegisterYmiLazyServices(builder);
 
-        static void RegisterAccountLazyServices(WebAssemblyHostBuilder builder)
-        {
-            var appSettings = builder.Configuration.Get<AppSettings>();
-
-            // add the logged in users client endpoint for Account
-            builder
-                .Services
-                    .AddHttpClient("AccountHttpClient",
-                        client =>
-                        {
-                            client.BaseAddress = new Uri(appSettings.Endpoints.AccountAdminApiUrl);
-                            client.Timeout = TimeSpan.FromSeconds(300);
-                        }
-
-                    ).AddHttpMessageHandler<CustomAuthorizationMessageHandler>();
-
-            // register the http client factory
-            builder.Services.AddScoped<AccountModuleHttpClientFactory>();
-
-            // allow the lazy modules an opportunity to participate in Dependency Injection
-            builder.Services.AddAccountModuleHttpDataService();
-
-            // setup the dependency injector to get a new instance of httpclient from the factory you registered above for the authorized calls
-            builder.Services.AddScoped<IAccountModuleDataService>(x => x
-                .GetServices<AccountModuleHttpClientFactory>()
-                .First().Create());
-        }
-
         static void RegisterTplLazyServices(WebAssemblyHostBuilder builder)
         {
             var appSettings = builder.Configuration.Get<AppSettings>();

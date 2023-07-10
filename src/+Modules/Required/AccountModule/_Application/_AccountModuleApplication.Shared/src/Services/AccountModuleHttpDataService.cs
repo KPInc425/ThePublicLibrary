@@ -17,7 +17,7 @@ public partial class AccountModuleHttpDataService : IAccountModuleDataService
             .Content
             .ReadFromJsonAsync<KnownAccountViewModel>();
     }
-    public async Task<List<KnownAccountViewModel>> AccountModuleList()
+    public async Task<List<KnownAccountViewModel>> AccountModuleListAsync()
     {
         var response = await _httpClient.GetAsync(KnownAccountGetAllRequest.BuildRoute());
         response.EnsureSuccessStatusCode();
@@ -40,7 +40,7 @@ public partial class AccountModuleHttpDataService : IAccountModuleDataService
         var result = await response.Content.ReadFromJsonAsync<List<KnownAccountViewModel>>() ?? new List<KnownAccountViewModel>();
         return result;
     }
-    public async Task<KnownBusinessWebsiteViewModel> KnownBusinessWebsiteGet()
+    public async Task<KnownBusinessWebsiteViewModel> KnownBusinessWebsiteGetAsync()
     {
         var response = await _httpClient.GetAsync(KnownBusinessWebsiteGetByUrlRequest.BuildRoute());
         response.EnsureSuccessStatusCode();
@@ -51,7 +51,7 @@ public partial class AccountModuleHttpDataService : IAccountModuleDataService
         }
         return vm;
     }
-    public async Task<WebsitePageViewModel> WebsitePageGetByUrl(WebsitePageGetByUrlRequest request)
+    public async Task<WebsitePageViewModel> WebsitePageGetByUrlAsync(WebsitePageGetByUrlRequest request)
     {
         var response = await _httpClient.GetAsync(WebsitePageGetByUrlRequest.BuildRoute(request.Url));
         response.EnsureSuccessStatusCode();
@@ -63,7 +63,7 @@ public partial class AccountModuleHttpDataService : IAccountModuleDataService
         }
         return vm;
     }
-    public async Task<WebsitePageViewModel> WebsitePageUpdate(WebsitePageUpdateRequest request)
+    public async Task<WebsitePageViewModel> WebsitePageUpdateAsync(WebsitePageUpdateRequest request)
     {
         var response = await _httpClient.PostAsJsonAsync(WebsitePageUpdateRequest.BuildRoute(), request);
         response.EnsureSuccessStatusCode();
@@ -89,7 +89,7 @@ public partial class AccountModuleHttpDataService : IAccountModuleDataService
         response.EnsureSuccessStatusCode();
     }
 
-    public async Task<KnownUserViewModel> KnownUserGet()
+    public async Task<KnownUserViewModel> KnownUserGetAsync()
     {
         var response = await _httpClient.GetAsync(KnownUserGetRequest.BuildRoute());
         response.EnsureSuccessStatusCode();
@@ -100,7 +100,7 @@ public partial class AccountModuleHttpDataService : IAccountModuleDataService
         }
         return vm;
     }
-    public async Task<KnownBusinessViewModel> KnownBusiness(KnownBusinessGetByIdRequest request)
+    public async Task<KnownBusinessViewModel> KnownBusinessAsync(KnownBusinessGetByIdRequest request)
     {
         var response = await _httpClient.GetAsync(KnownBusinessGetByIdRequest.BuildRoute(request.Id));
         response.EnsureSuccessStatusCode();
@@ -111,7 +111,7 @@ public partial class AccountModuleHttpDataService : IAccountModuleDataService
         }
         return vm;
     }
-    public async Task<IEnumerable<KnownBusinessViewModel>> KnownBusinessGetChildBusinesses(KnownBusinessGetChildBusinessesRequest request)
+    public async Task<IEnumerable<KnownBusinessViewModel>> KnownBusinessGetChildBusinessesAsync(KnownBusinessGetChildBusinessesRequest request)
     {
         var response = await _httpClient.GetAsync(KnownBusinessGetChildBusinessesRequest.BuildRoute(request.Id));
         response.EnsureSuccessStatusCode();
@@ -122,7 +122,7 @@ public partial class AccountModuleHttpDataService : IAccountModuleDataService
         }
         return vm;
     }
-    public async Task<KnownUserViewModel> KnownUserUpdateAccount(KnownUserUpdateAccountRequest request)
+    public async Task<KnownUserViewModel> KnownUserUpdateAccountAsync(KnownUserUpdateAccountRequest request)
     {
         var response = await _httpClient.PostAsJsonAsync(KnownUserUpdateAccountRequest.BuildRoute(), request);
         response.EnsureSuccessStatusCode();

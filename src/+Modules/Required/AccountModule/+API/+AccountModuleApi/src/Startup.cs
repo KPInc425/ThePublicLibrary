@@ -10,8 +10,7 @@ public class Startup
     public IConfiguration Configuration { get; }
     public void ConfigureServices(IServiceCollection services)
     {
-
-        
+        //Microsoft.IdentityModel.Logging.IdentityModelEventSource.ShowPII = true;       
         
         services
             .Configure<CookiePolicyOptions>(options =>
@@ -21,7 +20,7 @@ public class Startup
             });
         // default to TPLAccountModuleConnectionString ENVVAR
         string connectionString =
-            Configuration.GetConnectionString("SqliteConnection"); //Configuration.GetConnectionString("DefaultConnection");
+            Configuration.GetConnectionString("Active"); //Configuration.GetConnectionString("DefaultConnection");
         var appSettings = Configuration.Get<AppSettings>();
         services.AddSingleton<AppSettings>(appSettings);
         services.AddAutoMapper(typeof(KnownAccountMap).GetTypeInfo().Assembly);
@@ -60,7 +59,7 @@ public class Startup
                     .AddDefaultPolicy(builder =>
                     {
                         builder
-                            .WithOrigins("https://fernweh.com", "http://fernweh.com:5007", "http://localhost:5007")
+                            .WithOrigins("https://fernweh.com", "http://fernweh.com:5020", "http://localhost:5020")
                             .AllowAnyHeader()
                             .AllowAnyMethod()
                             .WithExposedHeaders("*");
@@ -92,7 +91,7 @@ public class Startup
                     options.RequireHttpsMetadata = false;
                     options.Authority = appSettings.Endpoints.IdentityEndpointUrl;
                     options.MetadataAddress = $"{appSettings.Endpoints.IdentityEndpointUrl}/.well-known/openid-configuration";
-                    options.Audience = "TPLClient_api_swaggerui";
+                    options.Audience = "FernwehClient_api_swaggerui";
                     options.TokenValidationParameters = new TokenValidationParameters
                     {
                         ValidateAudience = false,

@@ -51,7 +51,7 @@
         Console.WriteLine($"email => {Email}");
         Console.WriteLine($"name => {Name}");
         var createKnownAccountRequest = new KnownUserUpdateAccountRequest(Name, Email);
-        await AccountModuleHttpClient.KnownUserUpdateAccount(createKnownAccountRequest);
+        await AccountModuleHttpClient.KnownUserUpdateAccountAsync(createKnownAccountRequest);
         PlatformCacheService.KnownUser.Name = Name;
         PlatformCacheService.KnownUser.EmailAddress = Email;
 

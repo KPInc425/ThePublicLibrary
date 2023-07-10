@@ -43,7 +43,7 @@
     }
     protected async Task SaveChanges() {
         var websitePageUpdateRequest = new WebsitePageUpdateRequest(CurrentSelectedWebsitePage);
-        await AccountModuleHttpClient.WebsitePageUpdate(websitePageUpdateRequest);
+        await AccountModuleHttpClient.WebsitePageUpdateAsync(websitePageUpdateRequest);
         Snackbar.Add("Save successful, well done, you are good at this!");     
         await PlatformCacheService.InitAppDataAsync(true);
         PlatformCacheService.UpdateMenu();

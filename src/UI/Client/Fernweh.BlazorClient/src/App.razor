@@ -4,21 +4,24 @@
 @* <MudThemeProvider Theme="SelectedMudTheme" />
 <MudDialogProvider />
 <MudSnackbarProvider /> *@
-
-<Router AppAssembly="@typeof(Program).Assembly" AdditionalAssemblies="@LoadedAssemblies" OnNavigateAsync="@OnNavigateAsync" PreferExactMatches="@true">
-    <Found Context="routeData">
-        <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
-        <FocusOnNavigate RouteData="@routeData" Selector="h1" />
-    </Found>
-    <NotFound>
-        <PageTitle>Not found</PageTitle>
-        <LayoutView Layout="@typeof(MainLayout)">
-            <p role="alert">Sorry, there's nothing at this address.</p>
-        </LayoutView>
-    </NotFound>
-</Router>
+<CascadingAuthenticationState>
+    <Router AppAssembly="@typeof(Program).Assembly" AdditionalAssemblies="@LoadedAssemblies" OnNavigateAsync="@OnNavigateAsync" PreferExactMatches="@true">
+        <Found Context="routeData">
+            <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
+            <FocusOnNavigate RouteData="@routeData" Selector="h1" />
+        </Found>
+        <NotFound>
+            <PageTitle>Not found</PageTitle>
+            <LayoutView Layout="@typeof(MainLayout)">
+                <p role="alert">Sorry, there's nothing at this address.</p>
+            </LayoutView>
+        </NotFound>
+    </Router>
+</CascadingAuthenticationState>
 
 @code {
+    [CascadingParameter]
+    private Task<AuthenticationState> authenticationStateTask { get; set; }
     public string roomName { get; set; } = String.Empty;
     //MudTheme SelectedMudTheme = MudStaticDefaultTheme.Default;
     public bool hasRunUserInit = false;
@@ -26,11 +29,15 @@
     public bool hasSkinInit = false;
     public bool watchingSkinEvents = false;
     private List<Assembly> LoadedAssemblies = new List<Assembly>();
+    private ClaimsPrincipal user;    
     private bool isAuthenticated = false;
     private bool showSplash = true;
     protected override async Task OnInitializedAsync()
     {
         PlatformCacheService.SetAppDataToReady();
+        var authstate = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        user = authstate.User;
+        isAuthenticated = (user?.Identity?.IsAuthenticated == true);
     }
     private async Task GetAppData()
     {

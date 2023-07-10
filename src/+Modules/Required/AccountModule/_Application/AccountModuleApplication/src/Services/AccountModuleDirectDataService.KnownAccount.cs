@@ -6,7 +6,7 @@ public partial class AccountModuleDirectDataService
     {
         return _mapper.Map<KnownAccountViewModel>(await _mediator.Send(name));
     }
-    public async Task<List<KnownAccountViewModel>> AccountModuleList()
+    public async Task<List<KnownAccountViewModel>> AccountModuleListAsync()
     {
         return null;
     }

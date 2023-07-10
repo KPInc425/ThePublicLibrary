@@ -3,9 +3,9 @@ namespace AccountModuleApplication.Shared.Interfaces;
 public partial interface IAccountModuleDataService
 {
     
-    Task<KnownBusinessWebsiteViewModel> KnownBusinessWebsiteGet();
-    Task<WebsitePageViewModel> WebsitePageGetByUrl(WebsitePageGetByUrlRequest request);
-    Task<WebsitePageViewModel> WebsitePageUpdate(WebsitePageUpdateRequest request);
+    Task<KnownBusinessWebsiteViewModel> KnownBusinessWebsiteGetAsync();
+    Task<WebsitePageViewModel> WebsitePageGetByUrlAsync(WebsitePageGetByUrlRequest request);
+    Task<WebsitePageViewModel> WebsitePageUpdateAsync(WebsitePageUpdateRequest request);
 
     Task KnownBusinessWebsiteProfileUpdateAsync(KnownBusinessWebsiteProfileUpdateRequest request);
     Task KnownBusinessWebsiteUpdateAsync(KnownBusinessWebsiteUpdateRequest request);

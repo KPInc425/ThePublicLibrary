@@ -48,14 +48,14 @@ public class PlatformCacheService
     {
         if (isAuthenticated)
         {
-            KnownBusinessWebsite = await _accountModuleHttpClient.KnownBusinessWebsiteGet();
+            KnownBusinessWebsite = await _accountModuleHttpClient.KnownBusinessWebsiteGetAsync();
             Console.WriteLine($"InitAppDataAsync load data > {KnownBusinessWebsite?.Name}");
             if (KnownBusinessWebsite != null)
             {
                 SetBusinessDataToReady();
                 await Task.Delay(50);
             }
-            KnownUser = await _accountModuleHttpClient.KnownUserGet();
+            KnownUser = await _accountModuleHttpClient.KnownUserGetAsync();
             Console.WriteLine($"InitAppDataAsync user from api state > {KnownUser?.UserId}");
             if (KnownUser != null)
             {

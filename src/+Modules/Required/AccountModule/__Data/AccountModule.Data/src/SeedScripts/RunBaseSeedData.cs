@@ -10,7 +10,7 @@ public class RunBaseSeedData
         _mediator = serviceProvider.GetRequiredService<IMediator>();
         _logger = serviceProvider.GetRequiredService<ILogger<RunBaseSeedData>>();
         
-        var booksSeedWithData = new BooksSeedWithData().PopulateAccountModuleTestData(serviceProvider);
+        //var booksSeedWithData = new BooksSeedWithData().PopulateAccountModuleTestData(serviceProvider);
 
         await Task.Yield();
         

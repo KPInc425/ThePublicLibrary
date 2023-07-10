@@ -9,8 +9,9 @@ public static class Program
         using (var scope = host.Services.CreateScope())
         {
             var services = scope.ServiceProvider;
+            var configuration = GetConfiguration(args);
+            var appSettings = configuration.Get<AppSettings>();
 
-            var context = services.GetRequiredService<AccountModuleDbContext>();
             /* context.Database.EnsureCreated();
             //context.Database.Migrate();
 
@@ -37,4 +38,29 @@ public static class Program
                     // logging.AddAzureWebAppDiagnostics(); add this if deploying to Azure
                 });
             });
+
+    private static IConfiguration GetConfiguration(string[] args)
+    {
+        var environment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
+        var isDevelopment = environment == Environments.Development;
+
+        var configurationBuilder = new ConfigurationBuilder()
+            .SetBasePath(Directory.GetCurrentDirectory())
+            .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+            .AddJsonFile($"appsettings.{environment}.json", optional: true, reloadOnChange: true);
+
+        if (isDevelopment)
+        {
+            configurationBuilder.AddUserSecrets<Startup>(true);
+        }
+
+        var configuration = configurationBuilder.Build();
+
+        //configuration.AddAzureKeyVaultConfiguration(configurationBuilder);
+
+        configurationBuilder.AddCommandLine(args);
+        configurationBuilder.AddEnvironmentVariables();
+
+        return configurationBuilder.Build();
+    }
 }

@@ -37,7 +37,7 @@ public class CustomAuthorizationMessageHandler : AuthorizationMessageHandler
                 
 
                  },
-            scopes: new[] { "openid", "email", "profile", "roles", "mack", "address" });
+            scopes: new[] { "openid", "email", "profile", "roles" });
 
     }
 }
