@@ -5,4 +5,4 @@ global using Xunit;
 
 global using YmiCore.Entities;
 
-global using YmiCore.YmiTestData.Entities;
+global using YmiCore.TestData.Entities;
