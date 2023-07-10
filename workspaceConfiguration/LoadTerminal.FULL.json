@@ -2,6 +2,20 @@
     "version": "1.2.1",
     "groups": [
         {
+            "name": "Fernweh.Identity",
+            "enabled": true,
+            "terminals": [
+                {
+                    "name": "Fernweh.Identity",
+                    "path": "./src/++Identity/Fernweh.Identity/src/Fernweh.Identity.STS.Identity/",
+                    "cmd": [
+                        "dotnet watch run"
+                    ],
+                    "num": 1
+                }
+            ]            
+        },
+        {
             "name": "Fernweh.Client.BlazorClient",
             "enabled": true,
             "terminals": [
@@ -122,52 +136,6 @@
                     ],
                     "num": 4
                 }             
-            ]
-        },
-        {
-            "name": "YmiCore",
-            "enabled": true,
-            "terminals": [
-                {
-                    "name": "YmiCore.UnitTests",
-                    "path": "./src/+Modules/Lazy/YourMainIdea/____Core/_YmiCore.UnitTests/src",
-                    "cmd": [
-                        "dotnet test"
-                    ],
-                    "num": 5
-                },
-                {
-                    "name": "YmiInfrastructure.IntegrationTests",
-                    "path": "./src/+Modules/Lazy/YourMainIdea/___Infrastructure/YmiInfrastructure.IntegrationTests/src",
-                    "cmd": [
-                        "dotnet test"
-                    ],
-                    "num": 5
-                },
-                {
-                    "name": "YmiApplication.FeatureTests",
-                    "path": "./src/+Modules/Lazy/YourMainIdea/_Application/YmiApplication.FeatureTests/src",
-                    "cmd": [
-                        "dotnet test"
-                    ],
-                    "num": 5
-                },
-                {
-                    "name": "YmiApi.FunctionalTests",
-                    "path": "./src/+Modules/Lazy/YourMainIdea/+Api/YmiApi.FunctionalTests/src",
-                    "cmd": [
-                        "dotnet test"
-                    ],
-                    "num": 5
-                },
-                {
-                    "name": "YmiApi",
-                    "path": "./src/+Modules/Lazy/YourMainIdea/+Api/YmiApi/src",
-                    "cmd": [
-                        "dotnet watch run"
-                    ],
-                    "num": 5
-                }
             ]
         }
     ]

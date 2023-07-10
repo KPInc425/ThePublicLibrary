@@ -37,7 +37,7 @@
                 },
                 {
                     "name": "YmiCore.YmiTestData",
-                    "path": "./YmiCore.YmiTestData/src",
+                    "path": "./_YmiCore.TestData/src",
                     "cmd": [
                         ""
                     ],
