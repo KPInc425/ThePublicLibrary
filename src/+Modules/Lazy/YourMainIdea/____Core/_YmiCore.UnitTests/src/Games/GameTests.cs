@@ -3,15 +3,39 @@ namespace YmiCore.UnitTests;
 
 public class GameTests
 {
+    private readonly Game gameData = GameTestData.TestGame;
+    private readonly Player playerData = PlayerTestData.TestPlayer;
     [Fact]
     public void CanCreateNewGame()
     {
         // Given I have a player with name, bio, description, and background. 
-        // AND 
+        var playerData = PlayerTestData.TestPlayer;
         // When I create a game 
+        var gameA = new Game(playerData);
         // Then game has random values based on player background 
-        // AND
-        // Game has regions, cities, and connected player, max days, time of day.
+        gameA.PlayerLuck.Should().BeGreaterThan(gameData.DifficultyLevel);
+        // And
+        // Game has regions and cities, 
+        gameA.AllRegions.Count().Should().Be(gameData.AllRegions.Count());
+        gameA.CurrentCity.Should().NotBeNull();
+        // And player is referenced in game, 
+        gameA.Player.Should().NotBeNull();
+        // And max days, time of day.
+        gameA.CurrentDay.Should().Be(gameData.CurrentDay);
+        gameA.MaxDays.Should().Be(gameData.MaxDays);
+        gameA.TimeOfDay.Should().Be(gameData.TimeOfDay);
+    }
+
+    [Fact]
+    public void GameHasRegions()
+    {
+        // Given I have a Data
+        var playerData = PlayerTestData.TestPlayer;
+        var gameData = GameTestData.TestGame;
+        // When I create a game
+        var gameA = new Game(playerData);
+        // Then game has a current city
+        gameA.AllRegions.Count().Should().Be(gameData.AllRegions.Count());
     }
 
     [Fact]
@@ -25,16 +49,31 @@ public class GameTests
         gameA.CurrentCity.Should().NotBeNull();
     }
 
+
     [Fact]
-    public void GameHasRegions()
+    public void GameHasRegionCount()
     {
-        // Given I have a Data
+        // Given I have Player Data
         var playerData = PlayerTestData.TestPlayer;
+        // AND Game Data
         var gameData = GameTestData.TestGame;
         // When I create a game
         var gameA = new Game(playerData);
-        // Then game has a current city
-        gameA.AllRegions.Count().Should().Be(gameData.AllRegions.Count());
+        // Then game has RegionCount
+        gameA.RegionCount.Should().Be(gameData.RegionCount);
+    }
+
+    [Fact]
+    public void GameHasCityCount()
+    {
+        // Given I have Player Data
+        var playerData = PlayerTestData.TestPlayer;
+        // AND Game Data
+        var gameData = GameTestData.TestGame;
+        // When I create a game
+        var gameA = new Game(playerData);
+        // Then game has CityCount
+        gameA.CityCount.Should().Be(gameData.CityCount);
     }
 
     [Fact]
@@ -53,8 +92,22 @@ public class GameTests
     [Fact]
     public void GameHasStartLocation()
     {
-        // Given I have a Data
+        // Given I have Player Data
         var playerData = PlayerTestData.TestPlayer;
+        // AND Game Data
+        var gameData = GameTestData.TestGame;
+        // When I create a game
+        var gameA = new Game(playerData);
+        // Then game has start location
+        gameA.StartLocation.Should().NotBeNullOrEmpty();
+    }
+
+    [Fact]
+    public void GameStartLocationFollowsConvention()
+    {
+        // Given I have Player Data
+        var playerData = PlayerTestData.TestPlayer;
+        // AND Game Data
         var gameData = GameTestData.TestGame;
         // AND I have a city pattern
         var cityPattern = @"City[0-9]{0,3}";
@@ -62,9 +115,34 @@ public class GameTests
         var cityMatch = cityRegex.Match(gameData.StartLocation);
         // When I create a game
         var gameA = new Game(playerData);
-        // Then game has start location
-        gameA.StartLocation.Should().NotBeNullOrEmpty();
+        // Then game has start location name follows convention
         cityMatch.Success.Should().BeTrue();
+    }
 
+    [Fact]
+    public void GameHasDifficultyLevel()
+    {
+        // Given I have Player Data
+        var playerData = PlayerTestData.TestPlayer;
+        // AND Game Data
+        var gameData = GameTestData.TestGame;
+        // When I create a game
+        var gameA = new Game(playerData);
+        // Then game has difficulty level
+        gameA.DifficultyLevel.Should().Be(gameData.DifficultyLevel);
+
+    }
+
+    [Fact]
+    public void GameHasPlayerLuck()
+    {
+        // Given I have Player Data
+        var playerData = PlayerTestData.TestPlayer;
+        // AND Game Data
+        var gameData = GameTestData.TestGame;
+        // When I create a game
+        var gameA = new Game(playerData);
+        // Then game has difficulty level
+        gameA.PlayerLuck.Should().BeGreaterThanOrEqualTo(gameData.DifficultyLevel);
     }
 }

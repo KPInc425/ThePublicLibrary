@@ -37,7 +37,7 @@
                 },
                 {
                     "name": "YmiCore.TestData",
-                    "path": "./src/+Modules/Lazy/YourMainIdea/____Core/_YmiCore.TestData/src",
+                    "path": "./src/+Modules/Lazy/YourMainIdea/____Core/YmiCore.YmiTestData/src",
                     "cmd": [
                         ""
                     ],

@@ -6,14 +6,14 @@ public class Game : BaseEntityTracked<Guid>, IAggregateRoot
     public City CurrentCity { get; private set; }
     private List<LocationRegion> _regions = new();
     public IEnumerable<LocationRegion> AllRegions => _regions.AsReadOnly();
+    public int RegionCount => _regions.Count(); 
+    public int CityCount { get; private set; }
     public int CurrentDay { get; private set; }
     public int MaxDays { get; private set; }
     public DayCycleTypes TimeOfDay { get; private set; }
     public string StartLocation { get; private set; }
     public int DifficultyLevel { get; private set; }
-    public int RegionCount { get; private set; }
-    public int CityCount { get; private set; }
-    public int Luck { get; private set; }
+    public int PlayerLuck { get; private set; }
 
     private Game() {}
 
@@ -21,12 +21,16 @@ public class Game : BaseEntityTracked<Guid>, IAggregateRoot
     {
         Player = Guard.Against.Null(player, "Because Player cannot be null");
         GenerateRegions(5);
+        // RegionCount = AllRegions.Count();
+        CityCount = AllRegions.SelectMany(r => r.RegionCities).Count();
         var citiesQuery = _regions.SelectMany(r => r.RegionCities).ToList();
         CurrentCity = citiesQuery[new Random().Next(0, citiesQuery.Count)];
         CurrentDay = 1;
         MaxDays = 30;
         TimeOfDay = DayCycleTypes.Morning;
         StartLocation = CurrentCity.Name;
+        DifficultyLevel = (int)Player.UpbringingType;
+        PlayerLuck = new Random().Next(DifficultyLevel, 100);
     }
 
     private void GenerateRegions(int regionCount)

@@ -6,3 +6,5 @@ global using Xunit;
 global using YmiCore.Entities;
 
 global using YmiCore.TestData.Entities;
+
+global using YmiCore.Enums;

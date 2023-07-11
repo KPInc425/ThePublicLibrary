@@ -9,7 +9,6 @@ public class GameTestData
     static GameTestData()
     {
         var playerA = PlayerTestData.TestPlayer;
-        var cityA = CityTestData.TestCity;
         TestGame = new Game(playerA);
 
         AllGames = new List<Game> {
