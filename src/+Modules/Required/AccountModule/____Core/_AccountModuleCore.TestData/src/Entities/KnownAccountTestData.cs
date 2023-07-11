@@ -1,25 +1,19 @@
 namespace AccountModuleCore.TestData.Entities;
-public static class AccountModuleTestData {
-    /* public static NameVO AuthorJohnWriterName = new("John", "Writer");
-    public static NameVO AuthorSallyTyperName = new("Sally", "Typer");
-    public static NameVO AuthorBishopKnightName = new("Bishop", "Knight");
-
-    public static Author AuthorJohnWriter;
-    public static Author AuthorSallyTyper;
-    public static Author AuthorBishopKnight;
+public static class KnownAccountProfileTestData {
     
-    public static IEnumerable<Author> AllAuthors;
+    public readonly static KnownAccount JamesAccount;
+    public readonly static KnownAccount KpAccount;
 
-    static AuthorAccountModuleTestData() {
-        AuthorJohnWriter = new(AuthorJohnWriterName);
-        AuthorSallyTyper = new(AuthorSallyTyperName);
-        AuthorBishopKnight = new(AuthorBishopKnightName);
+    public readonly static IEnumerable<KnownAccount> AllKnownAccounts;
 
-        AllAuthors = new List<Author> {
-            AuthorJohnWriter,
-            AuthorSallyTyper,
-            AuthorBishopKnight
+    static KnownAccountTestData() {
+        JamesAccount = new("10geek", "10geekjames@gmail.com");
+        KpAccount = new ("kp", "vreyes.s.a@gmail.com");
+        
+        AllKnownAccounts = new List<AllKnownAccounts> {
+            JamesAccount,
+            KpAccount
         }
         .AsReadOnly();
-    } */
+    }
 }

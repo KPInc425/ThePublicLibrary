@@ -1,27 +1,27 @@
 namespace AccountModule.Data.SeedScripts;
-public class KnownAccountsSeedWithData : IAccountModuleSeedScript
+public class KnownAccountsSeedWithData : ITplSeedScript
 {
-    public async Task PopulateAccountModuleTestData(IServiceProvider serviceProvider)
+    public async Task PopulateTplTestData(IServiceProvider serviceProvider)
     {
-        /* var mediator = serviceProvider.GetRequiredService<IMediator>();
-        var logger = serviceProvider.GetRequiredService<ILogger<BooksSeedWithData>>();
+        var mediator = serviceProvider.GetRequiredService<IMediator>();
+        var logger = serviceProvider.GetRequiredService<ILogger<KnownAccountSeedWithData>>();
         using var dbContext =
-                new KnownAccountDbContext(serviceProvider
-                        .GetRequiredService<DbContextOptions<KnownAccountDbContext>>(
+                new TplDbContext(serviceProvider
+                        .GetRequiredService<DbContextOptions<TplDbContext>>(
                         ), mediator);
         
-        foreach (var book in BookAccountModuleTestData.AllBooks)
+        foreach (var knownAccount in KnownAccountTestData.AllKnownAccounts)
         {
-            if (!dbContext.Books.AsEnumerable().Any(rs => book.Isbn.Equals(rs.Isbn)))
+            if (!dbContext.KnownAccounts.AsEnumerable().Any(rs => knownAccount.Isbn.Equals(rs.Isbn)))
             {
-                dbContext.Books.Add(book);
-                logger?.LogInformation("{book.Title} was created in the database.", book.Title);
+                dbContext.KnownAccounts.Add(knownAccount);
+                logger?.LogInformation("{knownAccount.Title} was created in the database.", knownAccount.Title);
             }
             else
             {
-                logger?.LogInformation("{book.Title} already exist in the database.", book.Title);
+                logger?.LogInformation("{knownAccount.Title} already exist in the database.", knownAccount.Title);
             }
             await dbContext.SaveChangesAsync();
-        } */
+        }
     }
 }

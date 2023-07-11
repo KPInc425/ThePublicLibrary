@@ -10,20 +10,16 @@ public class RunBaseSeedData
         _mediator = serviceProvider.GetRequiredService<IMediator>();
         _logger = serviceProvider.GetRequiredService<ILogger<RunBaseSeedData>>();
         
-        var booksSeedWithData = new BooksSeedWithData().PopulateTplTestData(serviceProvider);
-
-        await Task.Yield();
-        
-        /* foreach (var seedData in Assembly
+        foreach (var seedData in Assembly
             .GetExecutingAssembly()
             .GetTypes()
-            .Where(x => x.IsClass && x.IsAbstract && x.IsSealed)
+            .Where(x => x.IsClass && x.IsAbstract && x.IsSealed && x.Name.Contains("SeedWithData") && !x.Name.Contains("RunBase"))
             .OrderBy(rs => rs.Name))
         {
             _logger.LogInformation("Seeding ... {seedData.Name}", seedData.Name);
             await ((ITplSeedScript)serviceProvider
                 .GetRequiredService(seedData))
                 .PopulateTplTestData(serviceProvider);
-        } */
+        }
     }
 }
