@@ -28,8 +28,8 @@ public class StorageContainer : BaseEntityTracked<Guid>, IAggregateRoot
         return _storageItems.Remove(storageItem);
     }
 
-    public IEnumerable<StorageItem> ViewItems()
-    {
-        return Items;
-    }
+    // public IEnumerable<StorageItem> ViewItems()
+    // {
+    //     return Items;
+    // }
 }

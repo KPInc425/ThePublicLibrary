@@ -5,6 +5,10 @@ public static class StorageItemTestData
     public static StorageItem AlternateTestItem;
 
     public static IEnumerable<StorageItem> ManyItems;
+    private static List<StorageItem> _overFlowItems = new();
+    public static IEnumerable<StorageItem> OverFlowItems => _overFlowItems.AsReadOnly();
+    private static List<StorageItem> _overFlowItems2 = new();
+    public static IEnumerable<StorageItem> OverFlowItems2 => _overFlowItems2.AsReadOnly();
 
     static StorageItemTestData()
     {
@@ -12,7 +16,7 @@ public static class StorageItemTestData
         var _description = "Item Description";
         var _price = 100.00f;
         var _imageUrl = "https://www.KPInc425.com";
-        // When I create a StorageItem
+
         TestItem = new StorageItem(_name, _description, _price, ItemTypes.Product, _imageUrl);
         AlternateTestItem = new StorageItem("Herbage", "Something Strong!", 45.00f, ItemTypes.Product, "https://www.WhiteWillow.com");
 
@@ -23,5 +27,15 @@ public static class StorageItemTestData
             TestItem,
             TestItem
         };
+
+        for (int i = 0; i < 101; i++)
+        {
+            _overFlowItems.Add(TestItem);
+        }
+        for (int i = 0; i < 150; i++)
+        {
+            _overFlowItems2.Add(TestItem);
+        }
+
     }
 }

@@ -32,7 +32,7 @@ public class Player : BaseEntityTracked<Guid>, IAggregateRoot
     public IEnumerable<StorageItem> ViewItemsInStorage()
     {
         var storageContainer = _storageContainers.FirstOrDefault();
-        return storageContainer.ViewItems();
+        return storageContainer.Items;
     }
 
     public void AddItemToStorage(StorageItem storageItem)
@@ -41,12 +41,26 @@ public class Player : BaseEntityTracked<Guid>, IAggregateRoot
         storageContainer.AddItem(storageItem);
     }
 
-    public void AddManyItemsToStorage(IEnumerable<StorageItem> manyStorageItems)
+    public IEnumerable<StorageItem> AddManyItemsToStorage(IEnumerable<StorageItem> manyStorageItems)
     {
         var storageContainer = _storageContainers.FirstOrDefault();
-        foreach (var storageItem in manyStorageItems)
+        if (storageContainer.Items.Count() + manyStorageItems.Count() <= storageContainer.SlotCount)
         {
-            storageContainer.AddItem(storageItem);
+            foreach (var storageItem in manyStorageItems)
+            {
+                storageContainer.AddItem(storageItem);
+            }
+            return storageContainer.Items;
+        }
+        else
+        {
+            var overFlowCount = storageContainer.Items.Count() + manyStorageItems.Count() - storageContainer.SlotCount;
+            var itemsThatFit = manyStorageItems.SkipLast(overFlowCount);
+            foreach (var storageItem in itemsThatFit)
+            {
+                storageContainer.AddItem(storageItem);
+            }
+            return manyStorageItems.TakeLast(overFlowCount);
         }
     }
     public bool RemoveItemFromStorage(StorageItem storageItem)
@@ -77,11 +91,7 @@ public class Player : BaseEntityTracked<Guid>, IAggregateRoot
         }
     }
 
-    public IEnumerable<StorageItem> SearchStorage(string itemName)
-    {
-        var storageContainer = _storageContainers.FirstOrDefault();
-        return storageContainer.Items;
-    }
+
 
 
 

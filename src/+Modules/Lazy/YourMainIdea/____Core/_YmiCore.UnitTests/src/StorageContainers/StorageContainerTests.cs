@@ -74,13 +74,18 @@ public class StorageContainerTests
     [Fact]
     public void OverflowExtraItemsToLostItemPool()
     {
-        // Given we have a Player with a Storage Container with Items
-        var playerData = PlayerTestData.TestPlayerWithItems;
-        // And We have a Game with a Lost Item Pool
-        var gameData = GameTestData.TestGame;
+        // Given we have a Game with a Player with a Storage Container with Items
+        var playerData = new Player(PlayerTestData.TestPlayer.Name);
+        var gameData = new Game(playerData);
         // When we add 101 items to the players inventory
+        var overFlowItems = gameData.Player.AddManyItemsToStorage(StorageItemTestData.OverFlowItems);
+        // And we add overflow items to games lost items pool
+        gameData.AddItemToLostItemsStorage(overFlowItems.FirstOrDefault());
+        gameData.AddManyItemsToLostItemsStorage(StorageItemTestData.OverFlowItems2);
         // Then we can see 100 items in players inventory
+        gameData.Player.ViewItemsInStorage().Count().Should().Be(100);
         // And then we can see 1 item in games lost items inventory
+        gameData.ViewLostItemsInStorage().Count().Should().Be(StorageItemTestData.OverFlowItems2.Count() + 1);
     }   
 }
 
