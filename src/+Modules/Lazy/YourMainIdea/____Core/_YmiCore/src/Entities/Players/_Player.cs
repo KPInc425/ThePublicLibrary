@@ -49,6 +49,40 @@ public class Player : BaseEntityTracked<Guid>, IAggregateRoot
             storageContainer.AddItem(storageItem);
         }
     }
+    public bool RemoveItemFromStorage(StorageItem storageItem)
+    {
+        
+        var storageContainer = _storageContainers.FirstOrDefault();
+        if (storageContainer.Items.Contains(storageItem))
+        {
+            return storageContainer.RemoveItem(storageItem);
+        }
+        return false;
+    }
+    public bool RemoveManyItemsFromStorage(IEnumerable<StorageItem> manyStorageItems)
+    {
+        var storageContainer = _storageContainers.FirstOrDefault();
+        var storedItemCount = storageContainer.Items.Where(x => x.Name == manyStorageItems.FirstOrDefault().Name).Count();
+        if (storedItemCount >= manyStorageItems.Count())
+        {
+            foreach (var storageItem in manyStorageItems)
+            {
+                storageContainer.RemoveItem(storageItem);
+            }
+            return true;
+        }
+        else 
+        {
+            return false;
+        }
+    }
+
+    public IEnumerable<StorageItem> SearchStorage(string itemName)
+    {
+        var storageContainer = _storageContainers.FirstOrDefault();
+        return storageContainer.Items;
+    }
+
 
 
     public override string ToString()

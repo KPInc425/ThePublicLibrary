@@ -14,6 +14,8 @@ public class Game : BaseEntityTracked<Guid>, IAggregateRoot
     public string StartLocation { get; private set; }
     public int DifficultyLevel { get; private set; }
     public int PlayerLuck { get; private set; }
+    private List<StorageContainer> _lostItemsStorageContainers = new();
+    public IEnumerable<StorageContainer> LostItemsStorageContainers => _lostItemsStorageContainers.AsReadOnly();
 
     private Game() {}
 
@@ -31,6 +33,7 @@ public class Game : BaseEntityTracked<Guid>, IAggregateRoot
         StartLocation = CurrentCity.Name;
         DifficultyLevel = (int)Player.UpbringingType;
         PlayerLuck = new Random().Next(DifficultyLevel, 100);
+        _lostItemsStorageContainers.Add(new StorageContainer("Trash Can", "What ever fits, stays.", 25));
     }
 
     private void GenerateRegions(int regionCount)
@@ -41,5 +44,11 @@ public class Game : BaseEntityTracked<Guid>, IAggregateRoot
             newRegion.GenerateCities(newRegion, 6);
             _regions.Add(newRegion);
         }
+    }
+
+    public void AddItemToLostItemsStorage(StorageItem storageItem)
+    {
+        var storageContainer = _lostItemsStorageContainers.FirstOrDefault();
+        storageContainer.AddItem(storageItem);
     }
 }

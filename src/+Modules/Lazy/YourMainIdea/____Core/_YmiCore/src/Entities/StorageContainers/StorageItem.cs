@@ -9,7 +9,6 @@ public class StorageItem : BaseEntity<Guid>
     public string ImageUrl { get; private set; }
 
     private StorageItem() { }
-
     public StorageItem(string name, string description, float price, ItemTypes itemType, string imageUrl)
     {
         Name = Guard.Against.NullOrEmpty(name, "Because Name is required");

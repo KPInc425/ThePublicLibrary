@@ -2,8 +2,9 @@ namespace YmiCore.TestData.Entities;
 public static class PlayerTestData
 {
     public static Player TestPlayer;
-
+    public static Player TestPlayerWithItems;
     public static IEnumerable<Player> AllPlayers;
+
 
     static PlayerTestData()
     {
@@ -15,5 +16,8 @@ public static class PlayerTestData
             TestPlayer,
             TestPlayer
         };
+        TestPlayerWithItems = new Player("George");
+        TestPlayerWithItems.AddItemToStorage(StorageItemTestData.AlternateTestItem);
+        TestPlayerWithItems.AddManyItemsToStorage(StorageItemTestData.ManyItems);
     }
 }

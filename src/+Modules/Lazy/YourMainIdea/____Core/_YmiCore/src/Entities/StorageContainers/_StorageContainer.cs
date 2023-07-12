@@ -23,6 +23,11 @@ public class StorageContainer : BaseEntityTracked<Guid>, IAggregateRoot
         _storageItems.Add(storageItem);
     }
 
+    public bool RemoveItem(StorageItem storageItem)
+    {
+        return _storageItems.Remove(storageItem);
+    }
+
     public IEnumerable<StorageItem> ViewItems()
     {
         return Items;
