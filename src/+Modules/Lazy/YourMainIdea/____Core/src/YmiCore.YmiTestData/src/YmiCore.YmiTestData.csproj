@@ -4,12 +4,12 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <IsPackable>true</IsPackable>
-    <PackageId>YmiCore</PackageId>
+    <PackageId>YmiCore.YmiTestData</PackageId>
     <Version>1.01.02.003</Version>
     <Authors>10GeekJames</Authors>
     <Company>10GeekJames</Company>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
-    <DefaultNamespace>YmiCore</DefaultNamespace>
+    <DefaultNamespace>YmiCore.YmiTestData</DefaultNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -21,9 +21,12 @@
     <PackageReference Include="MediatR" Version="12.0.1" />
     <PackageReference Include="Toolbelt.EntityFrameworkCore.IndexAttribute.SqlServer" Version="5.0.1" />
   </ItemGroup>
+
+  
   <ItemGroup>
+    <ProjectReference Include=".\..\..\_YmiCore\src\YmiCore.csproj" />
     <Reference Include="Fernweh.KernelShared">
-      <HintPath>.\..\..\..\..\..\..\..\src\__Kernel\Fernweh.KernelShared\src\bin\Debug\net7.0\Fernweh.KernelShared.dll</HintPath>
+      <HintPath>.\..\..\..\..\..\..\..\..\src\__Kernel\Fernweh.KernelShared\src\bin\Debug\net7.0\Fernweh.KernelShared.dll</HintPath>
     </Reference>
-  </ItemGroup>  
+  </ItemGroup>
 </Project>

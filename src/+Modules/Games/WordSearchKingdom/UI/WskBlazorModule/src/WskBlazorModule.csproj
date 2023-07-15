@@ -31,7 +31,7 @@
   </ItemGroup>
   <Choose>
     <When Condition="'$(Configuration)' == 'Release'">
-      <ItemGroup>      
+      <ItemGroup>
         <PackageReference Include="Fernweh.KernelShared" />
         <PackageReference Include="Fernweh.Common" />
         <PackageReference Include="WskCore.WskTestData" />
@@ -44,7 +44,9 @@
     <Reference Include="Fernweh.KernelShared">
       <HintPath>.\..\..\..\..\..\..\..\src\__Kernel\Fernweh.KernelShared\src\bin\Debug\net7.0\Fernweh.KernelShared.dll</HintPath>
     </Reference>
-    <ProjectReference Include="./../../../../../../_Common/Fernweh.Common/src/Fernweh.Common.csproj" />
+    <Reference Include="Fernweh.Common">
+      <HintPath>./../../../../../../_Common/Fernweh.Common/src/bin\Debug\net7.0\Fernweh.Common.dll</HintPath>
+    </Reference>
     <ProjectReference Include="./../../../____Core/WskCore.WskTestData/src/WskCore.WskTestData.csproj" />
     <ProjectReference Include="./../../../_Application/_WskApplication.Shared/src/WskApplication.Shared.csproj" />
     <ProjectReference Include="./../../_WskModuleClientServiceLoader/src/WskModuleClientServiceLoader.csproj" />
@@ -52,7 +54,8 @@
   <ItemGroup>
     <Watch Remove="**/*.css" />
     <Watch Include="**/*.scss" />
-    <Watch Include="**/*.sass" /></ItemGroup>
+    <Watch Include="**/*.sass" />
+  </ItemGroup>  
   <ItemGroup>
     <EmbeddedResource Include="wwwroot/**/*" />
     <Content Update="**/*.cshtml" Pack="false" />

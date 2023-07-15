@@ -10,7 +10,6 @@
     <Company>RobotBuildersInc</Company>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <DefaultNamespace>WskBlazorModuleAdmin</DefaultNamespace>
-    <StaticWebAssetBasePath>WskBlazorModuleAdmin</StaticWebAssetBasePath>
   </PropertyGroup>
   <ItemGroup>
     <SupportedPlatform Include="browser" />
@@ -44,7 +43,12 @@
     <Reference Include="Fernweh.KernelShared">
       <HintPath>.\..\..\..\..\..\..\..\src\__Kernel\Fernweh.KernelShared\src\bin\Debug\net7.0\Fernweh.KernelShared.dll</HintPath>
     </Reference>
-    <ProjectReference Include="./../../../../../../_Common/Fernweh.Common/src/Fernweh.Common.csproj" />
+    
+    <!-- <ProjectReference Include="./../../../../../../_Common/Fernweh.Common/src/Fernweh.Common.csproj" Private="true" /> -->
+    <Reference Include="Fernweh.Common">
+      <HintPath>./../../../../../../_Common/Fernweh.Common/src/bin\Debug\net7.0\Fernweh.Common.dll</HintPath>
+    </Reference>
+
     <ProjectReference Include="./../../../____Core/WskCore.WskTestData/src/WskCore.WskTestData.csproj" />
     <ProjectReference Include="./../../../_Application/_WskApplication.Shared/src/WskApplication.Shared.csproj" />
     <ProjectReference Include="./../../_WskModuleClientServiceLoader/src/WskModuleClientServiceLoader.csproj" />

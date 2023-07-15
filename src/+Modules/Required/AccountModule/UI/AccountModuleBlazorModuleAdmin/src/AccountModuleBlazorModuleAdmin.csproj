@@ -42,7 +42,7 @@
     </When>
   </Choose>
   <ItemGroup>                                              
-    <ProjectReference Include="./../../../../../../_Common/Fernweh.Common/src/Fernweh.Common.csproj" />
+    <ProjectReference Include="./../../../../../../_Common/Fernweh.Common/src/Fernweh.Common.csproj" Private="true" />
     <ProjectReference Include="./../../../_Application/_AccountModuleApplication.Shared/src/AccountModuleApplication.Shared.csproj" />
     <ProjectReference Include="./../../../_Application/AccountModuleApplication/src/AccountModuleApplication.csproj" />
   </ItemGroup>

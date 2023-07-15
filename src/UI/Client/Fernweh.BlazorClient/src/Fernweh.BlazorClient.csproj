@@ -36,12 +36,14 @@
     </Reference> -->
     <ProjectReference Include=".\..\..\..\..\..\src\__Kernel\Fernweh.KernelShared\src\Fernweh.KernelShared.csproj" />
 
-    <ProjectReference Include="./../../../../_Common/Fernweh.Common/src/Fernweh.Common.csproj" />
+    <!-- <ProjectReference Include="./../../../../_Common/Fernweh.Common/src/Fernweh.Common.csproj" /> -->
+    <Reference Include="Fernweh.Common">
+      <HintPath>.\..\..\..\..\src\__Kernel\Fernweh.Common\src\bin\Debug\net7.0\Fernweh.Common.dll</HintPath>
+    </Reference>
     <ProjectReference Include=".\..\..\..\..\..\src\+Modules\Required\AccountModule\____Core\_AccountModuleCore.TestData\src\AccountModuleCore.TestData.csproj" />
     <ProjectReference Include=".\..\..\..\..\..\src\+Modules\Required\AccountModule\_Application\_AccountModuleApplication.Shared\src\AccountModuleApplication.Shared.csproj" />
     <ProjectReference Include=".\..\..\..\..\..\src\+Modules\Required\AccountModule\UI\_AccountModuleClientServiceLoader\src\AccountModuleClientServiceLoader.csproj" />
   </ItemGroup>
-
 
   <Import Project="BuildCoreModules.Local._.targets" Condition="'$(Configuration)' != 'Release'" />
   <Import Project="BuildLazyModules.Local._.targets" Condition="'$(Configuration)' != 'Release'" />
@@ -55,11 +57,6 @@
     <Watch Include="**/*.scss" />
     <Watch Include="**/*.sass" />
   </ItemGroup>
-
-  <!-- <ItemGroup>
-    <EmbeddedResource Include="wwwroot/**/*" />
-    <Content Update="**/*.cshtml" Pack="false" />
-  </ItemGroup> -->
 
   <Target Name="SassCheck" BeforeTargets="AfterBuild">
     <Exec Command="sass --version" ContinueOnError="true">

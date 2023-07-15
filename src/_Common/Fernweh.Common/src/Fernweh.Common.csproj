@@ -1,5 +1,4 @@
 <Project Sdk="Microsoft.NET.Sdk.Razor">
-
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
     <Nullable>enable</Nullable>
@@ -11,7 +10,6 @@
     <Company>10GeekJames</Company>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <DefaultNamespace>Fernweh.Common</DefaultNamespace>
-    <StaticWebAssetBasePath>FernwehCommon</StaticWebAssetBasePath>
   </PropertyGroup>
 
   <ItemGroup>
@@ -40,24 +38,20 @@
     </When>
   </Choose>
   <ItemGroup>
-  <Reference Include="Fernweh.KernelShared">
-      <HintPath>./../../../../src/__Kernel/Fernweh.KernelShared/src/bin/Debug/net7.0/Fernweh.KernelShared.dll</HintPath>    
+    <Reference Include="Fernweh.KernelShared">
+      <HintPath>./../../../__Kernel/Fernweh.KernelShared/src/bin/Debug/net7.0/Fernweh.KernelShared.dll</HintPath>
     </Reference>
-    
     <ProjectReference Include="./../../../+Modules/Required/AccountModule/_Application/_AccountModuleApplication.Shared/src/AccountModuleApplication.Shared.csproj" />
   </ItemGroup>
-
   <ItemGroup>
     <Watch Remove="**/*.css" />
     <Watch Include="**/*.scss" />
     <Watch Include="**/*.sass" />
   </ItemGroup>
-
   <ItemGroup>
     <EmbeddedResource Include="wwwroot/**/*" />
     <Content Update="**/*.cshtml" Pack="false" />
   </ItemGroup>
-
   <Target Name="SassCheck" BeforeTargets="AfterBuild">
     <Exec Command="sass --version" ContinueOnError="true">
       <Output TaskParameter="ExitCode" PropertyName="ErrorCodeSass" />

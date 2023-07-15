@@ -44,7 +44,7 @@
     <Reference Include="Fernweh.KernelShared">
       <HintPath>.\..\..\..\..\..\..\..\src\__Kernel\Fernweh.KernelShared\src\bin\Debug\net7.0\Fernweh.KernelShared.dll</HintPath>
     </Reference>
-    <ProjectReference Include="./../../../../../../_Common/Fernweh.Common/src/Fernweh.Common.csproj" />
+    <ProjectReference Include="./../../../../../../_Common/Fernweh.Common/src/Fernweh.Common.csproj" Private="true" />
     <ProjectReference Include="./../../../____Core/TplCore.TplTestData/src/TplCore.TplTestData.csproj" />
     <ProjectReference Include="./../../../_Application/_TplApplication.Shared/src/TplApplication.Shared.csproj" />
     <ProjectReference Include="./../../_TplModuleClientServiceLoader/src/TplModuleClientServiceLoader.csproj" />

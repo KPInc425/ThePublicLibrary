@@ -21,7 +21,7 @@
             "terminals": [
                 {
                     "name": "YmiCore",
-                    "path": "./_YmiCore/src",
+                    "path": "./src/_YmiCore/src",
                     "cmd": [
                         ""
                     ],
@@ -29,7 +29,7 @@
                 },
                 {
                     "name": "YmiCore.UnitTests",
-                    "path": "./_YmiCore.UnitTests/src",
+                    "path": "./src/_YmiCore.UnitTests/src",
                     "cmd": [
                         ""
                     ],
@@ -37,7 +37,7 @@
                 },
                 {
                     "name": "YmiCore.YmiTestData",
-                    "path": "./YmiCore.YmiTestData/src",
+                    "path": "./src/YmiCore.YmiTestData/src",
                     "cmd": [
                         ""
                     ],

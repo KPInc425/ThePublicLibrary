@@ -4,7 +4,6 @@ public static class RegisterLazyServicesTpl
     public static void RegisterModules(WebAssemblyHostBuilder builder)
     {
         RegisterTplLazyServices(builder);
-        RegisterYmiLazyServices(builder);
 
         static void RegisterTplLazyServices(WebAssemblyHostBuilder builder)
         {

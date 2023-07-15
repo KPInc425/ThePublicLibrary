@@ -25,7 +25,6 @@ public class GameGrid : BaseEntityTracked<Guid>
         _hiddenWords = hiddenWords.ToList();
         _rowCells = setupGrid(height, width);
 
-        // place words where the fit in various places on the grid to create a word search
         hideTheWordsOnGrid(hiddenWords);
         fillEmptySpacesInTheGrid();        
     }
