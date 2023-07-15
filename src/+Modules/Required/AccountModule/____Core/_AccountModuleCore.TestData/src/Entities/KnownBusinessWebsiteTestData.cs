@@ -1,4 +1,4 @@
-namespace BusinessWebsiteModuleCore.TestData.Entities;
+namespace AccountModuleCore.TestData.Entities;
 public static class KnownBusinessWebsiteTestData {
     
     public readonly static KnownBusinessWebsite JamesBusinessWebsite;
@@ -8,10 +8,10 @@ public static class KnownBusinessWebsiteTestData {
 
 
     static KnownBusinessWebsiteTestData() {
-        JamesBusinessWebsite = new(KnownBusinessTestData.JamesBusiness, "localhost:5020", "10geek website",);
-        KpBusinessWebsite = new (KnownBusinessWebsiteTestData.KpBusiness, "localhost:5020", "kp corp");
+        JamesBusinessWebsite = new(KnownBusinessTestData.JamesBusiness, "localhost:5020", "10geek website");
+        KpBusinessWebsite = new (KnownBusinessTestData.KpBusiness, "localhost:5020", "kp corp");
         
-        AllKnownBusinessWebsites = new List<AllKnownBusinessWebsites> {
+        AllKnownBusinessWebsites = new List<KnownBusinessWebsite> {
             JamesBusinessWebsite,
             KpBusinessWebsite
         }

@@ -31,20 +31,23 @@
     </When>
   </Choose>
   <ItemGroup>
-    <Reference Include="Fernweh.KernelShared">
-      <HintPath>.\..\..\..\..\..\src\__Kernel\Fernweh.KernelShared\src\bin\Debug\net7.0\Fernweh.KernelShared.dll</HintPath>    
-    </Reference>
-    <ProjectReference Include=".\..\..\..\..\..\src\+Modules\Required\AccountModule\____Core\_AccountModuleCore.TestData\src\AccountModuleCore.TestData.csproj" />    
-    <ProjectReference Include=".\..\..\..\..\..\src\+Modules\Required\AccountModule\_Application\_AccountModuleApplication.Shared\src\AccountModuleApplication.Shared.csproj" />    
-    <ProjectReference Include=".\..\..\..\..\..\src\+Modules\Required\AccountModule\UI\_AccountModuleClientServiceLoader\src\AccountModuleClientServiceLoader.csproj" />    
+    <!-- <Reference Include="Fernweh.KernelShared">
+      <HintPath>.\..\..\..\..\..\src\__Kernel\Fernweh.KernelShared\src\bin\Debug\net7.0\Fernweh.KernelShared.dll</HintPath>
+    </Reference> -->
+    <ProjectReference Include=".\..\..\..\..\..\src\__Kernel\Fernweh.KernelShared\src\Fernweh.KernelShared.csproj" />
+
+    <ProjectReference Include="./../../../../_Common/Fernweh.Common/src/Fernweh.Common.csproj" />
+    <ProjectReference Include=".\..\..\..\..\..\src\+Modules\Required\AccountModule\____Core\_AccountModuleCore.TestData\src\AccountModuleCore.TestData.csproj" />
+    <ProjectReference Include=".\..\..\..\..\..\src\+Modules\Required\AccountModule\_Application\_AccountModuleApplication.Shared\src\AccountModuleApplication.Shared.csproj" />
+    <ProjectReference Include=".\..\..\..\..\..\src\+Modules\Required\AccountModule\UI\_AccountModuleClientServiceLoader\src\AccountModuleClientServiceLoader.csproj" />
   </ItemGroup>
 
 
-  <Import Project="BuildCoreModules.targets" Condition="'$(Configuration)' != 'Release'" />
-  <Import Project="BuildLazyModules.targets" Condition="'$(Configuration)' != 'Release'" />
-  
-  <Import Project="BuildCoreModules.Deploy.targets" Condition="'$(Configuration)' == 'Release'" />
-  <Import Project="BuildLazyModules.Deploy.targets" Condition="'$(Configuration)' == 'Release'" />
+  <Import Project="BuildCoreModules.Local._.targets" Condition="'$(Configuration)' != 'Release'" />
+  <Import Project="BuildLazyModules.Local._.targets" Condition="'$(Configuration)' != 'Release'" />
+
+  <Import Project="BuildCoreModules.Deploy._.targets" Condition="'$(Configuration)' == 'Release'" />
+  <Import Project="BuildLazyModules.Deploy._.targets" Condition="'$(Configuration)' == 'Release'" />
 
 
   <ItemGroup>
@@ -62,22 +65,18 @@
     <Exec Command="sass --version" ContinueOnError="true">
       <Output TaskParameter="ExitCode" PropertyName="ErrorCodeSass" />
     </Exec>
-    <Error Condition="'$(ErrorCodeSass)' != '0'"
-      Text="Dart-sass is required for this project. Install globally with 'npm i -g sass' " />
+    <Error Condition="'$(ErrorCodeSass)' != '0'" Text="Dart-sass is required for this project. Install globally with 'npm i -g sass' " />
   </Target>
 
   <Target Name="SassBuild" BeforeTargets="AfterBuild">
-    <Exec
-      Command="sass Styles:wwwroot/ --embed-source-map Shared:Shared --style=compressed --load-path=Styles --update"
-      ContinueOnError="false">
+    <Exec Command="sass Styles:wwwroot/ --embed-source-map Shared:Shared --style=compressed --load-path=Styles --update" ContinueOnError="false">
       <Output TaskParameter="ExitCode" PropertyName="ErrorCodeSass" />
     </Exec>
     <Error Condition="'$(ErrorCodeSass)' != '0'" Text="Dart-sass is unhappy about something " />
   </Target>
   <Target Name="PushPackage" AfterTargets="Publish" Condition="'$(Configuration)' == 'Release'">
     <Exec Command="dotnet pack -c Release" />
-    <Exec
-      Command="dotnet nuget push &quot;$(MSBuildProjectDirectory)\bin\$(Configuration)\$(AssemblyName).$(Version).nupkg&quot; -s LocalNuggget" />
+    <Exec Command="dotnet nuget push &quot;$(MSBuildProjectDirectory)\bin\$(Configuration)\$(AssemblyName).$(Version).nupkg&quot; -s LocalNuggget" />
   </Target>
 
 </Project>

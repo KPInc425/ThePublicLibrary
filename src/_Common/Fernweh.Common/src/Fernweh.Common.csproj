@@ -11,6 +11,7 @@
     <Company>10GeekJames</Company>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <DefaultNamespace>Fernweh.Common</DefaultNamespace>
+    <StaticWebAssetBasePath>FernwehCommon</StaticWebAssetBasePath>
   </PropertyGroup>
 
   <ItemGroup>

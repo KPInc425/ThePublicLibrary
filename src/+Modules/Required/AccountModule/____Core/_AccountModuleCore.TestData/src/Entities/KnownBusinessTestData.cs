@@ -1,4 +1,4 @@
-namespace BusinessModuleCore.TestData.Entities;
+namespace AccountModuleCore.TestData.Entities;
 public static class KnownBusinessTestData {
     
     public readonly static KnownBusiness JamesBusiness;
@@ -11,7 +11,7 @@ public static class KnownBusinessTestData {
         JamesBusiness = new("10geek corp");
         KpBusiness = new ("kp corp");
         
-        AllKnownBusinesss = new List<AllKnownBusinesss> {
+        AllKnownBusinesss = new List<KnownBusiness> {
             JamesBusiness,
             KpBusiness
         }

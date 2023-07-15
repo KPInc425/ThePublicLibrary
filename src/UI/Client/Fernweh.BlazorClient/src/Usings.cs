@@ -67,5 +67,14 @@ global using YmiApplication.Shared.Services;
 global using YmiModuleClientServiceLoader; */
 // \YourMainIdea
 
+// WordSearchKingdom
+global using WskCore.WskTestData.Entities;
+
+global using WskApplication.Shared.Interfaces;
+global using WskApplication.Shared.Services;
+
+global using WskModuleClientServiceLoader;
+// \WordSearchKingdom
+
 
 
