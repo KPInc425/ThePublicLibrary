@@ -1,25 +1,25 @@
 namespace YmiApplication.Data.SeedScripts;
-public class BooksSeedWithData : IYmiSeedScript
+public class GamesSeedWithData : IYmiSeedScript
 {
     public async Task PopulateYmiTestData(IServiceProvider serviceProvider)
     {
         var mediator = serviceProvider.GetRequiredService<IMediator>();
-        var logger = serviceProvider.GetRequiredService<ILogger<BooksSeedWithData>>();
+        var logger = serviceProvider.GetRequiredService<ILogger<GamesSeedWithData>>();
         using var dbContext =
                 new YmiDbContext(serviceProvider
                         .GetRequiredService<DbContextOptions<YmiDbContext>>(
                         ), mediator);
         
-        foreach (var book in BookYmiTestData.AllBooks)
+        foreach (var game in GameTestData.AllGames)
         {
-            if (!dbContext.Books.AsEnumerable().Any(rs => book.Isbn.Equals(rs.Isbn)))
+            if (!dbContext.Games.AsEnumerable().Any(rs => game.Id == rs.Id))
             {
-                dbContext.Books.Add(book);
-                logger?.LogInformation("{book.Title} was created in the database.", book.Title);
+                dbContext.Games.Add(game);
+                logger?.LogInformation("{game.Id} was created in the database.", game.Id);
             }
             else
             {
-                logger?.LogInformation("{book.Title} already exist in the database.", book.Title);
+                logger?.LogInformation("{game.Id} already exist in the database.", game.Id);
             }
             await dbContext.SaveChangesAsync();
         }

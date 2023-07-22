@@ -145,4 +145,6 @@ public class GameTests
         // Then game has difficulty level
         gameA.PlayerLuck.Should().BeGreaterThanOrEqualTo(gameData.DifficultyLevel);
     }
+
+    
 }

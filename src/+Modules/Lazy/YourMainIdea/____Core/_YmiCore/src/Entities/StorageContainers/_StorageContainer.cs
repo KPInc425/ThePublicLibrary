@@ -7,7 +7,7 @@ public class StorageContainer : BaseEntityTracked<Guid>, IAggregateRoot
     public string Description { get; private set; }
     public int SlotCount { get; private set; }
     private List<StorageItem> _storageItems = new();
-    public IEnumerable<StorageItem> Items => _storageItems.AsReadOnly(); 
+    public IEnumerable<StorageItem> StorageItems => _storageItems.AsReadOnly(); 
 
     private StorageContainer() { }
 

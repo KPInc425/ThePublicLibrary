@@ -5,8 +5,8 @@ public class LocationRegion : BaseEntity<Guid>
     public string Name { get; private set; }
     public string Description { get; private set; }
     public string ControllingFaction { get; private set;}
-    private List<City> _regionCities = new();
-    public IEnumerable<City> RegionCities => _regionCities.AsReadOnly();
+    private List<City> _cities = new();
+    public IEnumerable<City> Cities => _cities.AsReadOnly();
 
     public LocationRegion(string name, string description = "A wonderful place to make some money.", string controllingFaction = "Free-For-All") 
     {
@@ -20,7 +20,7 @@ public class LocationRegion : BaseEntity<Guid>
         for (int i = 0; i < cityCount; i++)
         {
             var newCity = new City(region, $"City{i}");
-            _regionCities.Add(newCity);
+            _cities.Add(newCity);
         }
     }
 }

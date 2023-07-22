@@ -69,8 +69,7 @@ public class StorageContainerTests
         playerData.ViewItemsInStorage().Count().Should().Be(0);
 
     }
-
-
+    
     [Fact]
     public void OverflowExtraItemsToLostItemPool()
     {

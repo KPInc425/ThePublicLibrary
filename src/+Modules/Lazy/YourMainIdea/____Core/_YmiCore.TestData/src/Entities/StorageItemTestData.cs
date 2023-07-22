@@ -3,7 +3,6 @@ public static class StorageItemTestData
 {
     public static StorageItem TestItem;
     public static StorageItem AlternateTestItem;
-
     public static IEnumerable<StorageItem> ManyItems;
     private static List<StorageItem> _overFlowItems = new();
     public static IEnumerable<StorageItem> OverFlowItems => _overFlowItems.AsReadOnly();

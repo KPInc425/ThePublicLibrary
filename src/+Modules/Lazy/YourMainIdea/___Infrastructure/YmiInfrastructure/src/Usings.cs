@@ -24,5 +24,4 @@ global using Fernweh.KernelShared.Interfaces;
 
 global using YmiCore;
 global using YmiCore.Entities;
-global using YmiCore.Interfaces;
 global using YmiInfrastructure.Data;

@@ -32,7 +32,7 @@ public class Player : BaseEntityTracked<Guid>, IAggregateRoot
     public IEnumerable<StorageItem> ViewItemsInStorage()
     {
         var storageContainer = _storageContainers.FirstOrDefault();
-        return storageContainer.Items;
+        return storageContainer.StorageItems;
     }
 
     public void AddItemToStorage(StorageItem storageItem)
@@ -44,17 +44,17 @@ public class Player : BaseEntityTracked<Guid>, IAggregateRoot
     public IEnumerable<StorageItem> AddManyItemsToStorage(IEnumerable<StorageItem> manyStorageItems)
     {
         var storageContainer = _storageContainers.FirstOrDefault();
-        if (storageContainer.Items.Count() + manyStorageItems.Count() <= storageContainer.SlotCount)
+        if (storageContainer.StorageItems.Count() + manyStorageItems.Count() <= storageContainer.SlotCount)
         {
             foreach (var storageItem in manyStorageItems)
             {
-                storageContainer.AddItem(storageItem);
+                AddItemToStorage(storageItem);
             }
-            return storageContainer.Items;
+            return storageContainer.StorageItems;
         }
         else
         {
-            var overFlowCount = storageContainer.Items.Count() + manyStorageItems.Count() - storageContainer.SlotCount;
+            var overFlowCount = storageContainer.StorageItems.Count() + manyStorageItems.Count() - storageContainer.SlotCount;
             var itemsThatFit = manyStorageItems.SkipLast(overFlowCount);
             foreach (var storageItem in itemsThatFit)
             {
@@ -67,7 +67,7 @@ public class Player : BaseEntityTracked<Guid>, IAggregateRoot
     {
         
         var storageContainer = _storageContainers.FirstOrDefault();
-        if (storageContainer.Items.Contains(storageItem))
+        if (storageContainer.StorageItems.Contains(storageItem))
         {
             return storageContainer.RemoveItem(storageItem);
         }
@@ -76,7 +76,7 @@ public class Player : BaseEntityTracked<Guid>, IAggregateRoot
     public bool RemoveManyItemsFromStorage(IEnumerable<StorageItem> manyStorageItems)
     {
         var storageContainer = _storageContainers.FirstOrDefault();
-        var storedItemCount = storageContainer.Items.Where(x => x.Name == manyStorageItems.FirstOrDefault().Name).Count();
+        var storedItemCount = storageContainer.StorageItems.Where(x => x.Name == manyStorageItems.FirstOrDefault().Name).Count();
         if (storedItemCount >= manyStorageItems.Count())
         {
             foreach (var storageItem in manyStorageItems)

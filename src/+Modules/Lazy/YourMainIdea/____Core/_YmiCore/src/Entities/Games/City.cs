@@ -2,7 +2,8 @@ namespace YmiCore.Entities;
 
 public class City: BaseEntity<Guid>
 {
-    public LocationRegion Region { get; private set; }
+    public Guid LocationRegionId { get; private set; }
+    public LocationRegion LocationRegion { get; private set; }
     public string Name { get; private set; }
     // public string Description { get; private set; }
     // public string  AverageQuality { get; private set; }
@@ -17,7 +18,7 @@ public class City: BaseEntity<Guid>
 
     public City(LocationRegion region, string name)
     {
-        Region = Guard.Against.Null(region, "Because region cannot be empty");
+        LocationRegion = Guard.Against.Null(region, "Because region cannot be empty");
         Name = Guard.Against.NullOrWhiteSpace(name, "Because name cannot be empty");
     }
 

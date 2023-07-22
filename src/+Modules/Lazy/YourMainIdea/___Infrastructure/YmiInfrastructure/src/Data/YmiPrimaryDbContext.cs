@@ -8,18 +8,15 @@ public class YmiDbContext : DbContext
         _mediator = mediator;
     }
 
-    public DbSet<Library> Libraries { get; set; }
-    public DbSet<Book> Books { get; set; }
-    public DbSet<BookCopy> BookCopies { get; set; }
-    public DbSet<Author> Authors { get; set; }
+    public DbSet<Game> Games { get; set; }
+    public DbSet<City> Cities { get; set; }
+    public DbSet<LocationRegion> LocationRegions { get; set; }
+    public DbSet<Player> Players { get; set; }
+    public DbSet<StorageContainer> StorageContainers { get; set; }
+    public DbSet<StorageItem> StorageItems { get; set; }
+
     
     // Shared
-    public DbSet<BookCategory> BookCategories { get; set; } 
-
-    // Value Objects
-  /*   public DbSet<DigitalAddressVO> DigitalAddressVOs {get;set;}
-    public DbSet<NameVO> NameVOs {get;set;}
-    public DbSet<PhysicalAddressVO> DigitalAddressePhysicalAddressVOs {get;set;} */
 
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -28,7 +25,7 @@ public class YmiDbContext : DbContext
         //modelBuilder.BuildIndexesFromAnnotations();
         modelBuilder.BuildIndexesFromAnnotationsForSqlServer();
         modelBuilder.ApplyAllConfigurationsFromCurrentAssembly();
-
+        // modelBuilder.
         //this.ChangeTracker.LazyLoadingEnabled = true;
     }
     public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())

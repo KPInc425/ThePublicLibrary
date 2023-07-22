@@ -10,20 +10,20 @@ public class RunBaseSeedData
         _mediator = serviceProvider.GetRequiredService<IMediator>();
         _logger = serviceProvider.GetRequiredService<ILogger<RunBaseSeedData>>();
         
-        var booksSeedWithData = new BooksSeedWithData().PopulateYmiTestData(serviceProvider);
+        // var booksSeedWithData = new BooksSeedWithData().PopulateYmiTestData(serviceProvider);
 
-        await Task.Yield();
+        // await Task.Yield();
         
-        /* foreach (var seedData in Assembly
+        foreach (var seedData in Assembly
             .GetExecutingAssembly()
             .GetTypes()
-            .Where(x => x.IsClass && x.IsAbstract && x.IsSealed)
+            .Where(x => x.IsClass && x.Name.Contains("SeedWithData"))
             .OrderBy(rs => rs.Name))
         {
             _logger.LogInformation("Seeding ... {seedData.Name}", seedData.Name);
             await ((IYmiSeedScript)serviceProvider
                 .GetRequiredService(seedData))
                 .PopulateYmiTestData(serviceProvider);
-        } */
+        } 
     }
 }

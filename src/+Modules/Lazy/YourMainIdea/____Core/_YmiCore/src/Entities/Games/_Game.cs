@@ -3,10 +3,11 @@ namespace YmiCore.Entities;
 public class Game : BaseEntityTracked<Guid>, IAggregateRoot
 {
     public Player Player { get; private set; }
+    public Guid CurrentCityId { get; private set; }
     public City CurrentCity { get; private set; }
-    private List<LocationRegion> _regions = new();
-    public IEnumerable<LocationRegion> AllRegions => _regions.AsReadOnly();
-    public int RegionCount => _regions.Count(); 
+    private List<LocationRegion> _locationRegions = new();
+    public IEnumerable<LocationRegion> LocationRegions => _locationRegions.AsReadOnly();
+    public int RegionCount => _locationRegions.Count(); 
     public int CityCount { get; private set; }
     public int CurrentDay { get; private set; }
     public int MaxDays { get; private set; }
@@ -18,14 +19,17 @@ public class Game : BaseEntityTracked<Guid>, IAggregateRoot
     public IEnumerable<StorageContainer> LostItemsStorageContainers => _lostItemsStorageContainers.AsReadOnly();
 
     private Game() {}
-
+    public Game(Guid id, Player player): this(player)
+    {
+        Id = id;
+    }
     public Game(Player player) 
     {
         Player = Guard.Against.Null(player, "Because Player cannot be null");
         GenerateRegions(5);
-        // RegionCount = AllRegions.Count();
-        CityCount = AllRegions.SelectMany(r => r.RegionCities).Count();
-        var citiesQuery = _regions.SelectMany(r => r.RegionCities).ToList();
+        // RegionCount = LocationRegions.Count();
+        CityCount = LocationRegions.SelectMany(r => r.Cities).Count();
+        var citiesQuery = _locationRegions.SelectMany(r => r.Cities).ToList();
         CurrentCity = citiesQuery[new Random().Next(0, citiesQuery.Count)];
         CurrentDay = 1;
         MaxDays = 30;
@@ -42,7 +46,7 @@ public class Game : BaseEntityTracked<Guid>, IAggregateRoot
         {
             var newRegion = new LocationRegion($"Region{i}");
             newRegion.GenerateCities(newRegion, 6);
-            _regions.Add(newRegion);
+            _locationRegions.Add(newRegion);
         }
     }
 
@@ -55,19 +59,19 @@ public class Game : BaseEntityTracked<Guid>, IAggregateRoot
     public IEnumerable<StorageItem> AddManyItemsToLostItemsStorage(IEnumerable<StorageItem> manyStorageItems)
     {
         var storageContainer = _lostItemsStorageContainers.LastOrDefault();
-        if (storageContainer.Items.Count() + manyStorageItems.Count() <= storageContainer.SlotCount)
+        if (storageContainer.StorageItems.Count() + manyStorageItems.Count() <= storageContainer.SlotCount)
         {
             foreach (var storageItem in manyStorageItems)
             {
                 storageContainer.AddItem(storageItem);
             }
-            return storageContainer.Items;
+            return storageContainer.StorageItems;
         }
         else
         {
             while (manyStorageItems.Count() > 0)
             {
-                var overFlowCount = storageContainer.Items.Count() + manyStorageItems.Count() - storageContainer.SlotCount;
+                var overFlowCount = storageContainer.StorageItems.Count() + manyStorageItems.Count() - storageContainer.SlotCount;
                 var itemsThatFit = manyStorageItems.SkipLast(overFlowCount);
                 manyStorageItems = manyStorageItems.SkipLast(itemsThatFit.Count());
                 foreach (var storageItem in itemsThatFit)
@@ -82,13 +86,13 @@ public class Game : BaseEntityTracked<Guid>, IAggregateRoot
                 }
             }
             
-            return _lostItemsStorageContainers.SelectMany(r => r.Items);
+            return _lostItemsStorageContainers.SelectMany(r => r.StorageItems);
         }
     }
 
     public IEnumerable<StorageItem> ViewLostItemsInStorage()
     {
-        return _lostItemsStorageContainers.SelectMany(r => r.Items);
+        return _lostItemsStorageContainers.SelectMany(r => r.StorageItems);
 
     }
 }

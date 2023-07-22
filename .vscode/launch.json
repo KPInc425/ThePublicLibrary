@@ -1,11 +1,11 @@
 {
     "version": "0.2.0",
     "configurations": [
-    {
-        "name": ".NET Core Attach",
-        "type": "coreclr",
-        "request": "attach"
-    },
+        {
+            "name": ".NET Core Attach",
+            "type": "coreclr",
+            "request": "attach"
+        },
         {
             "name": "DrawProjectFolders",
             "type": "coreclr",
@@ -90,6 +90,17 @@
             "sourceFileMap": {
                 "/Views": "${workspaceFolder}/src/+Modules/Required/AccountModule/+API/+AccountModuleApi/src/Views"
             }
+        },
+        {
+            "name": "YmiCore",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build-YmiCore",
+            "program": "${workspaceFolder}/src/+Modules/Lazy/YourMainIdea/____Core/_YmiCore/src/bin/Debug/net7.0/YmiCore.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/src/+Modules/Lazy/YourMainIdea/____Core/_YmiCore/src",
+            "stopAtEntry": false,
+            "console": "internalConsole"
         }
     ]
 }

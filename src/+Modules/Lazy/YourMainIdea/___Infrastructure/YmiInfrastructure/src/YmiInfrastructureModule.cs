@@ -66,8 +66,6 @@ public class YmiInfrastructureModule : Module
             .AsImplementedInterfaces();
         }
 
-        builder.RegisterType<EmailSender>().As<IEmailSender>()
-            .InstancePerLifetimeScope();
     }
 
     private void RegisterDevelopmentOnlyDependencies(ContainerBuilder builder)
