@@ -3,19 +3,19 @@ namespace YmiCore.Entities;
 public class Game : BaseEntityTracked<Guid>, IAggregateRoot
 {
     public Player Player { get; private set; }
-    public Guid CurrentCityId { get; private set; }
-    public City CurrentCity { get; private set; }
+    public Guid? CurrentCityId { get; private set; }
+    public City? CurrentCity { get; private set; }
     private List<LocationRegion> _locationRegions = new();
     public IEnumerable<LocationRegion> LocationRegions => _locationRegions.AsReadOnly();
     public int RegionCount => _locationRegions.Count(); 
-    public int CityCount { get; private set; }
-    public int CurrentDay { get; private set; }
-    public int MaxDays { get; private set; }
-    public DayCycleTypes TimeOfDay { get; private set; }
-    public string StartLocation { get; private set; }
+    public int CityCount => _locationRegions.SelectMany(r => r.Cities).Count(); 
+    public int CurrentDay { get; private set; } = 1;
+    public int MaxDays { get; private set; } = 30;
+    public DayCycleTypes TimeOfDay { get; private set; } = DayCycleTypes.Morning;
+    public string? StartLocation { get; private set; }
     public int DifficultyLevel { get; private set; }
-    public int PlayerLuck { get; private set; }
-    private List<StorageContainer> _lostItemsStorageContainers = new();
+    public int PlayerLuck { get; private set; } 
+    private List<StorageContainer> _lostItemsStorageContainers = new(){new StorageContainer("Trash Can", "What ever fits, stays.", 25)};
     public IEnumerable<StorageContainer> LostItemsStorageContainers => _lostItemsStorageContainers.AsReadOnly();
 
     private Game() {}
@@ -27,17 +27,15 @@ public class Game : BaseEntityTracked<Guid>, IAggregateRoot
     {
         Player = Guard.Against.Null(player, "Because Player cannot be null");
         GenerateRegions(5);
-        // RegionCount = LocationRegions.Count();
-        CityCount = LocationRegions.SelectMany(r => r.Cities).Count();
-        var citiesQuery = _locationRegions.SelectMany(r => r.Cities).ToList();
-        CurrentCity = citiesQuery[new Random().Next(0, citiesQuery.Count)];
-        CurrentDay = 1;
-        MaxDays = 30;
-        TimeOfDay = DayCycleTypes.Morning;
-        StartLocation = CurrentCity.Name;
         DifficultyLevel = (int)Player.UpbringingType;
         PlayerLuck = new Random().Next(DifficultyLevel, 100);
-        _lostItemsStorageContainers.Add(new StorageContainer("Trash Can", "What ever fits, stays.", 25));
+    }
+
+    public void GameInit() 
+    {
+        var citiesQuery = _locationRegions.SelectMany(r => r.Cities).ToList();
+        CurrentCity = citiesQuery[new Random().Next(0, citiesQuery.Count)];
+        StartLocation = CurrentCity.Name;
     }
 
     private void GenerateRegions(int regionCount)

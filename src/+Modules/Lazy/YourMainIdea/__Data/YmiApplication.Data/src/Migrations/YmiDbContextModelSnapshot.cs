@@ -20,6 +20,10 @@ namespace YmiApplication.Data.Migrations
             modelBuilder.Entity("YmiCore.Entities.City", b =>
                 {
                     b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("TEXT");
+
+                    b.Property<Guid>("LocationRegionId")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Name")
@@ -27,6 +31,8 @@ namespace YmiApplication.Data.Migrations
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("LocationRegionId");
 
                     b.ToTable("Cities");
                 });
@@ -37,13 +43,10 @@ namespace YmiApplication.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("CityCount")
-                        .HasColumnType("INTEGER");
-
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("TEXT");
 
-                    b.Property<Guid>("CurrentCityId")
+                    b.Property<Guid?>("CurrentCityId")
                         .HasColumnType("TEXT");
 
                     b.Property<int>("CurrentDay")
@@ -62,7 +65,6 @@ namespace YmiApplication.Data.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("StartLocation")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<int>("TimeOfDay")
@@ -216,7 +218,7 @@ namespace YmiApplication.Data.Migrations
                 {
                     b.HasOne("YmiCore.Entities.LocationRegion", "LocationRegion")
                         .WithMany("Cities")
-                        .HasForeignKey("Id")
+                        .HasForeignKey("LocationRegionId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -227,9 +229,7 @@ namespace YmiApplication.Data.Migrations
                 {
                     b.HasOne("YmiCore.Entities.City", "CurrentCity")
                         .WithMany()
-                        .HasForeignKey("CurrentCityId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("CurrentCityId");
 
                     b.HasOne("YmiCore.Entities.Player", "Player")
                         .WithMany()

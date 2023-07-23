@@ -15,9 +15,14 @@ public class YmiDbContext : DbContext
     public DbSet<StorageContainer> StorageContainers { get; set; }
     public DbSet<StorageItem> StorageItems { get; set; }
 
-    
+
     // Shared
 
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+        base.OnConfiguring(optionsBuilder);
+        optionsBuilder.EnableSensitiveDataLogging();
+    }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -25,7 +30,6 @@ public class YmiDbContext : DbContext
         //modelBuilder.BuildIndexesFromAnnotations();
         modelBuilder.BuildIndexesFromAnnotationsForSqlServer();
         modelBuilder.ApplyAllConfigurationsFromCurrentAssembly();
-        // modelBuilder.
         //this.ChangeTracker.LazyLoadingEnabled = true;
     }
     public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())

@@ -9,6 +9,7 @@ public class GamesSeedWithData : IYmiSeedScript
                 new YmiDbContext(serviceProvider
                         .GetRequiredService<DbContextOptions<YmiDbContext>>(
                         ), mediator);
+
         
         foreach (var game in GameTestData.AllGames)
         {
